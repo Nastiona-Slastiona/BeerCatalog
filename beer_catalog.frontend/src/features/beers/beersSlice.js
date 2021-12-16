@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const InitialState = [
-    
-];
+const initialState = {
+    beers: []
+};
 
 const beersSlice = createSlice({
     name: 'beers',
