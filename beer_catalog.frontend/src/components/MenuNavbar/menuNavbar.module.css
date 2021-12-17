@@ -1,0 +1,8 @@
+.menuNavbarContainer {
+  display: flex;
+  justify-content: start;
+}
+
+.menuNavbarIcon {
+  margin-right: 40px;
+}
