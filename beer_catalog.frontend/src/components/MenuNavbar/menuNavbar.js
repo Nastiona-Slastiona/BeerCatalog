@@ -6,8 +6,8 @@ function MenuNavbar() {
     return (
         <nav className={cl.menuNavbarContainer}>
             <ul>
-                <MenuNavbarItem><span className={`icon-drawer2 ${cl.menuNavbarIcon}`}></span>Home</MenuNavbarItem>
-                <MenuNavbarItem><span className={`icon-star-full ${cl.menuNavbarIcon}`}></span>Favorites</MenuNavbarItem>
+                <MenuNavbarItem link={'/'}><span className={`icon-drawer2 ${cl.menuNavbarIcon}`}></span>Home</MenuNavbarItem>
+                <MenuNavbarItem link={'/favorites'}><span className={`icon-star-full ${cl.menuNavbarIcon}`}></span>Favorites</MenuNavbarItem>
             </ul>
         </nav>
     );
