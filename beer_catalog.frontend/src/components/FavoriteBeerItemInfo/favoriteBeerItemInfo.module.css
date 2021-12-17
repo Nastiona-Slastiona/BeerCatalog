@@ -1,0 +1,12 @@
+.favoriteBeerItemInfoContainer {
+  display: block;
+
+  max-width: 500px;
+  max-height: 100%;
+
+  text-align: left;
+}
+
+.favoriteBeerItemInfoDescription {
+  margin: 20px 0 40px;
+}

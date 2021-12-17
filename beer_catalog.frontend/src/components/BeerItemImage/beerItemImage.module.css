@@ -1,10 +1,10 @@
 .beerItemImageContainer {
   display: flex;
 
-  width: 150px;
+  min-width: 130px;
+  max-width: 150px;
   height: 150px;
   margin: 5px;
-  padding-left: 75px;
 }
 
 .beerItemImage {

@@ -11,3 +11,8 @@
 
   color: #87888f;
 }
+
+.menuNavbarItem:hover {
+  color: #696a6e;
+  border-bottom: 1px solid #696a6e;
+}

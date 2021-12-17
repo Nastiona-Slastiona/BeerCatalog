@@ -1,0 +1,14 @@
+.beerItemInfoContainer {
+  font-size: 20px;
+
+  display: block;
+
+  width: 300px;
+  height: 100px;
+  padding: 20px;
+
+  text-align: left;
+
+  color: #fff;
+  background: grey;
+}

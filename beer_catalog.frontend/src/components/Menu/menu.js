@@ -2,11 +2,19 @@ import React from 'react';
 import MenuNavbar from '../MenuNavbar/menuNavbar';
 import cl from './menu.module.css';
 
-function Menu() {
+function Menu({visible, setVisible, children}) {
+    const classes = [cl.menuContainer];
+
+    if(visible) {
+        classes.push(cl.active);
+    }
+
     return (
-        <div className={cl.menuContainer}>
-            <span className={cl.menuHeader}>Beer Catalog</span>
-            <MenuNavbar/>
+        <div className={classes.join(' ')} onClick={() => setVisible(false)}>
+            <div className={cl.menu} onClick={e => e.stopPropagation()}>
+                <span className={cl.menuHeader} >{children}</span>
+                <MenuNavbar/>
+            </div>
         </div>
     );
 }

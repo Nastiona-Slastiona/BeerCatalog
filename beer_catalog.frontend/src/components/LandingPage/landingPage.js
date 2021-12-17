@@ -1,14 +1,13 @@
 import React from 'react';
-import Menu from '../Menu/menu';
 import Filter from '../Filter/filter';
 import SearchBox from '../SearchBox/searchBox';
 import BeerList from '../BeersList/beersList';
 import InfiniteScroll from '../InfiniteScroll/infiniteScroll';
+import cl from "./landingPage.module.css";
 
 function LandingPage() {
   return (
-    <div>
-      {/* <Menu /> */}
+    <div className={cl.landingPage}>
       <SearchBox/>
       <Filter/>
       <BeerList/>
