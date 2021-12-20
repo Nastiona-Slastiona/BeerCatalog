@@ -1,7 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+
+
 const initialState = {
-    beers: []
+    beers: [
+        // {
+        //     image_url:'image',
+        //     name:'beer',
+        //     tagline: 'tagline_beer',
+        //     description: 'description_beer',
+
+        // }
+    ]
 };
 
 const beersSlice = createSlice({

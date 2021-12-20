@@ -1,4 +1,16 @@
 .filterSliderContainer {
   display: flex;
-  width: 300px;
+  width: 200px;
+  align-items: center;
+}
+
+.filterSlider {
+  display: inline-block;
+  width: 100%;
+  height: 1px;
+  padding: 0;
+}
+
+.filterSliderLabel {
+  margin-right: 5px;
 }
