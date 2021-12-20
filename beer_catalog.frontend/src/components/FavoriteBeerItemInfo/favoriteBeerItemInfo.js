@@ -7,14 +7,10 @@ import cl from './favoriteBeerItemInfo.module.css';
 function FavoriteBeerItemInfo({favoriteBeer}) {
     return (
         <div className={cl.favoriteBeerItemInfoContainer}>
-            <BeerItemTitle>Title</BeerItemTitle>
-            <BeerItemTagline>Tagline</BeerItemTagline>
-            <div className={cl.favoriteBeerItemInfoDescription}>Description store.
-
-Since any React component in a React Redux app can be connected to the store, most applications will render a store.
-
-Since any React component in a React Redux app can be connected to the store, most applications will render a  at the top level, with the entire app’s component tree inside of iat the top level, with the entire app’s component tree inside of i</div>
-            <BeerItemButtons/>  
+            <BeerItemTitle>{favoriteBeer.name}</BeerItemTitle>
+            <BeerItemTagline>{favoriteBeer.tagline}</BeerItemTagline>
+            <div className={cl.favoriteBeerItemInfoDescription}>{favoriteBeer.description}</div>    
+            <BeerItemButtons beer={favoriteBeer}/>  
         </div>
     );
 }

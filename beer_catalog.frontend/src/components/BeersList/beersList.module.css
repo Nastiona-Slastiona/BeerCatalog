@@ -1,7 +1,12 @@
 .beersList {
-  display: flex;
-  justify-content: space-around;
+  display: block;
 
+  width: fit-content;
+  margin: 60px;
+}
+
+.beersListContainer {
+  display: flex;
   width: 100%;
-  margin: 30px;
+  justify-content: center;
 }

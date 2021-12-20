@@ -1,11 +1,18 @@
 import React from 'react';
 import cl from './beerItemButtons.module.css';
 
-function BeerItemButtons() {
+function BeerItemButtons({beer}) {
+    let favoriteButton = beer.isFavorite ? 'Remove Favorite' : 'Favorite'
+
+    const handleFavoriteButton = () => {
+        const sign = !beer.isFavorite;
+        favoriteButton = sign ? 'Remove Favorite' : 'Favorite'
+    }
+
     return (
         <div className={cl.beerItemButtonsContainer}>
                 <button className={cl.beerItemButton}>Open</button>
-                <button className={cl.beerItemButton}>Favorite</button>
+                <button className={cl.beerItemButton} onClick={handleFavoriteButton}>{favoriteButton}</button>
         </div>    
     );
 }

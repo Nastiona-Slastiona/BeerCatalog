@@ -4,12 +4,12 @@ import BeerItemTagline from '../BeerItemTagline/beerItemTagline';
 import BeerItemTitle from '../BeerItemTitle/beerItemTitle';
 import cl from './beerItemInfo.module.css';
 
-function BeerItemInfo() {
+function BeerItemInfo({beer}) {
     return (
         <div className={cl.beerItemInfoContainer}>
-            <BeerItemTitle>Title</BeerItemTitle>
-            <BeerItemTagline>Tagline</BeerItemTagline>
-            <BeerItemButtons/>  
+            <BeerItemTitle>{beer.name}</BeerItemTitle>
+            <BeerItemTagline>{beer.tagline}</BeerItemTagline>
+            <BeerItemButtons beer={beer}/>  
         </div>
     );
 }

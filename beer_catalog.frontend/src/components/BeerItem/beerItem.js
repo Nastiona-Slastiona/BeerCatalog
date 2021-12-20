@@ -3,11 +3,11 @@ import BeerItemInfo from '../BeerItemInfo/beerItemInfo';
 import BeerItemImage from '../BeerItemImage/beerItemImage';
 import cl from './beerItem.module.css';
 
-function BeerItem() {
+function BeerItem({beer}) {
     return (
         <div className={cl.beerItem}>
-          <BeerItemImage/>
-          <BeerItemInfo/>
+          <BeerItemImage image={beer["image_url"]}/>
+          <BeerItemInfo beer={beer}/>
         </div>
     );
 }
