@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './filterSlider.css';
 
 
-function FilterSlider({minimum, maximum, defaultVal}) {
+function FilterSlider({name, minimum, maximum, defaultVal, onChange}) {
     let step = '1';
     const [val, setValue] = useState(defaultVal);
 
@@ -12,7 +12,10 @@ function FilterSlider({minimum, maximum, defaultVal}) {
         step = '.1';
     }
 
-    const onInputChange = (e) => setValue(e.target.value);
+    const onInputChange = (e) => {
+        setValue(e.target.value);
+        onChange(e);
+    } 
 
     return (
         <div className={'filter-slider__container'}>
@@ -25,6 +28,7 @@ function FilterSlider({minimum, maximum, defaultVal}) {
                 defaultValue={defaultVal} 
                 step={step}
                 onChange={onInputChange}
+                name={name}
             />
         </div>
     );

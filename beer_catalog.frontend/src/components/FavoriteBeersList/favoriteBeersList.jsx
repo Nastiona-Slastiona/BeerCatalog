@@ -8,7 +8,9 @@ import './favoriteBeersList.css';
 
 
 export default function FavoriteBeersList() {
-    const favorites = useSelector(state => state.favoriteBeers.favoriteBeers);
+    const favorites = useSelector(state => state.beers.beers.filter(
+        beer => beer.isFavorite === true
+    ));
 
     if(!favorites.length) {
         return (

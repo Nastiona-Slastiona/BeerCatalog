@@ -6,7 +6,7 @@ import FilterSlider from 'Components/FilterSlider/filterSlider.jsx';
 import './filterItem.css';
 
 
-function FilterItem({children, min, max, defaultValue}) {
+function FilterItem({children, name, min, max, defaultValue, onChange}) {
     return (
         <div className={'filter__item-container'}>
             <span>{children}</span>
@@ -14,6 +14,8 @@ function FilterItem({children, min, max, defaultValue}) {
                 minimum={min} 
                 maximum={max} 
                 defaultVal={defaultValue}
+                onChange={onChange}
+                name={name}
                 />
         </div>
     );

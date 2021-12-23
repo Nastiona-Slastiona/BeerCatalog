@@ -1,6 +1,8 @@
 .menu-navbar__container {
   display: flex;
   justify-content: start;
+
+  padding-left: 50px;
 }
 
 .menu-navbar__icon {

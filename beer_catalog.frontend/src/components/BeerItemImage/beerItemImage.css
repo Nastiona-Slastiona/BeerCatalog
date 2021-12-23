@@ -18,6 +18,6 @@
 
 .beer-item-image__section {
   display: flex;
-  width: 370px;
+  max-width: 370px;
   justify-content: center;
 }

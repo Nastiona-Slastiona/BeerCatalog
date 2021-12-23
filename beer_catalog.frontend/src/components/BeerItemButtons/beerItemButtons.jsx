@@ -1,14 +1,20 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+
+import { setIsFavoriteBeer } from 'Store/features/beers/beersSlice.jsx';
 
 import './beerItemButtons.css';
 
 
 export default function BeerItemButtons({beer}) {
+    const dispatch = useDispatch();
     let favoriteButton = beer.isFavorite ? 'Remove Favorite' : 'Favorite'
 
     const handleFavoriteButton = () => {
         const sign = !beer.isFavorite;
         favoriteButton = sign ? 'Remove Favorite' : 'Favorite'
+
+        dispatch(setIsFavoriteBeer(beer));
     }
 
     return (
