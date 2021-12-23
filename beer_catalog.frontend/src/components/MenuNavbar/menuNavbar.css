@@ -1,0 +1,8 @@
+.menu-navbar__container {
+  display: flex;
+  justify-content: start;
+}
+
+.menu-navbar__icon {
+  margin-right: 40px;
+}

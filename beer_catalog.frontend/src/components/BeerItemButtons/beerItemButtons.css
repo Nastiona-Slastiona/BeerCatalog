@@ -1,0 +1,24 @@
+.beer-item__button {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 20px;
+
+  width: max-content;
+
+  text-align: left;
+  text-transform: uppercase;
+
+  color: inherit;
+  border: none;
+  background: none;
+  padding: 0 20px;
+}
+.beer-item__button:hover {
+  background: rgb(109, 107, 107);
+}
+
+.beer-item__buttons-container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 25px;
+}

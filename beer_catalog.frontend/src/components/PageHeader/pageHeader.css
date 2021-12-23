@@ -1,0 +1,29 @@
+.page-header__container {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 60px;
+
+  color: #cbcedd;
+  background-color: #0870ce;
+}
+
+.page-header__settings {
+  font-size: 27px;
+
+  align-self: center;
+
+  margin-right: 10px;
+}
+
+.page-header__settings:hover {
+  color: #fff;
+}

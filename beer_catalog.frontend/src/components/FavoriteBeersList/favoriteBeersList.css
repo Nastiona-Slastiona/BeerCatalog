@@ -1,0 +1,12 @@
+.favorite-beers-list {
+  display: block;
+
+  width: 60%;
+}
+
+.favorite-beers-list__container {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+}

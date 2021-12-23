@@ -1,0 +1,30 @@
+.page-header-main {
+  display: flex;
+  align-items: center;
+
+  height: 100%;
+}
+
+.page-header-main__container {
+  display: flex;
+  justify-content: space-around;
+
+  width: 180px;
+  margin-left: 10px;
+}
+
+.page-header-main__menu {
+  font-size: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 100%;
+}
+
+.page-header-main__menu:hover {
+  /* background-color: #014f92; */
+  color: #fff;
+}

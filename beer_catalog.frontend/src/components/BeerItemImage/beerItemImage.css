@@ -1,0 +1,23 @@
+.beer-item-image__container {
+  display: flex;
+
+  min-width: 150px;
+  max-width: 150px;
+  height: 150px;
+  margin: 5px;
+  background-color: #0870ce;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.beer-item-image {
+  width: auto;
+  height: 80%;
+}
+
+.beer-item-image__section {
+  display: flex;
+  width: 370px;
+  justify-content: center;
+}

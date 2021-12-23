@@ -1,0 +1,12 @@
+.beers-list {
+  display: block;
+
+  width: fit-content;
+  margin: 60px;
+}
+
+.beers-list__container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}

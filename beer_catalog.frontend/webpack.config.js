@@ -1,49 +1,86 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+const isDevelopmentMode = process.env.NODE_ENV === 'development';
+
+const generateStyleLoader = loaderName => {
+    return [
+        MiniCssExtractPlugin.loader,
+        {
+            loader: 'css-loader',
+            options: {
+                modules: false,
+                importLoaders: 2,
+                sourceMap: isDevelopmentMode
+            }
+        },
+        {
+            loader: 'postcss-loader',
+            options: {
+                sourceMap: isDevelopmentMode
+            }
+        },
+        {
+            loader: loaderName,
+            options: {
+                sourceMap: isDevelopmentMode,
+                sassOptions: {
+                    includePaths: ['src', 'node_modules']
+                }
+            }
+        }
+    ];
+};
 
 module.exports = {
-  mode: 'development',
-  entry: ['babel-polyfill','./src/index.js'],
-  output: {
-    path: path.resolve(__dirname, 'static'),
-    filename: 'bundle.js',
-  },
-  devServer: {
-      port: 3000,
-      hot: true
-  },
-  plugins: [
-      new HTMLWebpackPlugin({ template: "./public/index.html"}),
-      new CleanWebpackPlugin(),
-  ],
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env' , '@babel/preset-react']
-          }
+    mode: 'development',
+    entry: ['babel-polyfill','./src/index.js'],
+    output: {
+        path: path.resolve(__dirname, 'static'),
+        filename: 'bundle.js',
+    },
+    devServer: {
+        port: 3000,
+        hot: true
+    },
+    plugins: [
+        new HTMLWebpackPlugin({ template: "./index.html"}),
+        new CleanWebpackPlugin(),
+        new MiniCssExtractPlugin()
+    ],
+    module: {
+        rules: [
+        {
+            test:  /\.js$|jsx/,
+            exclude: /(node_modules|bower_components)/,
+            use: {
+                loader: 'babel-loader',
+                options: {
+                    presets: ['@babel/preset-env' , '@babel/preset-react']
+                }
+            }
+        },
+        {
+            test: /\.css$/i,
+            use: generateStyleLoader('sass-loader')
+        },
+        {
+            test: /\.(png|jpg|gif)$/i,
+            use: [{
+                loader: 'url-loader',
+                options: {
+                    limit: 8192,
+                },
+            }],
         }
-      },
-      {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
-      },
-      {
-        test: /\.(png|jpg|gif)$/i,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192,
-            },
-          },
-        ],
-      }
-    ]
-  }
+    ]},
+    resolve: {
+		alias: {
+			Components: path.resolve(__dirname, 'src/components'),
+			Store: path.resolve(__dirname, 'src/store'),
+			Src: path.resolve(__dirname, 'src'),
+		}
+	}
 };
