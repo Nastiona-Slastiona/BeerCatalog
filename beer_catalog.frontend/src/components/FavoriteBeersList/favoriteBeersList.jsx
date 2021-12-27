@@ -12,32 +12,36 @@ export default function FavoriteBeersList() {
         beer => beer.isFavorite
     ));
 
-    const [pageShown, setPageShown] = useState(0);
     const amountOfFavoriteBeers = favoriteBeers.length;
-    const [isPaginationVisible, setIsPaginationVisible] = useState(amountOfFavoriteBeers > 5);
-    const pages = [];
+    const [pageShown, setPageShown] = useState(0);
+    const [isPaginationVisible, setIsPaginationVisible] = useState(false);
 
-    for (let i = 0; i < (amountOfFavoriteBeers / 5); i++) {
-        pages[i] = i + 1;
-    };
-
-    if(!amountOfFavoriteBeers) {
+    if (!amountOfFavoriteBeers) {
         return (
             <h2>There is nothing</h2>
         );    
     };
-    
+
+    const pages = [];
+   
+    for (let i = 0; i < (amountOfFavoriteBeers / 5); i++) {
+        pages[i] = i + 1;
+    };
+
     const renderedBeers = [];
 
     for (let i = 0, j = 0; j < amountOfFavoriteBeers; i+=5, j++) {
         renderedBeers[j] = Array.from(favoriteBeers.slice(i, i + 5).map((favoriteBeer) => {
             return (
-                <FavoriteBeerItem favoriteBeer={favoriteBeer} key={favoriteBeer.id}/>
+                <FavoriteBeerItem 
+                    favoriteBeer={favoriteBeer} 
+                    key={favoriteBeer.id}
+                />
             )
         }));
     };
 
-    const onPaginationClick = useCallback((event) => {
+    const onPaginationClick = (event) => {
         const paginationValue = event.target.className.split(' ');
         if (paginationValue[0] != 'page__buttons') {
             const direction = paginationValue[paginationValue.length - 1].split('-');
@@ -51,13 +55,16 @@ export default function FavoriteBeersList() {
         } else {
             setPageShown(event.target.innerHTML - 1);
         }
-    });
-
+    };
+ 
     return (
         <div className={'favorite-beers-list__container'}>
             <div className={'favorite-beers-list'}>
                 {renderedBeers[pageShown]}
-                <Pagination pages={pages} isVisible={isPaginationVisible} onClick={onPaginationClick}/>
+                <Pagination 
+                    pages={pages} 
+                    isVisible={isPaginationVisible} 
+                    onClick={onPaginationClick}/>
             </div>
         </div>
     );

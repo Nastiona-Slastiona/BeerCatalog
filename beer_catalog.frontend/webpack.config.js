@@ -63,7 +63,7 @@ module.exports = {
             }
         },
         {
-            test: /\.css$/i,
+            test: /\.s?css$/i,
             use: generateStyleLoader('sass-loader')
         },
         {

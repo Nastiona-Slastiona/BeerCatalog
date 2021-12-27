@@ -58,14 +58,13 @@ const beersSlice = createSlice({
     initialState,
     reducers: {
         favoriteBeerSetted(state, action) {
-            console.log(state.beers.filter(beer => beer.isFavorite === true));
             return {
                 ...state,
                 beers: state.beers.map(beer => {
                     if (beer.id !== action.payload.id) {
                         return beer;
                     }
-                  
+                 
                     return {
                         ...beer,
                         isFavorite: !beer.isFavorite,
