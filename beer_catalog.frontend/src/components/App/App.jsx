@@ -9,7 +9,7 @@ import 'Src/styles/fonts/icomoon/style.css'
 import './App.css';
 
 
-export default function App({children}) {
+export default function App() {
     return (
         <div className="App">
             <BrowserRouter>
@@ -19,7 +19,6 @@ export default function App({children}) {
                     <Route path='/favorites' element={<FavoritesPage/>}/>
                 </Routes>
             </BrowserRouter>
-            {children}
         </div>
     );
 };

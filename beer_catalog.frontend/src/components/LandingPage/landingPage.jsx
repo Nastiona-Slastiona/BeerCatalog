@@ -1,29 +1,64 @@
-import React, {useCallback, useMemo, useState } from 'react';
-import { useSelector } from "react-redux";
+import React, { useEffect, useCallback, useMemo, useState } from 'react';
+import { useSelector, useDispatch } from "react-redux";
 
 import Filter from 'Components/Filter/filter.jsx';
 import SearchBox from 'Components/base/SearchBox/searchBox.jsx';
 import BeersList from 'Components/BeersList/beersList.jsx';
 import InfiniteScroll from 'Components/base/InfiniteScroll/infiniteScroll.jsx';
 import { FilterValues } from 'Models/FilterValues/filterValues.jsx';
+import { fetchBeers } from 'Store/features/beers/beersSlice.jsx';
 
 import "./landingPage.css";
 
 
 export default function LandingPage() {
     const beers = useSelector(state => state.beers.beers);
+    const dispatch = useDispatch();
+    const [isFilterVisible, setIsFilterVisible] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [fetching, setFetching] = useState(true);
+    const totalCount = useSelector(state => state.beers.totalCount);
     const [filter, setFilter] = useState({ 
         searchQuery: '', 
         filters: {
-            'abv': '4.6',
-            'ibu': '50',
-            'ebc': '60'
+            'abv': '0',
+            'ibu': '0',
+            'ebc': '0'
         }
     });
-    const [isFilterVisible, setIsFilterVisible] = useState(false);
+   
+    useEffect(() => {
+        if (fetching) {
+            dispatch(fetchBeers(`https://api.punkapi.com/v2/beers?page=${currentPage}&per_page=60`));
+            setCurrentPage(prevValue => prevValue + 1);
+            setFetching(false);
+        }
+    }, [fetching]);
+
+    useEffect(() => {
+        document.addEventListener('scroll', scrollHandler);
+
+        return function (){
+            document.removeEventListener('scroll', scrollHandler) 
+        };
+    })
+
+    const scrollHandler = useCallback((e) => {
+        if (e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 100
+            && beers.length < totalCount) {
+            setFetching(true);
+        }
+    });
 
     const onInputChange = useCallback((e) => { 
-        setFilter({searchQuery: e.target.value, ...filter});
+        setFilter({ searchQuery: e.target.value, 
+            filters: {
+                'abv': '4.6',
+                'ibu': '50',
+                'ebc': '60'
+            }
+        });
+
         setIsFilterVisible(true);
 
         if (e.target.value === '') {

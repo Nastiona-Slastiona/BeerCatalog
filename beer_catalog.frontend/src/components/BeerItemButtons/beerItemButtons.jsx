@@ -11,9 +11,6 @@ export default function BeerItemButtons({beer}) {
     let favoriteButton = beer.isFavorite ? 'Remove Favorite' : 'Favorite'
 
     const handleFavoriteButton = () => {
-        const sign = !beer.isFavorite;
-        favoriteButton = sign ? 'Remove Favorite' : 'Favorite'
-
         dispatch(setIsFavoriteBeer(beer));
     }
 

@@ -7,33 +7,21 @@ import { ThunkStatus } from 'Models/ThunkStatus/thunkStatus.jsx';
 const initialState = {
     beers: [],
     status: '',
+    totalCount: 0,
+    currentPage: 0,
     error: ''
 };
 
 export const setIsFavoriteBeer = createAsyncThunk(
     'favoriteBeers/setIsFavoriteBeer',
     async function(beer, {rejectWithValue, dispatch}) {
-        const favorite = {
+        const newBeer = {
             ...beer,
             isFavorite: !beer.isFavorite
         }
 
         try {
-            // const response = await fetch('https://api.punkapi.com/v2/beers/${id}', {
-            //     method: 'PATCH',
-            //     headers: {
-            //         'Content-Type': 'application/json',
-            //     },
-            //     body: JSON.stringify({
-            //         isFavorite: !beer.isFavorite,
-            //     })
-            // });
-
-            // if (!response.ok) {
-            //     throw new Error('ServerError on setting beer\'s isFavorite property');
-            // }
-
-            dispatch(isFavoriteBeerSetted(favorite));
+            dispatch(favoriteBeerSetted(newBeer));
         } catch (error) {
             return rejectWithValue(error.message());
         }
@@ -42,16 +30,18 @@ export const setIsFavoriteBeer = createAsyncThunk(
 
 export const fetchBeers = createAsyncThunk(
     'beers/FetchBeers',
-    async function(_, {rejectWithValue}) {
+    async function(url, {rejectWithValue}) {
         try {
-            const response = await fetch('https://api.punkapi.com/v2/beers');
+            const response = await fetch(url);
     
             if (!response.ok) {
                 throw new Error('ServerError');
             }
-    
-            const data = await response.json();
-            return data;
+
+            const totalCount = response.headers['x-total-count'];
+            const beers = await response.json();
+            
+            return [ beers, totalCount ];
         } catch (error) {
             return rejectWithValue(error.message)
         }
@@ -67,7 +57,8 @@ const beersSlice = createSlice({
     name: 'beers',
     initialState,
     reducers: {
-        isFavoriteBeerSetted(state, action) {
+        favoriteBeerSetted(state, action) {
+            console.log(state.beers.filter(beer => beer.isFavorite === true));
             return {
                 ...state,
                 beers: state.beers.map(beer => {
@@ -77,9 +68,9 @@ const beersSlice = createSlice({
                   
                     return {
                         ...beer,
-                        isFavorite: !beer.isFavorite
+                        isFavorite: !beer.isFavorite,
                     }
-                })
+                }),
             }
         }
     },
@@ -88,12 +79,15 @@ const beersSlice = createSlice({
             state.status = ThunkStatus.Loading;
         },
         [fetchBeers.fulfilled]: (state, action) => {
-            state.status = ThunkStatus.Resolved;
-            const beers = Object.assign(action.payload);
+            const beers = Object.assign(action.payload[0]);
+            
             for(let key in beers) {
                 beers[key].isFavorite = false;
             }
-            state.beers = beers;
+            
+            state.status = ThunkStatus.Resolved;
+            state.beers = [ ...beers ];
+            state.totalCount = action.payload[1];
         },
         [fetchBeers.rejected]: setError,
         [setIsFavoriteBeer.pending]: (state) => {
@@ -107,6 +101,6 @@ const beersSlice = createSlice({
     }
 });
 
-const { isFavoriteBeerSetted } = beersSlice.actions;
+const { favoriteBeerSetted } = beersSlice.actions;
 
 export default beersSlice.reducer;

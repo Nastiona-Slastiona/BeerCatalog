@@ -1,7 +1,49 @@
 .pagination__container {
-  display: flex;
-  justify-content: left;
+  display: none;
+  justify-content: center;
 
   width: 100%;
-  margin: 20px 0;
+}
+
+.pagination__container--active {
+  display: flex;
+}
+
+.page__buttons {
+  display: none;
+  font-size: 25px;
+}
+
+.page__buttons--active {
+  display: inline;
+  margin: 30px;
+}
+
+.page__button {
+  display: inherit;
+
+  margin: 5px 2px;
+  padding: 10px 15px;
+
+  border: 1px solid rgb(23, 57, 95);
+  background-color: rgb(182, 216, 255);
+  border-radius: 40%;
+}
+
+.page-change-direction {
+  display: inherit;
+  font-size: 35px;
+
+  margin: 5px;
+
+  color: rgb(182, 216, 255);
+}
+
+.page__button:hover {
+  border: 1px solid rgb(23, 57, 95);
+  background-color: rgb(92, 133, 180);
+}
+
+.page-change-direction:hover {
+  color: rgb(92, 133, 180);
 }
