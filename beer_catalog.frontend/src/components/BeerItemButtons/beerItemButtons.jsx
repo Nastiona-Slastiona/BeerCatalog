@@ -1,17 +1,19 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { setIsFavoriteBeer } from 'Store/features/beers/beersSlice.jsx';
 
 import './beerItemButtons.css';
 
 
-export default function BeerItemButtons({beer}) {
+function BeerItemButtons({beer, onFavoriteClick=()=>undefined}) {
     const dispatch = useDispatch();
     let favoriteButton = beer.isFavorite ? 'Remove Favorite' : 'Favorite'
 
     const handleFavoriteButton = () => {
         dispatch(setIsFavoriteBeer(beer));
+        onFavoriteClick();
     }
 
     return (
@@ -21,3 +23,10 @@ export default function BeerItemButtons({beer}) {
         </div>    
     );
 };
+
+BeerItemButtons.propTypes = {
+    beer: PropTypes.object,
+    onFavoriteClick: PropTypes.func
+}
+
+export default BeerItemButtons;

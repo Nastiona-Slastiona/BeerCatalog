@@ -8,7 +8,7 @@ import './filterItem.css';
 
 function FilterItem({children, name, min, max, defaultValue, onChange}) {
     return (
-        <div className={'filter__item-container'}>
+        <div className={'filter__item'}>
             <span>{children}</span>
             <FilterSlider 
                 minimum={min} 
@@ -25,6 +25,7 @@ FilterItem.propTypes = {
     min: PropTypes.number,
     max: PropTypes.number,
     defaultValue: PropTypes.number,
+    onChange: PropTypes.func
 };
 
 export default FilterItem;

@@ -8,7 +8,7 @@ import "./pageHeaderMain.css";
 export default function PageHeaderMain() {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
 
-    const closeMenu = () => {
+    const setMenuUnvisible = () => {
         setIsMenuVisible(false)
     };
 
@@ -16,15 +16,16 @@ export default function PageHeaderMain() {
         setIsMenuVisible(true)
     };
 
-    const stayingVisible = () => {
-        e => e.stopPropagation()
-    };
-
     return (
-        <div className={'page-header-main page-header-main__container'}>
-            <span className={'icon-menu page-header-main__menu'} onClick={setMenuVisible}></span>
+        <div className={'page-header-main'}>
+            <span 
+                className={'icon-menu page-header-main__menu'} 
+                onClick={setMenuVisible}></span>
             <span>Beer catalog</span>
-            <Menu isVisible={isMenuVisible} setIsVisible={closeMenu} stopClosing={stayingVisible}>Beer catalog</Menu>
+            <Menu 
+                isVisible={isMenuVisible} 
+                setIsVisible={setMenuUnvisible} 
+            >Beer catalog</Menu>
         </div>  
     );
 };

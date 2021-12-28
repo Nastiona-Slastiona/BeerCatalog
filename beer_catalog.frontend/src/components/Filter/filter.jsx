@@ -1,11 +1,12 @@
 import React from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types'
 
 import FilterSection from 'Components/FilterSection/filterSection.jsx';
 
 import './filter.css';
 
-export default function Filter({isVisible, onChange}) {
+function Filter({isVisible, onChange}) {
     const classes = classNames('filter__container', {'filter__container--active': isVisible})
     return (
         <div className={classes}>
@@ -18,3 +19,10 @@ export default function Filter({isVisible, onChange}) {
         </div>
     );
 };
+
+Filter.propTypes = {
+    isVisible: PropTypes.bool,
+    onChange: PropTypes.func
+}
+
+export default Filter;

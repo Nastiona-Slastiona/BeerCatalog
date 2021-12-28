@@ -12,9 +12,9 @@ export default function FavoriteBeersList() {
         beer => beer.isFavorite
     ));
 
-    const amountOfFavoriteBeers = favoriteBeers.length;
+    const [amountOfFavoriteBeers, setAmountOfFavoriteBeers] = useState(favoriteBeers.length);
     const [pageShown, setPageShown] = useState(0);
-    const [isPaginationVisible, setIsPaginationVisible] = useState(false);
+    const [isPaginationVisible, setIsPaginationVisible] = useState(amountOfFavoriteBeers > 5);
 
     if (!amountOfFavoriteBeers) {
         return (
@@ -29,6 +29,12 @@ export default function FavoriteBeersList() {
     };
 
     const renderedBeers = [];
+    const onRemoveFavoriteClick = () => {
+        setIsPaginationVisible(amountOfFavoriteBeers > 6);
+        console.log(Math.floor(((amountOfFavoriteBeers)/ 6)));
+        setPageShown(Math.floor(((amountOfFavoriteBeers - 2)/ 5)));
+        setAmountOfFavoriteBeers(prev => prev - 1);
+    }
 
     for (let i = 0, j = 0; j < amountOfFavoriteBeers; i+=5, j++) {
         renderedBeers[j] = Array.from(favoriteBeers.slice(i, i + 5).map((favoriteBeer) => {
@@ -36,6 +42,7 @@ export default function FavoriteBeersList() {
                 <FavoriteBeerItem 
                     favoriteBeer={favoriteBeer} 
                     key={favoriteBeer.id}
+                    onRemoveFavoriteClick={onRemoveFavoriteClick}
                 />
             )
         }));
@@ -43,12 +50,12 @@ export default function FavoriteBeersList() {
 
     const onPaginationClick = (event) => {
         const paginationValue = event.target.className.split(' ');
-        if (paginationValue[0] != 'page__buttons') {
+        if (paginationValue[0] != 'pagination__button') {
             const direction = paginationValue[paginationValue.length - 1].split('-');
             
-            if (direction.includes('right') && pageShown < pages.length) {
+            if (direction.includes('right') && pageShown < pages.length - 1) {
                 setPageShown(prevPage => prevPage + 1);
-            } else if (pageShown > 0) {
+            } else if (direction.includes('left') && pageShown > 0) {
                 setPageShown(prevPage => prevPage - 1);
             }
 

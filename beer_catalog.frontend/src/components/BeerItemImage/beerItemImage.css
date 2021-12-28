@@ -1,23 +1,32 @@
-.beer-item-image__container {
-  display: flex;
-
-  min-width: 150px;
-  max-width: 150px;
-  height: 150px;
-  margin: 5px;
-  background-color: #0870ce;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-}
-
 .beer-item-image {
   width: auto;
   height: 80%;
 }
-
-.beer-item-image__section {
+.beer-item-image__container {
+  width: 150px;
+  height: 150px;
+  margin: 5px;
+  border-radius: 50%;
+  background-color: #0870ce;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  max-width: 370px;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.beer-item-image__section {
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }

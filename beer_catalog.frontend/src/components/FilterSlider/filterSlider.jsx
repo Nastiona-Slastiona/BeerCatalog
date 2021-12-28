@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 import './filterSlider.css';
 
 
-function FilterSlider({name, minimum, maximum, defaultVal, onChange}) {
+function FilterSlider({name, minimum, maximum, defaultValue, onChange}) {
     let step = '1';
-    const [val, setValue] = useState(defaultVal);
+    const [value, setValue] = useState(defaultValue);
 
-    if (!Number.isInteger(+defaultVal)) {
+    if (!Number.isInteger(+defaultValue)) {
         step = '.1';
     }
 
@@ -19,13 +19,13 @@ function FilterSlider({name, minimum, maximum, defaultVal, onChange}) {
 
     return (
         <div className={'filter-slider__container'}>
-            <label className={'filter-slider__label'}>{val}</label>
+            <label className={'filter-slider__label'}>{value}</label>
             <input 
                 className={'filter-slider'} 
                 type="range" 
                 min={minimum} 
                 max={maximum} 
-                defaultValue={defaultVal} 
+                defaultValue={defaultValue} 
                 step={step}
                 onChange={onInputChange}
                 name={name}

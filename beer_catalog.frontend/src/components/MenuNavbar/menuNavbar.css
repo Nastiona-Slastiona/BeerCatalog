@@ -1,10 +1,12 @@
 .menu-navbar__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: start;
-
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   padding-left: 50px;
 }
-
 .menu-navbar__icon {
   margin-right: 40px;
 }

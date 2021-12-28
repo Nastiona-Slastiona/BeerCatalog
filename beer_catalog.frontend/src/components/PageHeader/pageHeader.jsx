@@ -7,7 +7,7 @@ import "./pageHeader.css";
 
 export default function PageHeader() {
     return (
-        <div  className={'page-header__container'}>
+        <div  className={'page-header'}>
             <PageHeaderMain/>
             <span className={'icon-dots-horizontal-triple page-header__settings'}></span>
         </div>

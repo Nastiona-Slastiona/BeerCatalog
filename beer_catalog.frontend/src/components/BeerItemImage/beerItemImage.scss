@@ -1,0 +1,27 @@
+@mixin beer-item-image__contant {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.beer-item-image {
+  width: auto;
+  height: 80%;
+
+  &__container {
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+
+    border-radius: 50%;
+    background-color: #0870ce;
+
+    @include beer-item-image__contant;
+  }
+
+  &__section {
+    max-width: 100%;
+
+    @include beer-item-image__contant;
+  }
+}

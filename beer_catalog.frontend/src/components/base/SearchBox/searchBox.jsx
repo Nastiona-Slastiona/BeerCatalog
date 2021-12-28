@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 
 import './searchBox.css';
 
 
-export default function SearchBox({onInputChange}) {
+function SearchBox({onInputChange}) {
     return (
-        <div className={'search-box__container'}>
+        <div className={'search-box'}>
             <input 
                 className={'search-box__input'} 
                 type='text' 
@@ -17,3 +18,9 @@ export default function SearchBox({onInputChange}) {
         </div>
     );
 };
+
+SearchBox.propTypes = {
+    onInputChange: PropTypes.func
+}
+
+export default SearchBox;

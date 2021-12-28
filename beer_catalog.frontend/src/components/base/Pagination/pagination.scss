@@ -2,7 +2,7 @@ $primary-color: rgb(182, 216, 255);
 $secondary-color: rgb(92, 133, 180);
 $border-color: rgb(23, 57, 95);
 
-.pagination__container {
+.pagination {
   display: none;
   justify-content: left;
 
@@ -13,32 +13,32 @@ $border-color: rgb(23, 57, 95);
   &--active {
     display: flex;
   }
-}
 
-.page__button {
-  display: inherit;
+  &__button {
+    display: inherit;
 
-  margin: 5px 2px;
-  padding: 10px 15px;
+    margin: 5px 2px;
+    padding: 10px 15px;
 
-  border: 1px solid $border-color;
-  background-color: $primary-color;
-  border-radius: 40%;
+    border: 1px solid $border-color;
+    background-color: $primary-color;
+    border-radius: 40%;
 
-  &:hover {
-    background-color: $secondary-color;
+    &:hover {
+      background-color: $secondary-color;
+    }
   }
-}
 
-.page__change-page {
-  display: inherit;
-  font-size: 35px;
+  &__change-page {
+    display: inherit;
+    font-size: 35px;
 
-  margin: 5px;
+    margin: 5px;
 
-  color: $primary-color;
+    color: $primary-color;
 
-  &:hover {
-    color: $secondary-color;
+    &:hover {
+      color: $secondary-color;
+    }
   }
 }

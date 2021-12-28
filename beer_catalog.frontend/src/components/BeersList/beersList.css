@@ -1,12 +1,16 @@
 .beers-list {
   display: block;
-
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   margin: 60px;
 }
-
 .beers-list__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
-  justify-content: center;
 }

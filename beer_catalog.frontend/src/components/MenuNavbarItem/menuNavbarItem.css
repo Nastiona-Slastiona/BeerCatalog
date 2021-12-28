@@ -1,17 +1,14 @@
 .menu-navbar__item {
-  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 20px;
-
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-
   width: 150px;
   margin-top: 30px;
-
   text-decoration: none;
-
   color: #87888f;
 }
-
 .menu-navbar__item:hover {
   color: #696a6e;
   border-bottom: 1px solid #696a6e;

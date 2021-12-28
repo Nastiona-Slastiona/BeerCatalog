@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 
 import BeerItemButtons from 'Components/BeerItemButtons/beerItemButtons.jsx';
 import BeerItemTagline from 'Components/BeerItemTagline/beerItemTagline.jsx';
@@ -7,7 +8,7 @@ import BeerItemTitle from 'Components/BeerItemTitle/beerItemTitle.jsx';
 import './beerItemInfo.css';
 
 
-export default function BeerItemInfo({beer}) {
+function BeerItemInfo({beer}) {
     return (
         <div className={'beer-item-info__container '}>
             <BeerItemTitle>{beer.name}</BeerItemTitle>
@@ -16,3 +17,9 @@ export default function BeerItemInfo({beer}) {
         </div>
     );
 };
+
+BeerItemInfo.propTypes = {
+    beer: PropTypes.object
+}
+
+export default BeerItemInfo;

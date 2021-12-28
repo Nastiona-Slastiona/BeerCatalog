@@ -1,0 +1,27 @@
+@mixin search-box__components {
+  display: inline;
+
+  color: rgb(148, 144, 144);
+  border: none;
+}
+
+.search-box {
+  &__input {
+    font-size: 18px;
+
+    width: 370px;
+    margin-right: 5px;
+
+    @include search-box__components;
+
+    border-bottom: 2px solid rgb(199, 195, 195);
+  }
+
+  &__button {
+    font-size: 40px;
+
+    background: none;
+
+    @include search-box__components;
+  }
+}

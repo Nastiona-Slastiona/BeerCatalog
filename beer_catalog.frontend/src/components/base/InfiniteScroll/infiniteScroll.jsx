@@ -3,7 +3,13 @@ import React from 'react';
 import img from './giphy.gif';
 
 
-function InfiniteScroll()  {
+function InfiniteScroll({isVisible})  {
+    if(!isVisible) {
+        return (
+            <div></div>
+        )
+    }
+
     return (
         <div>
             <img alt="loader" src={img}/>

@@ -7,8 +7,7 @@ import { ThunkStatus } from 'Models/ThunkStatus/thunkStatus.jsx';
 const initialState = {
     beers: [],
     status: '',
-    totalCount: 0,
-    currentPage: 0,
+    currentPage: 1,
     error: ''
 };
 
@@ -30,18 +29,17 @@ export const setIsFavoriteBeer = createAsyncThunk(
 
 export const fetchBeers = createAsyncThunk(
     'beers/FetchBeers',
-    async function(url, {rejectWithValue}) {
+    async function(input, {rejectWithValue}) {
         try {
-            const response = await fetch(url);
+            const response = await fetch(input[0]);
     
             if (!response.ok) {
                 throw new Error('ServerError');
             }
 
-            const totalCount = response.headers['x-total-count'];
             const beers = await response.json();
             
-            return [ beers, totalCount ];
+            return [ beers, input[1] ];
         } catch (error) {
             return rejectWithValue(error.message)
         }
@@ -84,9 +82,10 @@ const beersSlice = createSlice({
                 beers[key].isFavorite = false;
             }
             
+            const newBeers = beers.filter(beer => !state.beers.includes(beer))
             state.status = ThunkStatus.Resolved;
-            state.beers = [ ...beers ];
-            state.totalCount = action.payload[1];
+            state.beers = [ ...state.beers, ...newBeers ];
+            state.currentPage = action.payload[1];
         },
         [fetchBeers.rejected]: setError,
         [setIsFavoriteBeer.pending]: (state) => {

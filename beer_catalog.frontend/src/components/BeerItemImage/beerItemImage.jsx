@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 
 import './beerItemImage.css';
 
 
-export default function BeerItemImage({image}) {
+function BeerItemImage({image}) {
     return (
         <div className={'beer-item-image__section'}>
             <div className={'beer-item-image__container'}>
@@ -12,3 +13,9 @@ export default function BeerItemImage({image}) {
         </div>
     );
 };
+
+BeerItemImage.propTypes = {
+    image: PropTypes.string
+}
+
+export default BeerItemImage;
