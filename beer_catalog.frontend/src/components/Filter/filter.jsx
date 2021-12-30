@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types'
 
-import FilterSection from 'Components/FilterSection/filterSection.jsx';
+import FilterSection from 'components/FilterSection/filterSection';
 
 import './filter.css';
 

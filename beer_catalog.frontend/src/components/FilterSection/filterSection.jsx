@@ -1,6 +1,6 @@
 import React from 'react';
 
-import FilterItem from 'Components/FilterItem/filterItem.jsx';
+import FilterItem from 'components/FilterItem/filterItem';
 
 import './filterSection.css';
 

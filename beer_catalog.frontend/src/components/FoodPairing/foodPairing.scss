@@ -1,0 +1,22 @@
+@import '../BeerPage/beerPage.scss';
+
+.food-pairing {
+  display: block;
+  width: 100%;
+
+  &__container {
+    display: flex;
+    width: 400px;
+    min-width: fit-content;
+    min-height: fit-content;
+    margin: 0 80px;
+  }
+
+  &__header {
+    @include header;
+  }
+
+  &__table {
+    margin: 20px 0;
+  }
+}

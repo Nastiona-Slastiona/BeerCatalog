@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MenuNavbarItem from 'Components/MenuNavbarItem/menuNavbarItem.jsx';
+import MenuNavbarItem from 'components/MenuNavbarItem/menuNavbarItem';
 
 import './menuNavbar.css';
 

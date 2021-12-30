@@ -78,10 +78,12 @@ module.exports = {
     ]},
     resolve: {
 		alias: {
-			Components: path.resolve(__dirname, 'src/components'),
-            Models: path.resolve(__dirname, 'src/models'),
-			Store: path.resolve(__dirname, 'src/store'),
-			Src: path.resolve(__dirname, 'src'),
-		}
+			components: path.resolve(__dirname, 'src/components'),
+            models: path.resolve(__dirname, 'src/models'),
+			store: path.resolve(__dirname, 'src/store'),
+			src: path.resolve(__dirname, 'src'),
+		},
+        enforceExtension: false,
+        extensions: ['.jsx', '.js', '.css', 'wasm', '...']
 	}
 };

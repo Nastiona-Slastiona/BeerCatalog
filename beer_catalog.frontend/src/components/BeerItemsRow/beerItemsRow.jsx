@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 
-import BeerItem from 'Components/BeerItem/beerItem.jsx';
+import BeerItem from 'components/BeerItem/beerItem';
 
 import './beerItemsRow.css';
 

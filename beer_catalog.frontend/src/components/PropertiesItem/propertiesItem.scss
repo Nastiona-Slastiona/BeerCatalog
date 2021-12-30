@@ -1,0 +1,30 @@
+$bg-color: #9596a0;
+@import '../BeerPage/beerPage.scss';
+
+.properties__item {
+  align-items: center;
+  justify-content: space-between;
+
+  @include table-item;
+
+  &-value {
+    display: flex;
+
+    padding: 5px 20px;
+
+    color: #fff;
+    border-radius: 20px;
+    background-color: $bg-color;
+  }
+
+  &-name {
+    display: flex;
+    justify-content: space-between;
+
+    width: 70px;
+  }
+
+  &-icon {
+    color: $bg-color;
+  }
+}

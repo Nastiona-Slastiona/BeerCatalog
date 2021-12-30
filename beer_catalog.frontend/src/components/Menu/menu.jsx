@@ -1,8 +1,8 @@
 import React from 'react';
-
-import MenuNavbar from 'Components/MenuNavbar/menuNavbar.jsx';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+
+import MenuNavbar from 'components/MenuNavbar/menuNavbar';
 
 import './menu.css';
 

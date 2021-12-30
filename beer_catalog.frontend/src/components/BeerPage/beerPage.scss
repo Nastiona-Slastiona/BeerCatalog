@@ -1,0 +1,64 @@
+$primary-color: #0870ce;
+$secondary-color: #e4e7f7;
+$font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+@mixin two-columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin table-item {
+  border: 1px solid #dcdcdc;
+  border-radius: 2px;
+  width: 100%;
+  padding: 17px;
+  display: flex;
+}
+
+@mixin header {
+  font: {
+    size: 40px;
+    weight: 500;
+  }
+}
+
+.beer-page {
+  display: block;
+  text-align: left;
+  font: {
+    family: $font-family;
+    size: 20px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    padding: 30px 80px;
+    margin: 0 300px;
+  }
+
+  &__main {
+    @include two-columns;
+  }
+
+  &__info {
+    width: 100%;
+    display: block;
+    font-family: $font-family;
+  }
+
+  &__button {
+    display: inherit;
+    margin: 20px 0;
+    width: fit-content;
+    padding: 10px 20px;
+    border: none;
+    background-color: $primary-color;
+    color: $secondary-color;
+  }
+
+  &__characteristics {
+    @include two-columns;
+    margin: 30px 0;
+  }
+}

@@ -1,9 +1,9 @@
 import React from 'react';
 
 
-export default function BeerItemTagline({children}) {
+export default function BeerItemTagline({children, className}) {
     return (
-        <div>
+        <div className={className}>
             {children}
         </div>  
     );

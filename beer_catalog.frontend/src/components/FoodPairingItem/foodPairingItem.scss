@@ -1,0 +1,10 @@
+@import '../BeerPage/beerPage.scss';
+
+.food-pairing__item {
+  display: flex;
+  text-align: center;
+  width: 100%;
+
+  @include table-item;
+  padding: 30px 20px;
+}

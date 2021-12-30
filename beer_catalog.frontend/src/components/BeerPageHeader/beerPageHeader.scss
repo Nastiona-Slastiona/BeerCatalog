@@ -1,0 +1,15 @@
+.beer-page__header {
+  display: inline;
+  width: 100%;
+  text-align: left;
+  font-size: 32px;
+
+  &-tagline {
+    color: #808080;
+    font: {
+      style: italic;
+      family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      size: 60%;
+    }
+  }
+}

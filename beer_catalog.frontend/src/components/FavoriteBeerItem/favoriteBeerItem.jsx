@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import FavoriteBeerItemInfo from 'Components/FavoriteBeerItemInfo/favoriteBeerItemInfo.jsx';
-import BeerItemImage from 'Components/BeerItemImage/beerItemImage.jsx';
+import FavoriteBeerItemInfo from 'components/FavoriteBeerItemInfo/favoriteBeerItemInfo';
+import BeerItemImage from 'components/BeerItemImage/beerItemImage';
 
 import './favoriteBeerItem.css';
 

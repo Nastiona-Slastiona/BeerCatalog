@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 
-import BeerItemInfo from 'Components/BeerItemInfo/beerItemInfo.jsx';
-import BeerItemImage from 'Components/BeerItemImage/beerItemImage.jsx';
+import BeerItemInfo from 'components/BeerItemInfo/beerItemInfo';
+import BeerItemImage from 'components/BeerItemImage/beerItemImage';
 
 import './beerItem.css';
 

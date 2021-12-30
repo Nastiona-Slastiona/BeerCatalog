@@ -1,0 +1,12 @@
+@import '../BeerPage/beerPage.scss';
+
+.properties {
+  width: 350px;
+  &__header {
+    @include header;
+  }
+
+  &__table {
+    margin: 20px 0;
+  }
+}

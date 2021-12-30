@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import Menu from 'Components/Menu/menu.jsx';
+import Menu from 'components/Menu/menu';
 
 import "./pageHeaderMain.css";
 

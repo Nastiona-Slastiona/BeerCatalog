@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PageHeaderMain from 'Components/PageHeaderMain/pageHeaderMain.jsx';
+import PageHeaderMain from 'components/PageHeaderMain/pageHeaderMain';
 
 import "./pageHeader.css";
 

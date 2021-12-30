@@ -1,13 +1,13 @@
 import React, { useEffect, useCallback, useMemo, useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 
-import Filter from 'Components/Filter/filter.jsx';
-import SearchBox from 'Components/base/SearchBox/searchBox.jsx';
-import BeersList from 'Components/BeersList/beersList.jsx';
-import InfiniteScroll from 'Components/base/InfiniteScroll/infiniteScroll.jsx';
-import { FilterValues } from 'Models/FilterValues/filterValues.jsx';
-import { fetchBeers } from 'Store/features/beers/beersSlice.jsx';
-import { ThunkStatus } from 'Models/ThunkStatus/thunkStatus.jsx';
+import Filter from 'components/Filter/filter';
+import SearchBox from 'components/base/SearchBox/searchBox';
+import BeersList from 'components/BeersList/beersList';
+import InfiniteScroll from 'components/base/InfiniteScroll/infiniteScroll';
+import { FilterValues } from 'models/FilterValues/filterValues';
+import { fetchBeers } from 'store/features/beers/beersSlice';
+import { ThunkStatus } from 'models/ThunkStatus/thunkStatus';
 
 
 export default function LandingPage() {

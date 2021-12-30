@@ -1,13 +1,14 @@
 import React from 'react';
 
-import FavoriteHeader from 'Components/FavoriteHeader/favoriteHeader.jsx';
-import FavoriteBeersList from 'Components/FavoriteBeersList/favoriteBeersList.jsx';
+import FavoriteBeersList from 'components/FavoriteBeersList/favoriteBeersList';
+
+import './favoritePage.css';
 
 
 export default function FavoritesPage() {
     return (
         <div className={'favorites-page'}>
-            <FavoriteHeader/>
+            <div className={'favorites-page__header'}>Your Favorite beers</div>
             <FavoriteBeersList/>
         </div>
     );

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import BeerItemButtons from 'Components/BeerItemButtons/beerItemButtons.jsx';
-import BeerItemTagline from 'Components/BeerItemTagline/beerItemTagline.jsx';
-import BeerItemTitle from 'Components/BeerItemTitle/beerItemTitle.jsx';
+import BeerItemButtons from 'components/BeerItemButtons/beerItemButtons';
+import BeerItemTagline from 'components/BeerItemTagline/beerItemTagline';
+import BeerItemTitle from 'components/BeerItemTitle/beerItemTitle';
 
 import './favoriteBeerItemInfo.css';
 

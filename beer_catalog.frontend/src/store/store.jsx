@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import beersReducer from 'Store/features/beers/beersSlice.jsx';
+import beersReducer from 'store/features/beers/beersSlice.jsx';
 
 
 export const store = configureStore({

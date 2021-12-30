@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import FilterSlider from 'Components/FilterSlider/filterSlider.jsx';
+import FilterSlider from 'components/FilterSlider/filterSlider';
 
 import './filterItem.css';
 

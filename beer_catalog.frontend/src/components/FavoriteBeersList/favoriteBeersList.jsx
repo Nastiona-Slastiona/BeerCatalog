@@ -1,8 +1,8 @@
 import React, { useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import FavoriteBeerItem from 'Components/FavoriteBeerItem/favoriteBeerItem.jsx';
-import Pagination from 'Components/base/Pagination/pagination.jsx';
+import FavoriteBeerItem from 'components/FavoriteBeerItem/favoriteBeerItem';
+import Pagination from 'components/base/Pagination/pagination';
 
 import './favoriteBeersList.css';
 
@@ -24,19 +24,19 @@ export default function FavoriteBeersList() {
 
     const pages = [];
    
-    for (let i = 0; i < (amountOfFavoriteBeers / 5); i++) {
+    for (const i = 0; i < (amountOfFavoriteBeers / 5); i++) {
         pages[i] = i + 1;
     };
 
     const renderedBeers = [];
-    const onRemoveFavoriteClick = () => {
+    const onRemoveFavoriteClick = useCallback(() => {
         setIsPaginationVisible(amountOfFavoriteBeers > 6);
         console.log(Math.floor(((amountOfFavoriteBeers)/ 6)));
         setPageShown(Math.floor(((amountOfFavoriteBeers - 2)/ 5)));
         setAmountOfFavoriteBeers(prev => prev - 1);
-    }
+    });
 
-    for (let i = 0, j = 0; j < amountOfFavoriteBeers; i+=5, j++) {
+    for (const i = 0, j = 0; j < amountOfFavoriteBeers; i+=5, j++) {
         renderedBeers[j] = Array.from(favoriteBeers.slice(i, i + 5).map((favoriteBeer) => {
             return (
                 <FavoriteBeerItem 

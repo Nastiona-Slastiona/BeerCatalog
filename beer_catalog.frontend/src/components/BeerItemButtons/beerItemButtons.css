@@ -1,4 +1,4 @@
-.beer-item__buttons-container {
+.beer-item__buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15,11 +15,12 @@
   width: -moz-fit-content;
   width: fit-content;
   padding: 0 20px;
-  text-align: left;
-  text-transform: uppercase;
   color: inherit;
   border: none;
   background: none;
+  text-transform: uppercase;
+  text-align: left;
+  text-decoration: none;
 }
 .beer-item__button:hover {
   background: #6d6b6b;

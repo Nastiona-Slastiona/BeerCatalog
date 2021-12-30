@@ -1,0 +1,14 @@
+@import '../BeerPage/beerPage.scss';
+
+.brewing {
+  display: block;
+
+  &__header {
+    @include header;
+  }
+
+  &__description {
+    margin: 20px 0;
+    width: 85%;
+  }
+}

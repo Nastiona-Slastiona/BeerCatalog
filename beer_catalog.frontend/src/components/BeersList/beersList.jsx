@@ -1,7 +1,7 @@
 import React from 'react';
 
-import BeerItemsRow from 'Components/BeerItemsRow/beerItemsRow.jsx';
-import BeerItem from 'Components/BeerItem/beerItem.jsx';
+import BeerItemsRow from 'components/BeerItemsRow/beerItemsRow';
+import BeerItem from 'components/BeerItem/beerItem';
 
 import './beersList.css';
 
