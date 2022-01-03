@@ -152,7 +152,7 @@ module.exports = {
 
         'react/jsx-indent': ['error', 4],
         'react/jsx-indent-props': ['error', 4],
-        'react/jsx-filename-extension': ['warn', { 'extensions': ['.tsx', '.jsx'] }],
+        'react/jsx-filename-extension': ['warn', { 'extensions': ['.tsx', '.jsx', '.js'] }],
         'react/jsx-fragments': ['error', 'element'],
         'react/static-property-placement': ['error', 'static public field'],
         'react/jsx-curly-newline': ['error', { 'multiline': 'require', 'singleline': 'consistent' }],
@@ -170,6 +170,7 @@ module.exports = {
         'react/no-unescaped-entities': 'off',
         'react/state-in-constructor': 'off',
         'react/button-has-type': 'off',
+        'react/forbid-prop-types': 'off',
         'react/jsx-sort-props': ['error', {
             'callbacksLast': true,
             'shorthandLast': true,

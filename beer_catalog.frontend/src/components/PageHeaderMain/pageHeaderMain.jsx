@@ -1,31 +1,33 @@
+/* eslint-disable import/no-unresolved */
 import React, { useState } from 'react';
+import Menu from 'components/Menu/menu';
 
-import Menu from 'Components/Menu/menu.jsx';
-
-import "./pageHeaderMain.css";
+import './pageHeaderMain.css';
 
 
 export default function PageHeaderMain() {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
 
     const setMenuUnvisible = () => {
-        setIsMenuVisible(false)
+        setIsMenuVisible(false);
     };
 
     const setMenuVisible = () => {
-        setIsMenuVisible(true)
+        setIsMenuVisible(true);
     };
 
     return (
-        <div className={'page-header-main'}>
-            <span 
-                className={'icon-menu page-header-main__menu'} 
-                onClick={setMenuVisible}></span>
+        <div className="page-header-main">
+            <span
+                className="icon-menu page-header-main__menu"
+                onClick={setMenuVisible}
+            />
             <span>Beer catalog</span>
-            <Menu 
-                isVisible={isMenuVisible} 
-                setIsVisible={setMenuUnvisible} 
-            >Beer catalog</Menu>
-        </div>  
+            <Menu
+                isVisible={isMenuVisible}
+                setIsVisible={setMenuUnvisible}
+            >Beer catalog
+            </Menu>
+        </div>
     );
-};
+}

@@ -1,25 +1,45 @@
-import React from 'react';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/no-extraneous-dependencies */
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-
-import FilterSlider from 'Components/FilterSlider/filterSlider.jsx';
 
 import './filterItem.css';
 
 
-function FilterItem({children, name, min, max, defaultValue, onChange}) {
+function FilterItem({
+    fullName, name, min, max, defaultValue, onChange
+}) {
+    let step = '1';
+    const [value, setValue] = useState(defaultValue);
+
+    if (!Number.isInteger(+defaultValue)) {
+        step = '.1';
+    }
+
+    const onInputChange = e => {
+        setValue(e.target.value);
+        onChange(e);
+    };
+
     return (
-        <div className={'filter__item'}>
-            <span>{children}</span>
-            <FilterSlider 
-                minimum={min} 
-                maximum={max} 
-                defaultVal={defaultValue}
-                onChange={onChange}
-                name={name}
+        <div className="filter__item">
+            <span>{fullName}</span>
+            <div className="filter-slider__container">
+                <label className="filter-slider__label">{value}</label>
+                <input
+                    className="filter-slider"
+                    type="range"
+                    min={min}
+                    max={max}
+                    defaultValue={defaultValue}
+                    step={step}
+                    name={name}
+                    onChange={onInputChange}
                 />
+            </div>
         </div>
     );
-};
+}
 
 FilterItem.propTypes = {
     min: PropTypes.number,

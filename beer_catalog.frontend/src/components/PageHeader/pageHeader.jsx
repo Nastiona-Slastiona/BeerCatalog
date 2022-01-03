@@ -1,15 +1,15 @@
+/* eslint-disable import/no-unresolved */
 import React from 'react';
+import PageHeaderMain from 'components/PageHeaderMain/pageHeaderMain';
 
-import PageHeaderMain from 'Components/PageHeaderMain/pageHeaderMain.jsx';
-
-import "./pageHeader.css";
+import './pageHeader.css';
 
 
 export default function PageHeader() {
     return (
-        <div  className={'page-header'}>
-            <PageHeaderMain/>
-            <span className={'icon-dots-horizontal-triple page-header__settings'}></span>
+        <div className="page-header">
+            <PageHeaderMain />
+            <span className="icon-dots-horizontal-triple page-header__settings" />
         </div>
     );
-};
+}

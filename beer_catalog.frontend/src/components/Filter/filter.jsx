@@ -1,28 +1,48 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/no-unresolved */
 import React from 'react';
 import classNames from 'classnames';
-import PropTypes from 'prop-types'
-
-import FilterSection from 'Components/FilterSection/filterSection.jsx';
+import FilterItem from 'components/FilterItem/filterItem';
 
 import './filter.css';
 
-function Filter({isVisible, onChange}) {
-    const classes = classNames('filter__container', {'filter__container--active': isVisible})
+
+export default function Filter({ isVisible, onChange }) {
+    const classes = classNames('filter__container', { 'filter__container--active': isVisible });
+
     return (
         <div className={classes}>
-            <div>
-                <h1>
+            <div className="filter">
+                <h1 className="filter__header">
                     Filter results
                 </h1>
-                <FilterSection onChange={onChange}/>
+                <div className="filter-section__container">
+                    <FilterItem
+                        name="abv"
+                        fullName="Alcohol by volume"
+                        min={2}
+                        max={14}
+                        defaultValue={4.6}
+                        onChange={onChange}
+                    />
+                    <FilterItem
+                        name="ibu"
+                        fullName="International Bitterness Units"
+                        min={0}
+                        max={120}
+                        defaultValue={50}
+                        onChange={onChange}
+                    />
+                    <FilterItem
+                        name="ebc"
+                        fullName="Color by EBC"
+                        min={4}
+                        max={80}
+                        defaultValue={60}
+                        onChange={onChange}
+                    />
+                </div>
             </div>
         </div>
     );
-};
-
-Filter.propTypes = {
-    isVisible: PropTypes.bool,
-    onChange: PropTypes.func
 }
-
-export default Filter;
