@@ -2,8 +2,7 @@
 /* eslint-disable import/no-unresolved */
 
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import serviceUrls from 'src/constants/serviceUrls';
-import urlHelper from 'src/helpers/urlHelper';
+import requestHelper from 'src/helpers/requestHelper';
 
 
 export const setIsFavoriteBeer = createAsyncThunk(
@@ -26,17 +25,22 @@ export const fetchBeers = createAsyncThunk(
     'beers/FetchBeers',
     async (input, { rejectWithValue }) => {
         try {
-            const url = urlHelper.getUrlByTemplate(serviceUrls.getLimittedBeers, { currPage: input, page: 12 });
-
-            const response = await fetch(url);
-
-            if (!response.ok) {
-                throw new Error('ServerError');
-            }
-
-            const data = await response.json();
+            const data = await requestHelper.get('getLimittedBeers', { currPage: input, page: 12 });
 
             return [data, input];
+        } catch (error) {
+            return rejectWithValue(error.message);
+        }
+    }
+);
+
+export const fetchOneBeer = createAsyncThunk(
+    'beers/FetchOneBeer',
+    async (beerId, { rejectWithValue }) => {
+        try {
+            const data = await requestHelper.get('findById', { id: beerId });
+
+            return data;
         } catch (error) {
             return rejectWithValue(error.message);
         }

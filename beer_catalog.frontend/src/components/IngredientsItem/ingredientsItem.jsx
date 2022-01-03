@@ -35,7 +35,7 @@ export default function IngridientsItem({ ingredient }) {
 
     const render = rendered.map((value, index) => {
         return (
-            <div key={index}>
+            <div key={index} className="ingredients-item__component">
                 "{value.name}" - {value.amount.value} {value.amount.unit} {value.add ? `add when ${value.add}` : '' }
             </div>
         );

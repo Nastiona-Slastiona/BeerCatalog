@@ -6,4 +6,8 @@
   &__header {
     @include table-header;
   }
+
+  &__component {
+    padding: 2px 0;
+  }
 }

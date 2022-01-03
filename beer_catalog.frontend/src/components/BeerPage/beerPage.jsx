@@ -2,7 +2,7 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
 import { useSelector } from 'react-redux';
-// import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import BeerButtonFavorite from 'components/BeerButtonFavorite/beerButtonFavorite';
 import BeerItemImage from 'components/BeerItemImage/beerItemImage';
 import BeerPageHeader from 'components/BeerPageHeader/beerPageHeader';
@@ -16,9 +16,8 @@ import './beerPage.css';
 
 
 export default function BeerPage() {
-    // const location = useLocation();
-    const beerId = 1;
-    // +location.pathname.slice(10,);
+    const location = useLocation();
+    const beerId = +location.pathname.slice(10);
     const beer = useSelector(state => state.beers.beers.filter(b => b.id === beerId))[0];
 
     return (
