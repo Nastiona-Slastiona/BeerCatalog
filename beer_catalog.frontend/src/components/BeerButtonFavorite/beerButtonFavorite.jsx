@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import { setIsFavoriteBeer } from 'store/beers/state/thunks/thunks';
 
 
-function BeerButtonFavorite({ beer = { isFavorite: true }, onFavoriteClick = () => undefined, className }) {
+function BeerButtonFavorite({ beer, onFavoriteClick = () => undefined, className }) {
     const dispatch = useDispatch();
     const favoriteButton = beer.isFavorite ? 'Remove Favorite' : 'Add to Favorite';
 

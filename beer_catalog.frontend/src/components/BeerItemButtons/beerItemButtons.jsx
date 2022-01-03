@@ -13,7 +13,11 @@ function BeerItemButtons({ beer, onFavoriteClick }) {
     return (
         <div className="beer-item__buttons">
             <Link className="beer-item__button" to={`/beers/id=${beer.id}`}>Open</Link>
-            <BeerButtonFavorite className="beer-item__button" onFavoriteClick={onFavoriteClick} />
+            <BeerButtonFavorite
+                className="beer-item__button"
+                beer={beer}
+                onFavoriteClick={onFavoriteClick}
+            />
         </div>
     );
 }

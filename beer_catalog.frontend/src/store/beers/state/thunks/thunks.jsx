@@ -4,7 +4,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import serviceUrls from 'src/constants/serviceUrls';
 import urlHelper from 'src/helpers/urlHelper';
-import favoriteBeerSetted from 'store/reducers/beers/favoriteBeerSetted';
 
 
 export const setIsFavoriteBeer = createAsyncThunk(
@@ -16,7 +15,7 @@ export const setIsFavoriteBeer = createAsyncThunk(
         };
 
         try {
-            dispatch(favoriteBeerSetted(newBeer));
+            dispatch({ type: 'beers/favoriteBeerSetted', payload: newBeer });
         } catch (error) {
             return rejectWithValue(error.message());
         }
@@ -28,7 +27,7 @@ export const fetchBeers = createAsyncThunk(
     async (input, { rejectWithValue }) => {
         try {
             const url = urlHelper.getUrlByTemplate(serviceUrls.getLimittedBeers, { currPage: input, page: 12 });
-            console.log(input);
+
             const response = await fetch(url);
 
             if (!response.ok) {

@@ -8,40 +8,63 @@ import PropTypes from 'prop-types';
 import './pagination.css';
 
 
-function Pagination({ pages, isVisible, onClick }) {
+function Pagination({ beers, setPage, pageShown }) {
+    const amountOfFavoriteBeers = beers.length;
+    const isVisible = amountOfFavoriteBeers > 5;
+
     const className = classNames(
         'pagination',
         { 'pagination--active': isVisible }
     );
+    const pages = [];
+
+    for (let i = 0; i < (beers.length / 5); i++) {
+        pages[i] = i + 1;
+    }
+
+    const onPaginationClick = event => {
+        const paginationValue = event.target.className.split(' ');
+        if (paginationValue[0] !== 'pagination__button') {
+            const direction = paginationValue[paginationValue.length - 1].split('-');
+
+            if (direction.includes('right') && pageShown < pages.length - 1) {
+                setPage(prevPage => prevPage + 1);
+            } else if (direction.includes('left') && pageShown > 0) {
+                setPage(prevPage => prevPage - 1);
+            }
+        } else {
+            setPage(event.target.innerHTML - 1);
+        }
+    };
 
     return (
         <div className={className}>
             <span
                 className="pagination__change-page icon-arrow-left"
-                onClick={onClick}
+                onClick={onPaginationClick}
             />
             {
                 pages.map((page, index) => (
                     <span
                         key={index}
                         className="pagination__button"
-                        onClick={onClick}
+                        onClick={onPaginationClick}
                     >{page}
                     </span>
                 ))
             }
             <span
                 className="pagination__change-page icon-arrow-right"
-                onClick={onClick}
+                onClick={onPaginationClick}
             />
         </div>
     );
 }
 
 Pagination.propTypes = {
-    pages: PropTypes.instanceOf(Array),
-    isVisible: PropTypes.bool,
-    onClick: PropTypes.func
+    // // beers: PropType.,
+    setPage: PropTypes.func,
+    pageShown: PropTypes.number
 };
 
 export default Pagination;
