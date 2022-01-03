@@ -195,6 +195,8 @@ module.exports = {
             'controlComponents': ['ValidationInput']
         }],
         'jsx-a11y/anchor-is-valid': 'off',
+        'jsx-a11y/no-static-element-interactions': 'off',
+        'jsx-a11y/click-events-have-key-events': 'off',
 
         'putout/single-property-destructuring': 'error',
 
@@ -218,14 +220,14 @@ module.exports = {
         '@typescript-eslint/no-empty-function': ['error'],
         '@typescript-eslint/no-redeclare': ['error'],
         '@typescript-eslint/indent': ['error', 4, { 'SwitchCase': 1 }],
-        '@typescript-eslint/default-param-last': 'error',
+        '@typescript-eslint/default-param-last': 'error'
 
         // custom rules
-        'no-relative-imports': ['error', {
-            'ignoredPatterns': ['scss$'],
-            'rootFolder': 'src'
-        }],
-        'no-core-imports-full-path': ['error']
+        // 'no-relative-imports': ['error', {
+        //     'ignoredPatterns': ['scss$'],
+        //     'rootFolder': 'src'
+        // }],
+        // 'no-core-imports-full-path': ['error']
     },
     globals: {
         'gtag': 'readonly',
