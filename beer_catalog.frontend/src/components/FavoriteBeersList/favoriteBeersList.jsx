@@ -1,8 +1,10 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/no-unresolved */
 import React, { useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
-
-import FavoriteBeerItem from 'components/FavoriteBeerItem/favoriteBeerItem';
 import Pagination from 'components/base/Pagination/pagination';
+import FavoriteBeerItem from 'components/FavoriteBeerItem/favoriteBeerItem';
 
 import './favoriteBeersList.css';
 
@@ -19,60 +21,60 @@ export default function FavoriteBeersList() {
     if (!amountOfFavoriteBeers) {
         return (
             <h2>There is nothing</h2>
-        );    
-    };
+        );
+    }
 
     const pages = [];
-   
-    for (const i = 0; i < (amountOfFavoriteBeers / 5); i++) {
-        pages[i] = i + 1;
-    };
+
+    pages.forEach(page => page + 1);
 
     const renderedBeers = [];
     const onRemoveFavoriteClick = useCallback(() => {
         setIsPaginationVisible(amountOfFavoriteBeers > 6);
-        console.log(Math.floor(((amountOfFavoriteBeers)/ 6)));
-        setPageShown(Math.floor(((amountOfFavoriteBeers - 2)/ 5)));
+        setPageShown(Math.floor(((amountOfFavoriteBeers - 2) / 5)));
         setAmountOfFavoriteBeers(prev => prev - 1);
-    });
+    }, [amountOfFavoriteBeers]);
 
-    for (const i = 0, j = 0; j < amountOfFavoriteBeers; i+=5, j++) {
-        renderedBeers[j] = Array.from(favoriteBeers.slice(i, i + 5).map((favoriteBeer) => {
+
+    // renderedBeers.forEach(renderedBeer => Array.from())
+
+    for (let i = 0, j = 0; j < amountOfFavoriteBeers; i += 5, j++) {
+        renderedBeers[j] = Array.from(favoriteBeers.slice(i, i + 5).map(favoriteBeer => {
             return (
-                <FavoriteBeerItem 
-                    favoriteBeer={favoriteBeer} 
+                <FavoriteBeerItem
                     key={favoriteBeer.id}
+                    favoriteBeer={favoriteBeer}
                     onRemoveFavoriteClick={onRemoveFavoriteClick}
                 />
-            )
+            );
         }));
-    };
+    }
 
-    const onPaginationClick = (event) => {
+    const onPaginationClick = event => {
         const paginationValue = event.target.className.split(' ');
-        if (paginationValue[0] != 'pagination__button') {
+        if (paginationValue[0] !== 'pagination__button') {
             const direction = paginationValue[paginationValue.length - 1].split('-');
-            
+
             if (direction.includes('right') && pageShown < pages.length - 1) {
                 setPageShown(prevPage => prevPage + 1);
             } else if (direction.includes('left') && pageShown > 0) {
                 setPageShown(prevPage => prevPage - 1);
             }
-
         } else {
             setPageShown(event.target.innerHTML - 1);
         }
     };
- 
+
     return (
-        <div className={'favorite-beers-list__container'}>
-            <div className={'favorite-beers-list'}>
+        <div className="favorite-beers-list__container">
+            <div className="favorite-beers-list">
                 {renderedBeers[pageShown]}
-                <Pagination 
-                    pages={pages} 
-                    isVisible={isPaginationVisible} 
-                    onClick={onPaginationClick}/>
+                <Pagination
+                    pages={pages}
+                    isVisible={isPaginationVisible}
+                    onClick={onPaginationClick}
+                />
             </div>
         </div>
     );
-};
+}

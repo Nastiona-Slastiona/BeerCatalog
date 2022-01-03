@@ -218,14 +218,14 @@ module.exports = {
         '@typescript-eslint/no-empty-function': ['error'],
         '@typescript-eslint/no-redeclare': ['error'],
         '@typescript-eslint/indent': ['error', 4, { 'SwitchCase': 1 }],
-        '@typescript-eslint/default-param-last': 'error',
+        '@typescript-eslint/default-param-last': 'error'
 
         // custom rules
-        'no-relative-imports': ['error', {
-            'ignoredPatterns': ['scss$'],
-            'rootFolder': 'src'
-        }],
-        'no-core-imports-full-path': ['error']
+        // 'no-relative-imports': ['error', {
+        //     'ignoredPatterns': ['scss$'],
+        //     'rootFolder': 'src'
+        // }],
+        // 'no-core-imports-full-path': ['error']
     },
     globals: {
         'gtag': 'readonly',
