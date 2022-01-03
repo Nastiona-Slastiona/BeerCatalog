@@ -12,9 +12,9 @@ export default function Properties({ beer }) {
                 <span className="properties__header">Properties</span>
             </div>
             <div className="properties__table">
-                <PropertiesItem propertyName="ABV" propertyValue={beer.abv} />
-                <PropertiesItem propertyName="IBU" propertyValue={beer.ibu} />
-                <PropertiesItem propertyName="EBC" propertyValue={beer.ebc} />
+                <PropertiesItem title="Alcohol by volume" propertyName="ABV" propertyValue={beer.abv} />
+                <PropertiesItem title="International Bitterness Units" propertyName="IBU" propertyValue={beer.ibu} />
+                <PropertiesItem title="Color by EBC" propertyName="EBC" propertyValue={beer.ebc} />
             </div>
         </div>
     );

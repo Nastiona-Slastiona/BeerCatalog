@@ -1,11 +1,14 @@
+/* eslint-disable import/no-unresolved */
 import React from 'react';
+import IngredientsItem from 'components/IngredientsItem/ingredientsItem';
 
-// import IngridientsItem from 'components/IngridientsItem/ingridientsItem';
 import './ingredients.css';
 
 
-export default function Ingredients({ ingredients }) {
-    // ingredients = Array.from(ingredients);
+export default function Ingredients({ beer }) {
+    const ingredients = [];
+    ingredients.push(['water', { ...beer.boil_volume }]);
+    Object.entries(beer.ingredients).forEach(ingr => ingredients.push([ingr[0], { ...ingr[1] }]));
 
     return (
         <div>
@@ -14,9 +17,10 @@ export default function Ingredients({ ingredients }) {
             </div>
             <div className="ingredients__table">
                 {
-                    /* {ingridients.map((ingridient, index) => {
-                   return <IngridientsItem key={index}>{ingridient}</IngridientsItem>
-                })} */}
+                    ingredients.map((ingredient, index) => {
+                        return <IngredientsItem key={index} ingredient={ingredient} />;
+                    })
+                }
             </div>
         </div>
     );

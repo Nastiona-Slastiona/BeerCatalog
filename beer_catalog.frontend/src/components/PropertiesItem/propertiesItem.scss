@@ -4,6 +4,7 @@ $bg-color: #9596a0;
 .properties__item {
   align-items: center;
   justify-content: space-between;
+  display: flex;
 
   @include table-item;
 

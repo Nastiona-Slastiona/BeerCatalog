@@ -1,0 +1,9 @@
+@import '../../styles/scss/mixins.scss';
+
+.ingredients-item {
+  @include table-item;
+
+  &__header {
+    @include table-header;
+  }
+}

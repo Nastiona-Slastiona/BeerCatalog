@@ -18,12 +18,12 @@ export default function App() {
         <div className="app">
             <BrowserRouter>
                 <PageHeader />
-                <Routes>
+                {/* <Routes>
                     <Route path="/" element={<LandingPage />} exact />
                     <Route path="/favorites" element={<FavoritesPage />} />
                     <Route path="/beers/id=1" element={<BeerPage />} exact />
-                </Routes>
-                {/* <BeerPage /> */}
+                </Routes> */}
+                <BeerPage />
             </BrowserRouter>
         </div>
     );

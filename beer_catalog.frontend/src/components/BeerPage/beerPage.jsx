@@ -9,6 +9,7 @@ import BeerPageHeader from 'components/BeerPageHeader/beerPageHeader';
 import Brewing from 'components/Brewing/brewing';
 import FoodPairing from 'components/FoodPairing/foodPairing';
 import Ingredients from 'components/Ingredients/ingredients';
+import Method from 'components/Method/method';
 import Properties from 'components/Properties/properties';
 
 import './beerPage.css';
@@ -36,7 +37,10 @@ export default function BeerPage() {
                     <FoodPairing foodPairing={beer.food_pairing} />
                 </div>
                 <Brewing brewingDescription={beer.brewers_tips} />
-                <Ingredients ingredients={beer.ingredients} />
+                <div className="beer-page__preparation-section">
+                    <Ingredients beer={beer} />
+                    <Method beer={beer} />
+                </div>
             </div>
         </div>
     );
