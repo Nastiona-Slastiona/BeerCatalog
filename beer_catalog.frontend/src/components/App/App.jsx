@@ -4,10 +4,10 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import BeerPage from 'components/BeerPage/beerPage';
-import FavoritesPage from 'components/FavoritesPage/favoritesPage';
-import LandingPage from 'components/LandingPage/landingPage';
-import PageHeader from 'components/PageHeader/pageHeader';
+import PageHeader from 'features/common/components/PageHeader/pageHeader';
+import BeerPage from 'pages/BeerPage/beerPage';
+import FavoritesPage from 'pages/FavoritesPage/favoritesPage';
+import LandingPage from 'pages/LandingPage/landingPage';
 
 import 'src/styles/fonts/icomoon/style.css';
 import './app.css';
@@ -21,7 +21,7 @@ export default function App() {
                 <Routes>
                     <Route path="/" element={<LandingPage />} exact />
                     <Route path="/favorites" element={<FavoritesPage />} />
-                    <Route path="/beers/id=1" element={<BeerPage />} exact />
+                    <Route path="/beers/id=:id" element={<BeerPage />} exact />
                 </Routes>
                 {/* <BeerPage /> */}
             </BrowserRouter>

@@ -1,0 +1,15 @@
+.favorite-beer__item-info-container {
+  display: block;
+  max-width: 500px;
+  max-height: 100%;
+  text-align: left;
+}
+.favorite-beer__item-info-description {
+  margin: 20px 0 40px;
+}
+.favorite-beer__item-info--title {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  padding-bottom: 10px;
+  font-size: 45px;
+}

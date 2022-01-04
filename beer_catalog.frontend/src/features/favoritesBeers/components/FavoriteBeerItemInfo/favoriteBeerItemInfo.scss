@@ -1,0 +1,21 @@
+@import '../../styles/scss/mixins.scss';
+
+.favorite-beer__item-info {
+  &-container {
+    display: block;
+
+    max-width: 500px;
+    max-height: 100%;
+
+    text-align: left;
+  }
+
+  &-description {
+    margin: 20px 0 40px;
+  }
+
+  &--title {
+    @include title;
+    font-size: 45px;
+  }
+}

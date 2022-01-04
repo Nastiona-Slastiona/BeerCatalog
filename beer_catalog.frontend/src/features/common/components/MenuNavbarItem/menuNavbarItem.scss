@@ -1,0 +1,34 @@
+$hover-color: #696a6e;
+
+.menu-navbar__item {
+  font: {
+    family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    size: 20px;
+  }
+  display: flex;
+
+  width: 150px;
+
+  text-decoration: none;
+
+  color: #87888f;
+  &__icon {
+    display: flex;
+
+    margin-right: 40px;
+
+    color: $hover-color;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 30px;
+  }
+
+  &:hover {
+    border-bottom: 1px solid $hover-color;
+  }
+}

@@ -83,7 +83,9 @@ module.exports = {
             components: path.resolve(__dirname, 'src/components'),
             models: path.resolve(__dirname, 'src/models'),
             store: path.resolve(__dirname, 'src/store'),
-            src: path.resolve(__dirname, 'src')
+            src: path.resolve(__dirname, 'src'),
+            pages: path.resolve(__dirname, 'src/pages'),
+            features: path.resolve(__dirname, 'src/features')
         },
         enforceExtension: false,
         extensions: ['.jsx', '.js', '.css', '.wasm', '.ico', '...']

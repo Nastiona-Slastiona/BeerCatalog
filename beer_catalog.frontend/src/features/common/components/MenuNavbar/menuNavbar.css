@@ -1,0 +1,10 @@
+.menu-navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  padding-left: 50px;
+  margin-top: 40px;
+}

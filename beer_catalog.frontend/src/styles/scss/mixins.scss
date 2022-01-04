@@ -24,3 +24,11 @@
   }
   padding: 10px 0;
 }
+
+@mixin title {
+  font: {
+    family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    size: 30px;
+  }
+  padding-bottom: 10px;
+}

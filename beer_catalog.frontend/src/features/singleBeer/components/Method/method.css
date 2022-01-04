@@ -1,0 +1,17 @@
+.method {
+  margin-left: 100px;
+}
+.method__header {
+  font-size: 40px;
+  font-weight: 500;
+}
+.method__table {
+  width: 450px;
+  margin-top: 20px;
+}
+.method__table-header {
+  font-size: 25px;
+  font-weight: 500;
+  padding: 10px 0;
+  margin-top: 20px;
+}
