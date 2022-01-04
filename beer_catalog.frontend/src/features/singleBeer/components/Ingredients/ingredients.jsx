@@ -1,5 +1,5 @@
-/* eslint-disable import/no-unresolved */
 import React from 'react';
+
 import IngredientsItem from 'features/singleBeer/components/IngredientsItem/ingredientsItem';
 
 import './ingredients.css';

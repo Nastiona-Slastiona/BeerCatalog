@@ -1,7 +1,6 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable import/no-unresolved */
 import React from 'react';
 import classNames from 'classnames';
+
 import FilterItem from 'features/beersList/components/FilterItem/filterItem';
 
 import './filter.css';

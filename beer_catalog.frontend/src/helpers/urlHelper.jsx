@@ -1,4 +1,3 @@
-/* eslint-disable guard-for-in */
 const urlHelper = {
     getUrlByTemplate: (template, parameters) => {
         for (const key in parameters) {

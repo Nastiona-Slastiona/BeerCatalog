@@ -1,10 +1,8 @@
-/* eslint-disable react/forbid-prop-types */
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable import/no-unresolved */
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import Label from 'components/base/Label/label';
 import BeerItemButtons from 'features/common/components/BeerItemButtons/beerItemButtons';
-import PropTypes from 'prop-types';
 
 import './beerItemInfo.css';
 

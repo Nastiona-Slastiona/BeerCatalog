@@ -1,9 +1,7 @@
-/* eslint-disable react/forbid-prop-types */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+
 import { setIsFavoriteBeer } from 'store/beers/state/thunks/thunks';
 
 

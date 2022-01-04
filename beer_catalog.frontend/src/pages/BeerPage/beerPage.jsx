@@ -1,8 +1,7 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable import/no-unresolved */
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+
 import BeerItemImage from 'features/common/components/BeerItemImage/beerItemImage';
 import ButtonFavorite from 'features/common/components/ButtonFavorite/buttonFavorite';
 import BeerPageHeader from 'features/singleBeer/components/BeerPageHeader/beerPageHeader';

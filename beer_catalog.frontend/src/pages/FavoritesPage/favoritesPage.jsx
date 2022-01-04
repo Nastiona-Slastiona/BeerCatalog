@@ -1,8 +1,6 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable react-hooks/rules-of-hooks */
-/* eslint-disable import/no-unresolved */
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+
 import List from 'components/base/List/list';
 import Pagination from 'components/base/Pagination/pagination';
 import FavoriteBeerItem from 'features/favoritesBeers/components/FavoriteBeerItem/favoriteBeerItem';

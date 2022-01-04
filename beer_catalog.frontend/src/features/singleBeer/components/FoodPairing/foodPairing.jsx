@@ -1,5 +1,5 @@
-/* eslint-disable import/no-unresolved */
 import React from 'react';
+
 import FoodPairingItem from 'features/singleBeer/components/FoodPairingItem/foodPairingItem';
 
 import './foodPairing.css';

@@ -1,5 +1,5 @@
-/* eslint-disable import/no-unresolved */
 import React from 'react';
+
 import PropertiesItem from 'features/singleBeer/components/PropertiesItem/propertiesItem';
 
 import './properties.css';

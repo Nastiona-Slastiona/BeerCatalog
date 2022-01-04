@@ -1,7 +1,6 @@
-/* eslint-disable import/no-unresolved */
-/* eslint-disable import/no-extraneous-dependencies */
 import React, { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import InfiniteScroll from 'components/base/InfiniteScroll/infiniteScroll';
 import List from 'components/base/List/list';
 import SearchBox from 'components/base/SearchBox/searchBox';

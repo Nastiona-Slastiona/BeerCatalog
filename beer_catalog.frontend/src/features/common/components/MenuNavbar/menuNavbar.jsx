@@ -1,5 +1,5 @@
-/* eslint-disable import/no-unresolved */
 import React from 'react';
+
 import MenuNavbarItem from 'features/common/components/MenuNavbarItem/menuNavbarItem';
 
 import './menuNavbar.css';

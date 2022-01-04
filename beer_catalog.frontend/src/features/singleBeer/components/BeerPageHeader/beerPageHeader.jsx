@@ -1,5 +1,5 @@
-/* eslint-disable import/no-unresolved */
 import React from 'react';
+
 import Label from 'components/base/Label/label';
 
 import './beerPageHeader.css';

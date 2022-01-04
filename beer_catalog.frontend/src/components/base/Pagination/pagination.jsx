@@ -1,6 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
@@ -62,7 +59,7 @@ function Pagination({ beers, setPage, pageShown }) {
 }
 
 Pagination.propTypes = {
-    // // beers: PropType.,
+    beers: PropTypes.array,
     setPage: PropTypes.func,
     pageShown: PropTypes.number
 };

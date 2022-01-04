@@ -1,9 +1,8 @@
-/* eslint-disable quote-props */
 module.exports = {
     env: {
-        'browser': true,
-        'es6': true,
-        'jest': true
+        browser: true,
+        es6: true,
+        jest: true
     },
     ignorePatterns: [
         '**/*.d.ts',
@@ -35,24 +34,25 @@ module.exports = {
         'comma-dangle': ['error', 'never'],
         'indent': 'off',
         'max-len': ['warn', 150, {
-            'ignorePattern': '^import\\s.+\\sfrom\\s.+;$'
+            ignorePattern: '^import\\s.+\\sfrom\\s.+;$'
         }],
         'newline-before-return': 'error',
         'object-curly-newline': ['error', {
-            'ObjectExpression': { 'minProperties': 4, 'multiline': true, 'consistent': true },
-            'ObjectPattern': { 'minProperties': 4, 'multiline': true, 'consistent': true }
+            ObjectExpression: { minProperties: 4, multiline: true, consistent: true },
+            ObjectPattern: { minProperties: 4, multiline: true, consistent: true }
         }],
         'arrow-parens': ['error', 'as-needed'],
 
         'import/extensions': ['error', {
-            'ts': 'never',
-            'tsx': 'never'
+            ts: 'never',
+            tsx: 'never'
         }],
-        'import/no-extraneous-dependencies': 'error',
+        'import/no-extraneous-dependencies': 'off',
         'import/order': 'off',
-        'import/newline-after-import': ['error', { 'count': 2 }],
+        'import/no-unresolved': 'off',
+        'import/newline-after-import': ['error', { count: 2 }],
         'simple-import-sort/imports': ['error', {
-            'groups': [
+            groups: [
                 [
                     '^\\u0000' // side effect imports
                 ],
@@ -114,11 +114,12 @@ module.exports = {
                     '\\.s?css$',
                     '^\\u0000.*\\.s?css$'
                 ]
-            ]
+            ],
+            allowSeparatedGroups: true
         }],
 
         'operator-linebreak': ['error', 'before', {
-            'overrides': {
+            overrides: {
                 '=': 'ignore',
                 '&&': 'ignore'
             }
@@ -128,6 +129,7 @@ module.exports = {
         'array-bracket-newline': ['error', 'consistent'],
         'no-case-declarations': 'off',
         'class-methods-use-this': 'off',
+        'consistent-return': 'off',
         'arrow-body-style': 'off',
         'lines-between-class-members': 'off',
         'no-restricted-syntax': ['error', 'LabeledStatement', 'WithStatement'],
@@ -141,8 +143,8 @@ module.exports = {
         'semi': 'off', // used @typescript-eslint rule
         'no-use-before-define': 'off', // used @typescript-eslint rule
         'no-undef': 'off',
-        'no-underscore-dangle': ['error', { 'allowAfterThis': true }],
-        'no-multiple-empty-lines': ['error', { 'max': 2, 'maxEOF': 0, 'maxBOF': 0 }],
+        'no-underscore-dangle': ['error', { allowAfterThis: true }],
+        'no-multiple-empty-lines': ['error', { max: 2, maxEOF: 0, maxBOF: 0 }],
         'no-shadow': 'off',
         'no-loop-func': 'off',
         'no-useless-constructor': 'off',
@@ -152,11 +154,12 @@ module.exports = {
 
         'react/jsx-indent': ['error', 4],
         'react/jsx-indent-props': ['error', 4],
-        'react/jsx-filename-extension': ['warn', { 'extensions': ['.tsx', '.jsx', '.js'] }],
+        'react/jsx-filename-extension': ['warn', { extensions: ['.tsx', '.jsx', '.js'] }],
         'react/jsx-fragments': ['error', 'element'],
         'react/static-property-placement': ['error', 'static public field'],
-        'react/jsx-curly-newline': ['error', { 'multiline': 'require', 'singleline': 'consistent' }],
+        'react/jsx-curly-newline': ['error', { multiline: 'require', singleline: 'consistent' }],
         'react/prop-types': 'off',
+        'react/forbid-prop-types': 'off',
         'react/require-default-props': 'off',
         'react/no-danger': 'off',
         'react/destructuring-assignment': 'off',
@@ -171,42 +174,44 @@ module.exports = {
         'react/state-in-constructor': 'off',
         'react/button-has-type': 'off',
         'react/jsx-sort-props': ['error', {
-            'callbacksLast': true,
-            'shorthandLast': true,
-            'noSortAlphabetically': true,
-            'reservedFirst': ['key', 'ref']
+            callbacksLast: true,
+            shorthandLast: true,
+            noSortAlphabetically: true,
+            reservedFirst: ['key', 'ref']
         }],
         'react/jsx-key': 'error',
         'react/function-component-definition': ['error', {
-            'namedComponents': 'function-declaration',
-            'unnamedComponents': 'arrow-function'
+            namedComponents: 'function-declaration',
+            unnamedComponents: 'arrow-function'
         }],
         'react/no-unstable-nested-components': ['error', {
-            'allowAsProps': true
+            allowAsProps: true
         }],
         'react/jsx-no-useless-fragment': ['error', {
-            'allowExpressions': true
+            allowExpressions: true
         }],
 
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'warn',
 
         'jsx-a11y/label-has-associated-control': ['error', {
-            'controlComponents': ['ValidationInput']
+            controlComponents: ['ValidationInput']
         }],
         'jsx-a11y/anchor-is-valid': 'off',
+        'jsx-a11y/no-static-element-interactions': 'off',
+        'jsx-a11y/click-events-have-key-events': 'off',
 
         'putout/single-property-destructuring': 'error',
 
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/no-inferrable-types': ['error', {
-            'ignoreParameters': true,
-            'ignoreProperties': true
+            ignoreParameters: true,
+            ignoreProperties: true
         }],
         '@typescript-eslint/no-unused-vars': ['error', {
-            'vars': 'all',
-            'args': 'after-used',
-            'ignoreRestSiblings': true
+            vars: 'all',
+            args: 'after-used',
+            ignoreRestSiblings: true
         }],
         '@typescript-eslint/no-empty-interface': 'off',
         '@typescript-eslint/no-non-null-assertion': 'off',
@@ -217,7 +222,7 @@ module.exports = {
         '@typescript-eslint/no-useless-constructor': ['error'],
         '@typescript-eslint/no-empty-function': ['error'],
         '@typescript-eslint/no-redeclare': ['error'],
-        '@typescript-eslint/indent': ['error', 4, { 'SwitchCase': 1 }],
+        '@typescript-eslint/indent': ['error', 4, { SwitchCase: 1 }],
         '@typescript-eslint/default-param-last': 'error'
 
         // custom rules
@@ -228,8 +233,8 @@ module.exports = {
         // 'no-core-imports-full-path': ['error']
     },
     globals: {
-        'gtag': 'readonly',
-        'google': 'readonly'
+        gtag: 'readonly',
+        google: 'readonly'
     },
     settings: {
         'import/resolver': {
@@ -239,7 +244,7 @@ module.exports = {
             }
         },
         'import/internal-regex': '^core/',
-        react: {
+        'react': {
             version: 'detect'
         }
     },

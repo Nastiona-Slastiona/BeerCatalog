@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 import serviceUrls from 'src/constants/serviceUrls';
 import urlHelper from 'src/helpers/urlHelper';
 

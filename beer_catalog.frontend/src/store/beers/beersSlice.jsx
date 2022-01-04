@@ -1,11 +1,6 @@
-/* eslint-disable import/no-unresolved */
-/* eslint-disable no-unused-expressions */
-/* eslint-disable no-sequences */
-/* eslint-disable prefer-destructuring */
-
 import { createSlice } from '@reduxjs/toolkit';
 import ThunkStatus from 'models/thunkStatus';
-import { fetchBeers, fetchOneBeer, setIsFavoriteBeer } from 'store/beers/state/thunks/thunks';
+import { fetchBeers, setIsFavoriteBeer } from 'store/beers/state/thunks/thunks';
 import favoriteBeerSetted from 'store/reducers/beers/favoriteBeerSetted';
 
 
@@ -38,24 +33,12 @@ const beersSlice = createSlice({
                 beer.isFavorite = false;
             });
 
-            const newBeers = beers.filter(beer => !state.beers.includes(beer));
             state.status = ThunkStatus.Resolved;
-            console.log(beers);
-            state.beers = [...state.beers, ...newBeers];
-            state.currentPage = action.payload[1];
+            state.beers = [...state.beers, ...beers];
+            const { input } = action.payload[1];
+            state.currentPage = input;
         },
         [fetchBeers.rejected]: setError,
-        [fetchOneBeer.pending]: state => {
-            state.status = ThunkStatus.Loading;
-        },
-        [fetchOneBeer.fulfilled]: state => {
-            state.status = ThunkStatus.Resolved;
-        },
-        [fetchOneBeer.rejected]: setError,
-        [setIsFavoriteBeer.pending]: state => {
-            state.status = ThunkStatus.Loading,
-            state.error = null;
-        },
         [setIsFavoriteBeer.fulfilled]: state => {
             state.status = ThunkStatus.Resolved;
         },
