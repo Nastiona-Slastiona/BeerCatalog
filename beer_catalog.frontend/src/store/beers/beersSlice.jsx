@@ -1,3 +1,5 @@
+/* eslint-disable no-sequences */
+
 import { createSlice } from '@reduxjs/toolkit';
 import ThunkStatus from 'models/thunkStatus';
 import { fetchBeers, setIsFavoriteBeer } from 'store/beers/state/thunks/thunks';
@@ -35,8 +37,7 @@ const beersSlice = createSlice({
 
             state.status = ThunkStatus.Resolved;
             state.beers = [...state.beers, ...beers];
-            const { input } = action.payload[1];
-            state.currentPage = input;
+            state.currentPage = action.payload[1];
         },
         [fetchBeers.rejected]: setError,
         [setIsFavoriteBeer.fulfilled]: state => {

@@ -35,25 +35,27 @@ function Pagination({ beers, setPage, pageShown }) {
     };
 
     return (
-        <div className={className}>
-            <span
-                className="pagination__change-page icon-arrow-left"
-                onClick={onPaginationClick}
-            />
-            {
-                pages.map((page, index) => (
-                    <span
-                        key={index}
-                        className="pagination__button"
-                        onClick={onPaginationClick}
-                    >{page}
-                    </span>
-                ))
-            }
-            <span
-                className="pagination__change-page icon-arrow-right"
-                onClick={onPaginationClick}
-            />
+        <div className="pagination__container">
+            <div className={className}>
+                <span
+                    className="pagination__change-page icon-arrow-left"
+                    onClick={onPaginationClick}
+                />
+                {
+                    pages.map((page, index) => (
+                        <span
+                            key={index}
+                            className="pagination__button"
+                            onClick={onPaginationClick}
+                        >{page}
+                        </span>
+                    ))
+                }
+                <span
+                    className="pagination__change-page icon-arrow-right"
+                    onClick={onPaginationClick}
+                />
+            </div>
         </div>
     );
 }

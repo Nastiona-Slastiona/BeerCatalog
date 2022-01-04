@@ -1,1 +1,44 @@
-.pagination{display:none;-webkit-box-pack:left;-ms-flex-pack:left;justify-content:left;width:100%;font-size:25px;margin:10px;padding:10px}.pagination--active{display:-webkit-box;display:-ms-flexbox;display:flex}.pagination__button{display:inherit;margin:5px 2px;padding:10px 15px;border:1px solid #17395f;background-color:#b6d8ff;border-radius:40%}.pagination__button:hover{background-color:#5c85b4}.pagination__change-page{display:inherit;font-size:35px;margin:5px;color:#b6d8ff}.pagination__change-page:hover{color:#5c85b4}
+.pagination {
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  font-size: 25px;
+  margin: 10px;
+  padding: 10px;
+}
+.pagination--active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.pagination__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.pagination__button {
+  display: inherit;
+  margin: 5px 2px;
+  padding: 10px 15px;
+  border: 1px solid #17395f;
+  background-color: #b6d8ff;
+  border-radius: 40%;
+}
+.pagination__button:hover {
+  background-color: #5c85b4;
+}
+.pagination__change-page {
+  display: inherit;
+  font-size: 35px;
+  margin: 5px;
+  color: #b6d8ff;
+}
+.pagination__change-page:hover {
+  color: #5c85b4;
+}
