@@ -38,7 +38,7 @@ export default function LandingPage() {
             setIsFilterVisible(false);
             setIsScrollVisible(status === ThunkStatus.Loading);
         }
-    }, [fetching]);
+    }, [fetching, dispatch, setFetching, currentPage, status]);
 
     useEffect(() => {
         document.addEventListener('scroll', scrollHandler);
