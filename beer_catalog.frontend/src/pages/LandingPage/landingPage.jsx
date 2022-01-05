@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import BeerItem from 'features/beersList/components/BeerItem/beerItem';
@@ -57,7 +57,7 @@ export default function LandingPage() {
         }
     };
 
-    const onInputChange = e => {
+    const onInputChange = useCallback(e => {
         setFilter({
             searchQuery: e.target.value,
             filters: {
@@ -81,7 +81,7 @@ export default function LandingPage() {
                 }
             });
         }
-    };
+    }, []);
 
     const searchedBeers = useMemo(() => {
         return beers.filter(beer => beer
@@ -90,7 +90,7 @@ export default function LandingPage() {
             .includes(filter.searchQuery.toLowerCase()));
     }, [filter.searchQuery, beers]);
 
-    const onFilterChange = event => {
+    const onFilterChange = useCallback(event => {
         setFilter({
             ...filter,
             filters: {
@@ -98,7 +98,7 @@ export default function LandingPage() {
                 [event.target.name]: event.target.value
             }
         });
-    };
+    }, [filter]);
 
     const filtredBeers = useMemo(() => {
         return searchedBeers.filter(beer => beer[FilterValues.Volume] >= filter.filters[FilterValues.Volume]

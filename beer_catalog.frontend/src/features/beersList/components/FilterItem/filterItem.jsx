@@ -5,7 +5,12 @@ import './filterItem.scss';
 
 
 function FilterItem({
-    fullName, name, min, max, defaultValue, onChange
+    fullName,
+    name,
+    min,
+    max,
+    defaultValue,
+    onChange
 }) {
     let step = '1';
     const [value, setValue] = useState(defaultValue);
