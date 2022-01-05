@@ -32,3 +32,9 @@
   }
   padding-bottom: 10px;
 }
+
+@mixin beer-item-image__contant {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

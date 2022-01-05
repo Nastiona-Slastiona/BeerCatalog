@@ -1,8 +1,5 @@
-@mixin beer-item-image__contant {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+@import 'src/styles/scss/main';
+@import 'src/styles/scss/mixins';
 
 .beer-item-image {
   width: auto;
@@ -14,7 +11,7 @@
     margin: 5px;
 
     border-radius: 50%;
-    background-color: #0870ce;
+    background-color: $primary-color;
 
     @include beer-item-image__contant;
   }

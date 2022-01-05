@@ -1,5 +1,4 @@
-$primary-color: #0870ce;
-$secondary-color: #e4e7f7;
+@import 'src/styles/scss/main';
 
 .menu {
   display: block;
@@ -27,7 +26,7 @@ $secondary-color: #e4e7f7;
 
   &__header {
     font: {
-      family: Georgia, 'Times New Roman', Times, serif;
+      family: $font-family__styled;
       size: 25px;
     }
 

@@ -1,6 +1,6 @@
-$primary-color: rgb(182, 216, 255);
-$secondary-color: rgb(92, 133, 180);
-$border-color: rgb(23, 57, 95);
+$pagination-color: rgb(182, 216, 255);
+$pagination-color--hover: rgb(92, 133, 180);
+$pagination-border-color: rgb(23, 57, 95);
 
 .pagination {
   display: none;
@@ -27,12 +27,12 @@ $border-color: rgb(23, 57, 95);
     margin: 5px 2px;
     padding: 10px 15px;
 
-    border: 1px solid $border-color;
-    background-color: $primary-color;
+    border: 1px solid $pagination-border-color;
+    background-color: $pagination-color;
     border-radius: 40%;
 
     &:hover {
-      background-color: $secondary-color;
+      background-color: $pagination-color--hover;
     }
   }
 
@@ -42,10 +42,10 @@ $border-color: rgb(23, 57, 95);
 
     margin: 5px;
 
-    color: $primary-color;
+    color: $pagination-color;
 
     &:hover {
-      color: $secondary-color;
+      color: $pagination-color--hover;
     }
   }
 }
