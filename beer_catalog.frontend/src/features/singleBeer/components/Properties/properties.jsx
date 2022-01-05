@@ -2,7 +2,7 @@ import React from 'react';
 
 import PropertiesItem from 'features/singleBeer/components/PropertiesItem/propertiesItem';
 
-import './properties.css';
+import './properties.scss';
 
 
 export default function Properties({ beer }) {

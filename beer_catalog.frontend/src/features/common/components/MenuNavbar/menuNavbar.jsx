@@ -2,7 +2,7 @@ import React from 'react';
 
 import MenuNavbarItem from 'features/common/components/MenuNavbarItem/menuNavbarItem';
 
-import './menuNavbar.css';
+import './menuNavbar.scss';
 
 
 export default function MenuNavbar() {

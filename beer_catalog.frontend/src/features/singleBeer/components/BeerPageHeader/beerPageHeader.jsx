@@ -2,7 +2,7 @@ import React from 'react';
 
 import Label from 'components/base/Label/label';
 
-import './beerPageHeader.css';
+import './beerPageHeader.scss';
 
 
 export default function BeerPageHeader({ beer }) {

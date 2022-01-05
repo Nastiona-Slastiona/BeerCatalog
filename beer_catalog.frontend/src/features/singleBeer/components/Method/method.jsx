@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './method.css';
+import './method.scss';
 
 
 export default function Method({ beer }) {

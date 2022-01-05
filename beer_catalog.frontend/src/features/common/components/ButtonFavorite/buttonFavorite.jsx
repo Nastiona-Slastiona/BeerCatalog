@@ -1,8 +1,8 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import PropTypes from 'prop-types';
 
-import { setIsFavoriteBeer } from 'store/beers/state/thunks/thunks';
+import setIsFavoriteBeer from 'features/common/store/beers/state/thunks/thunks';
 
 
 function BeerButtonFavorite({

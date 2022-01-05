@@ -1,12 +1,11 @@
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable import/extensions */
-/* eslint-disable import/no-unresolved */
+import beersReducer from 'features/common/store/beers/beersSlice';
 import { configureStore } from '@reduxjs/toolkit';
-import beersReducer from 'store/beers/beersSlice.jsx';
 
 
-export const store = configureStore({
+const store = configureStore({
     reducer: {
         beers: beersReducer
     }
 });
+
+export default store;

@@ -1,10 +1,10 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
 
 import MenuNavbar from 'features/common/components/MenuNavbar/menuNavbar';
 
-import './menu.css';
+import './menu.scss';
 
 
 function Menu({ isVisible, setIsVisible }) {

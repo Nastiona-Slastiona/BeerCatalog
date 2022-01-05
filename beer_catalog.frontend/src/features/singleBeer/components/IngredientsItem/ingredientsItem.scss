@@ -1,4 +1,4 @@
-@import '../../styles/scss/mixins.scss';
+@import 'src/styles/scss/mixins';
 
 .ingredients-item {
   @include table-item;

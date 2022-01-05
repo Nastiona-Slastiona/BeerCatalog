@@ -2,7 +2,7 @@ import React from 'react';
 
 import PageHeaderMain from 'features/common/components/PageHeaderMain/pageHeaderMain';
 
-import './pageHeader.css';
+import './pageHeader.scss';
 
 
 export default function PageHeader() {

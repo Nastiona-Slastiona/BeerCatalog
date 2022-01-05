@@ -1,7 +1,7 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
-import './beerItemImage.css';
+import './beerItemImage.scss';
 
 
 function BeerItemImage({ image }) {

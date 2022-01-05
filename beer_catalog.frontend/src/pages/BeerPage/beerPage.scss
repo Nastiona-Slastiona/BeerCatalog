@@ -1,7 +1,8 @@
+@import 'src/styles/scss/mixins';
+
 $primary-color: #0870ce;
 $secondary-color: #e4e7f7;
 $font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-@import '../../styles/scss/mixins.scss';
 
 .beer-page {
   display: block;

@@ -1,10 +1,10 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
-import Label from 'components/base/Label/label';
 import BeerItemButtons from 'features/common/components/BeerItemButtons/beerItemButtons';
+import Label from 'components/base/Label/label';
 
-import './favoriteBeerItemInfo.css';
+import './favoriteBeerItemInfo.scss';
 
 
 function FavoriteBeerItemInfo({ favoriteBeer, onRemoveFavoriteClick }) {

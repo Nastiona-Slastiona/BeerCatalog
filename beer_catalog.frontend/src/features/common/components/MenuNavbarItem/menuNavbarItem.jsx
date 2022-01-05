@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import React from 'react';
 
-import './menuNavbarItem.css';
+import './menuNavbarItem.scss';
 
 
 function MenuNavbarItem({ link, iconClassName, name }) {

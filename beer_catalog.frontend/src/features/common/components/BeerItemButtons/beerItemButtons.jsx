@@ -1,10 +1,10 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
-import { Link } from 'react-router-dom';
 import ButtonFavorite from 'features/common/components/ButtonFavorite/buttonFavorite';
+import { Link } from 'react-router-dom';
 
-import './beerItemButtons.css';
+import './beerItemButtons.scss';
 
 
 function BeerItemButtons({ beer, onFavoriteClick }) {

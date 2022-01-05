@@ -1,17 +1,17 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import BeerItemImage from 'features/common/components/BeerItemImage/beerItemImage';
-import ButtonFavorite from 'features/common/components/ButtonFavorite/buttonFavorite';
 import BeerPageHeader from 'features/singleBeer/components/BeerPageHeader/beerPageHeader';
 import Brewing from 'features/singleBeer/components/Brewing/brewing';
+import ButtonFavorite from 'features/common/components/ButtonFavorite/buttonFavorite';
 import FoodPairing from 'features/singleBeer/components/FoodPairing/foodPairing';
 import Ingredients from 'features/singleBeer/components/Ingredients/ingredients';
 import Method from 'features/singleBeer/components/Method/method';
 import Properties from 'features/singleBeer/components/Properties/properties';
 
-import './beerPage.css';
+import './beerPage.scss';
 
 
 export default function BeerPage() {

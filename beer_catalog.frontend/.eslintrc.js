@@ -51,73 +51,7 @@ module.exports = {
         'import/order': 'off',
         'import/no-unresolved': 'off',
         'import/newline-after-import': ['error', { count: 2 }],
-        'simple-import-sort/imports': ['error', {
-            groups: [
-                [
-                    '^\\u0000' // side effect imports
-                ],
-                [
-                    '^react', '^[^.]' // npm imports
-                ],
-                [
-                    '^core/dependencies', '^\\u0000core/dependencies'
-                ],
-                [
-                    '^core/',
-                    '^core/features/common',
-                    '^core/features/'
-                ],
-                [
-                    '^media-management/',
-                    '^media-management/features/common',
-                    '^media-management/features/'
-                ],
-                [
-                    '^dependencies/', '^\\u0000dependencies'
-                ],
-                [
-                    '^nswag/',
-                    '^admin/',
-                    '^admin/features/common',
-                    '^admin/features',
-                    '^clinical-trials/',
-                    '^clinical-trials/features/common',
-                    '^clinical-trials/features',
-                    '^events/',
-                    '^events/features/common',
-                    '^events/features',
-                    '^media/',
-                    '^media/features/common',
-                    '^media/features',
-                    '^news/',
-                    '^news/features/common',
-                    '^news/features',
-                    '^organizations/',
-                    '^organizations/features/common',
-                    '^organizations/features',
-                    '^people/',
-                    '^people/features/common',
-                    '^people/features',
-                    '^root/',
-                    '^root/features/common',
-                    '^root/features'
-                ],
-                [
-                    '^\\.' // some edge cases
-                ],
-                [
-                    '^stories/'
-                ],
-                [
-                    'styles/images/.*\\.(png|gif|jpg|jpeg)$',
-                    'styles/icons/.*\\.svg$',
-                    '\\.s?css$',
-                    '^\\u0000.*\\.s?css$'
-                ]
-            ],
-            allowSeparatedGroups: true
-        }],
-
+        'sort-imports': ['error', { allowSeparatedGroups: true }],
         'operator-linebreak': ['error', 'before', {
             overrides: {
                 '=': 'ignore',
@@ -129,6 +63,8 @@ module.exports = {
         'array-bracket-newline': ['error', 'consistent'],
         'no-case-declarations': 'off',
         'class-methods-use-this': 'off',
+        'guard-for-in': 'off',
+        'prefer-destructuring': 'off',
         'consistent-return': 'off',
         'arrow-body-style': 'off',
         'lines-between-class-members': 'off',

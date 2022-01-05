@@ -1,13 +1,13 @@
-import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import React from 'react';
 
-import PageHeader from 'features/common/components/PageHeader/pageHeader';
 import BeerPage from 'pages/BeerPage/beerPage';
 import FavoritesPage from 'pages/FavoritesPage/favoritesPage';
 import LandingPage from 'pages/LandingPage/landingPage';
+import PageHeader from 'features/common/components/PageHeader/pageHeader';
 
 import 'src/styles/fonts/icomoon/style';
-import './app.css';
+import './app.scss';
 
 
 export default function App() {

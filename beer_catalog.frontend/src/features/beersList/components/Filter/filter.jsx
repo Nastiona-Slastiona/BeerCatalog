@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import FilterItem from 'features/beersList/components/FilterItem/filterItem';
 
-import './filter.css';
+import './filter.scss';
 
 
 export default function Filter({ isVisible, onChange }) {

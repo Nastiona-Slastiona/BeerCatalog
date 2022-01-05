@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './propertiesItem.css';
+import './propertiesItem.scss';
 
 
 export default function PropertiesItem({ propertyName, propertyValue, title }) {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './foodPairingItem.css';
+import './foodPairingItem.scss';
 
 
 export default function FoodPairingItem({ children }) {

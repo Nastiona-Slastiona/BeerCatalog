@@ -2,7 +2,7 @@ import React from 'react';
 
 import IngredientsItem from 'features/singleBeer/components/IngredientsItem/ingredientsItem';
 
-import './ingredients.css';
+import './ingredients.scss';
 
 
 export default function Ingredients({ beer }) {

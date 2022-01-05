@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './ingredientsItem.css';
+import './ingredientsItem.scss';
 
 
 export default function IngridientsItem({ ingredient }) {

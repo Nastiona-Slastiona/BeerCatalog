@@ -1,10 +1,10 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
 import BeerItemImage from 'features/common/components/BeerItemImage/beerItemImage';
 import FavoriteBeerItemInfo from 'features/favoritesBeers/components/FavoriteBeerItemInfo/favoriteBeerItemInfo';
 
-import './favoriteBeerItem.css';
+import './favoriteBeerItem.scss';
 
 
 function FavoriteBeerItem({ favoriteBeer, onRemoveFavoriteClick }) {

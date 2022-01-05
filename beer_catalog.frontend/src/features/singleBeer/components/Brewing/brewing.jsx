@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './brewing.css';
+import './brewing.scss';
 
 
 export default function Brewing({ brewingDescription }) {

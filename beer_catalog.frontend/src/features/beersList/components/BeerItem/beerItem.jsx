@@ -1,10 +1,10 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
-import BeerItemInfo from 'features/beersList/components/BeerItemInfo/beerItemInfo';
 import BeerItemImage from 'features/common/components/BeerItemImage/beerItemImage';
+import BeerItemInfo from 'features/beersList/components/BeerItemInfo/beerItemInfo';
 
-import './beerItem.css';
+import './beerItem.scss';
 
 
 function BeerItem({ beer }) {

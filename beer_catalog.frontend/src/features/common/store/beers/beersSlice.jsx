@@ -1,9 +1,8 @@
-/* eslint-disable no-sequences */
-
-import { createSlice } from '@reduxjs/toolkit';
 import ThunkStatus from 'models/thunkStatus';
-import { fetchBeers, setIsFavoriteBeer } from 'store/beers/state/thunks/thunks';
-import favoriteBeerSetted from 'store/reducers/beers/favoriteBeerSetted';
+import { createSlice } from '@reduxjs/toolkit';
+import favoriteBeerSetted from 'features/common/store/reducers/beers/favoriteBeerSetted';
+import fetchBeers from 'features/beersList/store/beers/state/thunks/thunks';
+import setIsFavoriteBeer from 'features/common/store/beers/state/thunks/thunks';
 
 
 const initialState = {

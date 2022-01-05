@@ -2,7 +2,7 @@ import React from 'react';
 
 import FoodPairingItem from 'features/singleBeer/components/FoodPairingItem/foodPairingItem';
 
-import './foodPairing.css';
+import './foodPairing.scss';
 
 
 export default function FoodPairing({ foodPairing }) {

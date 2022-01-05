@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import Menu from 'features/common/components/Menu/menu';
 
-import './pageHeaderMain.css';
+import './pageHeaderMain.scss';
 
 
 export default function PageHeaderMain() {

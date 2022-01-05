@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 
+import FavoriteBeerItem from 'features/favoritesBeers/components/FavoriteBeerItem/favoriteBeerItem';
 import List from 'components/base/List/list';
 import Pagination from 'components/base/Pagination/pagination';
-import FavoriteBeerItem from 'features/favoritesBeers/components/FavoriteBeerItem/favoriteBeerItem';
 
-import './favoritesPage.css';
+import './favoritesPage.scss';
 
 
 export default function FavoritesPage() {

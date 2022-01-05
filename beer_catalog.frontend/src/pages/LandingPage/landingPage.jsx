@@ -1,16 +1,16 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import InfiniteScroll from 'components/base/InfiniteScroll/infiniteScroll';
-import List from 'components/base/List/list';
-import SearchBox from 'components/base/SearchBox/searchBox';
 import BeerItem from 'features/beersList/components/BeerItem/beerItem';
 import Filter from 'features/beersList/components/Filter/filter';
 import FilterValues from 'models/filterValues';
+import InfiniteScroll from 'components/base/InfiniteScroll/infiniteScroll';
+import List from 'components/base/List/list';
+import SearchBox from 'components/base/SearchBox/searchBox';
 import ThunkStatus from 'models/thunkStatus';
-import { fetchBeers } from 'store/beers/state/thunks/thunks';
+import fetchBeers from 'features/beersList/store/beers/state/thunks/thunks';
 
-import './landingPage.css';
+import './landingPage.scss';
 
 
 export default function LandingPage() {
