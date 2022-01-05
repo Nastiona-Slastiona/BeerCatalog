@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 
@@ -6,7 +7,7 @@ import FilterItem from 'features/beersList/components/FilterItem/filterItem';
 import './filter.scss';
 
 
-export default function Filter({ isVisible, onChange }) {
+function Filter({ isVisible, onChange }) {
     const classes = classNames('filter__container', { 'filter__container--active': isVisible });
 
     return (
@@ -45,3 +46,10 @@ export default function Filter({ isVisible, onChange }) {
         </div>
     );
 }
+
+Filter.propTypes = {
+    isVisible: PropTypes.bool.isRequired,
+    onChange: PropTypes.func
+};
+
+export default Filter;

@@ -5,7 +5,11 @@ import classNames from 'classnames';
 import './pagination.scss';
 
 
-function Pagination({ beers, setPage, pageShown }) {
+function Pagination({
+    beers,
+    setPage,
+    pageShown
+}) {
     const amountOfFavoriteBeers = beers.length;
     const isVisible = amountOfFavoriteBeers > 5;
 
@@ -61,9 +65,9 @@ function Pagination({ beers, setPage, pageShown }) {
 }
 
 Pagination.propTypes = {
-    beers: PropTypes.array,
-    setPage: PropTypes.func,
-    pageShown: PropTypes.number
+    beers: PropTypes.array.isRequired,
+    setPage: PropTypes.func.isRequired,
+    pageShown: PropTypes.number.isRequired
 };
 
 export default Pagination;

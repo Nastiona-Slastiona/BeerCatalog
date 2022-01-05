@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import './filterItem.css';
+import './filterItem.scss';
 
 
 function FilterItem({
@@ -23,9 +23,9 @@ function FilterItem({
         <div className="filter__item">
             <span>{fullName}</span>
             <div className="filter-slider__container">
-                <label className="filter-slider__label">{value}</label>
+                <label className="filter__slider__label">{value}</label>
                 <input
-                    className="filter-slider"
+                    className="filter__slider"
                     type="range"
                     min={min}
                     max={max}

@@ -1,9 +1,4 @@
-@mixin search-box__components {
-  display: inline;
-
-  color: rgb(148, 144, 144);
-  border: none;
-}
+@import 'src/styles/scss/mixins';
 
 .search-box {
   &__input {

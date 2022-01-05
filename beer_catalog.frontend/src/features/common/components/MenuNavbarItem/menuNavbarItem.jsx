@@ -15,7 +15,9 @@ function MenuNavbarItem({ link, iconClassName, name }) {
 }
 
 MenuNavbarItem.propTypes = {
-    link: PropTypes.string
+    link: PropTypes.string.isRequired,
+    iconClassName: PropTypes.string,
+    name: PropTypes.string.isRequired
 };
 
 export default MenuNavbarItem;

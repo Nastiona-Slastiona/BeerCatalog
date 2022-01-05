@@ -38,3 +38,10 @@
   align-items: center;
   justify-content: center;
 }
+
+@mixin search-box__components {
+  display: inline;
+
+  color: rgb(148, 144, 144);
+  border: none;
+}

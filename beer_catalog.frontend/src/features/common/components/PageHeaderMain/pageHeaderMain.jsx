@@ -26,8 +26,7 @@ export default function PageHeaderMain() {
             <Menu
                 isVisible={isMenuVisible}
                 setIsVisible={setMenuUnvisible}
-            >Beer catalog
-            </Menu>
+            />
         </div>
     );
 }

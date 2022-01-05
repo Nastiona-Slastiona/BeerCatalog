@@ -17,7 +17,7 @@ function BeerItem({ beer }) {
 }
 
 BeerItem.propTypes = {
-    beer: PropTypes.object
+    beer: PropTypes.object.isRequired
 };
 
 export default BeerItem;
