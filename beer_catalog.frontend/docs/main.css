@@ -1,0 +1,2132 @@
+/*!****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/features/common/components/BeerItemImage/beerItemImage.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************/
+.beer-item-image {
+  width: auto;
+  height: 80%; }
+  .beer-item-image__container {
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+    border-radius: 50%;
+    background-color: #0870ce;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .beer-item-image__section {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/features/singleBeer/components/BeerPageHeader/beerPageHeader.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************/
+.beer-page__header {
+  display: inline;
+  width: 100%;
+  text-align: left;
+  font-size: 32px; }
+  .beer-page__header--tagline {
+    color: #808080;
+    font-style: italic;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 60%; }
+  .beer-page__header--title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    padding-bottom: 10px;
+    font-size: 54px; }
+
+/*!********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/features/singleBeer/components/Brewing/brewing.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************/
+.brewing {
+  display: block; }
+  .brewing__header {
+    font-size: 40px;
+    font-weight: 500; }
+  .brewing__description {
+    margin: 20px 0;
+    width: 85%; }
+
+/*!************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/features/singleBeer/components/FoodPairingItem/foodPairingItem.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************/
+.food-pairing__item {
+  display: flex;
+  text-align: center;
+  width: 100%;
+  border: 1px solid #dcdcdc;
+  border-radius: 2px;
+  width: 100%;
+  padding: 20px;
+  padding: 30px 20px; }
+
+/*!****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/features/singleBeer/components/FoodPairing/foodPairing.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************/
+.food-pairing {
+  display: block;
+  width: 100%; }
+  .food-pairing__container {
+    display: flex;
+    width: 400px;
+    min-width: fit-content;
+    min-height: fit-content;
+    margin: 0 80px; }
+  .food-pairing__header {
+    font-size: 40px;
+    font-weight: 500; }
+  .food-pairing__table {
+    margin: 20px 0; }
+
+/*!************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/features/singleBeer/components/IngredientsItem/ingredientsItem.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************/
+.ingredients-item {
+  border: 1px solid #dcdcdc;
+  border-radius: 2px;
+  width: 100%;
+  padding: 20px; }
+  .ingredients-item__header {
+    font-size: 25px;
+    font-weight: 500;
+    padding: 10px 0; }
+  .ingredients-item__component {
+    padding: 2px 0; }
+
+/*!****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/features/singleBeer/components/Ingredients/ingredients.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************/
+.ingredients {
+  display: block;
+  width: 450px;
+  min-width: fit-content;
+  margin-right: 50px; }
+  .ingredients__header {
+    font-size: 40px;
+    font-weight: 500; }
+  .ingredients__table {
+    margin: 20px 0; }
+
+/*!******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/features/singleBeer/components/Method/method.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************/
+.method {
+  margin-left: 100px; }
+  .method__header {
+    font-size: 40px;
+    font-weight: 500; }
+  .method__table {
+    width: 450px;
+    margin-top: 20px; }
+  .method__table-header {
+    font-size: 25px;
+    font-weight: 500;
+    padding: 10px 0;
+    margin-top: 20px; }
+
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/features/singleBeer/components/PropertiesItem/propertiesItem.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************/
+.properties__item {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  border: 1px solid #dcdcdc;
+  border-radius: 2px;
+  width: 100%;
+  padding: 20px; }
+  .properties__item-value {
+    display: flex;
+    padding: 5px 20px;
+    color: #fff;
+    border-radius: 20px;
+    background-color: #9596a0; }
+  .properties__item-name {
+    display: flex;
+    justify-content: space-between;
+    width: 70px; }
+  .properties__item-icon {
+    color: #9596a0; }
+
+/*!**************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/features/singleBeer/components/Properties/properties.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************/
+.properties {
+  width: 350px; }
+  .properties__header {
+    font-size: 40px;
+    font-weight: 500; }
+  .properties__table {
+    margin: 20px 0; }
+
+/*!*********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/pages/BeerPage/beerPage.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************/
+.beer-page {
+  display: block;
+  text-align: left;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20px; }
+  .beer-page__container {
+    display: flex;
+    justify-content: center;
+    padding: 30px 80px;
+    margin: 0 200px; }
+  .beer-page__main {
+    display: flex;
+    justify-content: space-between; }
+  .beer-page__info {
+    width: 100%;
+    display: block;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
+  .beer-page__button {
+    display: inherit;
+    margin: 20px 0;
+    width: fit-content;
+    padding: 10px 20px;
+    border: none;
+    background-color: #0870ce;
+    color: #e4e7f7; }
+  .beer-page__characteristics {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0; }
+  .beer-page__preparation-section {
+    display: flex;
+    justify-content: space-between;
+    width: max-content; }
+
+/*!********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/features/common/components/BeerItemButtons/beerItemButtons.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************/
+.beer-item__buttons {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 25px; }
+
+.beer-item__button {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  width: fit-content;
+  padding: 0 20px;
+  color: inherit;
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  text-align: left;
+  text-decoration: none; }
+  .beer-item__button:hover {
+    background: #6d6b6b; }
+
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/features/favoritesBeers/components/FavoriteBeerItemInfo/favoriteBeerItemInfo.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************/
+.favorite-beer__item-info-container {
+  display: block;
+  max-width: 500px;
+  max-height: 100%;
+  text-align: left; }
+
+.favorite-beer__item-info-description {
+  margin: 20px 0 40px; }
+
+.favorite-beer__item-info--title {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  padding-bottom: 10px;
+  font-size: 45px; }
+
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/features/favoritesBeers/components/FavoriteBeerItem/favoriteBeerItem.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************/
+.favorite-beer__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-width: fit-content;
+  min-height: fit-content;
+  margin: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 3px 2px rgba(152, 153, 155, 0.5); }
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/components/base/Pagination/pagination.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************/
+.pagination {
+  display: none;
+  justify-content: center;
+  width: 100%;
+  font-size: 25px;
+  margin: 10px;
+  padding: 10px; }
+  .pagination--active {
+    display: flex; }
+  .pagination__container {
+    display: flex;
+    width: 100%;
+    justify-content: center; }
+  .pagination__button {
+    display: inherit;
+    margin: 5px 2px;
+    padding: 10px 15px;
+    border: 1px solid #17395f;
+    background-color: #b6d8ff;
+    border-radius: 40%; }
+    .pagination__button:hover {
+      background-color: #5c85b4; }
+  .pagination__change-page {
+    display: inherit;
+    font-size: 35px;
+    margin: 5px;
+    color: #b6d8ff; }
+    .pagination__change-page:hover {
+      color: #5c85b4; }
+
+/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/pages/FavoritesPage/favoritesPage.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************/
+.favorites-page__header {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  margin: 30px 0; }
+
+.favorites-page__list {
+  display: block;
+  width: 800px; }
+  .favorites-page__list-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 30px; }
+
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/features/beersList/components/BeerItemInfo/beerItemInfo.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************/
+.beer-item-info__container {
+  display: grid;
+  font-size: 16px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  width: 330px;
+  height: 130px;
+  padding: 20px;
+  text-align: left;
+  color: #fff;
+  background: grey; }
+
+.beer-item-info--title {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  padding-bottom: 10px; }
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/features/beersList/components/BeerItem/beerItem.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************/
+.beer__item {
+  display: block;
+  margin-top: 20px; }
+
+/*!*************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/features/beersList/components/FilterItem/filterItem.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************/
+.filter__item {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  padding-top: 20px; }
+
+.filter__slider {
+  display: inline-block;
+  width: 100%;
+  height: 1px;
+  padding: 0; }
+  .filter__slider__container {
+    display: flex;
+    width: 200px;
+    align-items: center; }
+  .filter__slider__label {
+    margin-right: 5px; }
+
+/*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/features/beersList/components/Filter/filter.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************/
+.filter-section__container {
+  display: block; }
+
+.filter {
+  display: block; }
+  .filter__header {
+    display: flex;
+    justify-content: center;
+    font-size: 25px; }
+  .filter__container {
+    font-size: 20px;
+    display: none;
+    justify-content: center;
+    margin: 20px; }
+    .filter__container--active {
+      display: flex; }
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/components/base/SearchBox/searchBox.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************/
+.search-box__input {
+  font-size: 18px;
+  width: 370px;
+  margin-right: 5px;
+  display: inline;
+  color: #949090;
+  border: none;
+  border-bottom: 2px solid #c7c3c3; }
+
+.search-box__button {
+  font-size: 40px;
+  background: none;
+  display: inline;
+  color: #949090;
+  border: none; }
+
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/pages/LandingPage/landingPage.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
+.landing-page__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  width: fit-content;
+  margin: 60px; }
+  .landing-page__list-container {
+    display: flex;
+    justify-content: center;
+    width: 100%; }
+
+/*!******************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/features/common/components/MenuNavbarItem/menuNavbarItem.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************/
+.menu-navbar__item {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  display: flex;
+  width: 150px;
+  text-decoration: none;
+  color: #87888f; }
+  .menu-navbar__item__icon {
+    display: flex;
+    margin-right: 40px;
+    color: #696a6e; }
+  .menu-navbar__item__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px; }
+  .menu-navbar__item:hover {
+    border-bottom: 1px solid #696a6e; }
+
+/*!**********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/features/common/components/MenuNavbar/menuNavbar.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************/
+.menu-navbar {
+  display: flex;
+  justify-content: start;
+  padding-left: 50px;
+  margin-top: 40px; }
+
+/*!**********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/features/common/components/Menu/menu.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************/
+.menu {
+  display: block;
+  width: 350px;
+  height: 100%;
+  border-right: 1px solid #e4e7f7;
+  background-color: #fff; }
+  .menu__container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%; }
+    .menu__container--active {
+      display: flex; }
+  .menu__header {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 25px;
+    display: flex;
+    height: 120px;
+    padding: 30px;
+    color: #e4e7f7;
+    background-color: #0870ce; }
+
+/*!******************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/features/common/components/PageHeaderMain/pageHeaderMain.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************/
+.page-header-main {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  width: fit-content; }
+  .page-header-main__menu {
+    font-size: 32px;
+    display: inherit;
+    margin: 10px; }
+    .page-header-main__menu:hover {
+      color: #fff; }
+
+/*!**********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/features/common/components/PageHeader/pageHeader.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************/
+.page-header {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 25px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  color: #e4e7f7;
+  background-color: #0870ce; }
+  .page-header__settings {
+    margin-right: 10px; }
+    .page-header__settings:hover {
+      color: #fff; }
+
+/*!***********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/styles/fonts/icomoon/style.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************/
+@font-face {
+  font-family: 'icomoon';
+  src: url(1eb12bd8469d8383873d.eot?wvnkju);
+  src: url(1eb12bd8469d8383873d.eot?wvnkju#iefix) format("embedded-opentype"), url(f66b9c2b6f3e4b6812bd.ttf?wvnkju) format("truetype"), url(dfa9e5584837f8357da7.woff?wvnkju) format("woff"), url(49f8070438e9599aded1.svg?wvnkju#icomoon) format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block; }
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-search1:before {
+  content: "\e900"; }
+
+.icon-dots-horizontal-triple:before {
+  content: "\e901"; }
+
+.icon-home:before {
+  content: "\e902"; }
+
+.icon-home2:before {
+  content: "\e903"; }
+
+.icon-home3:before {
+  content: "\e904"; }
+
+.icon-newspaper:before {
+  content: "\e905"; }
+
+.icon-pencil:before {
+  content: "\e906"; }
+
+.icon-pencil2:before {
+  content: "\e907"; }
+
+.icon-quill:before {
+  content: "\e908"; }
+
+.icon-pen:before {
+  content: "\e909"; }
+
+.icon-blog:before {
+  content: "\e90a"; }
+
+.icon-eyedropper:before {
+  content: "\e90b"; }
+
+.icon-droplet:before {
+  content: "\e90c"; }
+
+.icon-paint-format:before {
+  content: "\e90d"; }
+
+.icon-image:before {
+  content: "\e90e"; }
+
+.icon-images:before {
+  content: "\e90f"; }
+
+.icon-camera:before {
+  content: "\e910"; }
+
+.icon-headphones:before {
+  content: "\e911"; }
+
+.icon-music:before {
+  content: "\e912"; }
+
+.icon-play:before {
+  content: "\e913"; }
+
+.icon-film:before {
+  content: "\e914"; }
+
+.icon-video-camera:before {
+  content: "\e915"; }
+
+.icon-dice:before {
+  content: "\e916"; }
+
+.icon-pacman:before {
+  content: "\e917"; }
+
+.icon-spades:before {
+  content: "\e918"; }
+
+.icon-clubs:before {
+  content: "\e919"; }
+
+.icon-diamonds:before {
+  content: "\e91a"; }
+
+.icon-bullhorn:before {
+  content: "\e91b"; }
+
+.icon-connection:before {
+  content: "\e91c"; }
+
+.icon-podcast:before {
+  content: "\e91d"; }
+
+.icon-feed:before {
+  content: "\e91e"; }
+
+.icon-mic:before {
+  content: "\e91f"; }
+
+.icon-book:before {
+  content: "\e920"; }
+
+.icon-books:before {
+  content: "\e921"; }
+
+.icon-library:before {
+  content: "\e922"; }
+
+.icon-file-text:before {
+  content: "\e923"; }
+
+.icon-profile:before {
+  content: "\e924"; }
+
+.icon-file-empty:before {
+  content: "\e925"; }
+
+.icon-files-empty:before {
+  content: "\e926"; }
+
+.icon-file-text2:before {
+  content: "\e927"; }
+
+.icon-file-picture:before {
+  content: "\e928"; }
+
+.icon-file-music:before {
+  content: "\e929"; }
+
+.icon-file-play:before {
+  content: "\e92a"; }
+
+.icon-file-video:before {
+  content: "\e92b"; }
+
+.icon-file-zip:before {
+  content: "\e92c"; }
+
+.icon-copy:before {
+  content: "\e92d"; }
+
+.icon-paste:before {
+  content: "\e92e"; }
+
+.icon-stack:before {
+  content: "\e92f"; }
+
+.icon-folder:before {
+  content: "\e930"; }
+
+.icon-folder-open:before {
+  content: "\e931"; }
+
+.icon-folder-plus:before {
+  content: "\e932"; }
+
+.icon-folder-minus:before {
+  content: "\e933"; }
+
+.icon-folder-download:before {
+  content: "\e934"; }
+
+.icon-folder-upload:before {
+  content: "\e935"; }
+
+.icon-price-tag:before {
+  content: "\e936"; }
+
+.icon-price-tags:before {
+  content: "\e937"; }
+
+.icon-barcode:before {
+  content: "\e938"; }
+
+.icon-qrcode:before {
+  content: "\e939"; }
+
+.icon-ticket:before {
+  content: "\e93a"; }
+
+.icon-cart:before {
+  content: "\e93b"; }
+
+.icon-coin-dollar:before {
+  content: "\e93c"; }
+
+.icon-coin-euro:before {
+  content: "\e93d"; }
+
+.icon-coin-pound:before {
+  content: "\e93e"; }
+
+.icon-coin-yen:before {
+  content: "\e93f"; }
+
+.icon-credit-card:before {
+  content: "\e940"; }
+
+.icon-calculator:before {
+  content: "\e941"; }
+
+.icon-lifebuoy:before {
+  content: "\e942"; }
+
+.icon-phone:before {
+  content: "\e943"; }
+
+.icon-phone-hang-up:before {
+  content: "\e944"; }
+
+.icon-address-book:before {
+  content: "\e945"; }
+
+.icon-envelop:before {
+  content: "\e946"; }
+
+.icon-pushpin:before {
+  content: "\e947"; }
+
+.icon-location:before {
+  content: "\e948"; }
+
+.icon-location2:before {
+  content: "\e949"; }
+
+.icon-compass:before {
+  content: "\e94a"; }
+
+.icon-compass2:before {
+  content: "\e94b"; }
+
+.icon-map:before {
+  content: "\e94c"; }
+
+.icon-map2:before {
+  content: "\e94d"; }
+
+.icon-history:before {
+  content: "\e94e"; }
+
+.icon-clock:before {
+  content: "\e94f"; }
+
+.icon-clock2:before {
+  content: "\e950"; }
+
+.icon-alarm:before {
+  content: "\e951"; }
+
+.icon-bell:before {
+  content: "\e952"; }
+
+.icon-stopwatch:before {
+  content: "\e953"; }
+
+.icon-calendar:before {
+  content: "\e954"; }
+
+.icon-printer:before {
+  content: "\e955"; }
+
+.icon-keyboard:before {
+  content: "\e956"; }
+
+.icon-display:before {
+  content: "\e957"; }
+
+.icon-laptop:before {
+  content: "\e958"; }
+
+.icon-mobile:before {
+  content: "\e959"; }
+
+.icon-mobile2:before {
+  content: "\e95a"; }
+
+.icon-tablet:before {
+  content: "\e95b"; }
+
+.icon-tv:before {
+  content: "\e95c"; }
+
+.icon-drawer:before {
+  content: "\e95d"; }
+
+.icon-drawer2:before {
+  content: "\e95e"; }
+
+.icon-box-add:before {
+  content: "\e95f"; }
+
+.icon-box-remove:before {
+  content: "\e960"; }
+
+.icon-download:before {
+  content: "\e961"; }
+
+.icon-upload:before {
+  content: "\e962"; }
+
+.icon-floppy-disk:before {
+  content: "\e963"; }
+
+.icon-drive:before {
+  content: "\e964"; }
+
+.icon-database:before {
+  content: "\e965"; }
+
+.icon-undo:before {
+  content: "\e966"; }
+
+.icon-redo:before {
+  content: "\e967"; }
+
+.icon-undo2:before {
+  content: "\e968"; }
+
+.icon-redo2:before {
+  content: "\e969"; }
+
+.icon-forward:before {
+  content: "\e96a"; }
+
+.icon-reply:before {
+  content: "\e96b"; }
+
+.icon-bubble:before {
+  content: "\e96c"; }
+
+.icon-bubbles:before {
+  content: "\e96d"; }
+
+.icon-bubbles2:before {
+  content: "\e96e"; }
+
+.icon-bubble2:before {
+  content: "\e96f"; }
+
+.icon-bubbles3:before {
+  content: "\e970"; }
+
+.icon-bubbles4:before {
+  content: "\e971"; }
+
+.icon-user:before {
+  content: "\e972"; }
+
+.icon-users:before {
+  content: "\e973"; }
+
+.icon-user-plus:before {
+  content: "\e974"; }
+
+.icon-user-minus:before {
+  content: "\e975"; }
+
+.icon-user-check:before {
+  content: "\e976"; }
+
+.icon-user-tie:before {
+  content: "\e977"; }
+
+.icon-quotes-left:before {
+  content: "\e978"; }
+
+.icon-quotes-right:before {
+  content: "\e979"; }
+
+.icon-hour-glass:before {
+  content: "\e97a"; }
+
+.icon-spinner:before {
+  content: "\e97b"; }
+
+.icon-spinner2:before {
+  content: "\e97c"; }
+
+.icon-spinner3:before {
+  content: "\e97d"; }
+
+.icon-spinner4:before {
+  content: "\e97e"; }
+
+.icon-spinner5:before {
+  content: "\e97f"; }
+
+.icon-spinner6:before {
+  content: "\e980"; }
+
+.icon-spinner7:before {
+  content: "\e981"; }
+
+.icon-spinner8:before {
+  content: "\e982"; }
+
+.icon-spinner9:before {
+  content: "\e983"; }
+
+.icon-spinner10:before {
+  content: "\e984"; }
+
+.icon-spinner11:before {
+  content: "\e985"; }
+
+.icon-binoculars:before {
+  content: "\e986"; }
+
+.icon-search:before {
+  content: "\e987"; }
+
+.icon-zoom-in:before {
+  content: "\e988"; }
+
+.icon-zoom-out:before {
+  content: "\e989"; }
+
+.icon-enlarge:before {
+  content: "\e98a"; }
+
+.icon-shrink:before {
+  content: "\e98b"; }
+
+.icon-enlarge2:before {
+  content: "\e98c"; }
+
+.icon-shrink2:before {
+  content: "\e98d"; }
+
+.icon-key:before {
+  content: "\e98e"; }
+
+.icon-key2:before {
+  content: "\e98f"; }
+
+.icon-lock:before {
+  content: "\e990"; }
+
+.icon-unlocked:before {
+  content: "\e991"; }
+
+.icon-wrench:before {
+  content: "\e992"; }
+
+.icon-equalizer:before {
+  content: "\e993"; }
+
+.icon-equalizer2:before {
+  content: "\e994"; }
+
+.icon-cog:before {
+  content: "\e995"; }
+
+.icon-cogs:before {
+  content: "\e996"; }
+
+.icon-hammer:before {
+  content: "\e997"; }
+
+.icon-magic-wand:before {
+  content: "\e998"; }
+
+.icon-aid-kit:before {
+  content: "\e999"; }
+
+.icon-bug:before {
+  content: "\e99a"; }
+
+.icon-pie-chart:before {
+  content: "\e99b"; }
+
+.icon-stats-bars:before {
+  content: "\e99c"; }
+
+.icon-stats-bars2:before {
+  content: "\e99d"; }
+
+.icon-trophy:before {
+  content: "\e99e"; }
+
+.icon-gift:before {
+  content: "\e99f"; }
+
+.icon-glass:before {
+  content: "\e9a0"; }
+
+.icon-glass2:before {
+  content: "\e9a1"; }
+
+.icon-mug:before {
+  content: "\e9a2"; }
+
+.icon-spoon-knife:before {
+  content: "\e9a3"; }
+
+.icon-leaf:before {
+  content: "\e9a4"; }
+
+.icon-rocket:before {
+  content: "\e9a5"; }
+
+.icon-meter:before {
+  content: "\e9a6"; }
+
+.icon-meter2:before {
+  content: "\e9a7"; }
+
+.icon-hammer2:before {
+  content: "\e9a8"; }
+
+.icon-fire:before {
+  content: "\e9a9"; }
+
+.icon-lab:before {
+  content: "\e9aa"; }
+
+.icon-magnet:before {
+  content: "\e9ab"; }
+
+.icon-bin:before {
+  content: "\e9ac"; }
+
+.icon-bin2:before {
+  content: "\e9ad"; }
+
+.icon-briefcase:before {
+  content: "\e9ae"; }
+
+.icon-airplane:before {
+  content: "\e9af"; }
+
+.icon-truck:before {
+  content: "\e9b0"; }
+
+.icon-road:before {
+  content: "\e9b1"; }
+
+.icon-accessibility:before {
+  content: "\e9b2"; }
+
+.icon-target:before {
+  content: "\e9b3"; }
+
+.icon-shield:before {
+  content: "\e9b4"; }
+
+.icon-power:before {
+  content: "\e9b5"; }
+
+.icon-switch:before {
+  content: "\e9b6"; }
+
+.icon-power-cord:before {
+  content: "\e9b7"; }
+
+.icon-clipboard:before {
+  content: "\e9b8"; }
+
+.icon-list-numbered:before {
+  content: "\e9b9"; }
+
+.icon-list:before {
+  content: "\e9ba"; }
+
+.icon-list2:before {
+  content: "\e9bb"; }
+
+.icon-tree:before {
+  content: "\e9bc"; }
+
+.icon-menu:before {
+  content: "\e9bd"; }
+
+.icon-menu2:before {
+  content: "\e9be"; }
+
+.icon-menu3:before {
+  content: "\e9bf"; }
+
+.icon-menu4:before {
+  content: "\e9c0"; }
+
+.icon-cloud:before {
+  content: "\e9c1"; }
+
+.icon-cloud-download:before {
+  content: "\e9c2"; }
+
+.icon-cloud-upload:before {
+  content: "\e9c3"; }
+
+.icon-cloud-check:before {
+  content: "\e9c4"; }
+
+.icon-download2:before {
+  content: "\e9c5"; }
+
+.icon-upload2:before {
+  content: "\e9c6"; }
+
+.icon-download3:before {
+  content: "\e9c7"; }
+
+.icon-upload3:before {
+  content: "\e9c8"; }
+
+.icon-sphere:before {
+  content: "\e9c9"; }
+
+.icon-earth:before {
+  content: "\e9ca"; }
+
+.icon-link:before {
+  content: "\e9cb"; }
+
+.icon-flag:before {
+  content: "\e9cc"; }
+
+.icon-attachment:before {
+  content: "\e9cd"; }
+
+.icon-eye:before {
+  content: "\e9ce"; }
+
+.icon-eye-plus:before {
+  content: "\e9cf"; }
+
+.icon-eye-minus:before {
+  content: "\e9d0"; }
+
+.icon-eye-blocked:before {
+  content: "\e9d1"; }
+
+.icon-bookmark:before {
+  content: "\e9d2"; }
+
+.icon-bookmarks:before {
+  content: "\e9d3"; }
+
+.icon-sun:before {
+  content: "\e9d4"; }
+
+.icon-contrast:before {
+  content: "\e9d5"; }
+
+.icon-brightness-contrast:before {
+  content: "\e9d6"; }
+
+.icon-star-empty:before {
+  content: "\e9d7"; }
+
+.icon-star-half:before {
+  content: "\e9d8"; }
+
+.icon-star-full:before {
+  content: "\e9d9"; }
+
+.icon-heart:before {
+  content: "\e9da"; }
+
+.icon-heart-broken:before {
+  content: "\e9db"; }
+
+.icon-man:before {
+  content: "\e9dc"; }
+
+.icon-woman:before {
+  content: "\e9dd"; }
+
+.icon-man-woman:before {
+  content: "\e9de"; }
+
+.icon-happy:before {
+  content: "\e9df"; }
+
+.icon-happy2:before {
+  content: "\e9e0"; }
+
+.icon-smile:before {
+  content: "\e9e1"; }
+
+.icon-smile2:before {
+  content: "\e9e2"; }
+
+.icon-tongue:before {
+  content: "\e9e3"; }
+
+.icon-tongue2:before {
+  content: "\e9e4"; }
+
+.icon-sad:before {
+  content: "\e9e5"; }
+
+.icon-sad2:before {
+  content: "\e9e6"; }
+
+.icon-wink:before {
+  content: "\e9e7"; }
+
+.icon-wink2:before {
+  content: "\e9e8"; }
+
+.icon-grin:before {
+  content: "\e9e9"; }
+
+.icon-grin2:before {
+  content: "\e9ea"; }
+
+.icon-cool:before {
+  content: "\e9eb"; }
+
+.icon-cool2:before {
+  content: "\e9ec"; }
+
+.icon-angry:before {
+  content: "\e9ed"; }
+
+.icon-angry2:before {
+  content: "\e9ee"; }
+
+.icon-evil:before {
+  content: "\e9ef"; }
+
+.icon-evil2:before {
+  content: "\e9f0"; }
+
+.icon-shocked:before {
+  content: "\e9f1"; }
+
+.icon-shocked2:before {
+  content: "\e9f2"; }
+
+.icon-baffled:before {
+  content: "\e9f3"; }
+
+.icon-baffled2:before {
+  content: "\e9f4"; }
+
+.icon-confused:before {
+  content: "\e9f5"; }
+
+.icon-confused2:before {
+  content: "\e9f6"; }
+
+.icon-neutral:before {
+  content: "\e9f7"; }
+
+.icon-neutral2:before {
+  content: "\e9f8"; }
+
+.icon-hipster:before {
+  content: "\e9f9"; }
+
+.icon-hipster2:before {
+  content: "\e9fa"; }
+
+.icon-wondering:before {
+  content: "\e9fb"; }
+
+.icon-wondering2:before {
+  content: "\e9fc"; }
+
+.icon-sleepy:before {
+  content: "\e9fd"; }
+
+.icon-sleepy2:before {
+  content: "\e9fe"; }
+
+.icon-frustrated:before {
+  content: "\e9ff"; }
+
+.icon-frustrated2:before {
+  content: "\ea00"; }
+
+.icon-crying:before {
+  content: "\ea01"; }
+
+.icon-crying2:before {
+  content: "\ea02"; }
+
+.icon-point-up:before {
+  content: "\ea03"; }
+
+.icon-point-right:before {
+  content: "\ea04"; }
+
+.icon-point-down:before {
+  content: "\ea05"; }
+
+.icon-point-left:before {
+  content: "\ea06"; }
+
+.icon-warning:before {
+  content: "\ea07"; }
+
+.icon-notification:before {
+  content: "\ea08"; }
+
+.icon-question:before {
+  content: "\ea09"; }
+
+.icon-plus:before {
+  content: "\ea0a"; }
+
+.icon-minus:before {
+  content: "\ea0b"; }
+
+.icon-info:before {
+  content: "\ea0c"; }
+
+.icon-cancel-circle:before {
+  content: "\ea0d"; }
+
+.icon-blocked:before {
+  content: "\ea0e"; }
+
+.icon-cross:before {
+  content: "\ea0f"; }
+
+.icon-checkmark:before {
+  content: "\ea10"; }
+
+.icon-checkmark2:before {
+  content: "\ea11"; }
+
+.icon-spell-check:before {
+  content: "\ea12"; }
+
+.icon-enter:before {
+  content: "\ea13"; }
+
+.icon-exit:before {
+  content: "\ea14"; }
+
+.icon-play2:before {
+  content: "\ea15"; }
+
+.icon-pause:before {
+  content: "\ea16"; }
+
+.icon-stop:before {
+  content: "\ea17"; }
+
+.icon-previous:before {
+  content: "\ea18"; }
+
+.icon-next:before {
+  content: "\ea19"; }
+
+.icon-backward:before {
+  content: "\ea1a"; }
+
+.icon-forward2:before {
+  content: "\ea1b"; }
+
+.icon-play3:before {
+  content: "\ea1c"; }
+
+.icon-pause2:before {
+  content: "\ea1d"; }
+
+.icon-stop2:before {
+  content: "\ea1e"; }
+
+.icon-backward2:before {
+  content: "\ea1f"; }
+
+.icon-forward3:before {
+  content: "\ea20"; }
+
+.icon-first:before {
+  content: "\ea21"; }
+
+.icon-last:before {
+  content: "\ea22"; }
+
+.icon-previous2:before {
+  content: "\ea23"; }
+
+.icon-next2:before {
+  content: "\ea24"; }
+
+.icon-eject:before {
+  content: "\ea25"; }
+
+.icon-volume-high:before {
+  content: "\ea26"; }
+
+.icon-volume-medium:before {
+  content: "\ea27"; }
+
+.icon-volume-low:before {
+  content: "\ea28"; }
+
+.icon-volume-mute:before {
+  content: "\ea29"; }
+
+.icon-volume-mute2:before {
+  content: "\ea2a"; }
+
+.icon-volume-increase:before {
+  content: "\ea2b"; }
+
+.icon-volume-decrease:before {
+  content: "\ea2c"; }
+
+.icon-loop:before {
+  content: "\ea2d"; }
+
+.icon-loop2:before {
+  content: "\ea2e"; }
+
+.icon-infinite:before {
+  content: "\ea2f"; }
+
+.icon-shuffle:before {
+  content: "\ea30"; }
+
+.icon-arrow-up-left:before {
+  content: "\ea31"; }
+
+.icon-arrow-up:before {
+  content: "\ea32"; }
+
+.icon-arrow-up-right:before {
+  content: "\ea33"; }
+
+.icon-arrow-right:before {
+  content: "\ea34"; }
+
+.icon-arrow-down-right:before {
+  content: "\ea35"; }
+
+.icon-arrow-down:before {
+  content: "\ea36"; }
+
+.icon-arrow-down-left:before {
+  content: "\ea37"; }
+
+.icon-arrow-left:before {
+  content: "\ea38"; }
+
+.icon-arrow-up-left2:before {
+  content: "\ea39"; }
+
+.icon-arrow-up2:before {
+  content: "\ea3a"; }
+
+.icon-arrow-up-right2:before {
+  content: "\ea3b"; }
+
+.icon-arrow-right2:before {
+  content: "\ea3c"; }
+
+.icon-arrow-down-right2:before {
+  content: "\ea3d"; }
+
+.icon-arrow-down2:before {
+  content: "\ea3e"; }
+
+.icon-arrow-down-left2:before {
+  content: "\ea3f"; }
+
+.icon-arrow-left2:before {
+  content: "\ea40"; }
+
+.icon-circle-up:before {
+  content: "\ea41"; }
+
+.icon-circle-right:before {
+  content: "\ea42"; }
+
+.icon-circle-down:before {
+  content: "\ea43"; }
+
+.icon-circle-left:before {
+  content: "\ea44"; }
+
+.icon-tab:before {
+  content: "\ea45"; }
+
+.icon-move-up:before {
+  content: "\ea46"; }
+
+.icon-move-down:before {
+  content: "\ea47"; }
+
+.icon-sort-alpha-asc:before {
+  content: "\ea48"; }
+
+.icon-sort-alpha-desc:before {
+  content: "\ea49"; }
+
+.icon-sort-numeric-asc:before {
+  content: "\ea4a"; }
+
+.icon-sort-numberic-desc:before {
+  content: "\ea4b"; }
+
+.icon-sort-amount-asc:before {
+  content: "\ea4c"; }
+
+.icon-sort-amount-desc:before {
+  content: "\ea4d"; }
+
+.icon-command:before {
+  content: "\ea4e"; }
+
+.icon-shift:before {
+  content: "\ea4f"; }
+
+.icon-ctrl:before {
+  content: "\ea50"; }
+
+.icon-opt:before {
+  content: "\ea51"; }
+
+.icon-checkbox-checked:before {
+  content: "\ea52"; }
+
+.icon-checkbox-unchecked:before {
+  content: "\ea53"; }
+
+.icon-radio-checked:before {
+  content: "\ea54"; }
+
+.icon-radio-checked2:before {
+  content: "\ea55"; }
+
+.icon-radio-unchecked:before {
+  content: "\ea56"; }
+
+.icon-crop:before {
+  content: "\ea57"; }
+
+.icon-make-group:before {
+  content: "\ea58"; }
+
+.icon-ungroup:before {
+  content: "\ea59"; }
+
+.icon-scissors:before {
+  content: "\ea5a"; }
+
+.icon-filter:before {
+  content: "\ea5b"; }
+
+.icon-font:before {
+  content: "\ea5c"; }
+
+.icon-ligature:before {
+  content: "\ea5d"; }
+
+.icon-ligature2:before {
+  content: "\ea5e"; }
+
+.icon-text-height:before {
+  content: "\ea5f"; }
+
+.icon-text-width:before {
+  content: "\ea60"; }
+
+.icon-font-size:before {
+  content: "\ea61"; }
+
+.icon-bold:before {
+  content: "\ea62"; }
+
+.icon-underline:before {
+  content: "\ea63"; }
+
+.icon-italic:before {
+  content: "\ea64"; }
+
+.icon-strikethrough:before {
+  content: "\ea65"; }
+
+.icon-omega:before {
+  content: "\ea66"; }
+
+.icon-sigma:before {
+  content: "\ea67"; }
+
+.icon-page-break:before {
+  content: "\ea68"; }
+
+.icon-superscript:before {
+  content: "\ea69"; }
+
+.icon-subscript:before {
+  content: "\ea6a"; }
+
+.icon-superscript2:before {
+  content: "\ea6b"; }
+
+.icon-subscript2:before {
+  content: "\ea6c"; }
+
+.icon-text-color:before {
+  content: "\ea6d"; }
+
+.icon-pagebreak:before {
+  content: "\ea6e"; }
+
+.icon-clear-formatting:before {
+  content: "\ea6f"; }
+
+.icon-table:before {
+  content: "\ea70"; }
+
+.icon-table2:before {
+  content: "\ea71"; }
+
+.icon-insert-template:before {
+  content: "\ea72"; }
+
+.icon-pilcrow:before {
+  content: "\ea73"; }
+
+.icon-ltr:before {
+  content: "\ea74"; }
+
+.icon-rtl:before {
+  content: "\ea75"; }
+
+.icon-section:before {
+  content: "\ea76"; }
+
+.icon-paragraph-left:before {
+  content: "\ea77"; }
+
+.icon-paragraph-center:before {
+  content: "\ea78"; }
+
+.icon-paragraph-right:before {
+  content: "\ea79"; }
+
+.icon-paragraph-justify:before {
+  content: "\ea7a"; }
+
+.icon-indent-increase:before {
+  content: "\ea7b"; }
+
+.icon-indent-decrease:before {
+  content: "\ea7c"; }
+
+.icon-share:before {
+  content: "\ea7d"; }
+
+.icon-new-tab:before {
+  content: "\ea7e"; }
+
+.icon-embed:before {
+  content: "\ea7f"; }
+
+.icon-embed2:before {
+  content: "\ea80"; }
+
+.icon-terminal:before {
+  content: "\ea81"; }
+
+.icon-share2:before {
+  content: "\ea82"; }
+
+.icon-mail:before {
+  content: "\ea83"; }
+
+.icon-mail2:before {
+  content: "\ea84"; }
+
+.icon-mail3:before {
+  content: "\ea85"; }
+
+.icon-mail4:before {
+  content: "\ea86"; }
+
+.icon-amazon:before {
+  content: "\ea87"; }
+
+.icon-google:before {
+  content: "\ea88"; }
+
+.icon-google2:before {
+  content: "\ea89"; }
+
+.icon-google3:before {
+  content: "\ea8a"; }
+
+.icon-google-plus:before {
+  content: "\ea8b"; }
+
+.icon-google-plus2:before {
+  content: "\ea8c"; }
+
+.icon-google-plus3:before {
+  content: "\ea8d"; }
+
+.icon-hangouts:before {
+  content: "\ea8e"; }
+
+.icon-google-drive:before {
+  content: "\ea8f"; }
+
+.icon-facebook:before {
+  content: "\ea90"; }
+
+.icon-facebook2:before {
+  content: "\ea91"; }
+
+.icon-instagram:before {
+  content: "\ea92"; }
+
+.icon-whatsapp:before {
+  content: "\ea93"; }
+
+.icon-spotify:before {
+  content: "\ea94"; }
+
+.icon-telegram:before {
+  content: "\ea95"; }
+
+.icon-twitter:before {
+  content: "\ea96"; }
+
+.icon-vine:before {
+  content: "\ea97"; }
+
+.icon-vk:before {
+  content: "\ea98"; }
+
+.icon-renren:before {
+  content: "\ea99"; }
+
+.icon-sina-weibo:before {
+  content: "\ea9a"; }
+
+.icon-rss:before {
+  content: "\ea9b"; }
+
+.icon-rss2:before {
+  content: "\ea9c"; }
+
+.icon-youtube:before {
+  content: "\ea9d"; }
+
+.icon-youtube2:before {
+  content: "\ea9e"; }
+
+.icon-twitch:before {
+  content: "\ea9f"; }
+
+.icon-vimeo:before {
+  content: "\eaa0"; }
+
+.icon-vimeo2:before {
+  content: "\eaa1"; }
+
+.icon-lanyrd:before {
+  content: "\eaa2"; }
+
+.icon-flickr:before {
+  content: "\eaa3"; }
+
+.icon-flickr2:before {
+  content: "\eaa4"; }
+
+.icon-flickr3:before {
+  content: "\eaa5"; }
+
+.icon-flickr4:before {
+  content: "\eaa6"; }
+
+.icon-dribbble:before {
+  content: "\eaa7"; }
+
+.icon-behance:before {
+  content: "\eaa8"; }
+
+.icon-behance2:before {
+  content: "\eaa9"; }
+
+.icon-deviantart:before {
+  content: "\eaaa"; }
+
+.icon-500px:before {
+  content: "\eaab"; }
+
+.icon-steam:before {
+  content: "\eaac"; }
+
+.icon-steam2:before {
+  content: "\eaad"; }
+
+.icon-dropbox:before {
+  content: "\eaae"; }
+
+.icon-onedrive:before {
+  content: "\eaaf"; }
+
+.icon-github:before {
+  content: "\eab0"; }
+
+.icon-npm:before {
+  content: "\eab1"; }
+
+.icon-basecamp:before {
+  content: "\eab2"; }
+
+.icon-trello:before {
+  content: "\eab3"; }
+
+.icon-wordpress:before {
+  content: "\eab4"; }
+
+.icon-joomla:before {
+  content: "\eab5"; }
+
+.icon-ello:before {
+  content: "\eab6"; }
+
+.icon-blogger:before {
+  content: "\eab7"; }
+
+.icon-blogger2:before {
+  content: "\eab8"; }
+
+.icon-tumblr:before {
+  content: "\eab9"; }
+
+.icon-tumblr2:before {
+  content: "\eaba"; }
+
+.icon-yahoo:before {
+  content: "\eabb"; }
+
+.icon-yahoo2:before {
+  content: "\eabc"; }
+
+.icon-tux:before {
+  content: "\eabd"; }
+
+.icon-appleinc:before {
+  content: "\eabe"; }
+
+.icon-finder:before {
+  content: "\eabf"; }
+
+.icon-android:before {
+  content: "\eac0"; }
+
+.icon-windows:before {
+  content: "\eac1"; }
+
+.icon-windows8:before {
+  content: "\eac2"; }
+
+.icon-soundcloud:before {
+  content: "\eac3"; }
+
+.icon-soundcloud2:before {
+  content: "\eac4"; }
+
+.icon-skype:before {
+  content: "\eac5"; }
+
+.icon-reddit:before {
+  content: "\eac6"; }
+
+.icon-hackernews:before {
+  content: "\eac7"; }
+
+.icon-wikipedia:before {
+  content: "\eac8"; }
+
+.icon-linkedin:before {
+  content: "\eac9"; }
+
+.icon-linkedin2:before {
+  content: "\eaca"; }
+
+.icon-lastfm:before {
+  content: "\eacb"; }
+
+.icon-lastfm2:before {
+  content: "\eacc"; }
+
+.icon-delicious:before {
+  content: "\eacd"; }
+
+.icon-stumbleupon:before {
+  content: "\eace"; }
+
+.icon-stumbleupon2:before {
+  content: "\eacf"; }
+
+.icon-stackoverflow:before {
+  content: "\ead0"; }
+
+.icon-pinterest:before {
+  content: "\ead1"; }
+
+.icon-pinterest2:before {
+  content: "\ead2"; }
+
+.icon-xing:before {
+  content: "\ead3"; }
+
+.icon-xing2:before {
+  content: "\ead4"; }
+
+.icon-flattr:before {
+  content: "\ead5"; }
+
+.icon-foursquare:before {
+  content: "\ead6"; }
+
+.icon-yelp:before {
+  content: "\ead7"; }
+
+.icon-paypal:before {
+  content: "\ead8"; }
+
+.icon-chrome:before {
+  content: "\ead9"; }
+
+.icon-firefox:before {
+  content: "\eada"; }
+
+.icon-IE:before {
+  content: "\eadb"; }
+
+.icon-edge:before {
+  content: "\eadc"; }
+
+.icon-safari:before {
+  content: "\eadd"; }
+
+.icon-opera:before {
+  content: "\eade"; }
+
+.icon-file-pdf:before {
+  content: "\eadf"; }
+
+.icon-file-openoffice:before {
+  content: "\eae0"; }
+
+.icon-file-word:before {
+  content: "\eae1"; }
+
+.icon-file-excel:before {
+  content: "\eae2"; }
+
+.icon-libreoffice:before {
+  content: "\eae3"; }
+
+.icon-html-five:before {
+  content: "\eae4"; }
+
+.icon-html-five2:before {
+  content: "\eae5"; }
+
+.icon-css3:before {
+  content: "\eae6"; }
+
+.icon-git:before {
+  content: "\eae7"; }
+
+.icon-codepen:before {
+  content: "\eae8"; }
+
+.icon-svg:before {
+  content: "\eae9"; }
+
+.icon-IcoMoon:before {
+  content: "\eaea"; }
+
+/*!****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/components/App/app.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************/
+.app {
+  text-align: center;
+  padding-top: 100px; }
+
+/*!*************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/styles/css/reset.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
