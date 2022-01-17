@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import FavoriteBeerItem from 'features/favoritesBeers/components/FavoriteBeerItem/favoriteBeerItem';
+import BeerItem from 'features/common/components/BeerItem/beerItem';
 import List from 'components/base/List/list';
 import Pagination from 'components/base/Pagination/pagination';
 
@@ -30,9 +30,11 @@ export default function FavoritesPage() {
     for (let i = 0, j = 0; j < amountOfFavoriteBeers; i += 5, j++) {
         renderedBeers[j] = Array.from(favoriteBeers.slice(i, i + 5).map(favoriteBeer => {
             return (
-                <FavoriteBeerItem
+                <BeerItem
                     key={favoriteBeer.id}
-                    favoriteBeer={favoriteBeer}
+                    beer={favoriteBeer}
+                    itemClassName="favorite-page__beer-item"
+                    isSimpleBeerMode={false}
                     onRemoveFavoriteClick={onRemoveFavoriteClick}
                 />
             );

@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import BeerItem from 'features/beersList/components/BeerItem/beerItem';
+import BeerItem from 'features/common/components/BeerItem/beerItem';
 import Filter from 'features/beersList/components/Filter/filter';
 import List from 'components/base/List/list';
 import LoadingIndicator from 'components/base/LoadingIndicator/loadingIndicator';
@@ -107,7 +107,7 @@ export default function LandingPage() {
         );
     }
 
-    const renderedRows = filtredBeers.map(beer => <BeerItem key={beer.id} beer={beer} />);
+    const renderedRows = filtredBeers.map(beer => <BeerItem key={beer.id} beer={beer} isSimpleBeerMode={true} />);
 
     return (
         <div>
