@@ -11,12 +11,12 @@ export default function MenuNavbar() {
             <li>
                 <MenuNavbarItem
                     link="/"
-                    iconClassName="icon-drawer2 menu-navbar__item__icon"
+                    iconClassName="icon-drawer2"
                     name="Home"
                 />
                 <MenuNavbarItem
                     link="/favorites"
-                    iconClassName="icon-star-full menu-navbar__item__icon"
+                    iconClassName="icon-star-full"
                     name="Favorites"
                 />
             </li>

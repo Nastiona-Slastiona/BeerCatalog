@@ -4,21 +4,20 @@
 .beer-item-image {
   width: auto;
   height: 80%;
+}
 
-  &__container {
-    width: 150px;
-    height: 150px;
-    margin: 5px;
+.beer-item-image__background {
+  width: 150px;
+  height: 150px;
+  margin: 5px;
+  border-radius: 50%;
+  background-color: $primary-color;
 
-    border-radius: 50%;
-    background-color: $primary-color;
+  @include centered-content;
+}
 
-    @include beer-item-image-content;
-  }
+.beer-item-image__container {
+  max-width: 100%;
 
-  &__section {
-    max-width: 100%;
-
-    @include beer-item-image-content;
-  }
+  @include centered-content;
 }

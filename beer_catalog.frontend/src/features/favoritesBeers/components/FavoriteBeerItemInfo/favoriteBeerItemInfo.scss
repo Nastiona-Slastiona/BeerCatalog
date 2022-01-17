@@ -1,21 +1,20 @@
 @import 'src/styles/scss/mixins';
 
-.favorite-beer__item-info {
-  &-container {
-    display: block;
+.favorite-beer-item-info__description {
+  margin: 20px 0 40px;
+}
 
-    max-width: 500px;
-    max-height: 100%;
+.favorite-beer-item-info__container {
+  display: block;
 
-    text-align: left;
-  }
+  max-width: 500px;
+  max-height: 100%;
 
-  &-description {
-    margin: 20px 0 40px;
-  }
+  text-align: left;
+}
 
-  &--title {
-    @include title;
-    font-size: 45px;
-  }
+.favorite-beer-item-info__title {
+  font-size: 45px;
+
+  @include title;
 }

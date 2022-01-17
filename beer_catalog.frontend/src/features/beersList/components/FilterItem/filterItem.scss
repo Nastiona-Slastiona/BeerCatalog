@@ -1,4 +1,4 @@
-.filter__item {
+.filter-item {
   display: flex;
   justify-content: space-between;
 
@@ -6,12 +6,13 @@
   padding-top: 20px;
 }
 
-.filter__slider {
+.filter-item__slider {
   display: inline-flex;
+
   width: 200px;
   height: 1px;
+}
 
-  &__label {
-    margin-right: 5px;
-  }
+.filter-item__label {
+  margin-right: 5px;
 }

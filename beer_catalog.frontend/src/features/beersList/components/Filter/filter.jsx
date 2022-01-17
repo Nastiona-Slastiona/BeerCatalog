@@ -12,11 +12,11 @@ function Filter({ isVisible, onChange }) {
 
     return (
         <div className={classes}>
-            <div className="filter">
+            <div>
                 <h1 className="filter__header">
                     Filter results
                 </h1>
-                <div className="filter-section__container">
+                <div>
                     <FilterItem
                         name="abv"
                         fullName="Alcohol by volume"

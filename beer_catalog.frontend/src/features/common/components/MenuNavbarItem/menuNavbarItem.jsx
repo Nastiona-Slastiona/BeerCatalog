@@ -7,9 +7,9 @@ import './menuNavbarItem.scss';
 
 function MenuNavbarItem({ link, iconClassName, name }) {
     return (
-        <div className="menu-navbar__item__container">
-            <span className={iconClassName} />
-            <Link className="menu-navbar__item" to={link}>{name}</Link>
+        <div className="menu-navbar-item__container">
+            <span className={`${iconClassName} menu-navbar-item__icon`} />
+            <Link className="menu-navbar-item" to={link}>{name}</Link>
         </div>
     );
 }

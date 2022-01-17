@@ -1,32 +1,29 @@
 @import 'src/styles/scss/mixins';
-
 $bg-color: #9596a0;
 
-.properties__item {
+.properties-item {
   align-items: center;
-  justify-content: space-between;
-  display: flex;
+
+  color: $bg-color;
+
+  @include two-columns;
 
   @include table-item;
+}
 
-  &-value {
-    display: flex;
+.properties-item__value {
+  display: flex;
 
-    padding: 5px 20px;
+  padding: 5px 20px;
 
-    color: #fff;
-    border-radius: 20px;
-    background-color: $bg-color;
-  }
+  color: #fff;
+  border-radius: 20px;
+  background-color: $bg-color;
+}
 
-  &-name {
-    display: flex;
-    justify-content: space-between;
+.properties-item__name {
+  display: flex;
+  justify-content: space-between;
 
-    width: 70px;
-  }
-
-  &-icon {
-    color: $bg-color;
-  }
+  width: 70px;
 }

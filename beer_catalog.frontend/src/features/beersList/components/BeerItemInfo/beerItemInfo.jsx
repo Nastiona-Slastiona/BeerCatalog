@@ -9,7 +9,7 @@ import './beerItemInfo.scss';
 
 function BeerItemInfo({ beer }) {
     return (
-        <div className="beer-item-info__container ">
+        <div className="beer-item-info">
             <Label className="beer-item-info--title">{beer.name}</Label>
             <Label>{beer.tagline}</Label>
             <BeerItemActionsSection beer={beer} />

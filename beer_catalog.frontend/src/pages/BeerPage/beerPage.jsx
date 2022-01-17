@@ -17,7 +17,7 @@ import './beerPage.scss';
 export default function BeerPage() {
     const location = useLocation();
     const beerId = +location.pathname.slice(10);
-    const beer = useSelector(state => state.beers.beers.filter(b => b.id === beerId))[0];
+    const beer = useSelector(state => state.beers.beersList.filter(b => b.id === beerId))[0];
 
     return (
         <div className="beer-page__container">
@@ -32,7 +32,7 @@ export default function BeerPage() {
                         />
                         <div>{beer.description}</div>
                     </div>
-                    <BeerItemImage image={beer.image_url} />
+                    <BeerItemImage imageUrl={beer.image_url} />
                 </div>
                 <div className="beer-page__characteristics">
                     <Properties beer={beer} />

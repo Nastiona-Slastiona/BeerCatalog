@@ -1,19 +1,23 @@
 @import 'src/styles/scss/main';
 
-.beer-item-buttons__container {
+.beer-item-actions-section__container {
   display: flex;
   justify-content: space-between;
 
   padding-top: 25px;
 }
 
-.beer-item-buttons {
+.beer-item-actions-section {
   font: {
     family: $font-family;
     size: 20px;
   }
+
+  display: flex;
+  align-items: center;
   width: fit-content;
   padding: 0 20px;
+
   color: inherit;
   border: none;
   background: none;
@@ -24,8 +28,7 @@
     align: left;
     decoration: none;
   }
-
   &:hover {
-    background: #808080;
+    background: #494949;
   }
 }

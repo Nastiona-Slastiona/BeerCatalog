@@ -40,12 +40,12 @@ export default function FavoritesPage() {
     }
 
     return (
-        <div className="favorites-page">
-            <div className="favorites-page__header">Your Favorite beers</div>
+        <div>
+            <h2>Your Favorite beers</h2>
             <List
                 renderedItems={renderedBeers[pageShown]}
-                containerClassName="favorites-page__list-container"
-                listClassName="favorites-page__list"
+                containerClassName="favorites-page__container"
+                listClassName="favorites-page"
             />
             <Pagination
                 beers={favoriteBeers}

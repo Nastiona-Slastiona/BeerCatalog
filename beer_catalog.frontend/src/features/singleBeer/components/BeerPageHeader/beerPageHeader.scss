@@ -2,22 +2,18 @@
 @import 'src/styles/scss/main';
 
 .beer-page__header {
-  display: inline;
-  width: 100%;
-  text-align: left;
-  font-size: 32px;
-
   &--tagline {
-    color: #808080;
     font: {
       style: italic;
       family: $font-family;
-      size: 60%;
+      size: 80%;
     }
+    color: #808080;
   }
 
   &--title {
+    font-size: 54pt;
+
     @include title;
-    font-size: 54px;
   }
 }

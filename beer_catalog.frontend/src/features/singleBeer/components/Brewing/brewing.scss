@@ -1,14 +1,10 @@
 @import 'src/styles/scss/mixins';
 
-.brewing {
-  display: block;
+.brewing__header {
+  @include header;
+}
 
-  &__header {
-    @include header;
-  }
-
-  &__description {
-    margin: 20px 0;
-    width: 85%;
-  }
+.brewing__description {
+  margin: 20px 0;
+  width: 85%;
 }

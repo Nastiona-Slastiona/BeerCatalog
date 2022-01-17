@@ -2,9 +2,10 @@
 
 .food-pairing__item {
   display: flex;
-  text-align: center;
-  width: 100%;
 
-  @include table-item;
+  width: 100%;
   padding: 30px 20px;
+
+  text-align: center;
+  @include table-item;
 }

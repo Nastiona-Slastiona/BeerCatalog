@@ -1,16 +1,9 @@
 @import 'src/styles/scss/mixins';
 
-.ingredients {
-  display: block;
-  width: 450px;
-  min-width: fit-content;
-  margin-right: 50px;
+.ingredients__header {
+  @include header;
+}
 
-  &__header {
-    @include header;
-  }
-
-  &__table {
-    margin: 20px 0;
-  }
+.ingredients__table {
+  @include table;
 }

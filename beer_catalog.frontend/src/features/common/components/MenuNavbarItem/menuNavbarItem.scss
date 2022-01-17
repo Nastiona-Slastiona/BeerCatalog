@@ -1,8 +1,8 @@
 @import 'src/styles/scss/main';
-
+@import 'src/styles/scss/mixins';
 $hover-color: #696a6e;
 
-.menu-navbar__item {
+.menu-navbar-item {
   font: {
     family: $font-family;
     size: 20px;
@@ -14,23 +14,21 @@ $hover-color: #696a6e;
   text-decoration: none;
 
   color: #87888f;
-  &__icon {
-    display: flex;
-
-    margin-right: 40px;
-
-    color: $hover-color;
-  }
-
-  &__container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    margin-top: 30px;
-  }
-
   &:hover {
     border-bottom: 1px solid $hover-color;
   }
+}
+
+.menu-navbar-item__container {
+  margin-top: 30px;
+
+  @include two-columns;
+}
+
+.menu-navbar-item__icon {
+  display: flex;
+
+  margin-right: 40px;
+
+  color: $hover-color;
 }

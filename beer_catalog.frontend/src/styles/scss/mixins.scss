@@ -1,6 +1,9 @@
+@import 'src/styles/scss/main';
+
 @mixin two-columns {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 @mixin table-item {
@@ -17,6 +20,16 @@
   }
 }
 
+@mixin table {
+  margin: 20px 0;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+@mixin table-container {
+  margin: 0 80px;
+}
+
 @mixin table-header {
   font: {
     size: 25px;
@@ -27,21 +40,14 @@
 
 @mixin title {
   font: {
-    family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    family: $font-family;
     size: 30px;
   }
   padding-bottom: 10px;
 }
 
-@mixin beer-item-image-content {
+@mixin centered-content {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-@mixin search-box-components {
-  display: inline;
-
-  color: rgb(148, 144, 144);
-  border: none;
 }

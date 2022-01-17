@@ -9,9 +9,9 @@ import './favoriteBeerItem.scss';
 
 function FavoriteBeerItem({ favoriteBeer, onRemoveFavoriteClick }) {
     return (
-        <div className="favorite-beer__item">
+        <div className="favorite-beer-item">
             <FavoriteBeerItemInfo favoriteBeer={favoriteBeer} onRemoveFavoriteClick={onRemoveFavoriteClick} />
-            <BeerItemImage image={favoriteBeer.image_url} />
+            <BeerItemImage imageUrl={favoriteBeer.image_url} />
         </div>
     );
 }

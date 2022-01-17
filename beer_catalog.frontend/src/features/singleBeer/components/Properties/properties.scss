@@ -1,12 +1,9 @@
 @import 'src/styles/scss/mixins';
 
-.properties {
-  width: 350px;
-  &__header {
-    @include header;
-  }
+.properties__header {
+  @include header;
+}
 
-  &__table {
-    margin: 20px 0;
-  }
+.properties__table {
+  @include table;
 }

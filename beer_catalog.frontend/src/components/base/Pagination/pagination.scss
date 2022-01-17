@@ -3,11 +3,12 @@ $pagination-color--hover: rgb(92, 133, 180);
 $pagination-border-color: rgb(23, 57, 95);
 
 .pagination {
+  font-size: 25px;
+
   display: none;
   justify-content: center;
 
   width: 100%;
-  font-size: 25px;
   margin: 10px;
   padding: 10px;
 
@@ -17,8 +18,9 @@ $pagination-border-color: rgb(23, 57, 95);
 
   &__container {
     display: flex;
-    width: 100%;
     justify-content: center;
+
+    width: 100%;
   }
 
   &__button {
@@ -28,8 +30,8 @@ $pagination-border-color: rgb(23, 57, 95);
     padding: 10px 15px;
 
     border: 1px solid $pagination-border-color;
-    background-color: $pagination-color;
     border-radius: 40%;
+    background-color: $pagination-color;
 
     &:hover {
       background-color: $pagination-color--hover;
@@ -37,8 +39,9 @@ $pagination-border-color: rgb(23, 57, 95);
   }
 
   &__change-page {
-    display: inherit;
     font-size: 35px;
+
+    display: inherit;
 
     margin: 5px;
 
@@ -47,5 +50,40 @@ $pagination-border-color: rgb(23, 57, 95);
     &:hover {
       color: $pagination-color--hover;
     }
+  }
+}
+
+.pagination__container {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+}
+.pagination__button {
+  display: inherit;
+
+  margin: 5px 2px;
+  padding: 10px 15px;
+
+  border: 1px solid $pagination-border-color;
+  border-radius: 40%;
+  background-color: $pagination-color;
+
+  &:hover {
+    background-color: $pagination-color--hover;
+  }
+}
+
+.pagination__change-page {
+  font-size: 35px;
+
+  display: inherit;
+
+  margin: 5px;
+
+  color: $pagination-color;
+
+  &:hover {
+    color: $pagination-color--hover;
   }
 }

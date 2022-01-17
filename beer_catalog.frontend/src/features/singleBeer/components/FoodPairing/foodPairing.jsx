@@ -7,8 +7,8 @@ import './foodPairing.scss';
 
 export default function FoodPairing({ foodPairing }) {
     return (
-        <div className="food-pairing__container">
-            <div className="food-pairing">
+        <div className="food-pairing">
+            <div>
                 <div>
                     <span className="food-pairing__header">Food Pairing</span>
                 </div>

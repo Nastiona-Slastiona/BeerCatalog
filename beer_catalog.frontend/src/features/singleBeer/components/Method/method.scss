@@ -1,18 +1,18 @@
 @import 'src/styles/scss/mixins';
 
 .method {
-  margin-left: 100px;
-  &__header {
-    @include header;
-  }
+  @include table-container;
+}
 
-  &__table {
-    width: 450px;
-    margin-top: 20px;
-  }
+.method__header {
+  @include header;
+}
+.method__table {
+  @include table;
+}
 
-  &__table-header {
-    @include table-header;
-    margin-top: 20px;
-  }
+.method__table-header {
+  margin-top: 20px;
+
+  @include table-header;
 }

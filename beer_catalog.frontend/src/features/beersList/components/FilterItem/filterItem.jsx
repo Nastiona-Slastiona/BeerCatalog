@@ -24,12 +24,12 @@ function FilterItem({
     };
 
     return (
-        <div className="filter__item">
+        <div className="filter-item">
             <span>{fullName}</span>
-            <div className="filter-slider__container">
-                <label className="filter__slider__label">{value}</label>
+            <div>
+                <label className="filter-item__label">{value}</label>
                 <input
-                    className="filter__slider"
+                    className="filter-item__slider"
                     type="range"
                     min={min}
                     max={max}

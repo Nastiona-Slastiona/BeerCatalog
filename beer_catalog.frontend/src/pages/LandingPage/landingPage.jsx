@@ -72,7 +72,7 @@ export default function LandingPage() {
                 searchQuery: ''
             });
         }
-    });
+    }, [filter]);
 
     const searchedBeers = useMemo(() => {
         return beers.filter(beer => beer
@@ -110,13 +110,13 @@ export default function LandingPage() {
     const renderedRows = filtredBeers.map(beer => <BeerItem key={beer.id} beer={beer} />);
 
     return (
-        <div className="landing-page">
+        <div>
             <SearchBox onInputChange={onInputChange} />
             <Filter isVisible={isFilterVisible} onChange={onFilterChange} />
             <List
                 renderedItems={renderedRows}
-                containerClassName="landing-page__list-container"
-                listClassName="landing-page__list"
+                containerClassName="landing-page__container"
+                listClassName="landing-page"
             />
             <LoadingIndicator isVisible={isLoadingVisible} />
         </div>

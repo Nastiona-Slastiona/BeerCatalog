@@ -9,10 +9,10 @@ import './favoriteBeerItemInfo.scss';
 
 function FavoriteBeerItemInfo({ favoriteBeer, onRemoveFavoriteClick }) {
     return (
-        <div className="favorite-beer__item-info-container">
-            <Label className="favorite-beer__item-info--title">{favoriteBeer.name}</Label>
+        <div className="favorite-beer-item-info__container">
+            <Label className="favorite-beer-item-info__title">{favoriteBeer.name}</Label>
             <Label>{favoriteBeer.tagline}</Label>
-            <div className="favorite-beer__item-info-description">{favoriteBeer.description}</div>
+            <div className="favorite-beer-item-info__description">{favoriteBeer.description}</div>
             <BeerItemActionsSection beer={favoriteBeer} onFavoriteClick={onRemoveFavoriteClick} />
         </div>
     );

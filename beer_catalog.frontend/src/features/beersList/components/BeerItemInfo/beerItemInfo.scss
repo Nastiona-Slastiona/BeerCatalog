@@ -2,23 +2,20 @@
 @import 'src/styles/scss/main';
 
 .beer-item-info {
-  &__container {
-    display: grid;
-
-    font: {
-      size: 16px;
-      family: $font-family;
-    }
-
-    width: 330px;
-    height: 130px;
-    padding: 20px;
-
-    text-align: left;
-
-    color: #fff;
-    background: #808080;
+  font: {
+    size: 16px;
+    family: $font-family;
   }
+
+  display: grid;
+  width: 330px;
+  height: 130px;
+  padding: 20px;
+
+  text-align: left;
+
+  color: #fff;
+  background: #808080;
 
   &--title {
     @include title;

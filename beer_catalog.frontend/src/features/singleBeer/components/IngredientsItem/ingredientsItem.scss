@@ -2,12 +2,12 @@
 
 .ingredients-item {
   @include table-item;
+}
 
-  &__header {
-    @include table-header;
-  }
+.ingredients-item__header {
+  @include table-header;
+}
 
-  &__component {
-    padding: 5px 0;
-  }
+.ingredients-item__component {
+  padding: 5px 0;
 }

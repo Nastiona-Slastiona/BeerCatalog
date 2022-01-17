@@ -1,26 +1,19 @@
-.filter-section__container {
-  display: block;
+.filter__header {
+  font-size: 25px;
+
+  display: flex;
+  justify-content: center;
 }
 
-.filter {
-  display: block;
+.filter__container {
+  font-size: 20px;
 
-  &__header {
+  display: none;
+  justify-content: center;
+
+  margin: 20px;
+
+  &--active {
     display: flex;
-    justify-content: center;
-    font-size: 25px;
-  }
-
-  &__container {
-    font-size: 20px;
-
-    display: none;
-    justify-content: center;
-
-    margin: 20px;
-
-    &--active {
-      display: flex;
-    }
   }
 }

@@ -1,22 +1,13 @@
 @import 'src/styles/scss/mixins';
 
 .food-pairing {
-  display: block;
-  width: 100%;
+  @include table-container;
+}
 
-  &__container {
-    display: flex;
-    width: 400px;
-    min-width: fit-content;
-    min-height: fit-content;
-    margin: 0 80px;
-  }
+.food-pairing__header {
+  @include header;
+}
 
-  &__header {
-    @include header;
-  }
-
-  &__table {
-    margin: 20px 0;
-  }
+.food-pairing__table {
+  @include table;
 }
