@@ -8,7 +8,7 @@ import './menuNavbar.scss';
 export default function MenuNavbar() {
     return (
         <nav className="menu-navbar">
-            <ul>
+            <li>
                 <MenuNavbarItem
                     link="/"
                     iconClassName="icon-drawer2 menu-navbar__item__icon"
@@ -19,7 +19,7 @@ export default function MenuNavbar() {
                     iconClassName="icon-star-full menu-navbar__item__icon"
                     name="Favorites"
                 />
-            </ul>
+            </li>
         </nav>
     );
 }

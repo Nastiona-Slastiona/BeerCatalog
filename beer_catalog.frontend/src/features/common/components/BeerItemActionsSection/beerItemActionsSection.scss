@@ -1,13 +1,13 @@
 @import 'src/styles/scss/main';
 
-.beer-item__buttons {
+.beer-item-buttons__container {
   display: flex;
   justify-content: space-between;
 
   padding-top: 25px;
 }
 
-.beer-item__button {
+.beer-item-buttons {
   font: {
     family: $font-family;
     size: 20px;
@@ -26,6 +26,6 @@
   }
 
   &:hover {
-    background: rgb(109, 107, 107);
+    background: #808080;
   }
 }

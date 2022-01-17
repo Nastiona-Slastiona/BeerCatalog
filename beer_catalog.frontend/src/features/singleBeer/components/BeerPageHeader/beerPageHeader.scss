@@ -1,4 +1,5 @@
 @import 'src/styles/scss/mixins';
+@import 'src/styles/scss/main';
 
 .beer-page__header {
   display: inline;
@@ -10,7 +11,7 @@
     color: #808080;
     font: {
       style: italic;
-      family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      family: $font-family;
       size: 60%;
     }
   }

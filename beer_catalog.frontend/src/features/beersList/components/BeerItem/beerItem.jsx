@@ -9,7 +9,7 @@ import './beerItem.scss';
 
 function BeerItem({ beer }) {
     return (
-        <div className="beer__item">
+        <div className="beer-item">
             <BeerItemImage image={beer.image_url} />
             <BeerItemInfo beer={beer} />
         </div>

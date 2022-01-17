@@ -7,7 +7,7 @@
     width: 370px;
     margin-right: 5px;
 
-    @include search-box__components;
+    @include search-box-components;
 
     border-bottom: 2px solid rgb(199, 195, 195);
   }
@@ -17,6 +17,6 @@
 
     background: none;
 
-    @include search-box__components;
+    @include search-box-components;
   }
 }

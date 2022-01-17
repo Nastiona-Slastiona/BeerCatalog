@@ -4,15 +4,15 @@ import React from 'react';
 import ButtonFavorite from 'features/common/components/ButtonFavorite/buttonFavorite';
 import { Link } from 'react-router-dom';
 
-import './beerItemButtons.scss';
+import './beerItemActionsSection.scss';
 
 
 function BeerItemButtons({ beer, onFavoriteClick }) {
     return (
-        <div className="beer-item__buttons">
-            <Link className="beer-item__button" to={`/beers/id=${beer.id}`}>Open</Link>
+        <div className="beer-item-buttons__container">
+            <Link className="beer-item-buttons" to={`/beers/id=${beer.id}`}>Open</Link>
             <ButtonFavorite
-                className="beer-item__button"
+                className="beer-item-buttons"
                 beer={beer}
                 buttonName="Favorite"
                 onFavoriteClick={onFavoriteClick}

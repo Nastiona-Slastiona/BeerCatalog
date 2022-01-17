@@ -5,22 +5,24 @@ import classNames from 'classnames';
 import './pagination.scss';
 
 
+const BEERS_ON_PAGE = 5;
+
 function Pagination({
     beers,
     setPage,
     pageShown
 }) {
     const amountOfFavoriteBeers = beers.length;
-    const isVisible = amountOfFavoriteBeers > 5;
+    const isVisible = amountOfFavoriteBeers > BEERS_ON_PAGE;
 
     const className = classNames(
         'pagination',
         { 'pagination--active': isVisible }
     );
-    const pages = [];
+    const pages = Array(Math.floor(amountOfFavoriteBeers / BEERS_ON_PAGE) + 1);
 
-    for (let i = 0; i < (beers.length / 5); i++) {
-        pages[i] = i + 1;
+    for (let i = 1; i <= (amountOfFavoriteBeers / BEERS_ON_PAGE) + 1; i++) {
+        pages[i] = i;
     }
 
     const onPaginationClick = event => {
@@ -34,7 +36,7 @@ function Pagination({
                 setPage(prevPage => prevPage - 1);
             }
         } else {
-            setPage(event.target.innerHTML - 1);
+            setPage(+event.target.innerHTML - 1);
         }
     };
 

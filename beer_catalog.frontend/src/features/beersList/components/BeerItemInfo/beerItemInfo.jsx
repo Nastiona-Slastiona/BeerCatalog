@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import BeerItemButtons from 'features/common/components/BeerItemButtons/beerItemButtons';
+import BeerItemActionsSection from 'features/common/components/BeerItemActionsSection/beerItemActionsSection';
 import Label from 'components/base/Label/label';
 
 import './beerItemInfo.scss';
@@ -12,7 +12,7 @@ function BeerItemInfo({ beer }) {
         <div className="beer-item-info__container ">
             <Label className="beer-item-info--title">{beer.name}</Label>
             <Label>{beer.tagline}</Label>
-            <BeerItemButtons beer={beer} />
+            <BeerItemActionsSection beer={beer} />
         </div>
     );
 }

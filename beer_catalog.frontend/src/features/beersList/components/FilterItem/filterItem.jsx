@@ -9,13 +9,12 @@ function FilterItem({
     name,
     min,
     max,
-    defaultValue,
     onChange
 }) {
     let step = '1';
-    const [value, setValue] = useState(defaultValue);
+    const [value, setValue] = useState(+min);
 
-    if (!Number.isInteger(+defaultValue)) {
+    if (name === 'abv') {
         step = '.1';
     }
 
@@ -34,7 +33,7 @@ function FilterItem({
                     type="range"
                     min={min}
                     max={max}
-                    defaultValue={defaultValue}
+                    defaultValue={min}
                     step={step}
                     name={name}
                     onChange={onInputChange}
@@ -47,7 +46,6 @@ function FilterItem({
 FilterItem.propTypes = {
     min: PropTypes.number,
     max: PropTypes.number,
-    defaultValue: PropTypes.number,
     onChange: PropTypes.func
 };
 

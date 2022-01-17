@@ -8,11 +8,11 @@ import './pageHeaderMain.scss';
 export default function PageHeaderMain() {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
 
-    const setMenuUnvisible = () => {
+    const hideMenu = () => {
         setIsMenuVisible(false);
     };
 
-    const setMenuVisible = () => {
+    const showMenu = () => {
         setIsMenuVisible(true);
     };
 
@@ -20,12 +20,14 @@ export default function PageHeaderMain() {
         <div className="page-header-main">
             <span
                 className="icon-menu page-header-main__menu"
-                onClick={setMenuVisible}
+                onClick={showMenu}
             />
-            <span>Beer catalog</span>
+            <span>
+                Beer catalog
+            </span>
             <Menu
                 isVisible={isMenuVisible}
-                setIsVisible={setMenuUnvisible}
+                setIsVisible={hideMenu}
             />
         </div>
     );

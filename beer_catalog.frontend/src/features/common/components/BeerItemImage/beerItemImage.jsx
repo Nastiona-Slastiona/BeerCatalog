@@ -4,18 +4,18 @@ import React from 'react';
 import './beerItemImage.scss';
 
 
-function BeerItemImage({ image }) {
+function BeerItemImage({ imageUrl }) {
     return (
         <div className="beer-item-image__section">
             <div className="beer-item-image__container">
-                <img className="beer-item-image" alt="PUNK IPA" src={image} />
+                <img className="beer-item-image" alt="PUNK IPA" src={imageUrl} />
             </div>
         </div>
     );
 }
 
 BeerItemImage.propTypes = {
-    image: PropTypes.string
+    imageUrl: PropTypes.string
 };
 
 export default BeerItemImage;

@@ -2,21 +2,14 @@
   display: flex;
   justify-content: space-between;
 
-  width: 500px;
+  width: 550px;
   padding-top: 20px;
 }
 
 .filter__slider {
-  display: inline-block;
-  width: 100%;
+  display: inline-flex;
+  width: 200px;
   height: 1px;
-  padding: 0;
-
-  &__container {
-    display: flex;
-    width: 200px;
-    align-items: center;
-  }
 
   &__label {
     margin-right: 5px;

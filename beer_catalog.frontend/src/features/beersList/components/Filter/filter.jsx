@@ -22,7 +22,6 @@ function Filter({ isVisible, onChange }) {
                         fullName="Alcohol by volume"
                         min={2}
                         max={14}
-                        defaultValue={4.6}
                         onChange={onChange}
                     />
                     <FilterItem
@@ -30,7 +29,6 @@ function Filter({ isVisible, onChange }) {
                         fullName="International Bitterness Units"
                         min={0}
                         max={120}
-                        defaultValue={50}
                         onChange={onChange}
                     />
                     <FilterItem
@@ -38,7 +36,6 @@ function Filter({ isVisible, onChange }) {
                         fullName="Color by EBC"
                         min={4}
                         max={80}
-                        defaultValue={60}
                         onChange={onChange}
                     />
                 </div>

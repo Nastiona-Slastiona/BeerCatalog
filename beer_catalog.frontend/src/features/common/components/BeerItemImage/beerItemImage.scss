@@ -13,12 +13,12 @@
     border-radius: 50%;
     background-color: $primary-color;
 
-    @include beer-item-image__contant;
+    @include beer-item-image-content;
   }
 
   &__section {
     max-width: 100%;
 
-    @include beer-item-image__contant;
+    @include beer-item-image-content;
   }
 }

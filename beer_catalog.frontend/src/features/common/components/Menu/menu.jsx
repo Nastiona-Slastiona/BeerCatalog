@@ -8,10 +8,10 @@ import './menu.scss';
 
 
 function Menu({ isVisible, setIsVisible }) {
-    const classes = classNames('menu__container', { 'menu__container--active': isVisible });
+    const containerClassNames = classNames('menu__container', { 'menu__container--active': isVisible });
 
     return (
-        <div className={classes} onClick={setIsVisible}>
+        <div className={containerClassNames} onClick={setIsVisible}>
             <div className="menu">
                 <span className="menu__header">Beer Catalog</span>
                 <MenuNavbar />

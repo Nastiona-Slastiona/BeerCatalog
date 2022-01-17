@@ -37,7 +37,7 @@ const generateStyleLoader = loaderName => {
 
 module.exports = {
     mode: 'development',
-    entry: ['babel-polyfill', './src/index.js'],
+    entry: ['babel-polyfill', './src/index.jsx'],
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'

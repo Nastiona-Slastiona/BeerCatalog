@@ -6,7 +6,7 @@ import setIsFavoriteBeer from 'features/common/store/beers/state/thunks/thunks';
 
 
 const initialState = {
-    beers: [],
+    beersList: [],
     status: '',
     currentPage: 0,
     error: ''
@@ -35,7 +35,7 @@ const beersSlice = createSlice({
             });
 
             state.status = ThunkStatus.Resolved;
-            state.beers = [...state.beers, ...beers];
+            state.beersList = [...state.beersList, ...beers];
             state.currentPage = action.payload[1];
         },
         [fetchBeers.rejected]: setError,

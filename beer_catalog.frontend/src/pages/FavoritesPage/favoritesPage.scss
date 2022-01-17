@@ -1,8 +1,9 @@
+@import 'src/styles/scss/main';
+
 .favorites-page {
   &__header {
     font: {
-      family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      family: $font-family-Lucinda;
       size: 32px;
     }
     display: flex;
