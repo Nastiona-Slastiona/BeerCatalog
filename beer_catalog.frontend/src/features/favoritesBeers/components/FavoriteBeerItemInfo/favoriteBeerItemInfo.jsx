@@ -19,7 +19,7 @@ function FavoriteBeerItemInfo({ favoriteBeer, onRemoveFavoriteClick }) {
 }
 
 FavoriteBeerItemInfo.propTypes = {
-    // favoriteBeer: PropTypes.object,
+    favoriteBeer: PropTypes.object.isRequired,
     onRemoveFavoriteClick: PropTypes.func
 };
 
