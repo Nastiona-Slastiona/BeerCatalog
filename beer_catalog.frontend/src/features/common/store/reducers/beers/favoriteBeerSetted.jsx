@@ -1,7 +1,7 @@
 function favoriteBeerSetted(state, action) {
     return {
         ...state,
-        beers: state.beersList.map(beer => {
+        beersList: state.beersList.map(beer => {
             if (beer.id !== action.payload.id) {
                 return beer;
             }
