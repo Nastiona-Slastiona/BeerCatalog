@@ -99,10 +99,10 @@ export default function LandingPage() {
 
     if (!filtredBeers.length) {
         return (
-            <div className="landing-page">
+            <div>
                 <SearchBox onInputChange={onInputChange} />
                 <Filter isVisible={isFilterVisible} onChange={onFilterChange} />
-                <h2>There is nothing to display</h2>
+                <h1>There is nothing to display</h1>
             </div>
         );
     }
