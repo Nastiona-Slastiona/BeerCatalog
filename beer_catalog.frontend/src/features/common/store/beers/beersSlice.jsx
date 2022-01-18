@@ -2,6 +2,7 @@ import ThunkStatus from 'models/thunkStatus';
 import { createSlice } from '@reduxjs/toolkit';
 import favoriteBeerSetted from 'features/common/store/reducers/beers/favoriteBeerSetted';
 import fetchBeers from 'features/beersList/store/beers/state/thunks/thunks';
+import fetchOneBeer from 'features/favoritesBeers/store/beers/state/thunks/thunks';
 import setIsFavoriteBeer from 'features/common/store/beers/state/thunks/thunks';
 
 
@@ -11,6 +12,7 @@ const favorites = JSON.parse(saved);
 const initialState = {
     beersList: [],
     favoritesBeersIds: favorites || [],
+    favoriteBeers: [],
     status: '',
     currentPage: 0,
     error: ''
@@ -46,7 +48,23 @@ const beersSlice = createSlice({
             state.beersList = [...state.beersList, ...beers];
             state.currentPage = action.payload[1];
         },
-        [fetchBeers.rejected]: setError,
+        [fetchOneBeer.rejected]: setError,
+        [fetchOneBeer.pending]: state => {
+            state.status = ThunkStatus.Loading;
+        },
+        [fetchOneBeer.fulfilled]: (state, action) => {
+            const beersId = state.favoriteBeers.map(beer => beer.id);
+            if (!beersId.includes(action.payload[0].id)) {
+                state.favoriteBeers = [...state.favoriteBeers, ...action.payload];
+                state.favoriteBeers = state.favoriteBeers.map(beer => {
+                    beer.isFavorite = true;
+
+                    return beer;
+                });
+            }
+            state.status = ThunkStatus.Resolved;
+        },
+        [fetchOneBeer.rejected]: setError,
         [setIsFavoriteBeer.fulfilled]: state => {
             state.status = ThunkStatus.Resolved;
         },

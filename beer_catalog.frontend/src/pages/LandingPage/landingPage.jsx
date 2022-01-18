@@ -52,7 +52,7 @@ export default function LandingPage() {
 
     useEffect(() => {
         localStorage.setItem('favoriteBeersIds', JSON.stringify(favoritesBeersIds));
-    });
+    }, [favoritesBeersIds]);
 
     const scrollHandler = e => {
         const targetWindowState = e.target.documentElement;

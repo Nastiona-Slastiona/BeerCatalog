@@ -9,12 +9,21 @@ function favoriteBeerSetted(state, action) {
             isFavorite: !beer.isFavorite
         };
     });
-    const favorites = beers.filter(beer => beer.isFavorite).map(beer => beer.id);
+    let favoritesId = [...state.favoritesBeersIds];
+    let favoritesBeers = [...state.favoriteBeers];
+
+    if (!action.payload.isFavorite) {
+        favoritesId = favoritesId.filter(beerId => beerId !== action.payload.id);
+        favoritesBeers = state.favoriteBeers.filter(beer => beer.id !== action.payload.id);
+    } else if (!favoritesId.includes(action.payload.id)) {
+        favoritesId.push(action.payload.id);
+    }
 
     return {
         ...state,
         beersList: beers,
-        favoritesBeersIds: favorites
+        favoritesBeersIds: favoritesId,
+        favoriteBeers: favoritesBeers
     };
 }
 
