@@ -5,8 +5,12 @@ import fetchBeers from 'features/beersList/store/beers/state/thunks/thunks';
 import setIsFavoriteBeer from 'features/common/store/beers/state/thunks/thunks';
 
 
+const saved = localStorage.getItem('favoriteBeersIds');
+const favorites = JSON.parse(saved);
+
 const initialState = {
     beersList: [],
+    favoritesBeersIds: favorites || [],
     status: '',
     currentPage: 0,
     error: ''
@@ -31,7 +35,11 @@ const beersSlice = createSlice({
             const beers = [...action.payload[0]];
 
             beers.forEach(beer => {
-                beer.isFavorite = false;
+                if (!state.favoritesBeersIds.includes(beer.id)) {
+                    beer.isFavorite = false;
+                } else {
+                    beer.isFavorite = true;
+                }
             });
 
             state.status = ThunkStatus.Resolved;

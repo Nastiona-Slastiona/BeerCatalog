@@ -18,6 +18,7 @@ export default function LandingPage() {
     const status = useSelector(state => state.beers.status);
     const currentPage = useSelector(state => state.beers.currentPage);
     const [page, setPage] = useState(currentPage + 1);
+    const favoritesBeersIds = useSelector(state => state.beers.favoritesBeersIds);
 
     const [isFilterVisible, setIsFilterVisible] = useState(false);
     const [isLoadingVisible, setIsLoadingVisible] = useState(status === ThunkStatus.Loading);
@@ -47,6 +48,10 @@ export default function LandingPage() {
         return () => {
             document.removeEventListener('scroll', scrollHandler);
         };
+    });
+
+    useEffect(() => {
+        localStorage.setItem('favoriteBeersIds', JSON.stringify(favoritesBeersIds));
     });
 
     const scrollHandler = e => {
