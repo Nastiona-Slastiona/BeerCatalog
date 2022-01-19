@@ -4,14 +4,12 @@ import favoriteBeerSetted from 'features/common/store/reducers/beers/favoriteBee
 import fetchBeers from 'features/beersList/store/beers/state/thunks/thunks';
 import fetchOneBeer from 'features/favoritesBeers/store/beers/state/thunks/thunks';
 import setIsFavoriteBeer from 'features/common/store/beers/state/thunks/thunks';
+import storageHelper from 'src/helpers/storageHelper';
 
-
-const saved = localStorage.getItem('favoriteBeersIds');
-const favorites = JSON.parse(saved);
 
 const initialState = {
     beersList: [],
-    favoritesBeersIds: favorites || [],
+    favoritesBeersIds: storageHelper.getItem('favoriteBeersIds'),
     favoriteBeers: [],
     status: '',
     currentPage: 0,

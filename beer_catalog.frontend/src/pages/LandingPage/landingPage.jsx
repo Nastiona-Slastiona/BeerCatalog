@@ -8,6 +8,7 @@ import LoadingIndicator from 'components/base/LoadingIndicator/loadingIndicator'
 import SearchBox from 'components/base/SearchBox/searchBox';
 import ThunkStatus from 'models/thunkStatus';
 import fetchBeers from 'features/beersList/store/beers/state/thunks/thunks';
+import storageHelper from 'src/helpers/storageHelper';
 
 import './landingPage.scss';
 
@@ -51,7 +52,7 @@ export default function LandingPage() {
     });
 
     useEffect(() => {
-        localStorage.setItem('favoriteBeersIds', JSON.stringify(favoritesBeersIds));
+        storageHelper.setItem('favoriteBeersIds', favoritesBeersIds);
     }, [favoritesBeersIds]);
 
     const scrollHandler = e => {
