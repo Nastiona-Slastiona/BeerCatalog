@@ -9,35 +9,30 @@ import './filter.scss';
 
 function Filter({ isVisible, onChange }) {
     const classes = classNames('filter__container', { 'filter__container--active': isVisible });
+    const filters = [{
+        name: 'abv', fullName: 'Alcohol by volume', min: 2, max: 14
+    }, {
+        name: 'ibu', fullName: 'International Bitterness Units', min: 0, max: 120
+    }, {
+        name: 'ebc', fullName: 'Color by EBC', min: 4, max: 80
+    }];
 
     return (
         <div className={classes}>
             <div>
-                <h1 className="filter__header">
+                <h2 className="filter__header">
                     Filter results
-                </h1>
+                </h2>
                 <div>
-                    <FilterItem
-                        name="abv"
-                        fullName="Alcohol by volume"
-                        min={2}
-                        max={14}
-                        onChange={onChange}
-                    />
-                    <FilterItem
-                        name="ibu"
-                        fullName="International Bitterness Units"
-                        min={0}
-                        max={120}
-                        onChange={onChange}
-                    />
-                    <FilterItem
-                        name="ebc"
-                        fullName="Color by EBC"
-                        min={4}
-                        max={80}
-                        onChange={onChange}
-                    />
+                    {
+                        filters.map((filter, index) => (
+                            <FilterItem
+                                key={index}
+                                filter={filter}
+                                onChange={onChange}
+                            />
+                        ))
+                    }
                 </div>
             </div>
         </div>

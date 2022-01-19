@@ -1,13 +1,13 @@
-@import 'src/styles/scss/mixins';
+@import 'src/styles/mixins/mixins';
 
 .ingredients-item {
-  @include table-item;
+    @include table-item;
 }
 
 .ingredients-item__header {
-  @include table-header;
+    @include table-header;
 }
 
 .ingredients-item__component {
-  padding: 5px 0;
+    padding: 5px 0;
 }

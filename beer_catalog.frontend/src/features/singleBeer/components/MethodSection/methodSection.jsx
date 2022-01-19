@@ -1,9 +1,9 @@
 import React from 'react';
 
-import './method.scss';
+import './methodSection.scss';
 
 
-export default function Method({ beer }) {
+export default function MethodSection({ beer }) {
     const { method } = beer;
     const mashTemp = method.mash_temp;
     const { fermentation } = method;
@@ -23,7 +23,7 @@ export default function Method({ beer }) {
     return (
         <div className="method">
             <div>
-                <span className="method__header">Method</span>
+                <h2 className="method__header">Method</h2>
             </div>
             <div className="method__table">
                 <div className="method__table-header">Mash</div>

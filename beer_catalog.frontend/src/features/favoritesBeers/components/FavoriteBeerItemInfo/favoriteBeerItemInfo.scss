@@ -1,20 +1,34 @@
-@import 'src/styles/scss/mixins';
+@import 'src/styles/mixins/mixins';
+@import 'src/styles/colors';
 
 .favorite-beer-item-info__description {
-  margin: 20px 0 40px;
+    margin: 20px 0 40px;
 }
 
 .favorite-beer-item-info__container {
-  display: block;
+    font: {
+        family: $font-family;
+        size: 20px;
+    };
+    
+    display: block;
 
-  max-width: 500px;
-  max-height: 100%;
+    max-width: 500px;
+    max-height: 100%;
 
-  text-align: left;
+    text-align: left;
 }
 
 .favorite-beer-item-info__title {
-  font-size: 45px;
+    @include title;
+    
+    font-size: 45px;
+}
 
-  @include title;
+.favorite-beer-item-info__tagline {
+    display: block;
+
+    margin: 10px 0;
+
+    color: #808080;
 }

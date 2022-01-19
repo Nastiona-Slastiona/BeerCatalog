@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import App from 'components/App/app';
 import store from 'store/store';
 
-import './styles/css/reset.css';
+import './styles/reset.scss';
 
 
 ReactDOM.render(

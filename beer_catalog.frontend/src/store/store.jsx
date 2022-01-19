@@ -1,4 +1,4 @@
-import beersReducer from 'features/common/store/beers/beersSlice';
+import beersReducer from 'features/common/store/beers/beersReducer';
 import { configureStore } from '@reduxjs/toolkit';
 
 

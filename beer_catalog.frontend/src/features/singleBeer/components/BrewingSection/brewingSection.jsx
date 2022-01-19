@@ -1,13 +1,13 @@
 import React from 'react';
 
-import './brewing.scss';
+import './brewingSection.scss';
 
 
-export default function Brewing({ brewingDescription }) {
+export default function BrewingSection({ brewingDescription }) {
     return (
         <div>
             <div>
-                <span className="brewing__header">Brewing</span>
+                <h2 className="brewing__header">Brewing</h2>
             </div>
             <div className="brewing__description">
                 {brewingDescription}

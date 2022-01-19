@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import BeerItemActionsSection from 'features/common/components/BeerItemActionsSection/beerItemActionsSection';
-import Label from 'components/base/Label/label';
 
 import './favoriteBeerItemInfo.scss';
 
@@ -10,8 +9,8 @@ import './favoriteBeerItemInfo.scss';
 function FavoriteBeerItemInfo({ favoriteBeer, onRemoveFavoriteClick }) {
     return (
         <div className="favorite-beer-item-info__container">
-            <Label className="favorite-beer-item-info__title">{favoriteBeer.name}</Label>
-            <Label>{favoriteBeer.tagline}</Label>
+            <span className="favorite-beer-item-info__title">{favoriteBeer.name}</span>
+            <span className="favorite-beer-item-info__tagline">{favoriteBeer.tagline}</span>
             <div className="favorite-beer-item-info__description">{favoriteBeer.description}</div>
             <BeerItemActionsSection beer={favoriteBeer} onFavoriteClick={onRemoveFavoriteClick} />
         </div>

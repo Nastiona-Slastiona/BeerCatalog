@@ -5,34 +5,32 @@ import classNames from 'classnames';
 import './pagination.scss';
 
 
-const BEERS_ON_PAGE = 5;
+const LIST_LENGTH = 5;
 
 function Pagination({
-    beers,
+    list,
     setPage,
     pageShown
 }) {
-    const amountOfFavoriteBeers = beers.length;
-    const isVisible = amountOfFavoriteBeers > BEERS_ON_PAGE;
+    const listLength = list.length;
+    const isVisible = listLength > LIST_LENGTH;
 
     const className = classNames(
         'pagination',
         { 'pagination--active': isVisible }
     );
-    const pages = Array(Math.floor(amountOfFavoriteBeers / BEERS_ON_PAGE) + 1);
-
-    for (let i = 1; i <= (amountOfFavoriteBeers / BEERS_ON_PAGE) + 1; i++) {
-        pages[i] = i;
+    const length = Math.ceil(listLength / LIST_LENGTH);
+    const pages = Array(length);
+    for (let i = 1; i <= length; i++) {
+        pages.push(i);
     }
-
     const onPaginationClick = event => {
-        const paginationValue = event.target.className.split(' ');
-        if (paginationValue[0] !== 'pagination__button') {
-            const direction = paginationValue[paginationValue.length - 1].split('-');
-
-            if (direction.includes('right') && pageShown < pages.length - 1) {
+        if (event.target.textContent === '>') {
+            if (pageShown < length - 1) {
                 setPage(prevPage => prevPage + 1);
-            } else if (direction.includes('left') && pageShown > 0) {
+            }
+        } else if (event.target.textContent === '<') {
+            if (pageShown > 0) {
                 setPage(prevPage => prevPage - 1);
             }
         } else {
@@ -44,9 +42,11 @@ function Pagination({
         <div className="pagination__container">
             <div className={className}>
                 <span
-                    className="pagination__change-page icon-arrow-left"
+                    className="pagination__button"
                     onClick={onPaginationClick}
-                />
+                >
+                    {'<'}
+                </span>
                 {
                     pages.map((page, index) => (
                         <span
@@ -58,16 +58,18 @@ function Pagination({
                     ))
                 }
                 <span
-                    className="pagination__change-page icon-arrow-right"
+                    className="pagination__button"
                     onClick={onPaginationClick}
-                />
+                >
+                    {'>'}
+                </span>
             </div>
         </div>
     );
 }
 
 Pagination.propTypes = {
-    beers: PropTypes.array.isRequired,
+    list: PropTypes.array.isRequired,
     setPage: PropTypes.func.isRequired,
     pageShown: PropTypes.number.isRequired
 };

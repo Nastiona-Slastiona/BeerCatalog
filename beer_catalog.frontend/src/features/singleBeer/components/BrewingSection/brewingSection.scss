@@ -1,0 +1,11 @@
+@import 'src/styles/mixins/typography';
+
+
+.brewing__header {
+    @include typography-6;
+}
+
+.brewing__description {
+    margin: 20px 0;
+    width: 85%;
+}

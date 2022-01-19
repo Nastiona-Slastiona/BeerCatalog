@@ -1,11 +1,13 @@
 import React from 'react';
 
-import img from './giphy.gif';
+import img from 'src/static/giphy';
 
 
 function LoadingIndicator({ isVisible }) {
     return (
-        !isVisible ? null : <div><img alt="loader" src={img} /></div>
+        isVisible
+            ? <div><img alt="loader" src={img} /></div>
+            : null
     );
 }
 

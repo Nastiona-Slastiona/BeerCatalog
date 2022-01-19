@@ -1,34 +1,35 @@
-@import 'src/styles/scss/main';
-@import 'src/styles/scss/mixins';
+@import 'src/styles/colors';
+@import 'src/styles/mixins/typography';
+
 $hover-color: #696a6e;
 
 .menu-navbar-item {
-  font: {
-    family: $font-family;
-    size: 20px;
-  }
-  display: flex;
+    @include typography-3;
+    
+    display: flex;
 
-  width: 150px;
+    width: 150px;
 
-  text-decoration: none;
+    text-decoration: none;
 
-  color: #87888f;
-  &:hover {
-    border-bottom: 1px solid $hover-color;
-  }
+    color: #87888f;
+    &:hover {
+        border-bottom: 1px solid $hover-color;
+    }
 }
 
 .menu-navbar-item__container {
-  margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
 
-  @include two-columns;
+    width: 100%;
+    margin-top: 30px;
 }
 
 .menu-navbar-item__icon {
-  display: flex;
+    display: flex;
 
-  margin-right: 40px;
+    margin-right: 40px;
 
-  color: $hover-color;
+    color: $hover-color;
 }

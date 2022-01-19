@@ -1,4 +1,4 @@
-function favoriteBeerSetted(state, action) {
+function favoriteBeerSet(state, action) {
     return {
         ...state,
         beersList: state.beersList.map(beer => {
@@ -14,4 +14,4 @@ function favoriteBeerSetted(state, action) {
     };
 }
 
-export default favoriteBeerSetted;
+export default favoriteBeerSet;

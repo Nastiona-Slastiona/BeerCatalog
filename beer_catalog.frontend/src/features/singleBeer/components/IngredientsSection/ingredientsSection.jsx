@@ -2,10 +2,10 @@ import React from 'react';
 
 import IngredientsItem from 'features/singleBeer/components/IngredientsItem/ingredientsItem';
 
-import './ingredients.scss';
+import './ingredientsSection.scss';
 
 
-export default function Ingredients({ beer }) {
+export default function IngredientsSection({ beer }) {
     const ingredients = [];
     ingredients.push(['water', { ...beer.boil_volume }]);
     Object.entries(beer.ingredients).forEach(ingr => ingredients.push([ingr[0], { ...ingr[1] }]));
@@ -13,7 +13,7 @@ export default function Ingredients({ beer }) {
     return (
         <div>
             <div>
-                <span className="ingredients__header">Ingredients</span>
+                <h2 className="ingredients__header">Ingredients</h2>
             </div>
             <div className="ingredients__table">
                 {

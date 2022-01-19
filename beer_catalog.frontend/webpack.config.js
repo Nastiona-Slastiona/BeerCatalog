@@ -88,6 +88,6 @@ module.exports = {
             features: path.resolve(__dirname, 'src/features')
         },
         enforceExtension: false,
-        extensions: ['.jsx', '.js', '.css', '.wasm', '.ico', '...']
+        extensions: ['.jsx', '.js', '.css', '.wasm', '.ico', '.gif', '...']
     }
 };

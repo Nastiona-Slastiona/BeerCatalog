@@ -1,7 +1,7 @@
-import ThunkStatus from 'models/thunkStatus';
+import ThunkStatus from 'src/store/thunkStatus';
 import { createSlice } from '@reduxjs/toolkit';
-import favoriteBeerSetted from 'features/common/store/reducers/beers/favoriteBeerSetted';
-import fetchBeers from 'features/beersList/store/beers/state/thunks/thunks';
+import favoriteBeerSet from 'features/common/store/reducers/beers/favoriteBeerSet';
+import fetchBeers from 'features/beersList/store/beersThunk';
 import setIsFavoriteBeer from 'features/common/store/beers/state/thunks/thunks';
 
 
@@ -21,7 +21,7 @@ const beersSlice = createSlice({
     name: 'beers',
     initialState,
     reducers: {
-        favoriteBeerSetted
+        favoriteBeerSet
     },
     extraReducers: {
         [fetchBeers.pending]: state => {

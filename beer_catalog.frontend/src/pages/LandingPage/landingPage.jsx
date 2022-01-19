@@ -3,11 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import BeerItem from 'features/common/components/BeerItem/beerItem';
 import Filter from 'features/beersList/components/Filter/filter';
-import List from 'components/base/List/list';
 import LoadingIndicator from 'components/base/LoadingIndicator/loadingIndicator';
 import SearchBox from 'components/base/SearchBox/searchBox';
-import ThunkStatus from 'models/thunkStatus';
-import fetchBeers from 'features/beersList/store/beers/state/thunks/thunks';
+import ThunkStatus from 'src/store/thunkStatus';
+import fetchBeers from 'features/beersList/store/beersThunk';
 
 import './landingPage.scss';
 
@@ -110,15 +109,15 @@ export default function LandingPage() {
     const renderedRows = filtredBeers.map(beer => <BeerItem key={beer.id} beer={beer} isSimpleBeerMode={true} />);
 
     return (
-        <div>
+        <section>
             <SearchBox onInputChange={onInputChange} />
             <Filter isVisible={isFilterVisible} onChange={onFilterChange} />
-            <List
-                renderedItems={renderedRows}
-                containerClassName="landing-page__container"
-                listClassName="landing-page"
-            />
+            <article className="landing-page__container">
+                <div className="landing-page">
+                    {renderedRows}
+                </div>
+            </article>
             <LoadingIndicator isVisible={isLoadingVisible} />
-        </div>
+        </section>
     );
 }

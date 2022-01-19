@@ -1,0 +1,62 @@
+$font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$font-family-styled: Georgia, 'Times New Roman', Times, serif;
+$font-family-Lucinda: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+  'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+@mixin typography-0 {
+    font: {
+        family: $font-family;
+        size: 18px;
+    };
+}
+
+@mixin typography-1 {
+    font: {
+        family: $font-family;
+        size: 25px;
+    };
+}
+
+@mixin typography-2 {
+    font: {
+        size: 25px;
+        weight: 500;
+    };
+}
+
+@mixin typography-3 {
+    font: {
+        size: 20px;
+        family: $font-family;
+    };
+}
+
+@mixin typography-4 {
+    font: {
+        size: 25px;
+        family: $font-family-styled;
+    };
+}
+
+@mixin typography-5 {
+    font: {
+        size: 30px;
+        family: $font-family-Lucinda;
+    };
+}
+
+@mixin typography-6 {
+    font: {
+        family: $font-family;
+        size: 25px;
+        weight: 700; 
+    };
+}
+
+@mixin typography-7 {
+    font: {
+        family: $font-family;
+        size: 20px;
+        style: italic;
+    };
+}

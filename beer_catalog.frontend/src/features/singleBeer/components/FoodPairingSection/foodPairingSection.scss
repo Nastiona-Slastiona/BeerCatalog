@@ -1,0 +1,24 @@
+@import 'src/styles/mixins/mixins';
+
+.food-pairing {
+    @include table-container;
+}
+
+.food-pairing__header {
+    @include typography-6;
+}
+
+.food-pairing__table {
+    @include table;
+}
+
+.food-pairing__item {
+    @include table-item;
+    
+    display: flex;
+
+    width: 100%;
+    padding: 30px 20px;
+
+    text-align: center;
+}

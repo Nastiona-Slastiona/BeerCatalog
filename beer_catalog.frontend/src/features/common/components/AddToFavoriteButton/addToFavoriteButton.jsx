@@ -5,14 +5,14 @@ import { useDispatch } from 'react-redux';
 import setIsFavoriteBeer from 'features/common/store/beers/state/thunks/thunks';
 
 
-function BeerButtonFavorite({
+function AddToFavoriteButton({
     beer,
     className,
-    buttonName,
+    buttonLabel,
     onFavoriteClick = () => undefined
 }) {
     const dispatch = useDispatch();
-    const favoriteButton = beer.isFavorite ? 'Remove Favorite' : buttonName;
+    const favoriteButton = beer.isFavorite ? 'Remove Favorite' : buttonLabel;
 
     const handleFavoriteButton = () => {
         dispatch(setIsFavoriteBeer(beer));
@@ -24,10 +24,11 @@ function BeerButtonFavorite({
     );
 }
 
-BeerButtonFavorite.propTypes = {
+AddToFavoriteButton.propTypes = {
     beer: PropTypes.object,
+    buttonLabel: PropTypes.string,
     onFavoriteClick: PropTypes.func,
     className: PropTypes.string
 };
 
-export default BeerButtonFavorite;
+export default AddToFavoriteButton;
