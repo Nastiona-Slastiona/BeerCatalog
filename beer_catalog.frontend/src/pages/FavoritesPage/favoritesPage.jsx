@@ -1,8 +1,9 @@
-import React, { useCallback, useState } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useCallback, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import BeerItem from 'features/common/components/BeerItem/beerItem';
 import Pagination from 'components/base/Pagination/pagination';
+import fetchOneBeer from 'features/favoritesBeers/store/thunks';
 
 import './favoritesPage.scss';
 
@@ -10,9 +11,22 @@ import './favoritesPage.scss';
 const ENTITIES_ON_PAGE = 5;
 
 export default function FavoritesPage() {
-    const favoriteBeers = useSelector(state => state.beers.beersList.filter(
-        beer => beer.isFavorite
-    ));
+    const favoriteBeersIds = useSelector(state => state.beers.favoritesBeersIds);
+    const dispatch = useDispatch();
+    const favorites = useSelector(state => state.beers.favoriteBeers);
+    const [fetching, setFetching] = useState(favorites.length < favoriteBeersIds.length);
+    useEffect(() => {
+        favoriteBeersIds.forEach(beerId => {
+            if (fetching) {
+                dispatch(fetchOneBeer(beerId));
+            }
+
+            setFetching(false);
+        });
+    }, [favoriteBeersIds, dispatch, fetching]);
+
+    const favoriteBeers = useSelector(state => state.beers.favoriteBeers);
+
     const amountOfFavoriteBeers = favoriteBeers.length;
     const [pageShown, setPageShown] = useState(0);
 
@@ -22,7 +36,7 @@ export default function FavoritesPage() {
 
     if (!amountOfFavoriteBeers) {
         return (
-            <h1>You have no favorite beers yet</h1>
+            <h2 className="favorites-page__header">You have no favorite beers yet</h2>
         );
     }
 
@@ -44,7 +58,7 @@ export default function FavoritesPage() {
 
     return (
         <section>
-            <h2>Your Favorite beers</h2>
+            <h2 className="favorites-page__header">Your Favorite beers</h2>
             <article className="favorites-page__container">
                 <div className="favorites-page">
                     {renderedBeers[pageShown]}

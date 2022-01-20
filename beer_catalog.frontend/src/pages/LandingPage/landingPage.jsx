@@ -7,6 +7,8 @@ import LoadingIndicator from 'components/base/LoadingIndicator/loadingIndicator'
 import SearchBox from 'components/base/SearchBox/searchBox';
 import ThunkStatus from 'src/store/thunkStatus';
 import fetchBeers from 'features/beersList/store/beersThunk';
+import storageHelper from 'src/helpers/storageHelper';
+
 
 import './landingPage.scss';
 
@@ -17,6 +19,7 @@ export default function LandingPage() {
     const status = useSelector(state => state.beers.status);
     const currentPage = useSelector(state => state.beers.currentPage);
     const [page, setPage] = useState(currentPage + 1);
+    const favoritesBeersIds = useSelector(state => state.beers.favoritesBeersIds);
 
     const [isFilterVisible, setIsFilterVisible] = useState(false);
     const [isLoadingVisible, setIsLoadingVisible] = useState(status === ThunkStatus.Loading);
@@ -47,6 +50,10 @@ export default function LandingPage() {
             document.removeEventListener('scroll', scrollHandler);
         };
     });
+
+    useEffect(() => {
+        storageHelper.setItem('favoriteBeersIds', favoritesBeersIds);
+    }, [favoritesBeersIds]);
 
     const scrollHandler = e => {
         const targetWindowState = e.target.documentElement;
