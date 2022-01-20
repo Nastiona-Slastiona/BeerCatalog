@@ -1,24 +1,24 @@
-@import 'src/styles/scss/mixins';
-
 .search-box {
-  color: #6c6c74;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  @include centered-content;
+    color: #6c6c74;
+}
 
-  &__input {
+.search-box__input {
     font-size: 18px;
 
     width: 370px;
     margin-right: 5px;
 
     border: inherit;
-    border-bottom: 2px solid rgb(199, 195, 195);
-  }
+    border-bottom: 2px solid #c7c3c3;
+}
 
-  &__button {
+.search-box__button {
     font-size: 40px;
 
     border: inherit;
     background: none;
-  }
 }

@@ -1,23 +1,28 @@
-@import 'src/styles/scss/mixins';
-@import 'src/styles/scss/main';
+@import 'src/styles/mixins/mixins';
+@import 'src/styles/colors';
+@import 'src/styles/mixins/typography';
 
 .beer-item-info {
-  font: {
-    size: 16px;
-    family: $font-family;
-  }
+    @include typography-0;
 
-  display: grid;
-  width: 330px;
-  height: 130px;
-  padding: 20px;
+    display: grid;
 
-  text-align: left;
+    width: 380px;
+    height: 130px;
+    padding: 20px;
 
-  color: #fff;
-  background: #808080;
+    text-align: left;
 
-  &--title {
+    color: #fff;
+    background: #808080;
+}
+
+.beer-item-info__text--title {
+    display: block;
+
     @include title;
-  }
+}
+
+.beer-item-info__text--tagline {
+    display: block;
 }

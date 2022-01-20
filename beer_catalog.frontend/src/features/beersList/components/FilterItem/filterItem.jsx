@@ -1,41 +1,38 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import './filterItem.scss';
 
 
 function FilterItem({
-    fullName,
-    name,
-    min,
-    max,
+    filter,
     onChange
 }) {
-    let step = '1';
-    const [value, setValue] = useState(+min);
+    let step = 1;
+    const [value, setValue] = useState(filter.min);
 
-    if (name === 'abv') {
-        step = '.1';
+    if (filter.name === 'abv') {
+        step = 0.1;
     }
 
-    const onInputChange = e => {
+    const onInputChange = useCallback(e => {
         setValue(e.target.value);
         onChange(e);
-    };
+    }, [onChange]);
 
     return (
         <div className="filter-item">
-            <span>{fullName}</span>
+            <span>{filter.fullName}</span>
             <div>
                 <label className="filter-item__label">{value}</label>
                 <input
                     className="filter-item__slider"
                     type="range"
-                    min={min}
-                    max={max}
-                    defaultValue={min}
+                    min={filter.min}
+                    max={filter.max}
+                    defaultValue={filter.min}
                     step={step}
-                    name={name}
+                    name={filter.name}
                     onChange={onInputChange}
                 />
             </div>
@@ -44,8 +41,7 @@ function FilterItem({
 }
 
 FilterItem.propTypes = {
-    min: PropTypes.number,
-    max: PropTypes.number,
+    filter: PropTypes.object,
     onChange: PropTypes.func
 };
 

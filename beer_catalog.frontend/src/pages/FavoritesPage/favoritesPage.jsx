@@ -2,12 +2,13 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import BeerItem from 'features/common/components/BeerItem/beerItem';
-import List from 'components/base/List/list';
 import Pagination from 'components/base/Pagination/pagination';
-import fetchOneBeer from 'features/favoritesBeers/store/beers/state/thunks/thunks';
+import fetchOneBeer from 'features/favoritesBeers/store/thunks';
 
 import './favoritesPage.scss';
 
+
+const ENTITIES_ON_PAGE = 5;
 
 export default function FavoritesPage() {
     const favoriteBeersIds = useSelector(state => state.beers.favoritesBeersIds);
@@ -30,7 +31,7 @@ export default function FavoritesPage() {
     const [pageShown, setPageShown] = useState(0);
 
     const onRemoveFavoriteClick = useCallback(() => {
-        setPageShown(Math.floor(((amountOfFavoriteBeers - 2) / 5)));
+        setPageShown(Math.floor(((amountOfFavoriteBeers - 2) / ENTITIES_ON_PAGE)));
     }, [amountOfFavoriteBeers]);
 
     if (!amountOfFavoriteBeers) {
@@ -40,8 +41,9 @@ export default function FavoritesPage() {
     }
 
     const renderedBeers = [];
-    for (let i = 0, j = 0; j < amountOfFavoriteBeers; i += 5, j++) {
-        renderedBeers[j] = favoriteBeers.slice(i, i + 5).map(favoriteBeer => {
+
+    for (let i = 0; i < amountOfFavoriteBeers; i += ENTITIES_ON_PAGE) {
+        renderedBeers.push(Array.from(favoriteBeers.slice(i, i + ENTITIES_ON_PAGE).map(favoriteBeer => {
             return (
                 <BeerItem
                     key={favoriteBeer.id}
@@ -51,22 +53,22 @@ export default function FavoritesPage() {
                     onRemoveFavoriteClick={onRemoveFavoriteClick}
                 />
             );
-        });
+        })));
     }
 
     return (
-        <div>
+        <section>
             <h2 className="favorites-page__header">Your Favorite beers</h2>
-            <List
-                renderedItems={renderedBeers[pageShown]}
-                containerClassName="favorites-page__container"
-                listClassName="favorites-page"
-            />
+            <article className="favorites-page__container">
+                <div className="favorites-page">
+                    {renderedBeers[pageShown]}
+                </div>
+            </article>
             <Pagination
-                beers={favoriteBeers}
+                list={favoriteBeers}
                 setPage={setPageShown}
                 pageShown={pageShown}
             />
-        </div>
+        </section>
     );
 }

@@ -10,7 +10,7 @@ const setIsFavoriteBeer = createAsyncThunk(
         };
 
         try {
-            dispatch({ type: 'beers/favoriteBeerSetted', payload: newBeer });
+            dispatch({ type: 'beers/favoriteBeerSet', payload: newBeer });
         } catch (error) {
             return rejectWithValue(error.message());
         }

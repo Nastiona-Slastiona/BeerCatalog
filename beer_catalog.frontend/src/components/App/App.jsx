@@ -18,7 +18,7 @@ export default function App() {
                 <Routes>
                     <Route path="/" element={<LandingPage />} exact />
                     <Route path="/favorites" element={<FavoritesPage />} />
-                    <Route path="/beers/id=:id" element={<BeerPage />} exact />
+                    <Route path="/beers/:id" element={<BeerPage />} exact />
                 </Routes>
             </BrowserRouter>
         </div>

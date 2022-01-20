@@ -1,0 +1,9 @@
+@import 'src/styles/mixins/mixins';
+
+.ingredients__header {
+    @include typography-6;
+}
+
+.ingredients__table {
+    @include table;
+}

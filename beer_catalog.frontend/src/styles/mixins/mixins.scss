@@ -1,0 +1,29 @@
+@import 'src/styles/mixins/typography';
+
+@mixin table-item {
+    width: 100%;
+    padding: 20px;
+
+    border: 1px solid #dcdcdc;
+    border-radius: 2px;
+}
+
+@mixin table {
+    min-width: 300px;
+    max-width: 500px;
+    margin: 20px 0;
+}
+
+@mixin table-container {
+    margin: 0 80px;
+}
+
+@mixin table-header {
+    @include typography-1;
+    padding: 10px 0;
+}
+
+@mixin title {
+    @include typography-1;
+    padding-bottom: 10px;
+}

@@ -1,19 +1,17 @@
-@import 'src/styles/scss/mixins';
-@import 'src/styles/scss/main';
+@import 'src/styles/mixins/mixins';
+@import 'src/styles/colors';
 
-.beer-page__header {
-  &--tagline {
-    font: {
-      style: italic;
-      family: $font-family;
-      size: 80%;
-    }
+.beer-page__header--tagline {
+    @include typography-7;
+
+    display: block;
+
+    margin: 10px 0;
     color: #808080;
-  }
+}
 
-  &--title {
-    font-size: 54pt;
-
+.beer-page__header--title {
     @include title;
-  }
+    
+    font-size: 54pt;
 }

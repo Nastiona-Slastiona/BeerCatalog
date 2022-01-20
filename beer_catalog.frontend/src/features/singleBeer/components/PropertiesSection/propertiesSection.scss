@@ -1,7 +1,15 @@
 @import 'src/styles/mixins/mixins';
 $bg-color: #9596a0;
 
-.properties-item {
+.properties__header {
+    @include typography-6;
+}
+
+.properties__table {
+    @include table;
+}
+
+.properties__item {
     @include table-item;
     
     display: flex;
@@ -13,7 +21,7 @@ $bg-color: #9596a0;
     color: #000000;
 }
 
-.properties-item__value {
+.properties__item-value {
     display: flex;
 
     padding: 5px 20px;
@@ -23,7 +31,7 @@ $bg-color: #9596a0;
     background-color: $bg-color;
 }
 
-.properties-item__name {
+.properties__item-name {
     display: flex;
     justify-content: space-between;
 

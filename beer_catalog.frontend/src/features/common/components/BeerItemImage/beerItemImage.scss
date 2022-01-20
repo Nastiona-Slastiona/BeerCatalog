@@ -1,23 +1,27 @@
-@import 'src/styles/scss/main';
-@import 'src/styles/scss/mixins';
+@import 'src/styles/colors';
 
 .beer-item-image {
-  width: auto;
-  height: 80%;
+    width: auto;
+    height: 80%;
 }
 
 .beer-item-image__background {
-  width: 150px;
-  height: 150px;
-  margin: 5px;
-  border-radius: 50%;
-  background-color: $primary-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  @include centered-content;
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+
+    border-radius: 50%;
+    background-color: $primary-color;
 }
 
 .beer-item-image__container {
-  max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  @include centered-content;
+    max-width: 100%;
 }
