@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-import setIsFavoriteBeer from 'features/common/store/beers/state/thunks/thunks';
+import setIsFavoriteBeer from 'features/common/store/beers/state/thunks/beerThunk';
 
 
 function AddToFavoriteButton({

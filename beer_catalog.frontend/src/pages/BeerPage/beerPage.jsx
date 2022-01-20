@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 
 import AddToFavoriteButton from 'features/common/components/AddToFavoriteButton/addToFavoriteButton';
 import BeerItemImage from 'features/common/components/BeerItemImage/beerItemImage';
@@ -10,6 +10,7 @@ import FoodPairingSection from 'features/singleBeer/components/FoodPairingSectio
 import IngredientsSection from 'features/singleBeer/components/IngredientsSection/ingredientsSection';
 import MethodSection from 'features/singleBeer/components/MethodSection/methodSection';
 import PropertiesSection from 'features/singleBeer/components/PropertiesSection/propertiesSection';
+import fetchOneBeer from 'features/common/store/beers/state/thunks/fetchBeerThunk';
 
 import './beerPage.scss';
 
@@ -17,7 +18,13 @@ import './beerPage.scss';
 export default function BeerPage() {
     const location = useLocation();
     const beerId = +location.pathname.slice(10);
-    const beer = useSelector(state => state.beers.beersList.filter(b => b.id === beerId))[0];
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchOneBeer(beerId));
+    }, [beerId, dispatch]);
+
+    const beer = useSelector(state => state.beers.selectedBeer);
 
     return (
         <div className="beer-page__container">

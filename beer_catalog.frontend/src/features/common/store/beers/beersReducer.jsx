@@ -2,9 +2,9 @@ import ThunkStatus from 'src/store/thunkStatus';
 import { createSlice } from '@reduxjs/toolkit';
 import favoriteBeerSet from 'features/common/store/reducers/beers/favoriteBeerSet';
 import fetchBeers from 'features/beersList/store/beersThunk';
-import fetchOneBeer from 'features/favoritesBeers/store/thunks';
+import fetchOneBeer from 'features/common/store/beers/state/thunks/fetchBeerThunk';
 import serviceKeys from 'src/constants/serviceKeys';
-import setIsFavoriteBeer from 'features/common/store/beers/state/thunks/thunks';
+import setIsFavoriteBeer from 'features/common/store/beers/state/thunks/beerThunk';
 import storageHelper from 'src/helpers/storageHelper';
 
 
@@ -12,6 +12,7 @@ const initialState = {
     beersList: [],
     favoritesBeersIds: storageHelper.getItem(serviceKeys.favoriteBeersIds),
     favoriteBeers: [],
+    selectedBeer: {},
     status: '',
     currentPage: 0,
     error: ''
@@ -53,13 +54,19 @@ const beersSlice = createSlice({
         },
         [fetchOneBeer.fulfilled]: (state, action) => {
             const beersId = state.favoriteBeers.map(beer => beer.id);
-            if (!beersId.includes(action.payload[0].id)) {
-                state.favoriteBeers = [...state.favoriteBeers, ...action.payload];
-                state.favoriteBeers = state.favoriteBeers.map(beer => {
-                    beer.isFavorite = true;
+            if (!beersId.includes(action.payload.id)) {
+                if (state.favoritesBeersIds.includes(action.payload.id)) {
+                    state.favoriteBeers = [...state.favoriteBeers, action.payload];
+                    state.favoriteBeers = state.favoriteBeers.map(beer => {
+                        beer.isFavorite = true;
 
-                    return beer;
-                });
+                        return beer;
+                    });
+                    state.selectedBeer = state.favoriteBeers.filter(beer => beer.id === action.payload.id)[0];
+                } else {
+                    action.payload.isFavorite = false;
+                    state.selectedBeer = action.payload;
+                }
             }
             state.status = ThunkStatus.Resolved;
         },

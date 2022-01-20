@@ -1,3 +1,4 @@
+import beerMapper from 'features/favoritesBeers/mapper/beerMapper';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import requestHelper from 'src/helpers/requestHelper';
 import serviceUrls from 'src/constants/serviceUrls';
@@ -14,7 +15,7 @@ const fetchOneBeer = createAsyncThunk(
             );
             const data = await requestHelper.get(url);
 
-            return data;
+            return beerMapper(...data);
         } catch (error) {
             return rejectWithValue(error.message);
         }

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import BeerItem from 'features/common/components/BeerItem/beerItem';
 import Pagination from 'components/base/Pagination/pagination';
-import fetchOneBeer from 'features/favoritesBeers/store/thunks';
+import fetchOneBeer from 'features/common/store/beers/state/thunks/fetchBeerThunk';
 
 import './favoritesPage.scss';
 
