@@ -3,13 +3,14 @@ import { createSlice } from '@reduxjs/toolkit';
 import favoriteBeerSetted from 'features/common/store/reducers/beers/favoriteBeerSetted';
 import fetchBeers from 'features/beersList/store/beers/state/thunks/thunks';
 import fetchOneBeer from 'features/favoritesBeers/store/beers/state/thunks/thunks';
+import serviceKeys from 'src/constants/serviceKeys';
 import setIsFavoriteBeer from 'features/common/store/beers/state/thunks/thunks';
 import storageHelper from 'src/helpers/storageHelper';
 
 
 const initialState = {
     beersList: [],
-    favoritesBeersIds: storageHelper.getItem('favoriteBeersIds'),
+    favoritesBeersIds: storageHelper.getItem(serviceKeys.favoriteBeersIds),
     favoriteBeers: [],
     status: '',
     currentPage: 0,
