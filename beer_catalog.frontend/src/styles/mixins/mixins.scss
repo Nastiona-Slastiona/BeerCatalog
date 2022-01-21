@@ -1,6 +1,8 @@
 @import 'src/styles/mixins/typography';
 
 @mixin table-item {
+    display: block;
+
     width: 100%;
     padding: 20px;
 
@@ -10,7 +12,7 @@
 
 @mixin table {
     min-width: 300px;
-    max-width: 500px;
+    width: 400px;
     margin: 20px 0;
 }
 
@@ -20,7 +22,6 @@
 
 @mixin table-header {
     @include typography-1;
-    padding: 10px 0;
 }
 
 @mixin title {

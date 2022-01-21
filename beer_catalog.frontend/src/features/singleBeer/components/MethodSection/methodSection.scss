@@ -9,10 +9,15 @@
 }
 .method__table {
     @include table;
+    display: block;
 }
 
 .method__table-header {
     @include table-header;
-    
-    margin-top: 20px;
+    padding: 10px 0 0;
+}
+
+.method__table-row {
+    display: block;
+    padding: 5px 0;
 }

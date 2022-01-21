@@ -5,17 +5,17 @@ import './ingredientsItem.scss';
 
 export default function IngridientsItem({ name, values }) {
     return (
-        <div className="ingredients-item">
-            <div className="ingredients-item__header">
+        <tr className="ingredients-item">
+            <td className="ingredients-item__header">
                 {name}
-            </div>
+            </td>
             {
                 values.map((value, index) => (
-                    <div key={index}>
+                    <td key={index} className="ingredients-item__component">
                         {value}
-                    </div>
+                    </td>
                 ))
             }
-        </div>
+        </tr>
     );
 }

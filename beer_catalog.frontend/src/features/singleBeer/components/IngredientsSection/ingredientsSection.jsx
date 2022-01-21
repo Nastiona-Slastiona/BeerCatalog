@@ -7,17 +7,19 @@ import './ingredientsSection.scss';
 
 export default function IngredientsSection({ beer }) {
     return (
-        <div>
-            <div>
-                <h2 className="ingredients__header">Ingredients</h2>
-            </div>
-            <div className="ingredients__table">
+        <table className="ingredients">
+            <thead>
+                <tr>
+                    <th className="ingredients__header">Ingredients</th>
+                </tr>
+            </thead>
+            <tbody className="ingredients__table">
                 {
                     beer.ingredients.map((ingredient, index) => {
                         return <IngredientsItem key={index} name={ingredient[0]} values={ingredient[1]} />;
                     })
                 }
-            </div>
-        </div>
+            </tbody>
+        </table>
     );
 }

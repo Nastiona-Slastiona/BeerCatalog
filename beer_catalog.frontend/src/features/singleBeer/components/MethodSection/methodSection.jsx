@@ -5,22 +5,24 @@ import './methodSection.scss';
 
 export default function MethodSection({ methods }) {
     return (
-        <div className="method">
-            <div>
-                <h2 className="method__header">Method</h2>
-            </div>
-            <div className="method__table">
+        <table className="method">
+            <thead>
+                <tr className="method__header">
+                    <th>Method</th>
+                </tr>
+            </thead>
+            <tbody className="method__table">
                 {
                     methods.map((method, index) => (
-                        <div key={index}>
-                            <div className="method__table-header">{method[0]}</div>
+                        <tr key={index} className="method__table-row">
+                            <td className="method__table-header">{method[0]}</td>
                             {
-                                method[1].map((step, stepIndex) => <div key={stepIndex}>{step}</div>)
+                                method[1].map((step, stepIndex) => <td key={stepIndex} className="method__table-row">{step}</td>)
                             }
-                        </div>
+                        </tr>
                     ))
                 }
-            </div>
-        </div>
+            </tbody>
+        </table>
     );
 }
