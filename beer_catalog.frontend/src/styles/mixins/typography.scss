@@ -6,42 +6,42 @@ $font-family-Lucinda: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
 @mixin typography-0 {
     font: {
         family: $font-family;
-        size: 18px;
+        size: 18pt;
     };
 }
 
 @mixin typography-1 {
     font: {
         family: $font-family;
-        size: 25px;
+        size: 25pt;
         weight: 600;
     };
 }
 
 @mixin typography-2 {
     font: {
-        size: 25px;
+        size: 25pt;
         weight: 500;
     };
 }
 
 @mixin typography-3 {
     font: {
-        size: 20px;
+        size: 20pt;
         family: $font-family;
     };
 }
 
 @mixin typography-4 {
     font: {
-        size: 25px;
+        size: 25pt;
         family: $font-family-styled;
     };
 }
 
 @mixin typography-5 {
     font: {
-        size: 30px;
+        size: 30pt;
         family: $font-family-Lucinda;
     };
 }
@@ -49,7 +49,7 @@ $font-family-Lucinda: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
 @mixin typography-6 {
     font: {
         family: $font-family;
-        size: 25px;
+        size: 25pt;
         weight: 700; 
     };
 }
@@ -57,7 +57,7 @@ $font-family-Lucinda: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
 @mixin typography-7 {
     font: {
         family: $font-family;
-        size: 20px;
+        size: 20pt;
         style: italic;
     };
 }

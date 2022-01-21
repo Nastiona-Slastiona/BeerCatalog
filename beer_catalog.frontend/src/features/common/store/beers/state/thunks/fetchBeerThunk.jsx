@@ -1,4 +1,4 @@
-import beerMapper from 'features/favoritesBeers/mapper/beerMapper';
+import beerMapper from 'features/singleBeer/mappers/beerMapper';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import requestHelper from 'src/helpers/requestHelper';
 import serviceUrls from 'src/constants/serviceUrls';

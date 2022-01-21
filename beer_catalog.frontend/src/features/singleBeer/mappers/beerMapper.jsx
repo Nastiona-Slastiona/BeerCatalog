@@ -1,4 +1,4 @@
-import mappingHelper, { getDegrees, isObject } from 'features/favoritesBeers/helper/mappingHelper';
+import mappingHelper, { getDegrees, isObject } from 'features/singleBeer/helpers/mappingHelper';
 
 
 export default function beerMapper(beer) {
