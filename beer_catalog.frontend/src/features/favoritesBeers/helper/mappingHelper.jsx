@@ -36,7 +36,7 @@ const mappingHelper = {
     propertyChanging: (property, mapping, defaultProp, action) => {
         return property.map(prop => {
             prop[0] = prop[0][0].toUpperCase() + prop[0].slice(1).split('_')[0];
-            prop[1] = typeof prop[1] === 'string'
+            prop[1] = typeof prop[1] === 'string' || prop[1] === null
                 ? [prop[1]]
                 : !isObject(prop[1])
                     ? prop[1].map(mapping)
