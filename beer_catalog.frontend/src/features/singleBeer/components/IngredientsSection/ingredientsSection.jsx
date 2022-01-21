@@ -6,10 +6,6 @@ import './ingredientsSection.scss';
 
 
 export default function IngredientsSection({ beer }) {
-    const ingredients = [];
-    ingredients.push(['water', { ...beer.boil_volume }]);
-    Object.entries(beer.ingredients).forEach(ingr => ingredients.push([ingr[0], { ...ingr[1] }]));
-
     return (
         <div>
             <div>
@@ -17,8 +13,8 @@ export default function IngredientsSection({ beer }) {
             </div>
             <div className="ingredients__table">
                 {
-                    ingredients.map((ingredient, index) => {
-                        return <IngredientsItem key={index} ingredient={ingredient} />;
+                    beer.ingredients.map((ingredient, index) => {
+                        return <IngredientsItem key={index} name={ingredient[0]} values={ingredient[1]} />;
                     })
                 }
             </div>

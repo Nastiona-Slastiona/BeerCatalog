@@ -8,6 +8,7 @@ import BeerPageHeader from 'features/singleBeer/components/BeerPageHeader/beerPa
 import BrewingSection from 'features/singleBeer/components/BrewingSection/brewingSection';
 import FoodPairingSection from 'features/singleBeer/components/FoodPairingSection/foodPairingSection';
 import IngredientsSection from 'features/singleBeer/components/IngredientsSection/ingredientsSection';
+import LoadingIndicator from 'components/base/LoadingIndicator/loadingIndicator';
 import MethodSection from 'features/singleBeer/components/MethodSection/methodSection';
 import PropertiesSection from 'features/singleBeer/components/PropertiesSection/propertiesSection';
 import fetchOneBeer from 'features/common/store/beers/state/thunks/fetchBeerThunk';
@@ -25,6 +26,11 @@ export default function BeerPage() {
     }, [beerId, dispatch]);
 
     const beer = useSelector(state => state.beers.selectedBeer);
+    if (beer.id !== beerId) {
+        return (
+            <LoadingIndicator />
+        );
+    }
 
     return (
         <div className="beer-page__container">
@@ -48,7 +54,7 @@ export default function BeerPage() {
                 <BrewingSection brewingDescription={beer.brewers_tips} />
                 <section className="beer-page__preparation-section">
                     <IngredientsSection beer={beer} />
-                    <MethodSection beer={beer} />
+                    <MethodSection methods={beer.method} />
                 </section>
             </div>
         </div>
