@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
 import Menu from 'features/common/components/Menu/menu';
 
@@ -8,19 +8,23 @@ import './pageHeader.scss';
 export default function PageHeader() {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
 
-    const hideMenu = () => {
+    const hideMenu = useCallback(() => {
         setIsMenuVisible(false);
-    };
+    }, []);
 
-    const showMenu = () => {
+    const showMenu = useCallback(() => {
         setIsMenuVisible(true);
-    };
+    }, []);
 
     return (
         <div>
             <div className="page-header">
                 <div className="page-header__main">
-                    <button className="icon-menu page-header__menu" label=" " onClick={showMenu} />
+                    <button
+                        className="icon-menu page-header__menu"
+                        label=" "
+                        onClick={showMenu}
+                    />
                     <span>
                         Beer catalog
                     </span>

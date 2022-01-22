@@ -1,4 +1,5 @@
-@import 'src/styles/mixins/mixins';
+@import 'src/styles/mixins/table';
+@import 'src/styles/mixins/typography';
 
 .method {
     @include table-container;

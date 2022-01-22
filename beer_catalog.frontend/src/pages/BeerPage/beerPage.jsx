@@ -33,9 +33,9 @@ export default function BeerPage() {
     }
 
     return (
-        <div className="beer-page__container">
+        <section className="beer-page__container">
             <div className="beer-page">
-                <section className="beer-page__main">
+                <article className="beer-page__main">
                     <div className="beer-page__info">
                         <BeerPageHeader beer={beer} />
                         <AddToFavoriteButton
@@ -46,17 +46,17 @@ export default function BeerPage() {
                         <div>{beer.description}</div>
                     </div>
                     <BeerItemImage imageUrl={beer.image_url} />
-                </section>
-                <section className="beer-page__characteristics">
+                </article>
+                <article className="beer-page__characteristics">
                     <PropertiesSection beer={beer} />
                     <FoodPairingSection foodPairing={beer.food_pairing} />
-                </section>
+                </article>
                 <BrewingSection brewingDescription={beer.brewers_tips} />
-                <section className="beer-page__preparation-section">
-                    <IngredientsSection beer={beer} />
+                <article className="beer-page__preparation-section">
+                    <IngredientsSection beer={beer.ingredients} />
                     <MethodSection methods={beer.method} />
-                </section>
+                </article>
             </div>
-        </div>
+        </section>
     );
 }

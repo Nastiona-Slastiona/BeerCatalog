@@ -1,4 +1,4 @@
-@import 'src/styles/mixins/mixins';
+@import 'src/styles/mixins/typography';
 @import 'src/styles/colors';
 
 .favorite-beer-item-info__description {
@@ -20,9 +20,10 @@
 }
 
 .favorite-beer-item-info__title {
-    @include title;
+    @include typography-1;
     
     font-size: 45px;
+    padding-bottom: 10px;
 }
 
 .favorite-beer-item-info__tagline {

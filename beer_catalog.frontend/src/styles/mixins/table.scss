@@ -1,5 +1,3 @@
-@import 'src/styles/mixins/typography';
-
 @mixin table-item {
     display: block;
 
@@ -22,9 +20,4 @@
 
 @mixin table-header {
     @include typography-1;
-}
-
-@mixin title {
-    @include typography-1;
-    padding-bottom: 10px;
 }

@@ -1,5 +1,5 @@
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
-import React from 'react';
 import classNames from 'classnames';
 
 import './pagination.scss';
@@ -24,7 +24,7 @@ function Pagination({
     for (let i = 1; i <= length; i++) {
         pages.push(i);
     }
-    const onPaginationClick = event => {
+    const onPaginationClick = useCallback(event => {
         if (event.target.textContent === '>') {
             if (pageShown < length - 1) {
                 setPage(prevPage => prevPage + 1);
@@ -36,7 +36,7 @@ function Pagination({
         } else {
             setPage(+event.target.innerHTML - 1);
         }
-    };
+    }, [length, pageShown, setPage]);
 
     return (
         <div className="pagination__container">

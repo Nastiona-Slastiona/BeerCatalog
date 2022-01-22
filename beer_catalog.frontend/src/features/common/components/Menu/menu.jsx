@@ -13,7 +13,7 @@ function Menu({ isVisible, setIsVisible }) {
     return (
         <div className={containerClassNames} onClick={setIsVisible}>
             <div className="menu">
-                <h2 className="menu__header">Beer Catalog</h2>
+                <span className="menu__header">Beer Catalog</span>
                 <MenuNavbar />
             </div>
         </div>

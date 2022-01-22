@@ -1,4 +1,4 @@
-@import 'src/styles/mixins/mixins';
+@import 'src/styles/mixins/typography';
 @import 'src/styles/colors';
 
 .beer-page__header--tagline {
@@ -11,7 +11,8 @@
 }
 
 .beer-page__header--title {
-    @include title;
+    @include typography-1;
+    padding-bottom: 10px;
     
     font-size: 30pt;
 }

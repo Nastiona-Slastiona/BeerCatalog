@@ -1,4 +1,4 @@
-import ThunkStatus from 'src/store/thunkStatus';
+import ThunkStatus from 'src/features/common/models/thunkStatus';
 import { createSlice } from '@reduxjs/toolkit';
 import favoriteBeerSet from 'features/common/store/reducers/beers/favoriteBeerSet';
 import fetchBeers from 'features/beersList/store/beersThunk';

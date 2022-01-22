@@ -27,14 +27,14 @@ export default function FavoritesPage() {
 
     const favoriteBeers = useSelector(state => state.beers.favoriteBeers);
 
-    const amountOfFavoriteBeers = favoriteBeers.length;
+    const beersListLength = favoriteBeers.length;
     const [pageShown, setPageShown] = useState(0);
 
     const onRemoveFavoriteClick = useCallback(() => {
-        setPageShown(Math.floor(((amountOfFavoriteBeers - 2) / ENTITIES_ON_PAGE)));
-    }, [amountOfFavoriteBeers]);
+        setPageShown(Math.ceil(((beersListLength) / ENTITIES_ON_PAGE)));
+    }, [beersListLength]);
 
-    if (!amountOfFavoriteBeers) {
+    if (!beersListLength) {
         return (
             <h2 className="favorites-page__header">You have no favorite beers yet</h2>
         );
@@ -42,7 +42,7 @@ export default function FavoritesPage() {
 
     const renderedBeers = [];
 
-    for (let i = 0; i < amountOfFavoriteBeers; i += ENTITIES_ON_PAGE) {
+    for (let i = 0; i < beersListLength; i += ENTITIES_ON_PAGE) {
         renderedBeers.push(Array.from(favoriteBeers.slice(i, i + ENTITIES_ON_PAGE).map(favoriteBeer => {
             return (
                 <BeerItem

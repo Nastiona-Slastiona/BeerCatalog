@@ -2,6 +2,11 @@
 @import 'src/styles/mixins/typography';
 
 
+.favorites-page {
+    width: 50%;
+}
+
+
 .favorites-page__header {
     @include typography-5;
     

@@ -1,23 +1,34 @@
 import React from 'react';
 
-import IngredientsItem from 'features/singleBeer/components/IngredientsItem/ingredientsItem';
-
 import './ingredientsSection.scss';
 
 
-export default function IngredientsSection({ beer }) {
+export default function IngredientsSection({ ingredients }) {
     return (
         <table className="ingredients">
             <thead>
                 <tr>
-                    <th className="ingredients__header">Ingredients</th>
+                    <th className="ingredients__header">
+                        Ingredients
+                    </th>
                 </tr>
             </thead>
             <tbody className="ingredients__table">
                 {
-                    beer.ingredients.map((ingredient, index) => {
-                        return <IngredientsItem key={index} name={ingredient[0]} values={ingredient[1]} />;
-                    })
+                    ingredients.map((ingredient, index) => (
+                        <tr key={index} className="ingredients-item">
+                            <td className="ingredients-item__header">
+                                {ingredient[0]}
+                            </td>
+                            {
+                                ingredient[1].map((step, stepIndex) => (
+                                    <td key={stepIndex} className="ingredients-item__component">
+                                        {step}
+                                    </td>
+                                ))
+                            }
+                        </tr>
+                    ))
                 }
             </tbody>
         </table>

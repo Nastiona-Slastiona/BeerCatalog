@@ -5,7 +5,7 @@ import BeerItem from 'features/common/components/BeerItem/beerItem';
 import Filter from 'features/beersList/components/Filter/filter';
 import LoadingIndicator from 'components/base/LoadingIndicator/loadingIndicator';
 import SearchBox from 'components/base/SearchBox/searchBox';
-import ThunkStatus from 'src/store/thunkStatus';
+import ThunkStatus from 'features/common/models/thunkStatus';
 import fetchBeers from 'features/beersList/store/beersThunk';
 import storageHelper from 'src/helpers/storageHelper';
 
@@ -55,12 +55,12 @@ export default function LandingPage() {
         storageHelper.setItem('favoriteBeersIds', favoritesBeersIds);
     }, [favoritesBeersIds]);
 
-    const scrollHandler = e => {
+    const scrollHandler = useCallback(e => {
         const targetWindowState = e.target.documentElement;
         if (targetWindowState.scrollHeight - (targetWindowState.scrollTop + window.innerHeight) < 50) {
             setFetching(true);
         }
-    };
+    }, []);
 
     const onInputChange = useCallback(e => {
         setFilter({
@@ -108,12 +108,12 @@ export default function LandingPage() {
             <div>
                 <SearchBox onInputChange={onInputChange} />
                 <Filter isVisible={isFilterVisible} onChange={onFilterChange} />
-                <h1>There is nothing to display</h1>
+                <h2>There is nothing to display</h2>
             </div>
         );
     }
 
-    const renderedRows = filtredBeers.map(beer => <BeerItem key={beer.id} beer={beer} isSimpleBeerMode={true} />);
+    const renderedBeers = filtredBeers.map(beer => <BeerItem key={beer.id} beer={beer} isSimpleBeerMode={true} />);
 
     return (
         <section>
@@ -121,7 +121,7 @@ export default function LandingPage() {
             <Filter isVisible={isFilterVisible} onChange={onFilterChange} />
             <article className="landing-page__container">
                 <div className="landing-page">
-                    {renderedRows}
+                    {renderedBeers}
                 </div>
             </article>
             <LoadingIndicator isVisible={isLoadingVisible} />
