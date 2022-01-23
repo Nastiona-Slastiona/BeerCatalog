@@ -1,9 +1,10 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import './propertiesSection.scss';
 
 
-export default function PropertiesSection({ beer }) {
+function PropertiesSection({ beer }) {
     const properties = [{
         title: 'Alcohol by volume', name: 'ABV', value: beer.abv
     }, {
@@ -13,22 +14,33 @@ export default function PropertiesSection({ beer }) {
     }];
 
     return (
-        <div className="properties">
-            <div>
-                <h2 className="properties__header">Properties</h2>
-            </div>
-            <div className="properties__table">
+        <table className="properties">
+            <thead>
+                <tr>
+                    <td className="properties__header">
+                        Properties
+                    </td>
+                </tr>
+            </thead>
+            <tbody className="properties__table">
                 {
                     properties.map((property, index) => (
-                        <div key={index} className="properties__item">
-                            <div className="properties__item-name">
+                        <tr key={index} className="properties__item">
+                            <td className="properties__item-name">
                                 {property.name} <span title={property.title} className="icon-info" />
-                            </div>
-                            <div className="properties__item-value">{property.value}</div>
-                        </div>
+                            </td>
+                            <td className="properties__item-value">{property.value}</td>
+                        </tr>
                     ))
                 }
-            </div>
-        </div>
+            </tbody>
+        </table>
     );
 }
+
+
+PropertiesSection.propTypes = {
+    beer: PropTypes.object
+};
+
+export default PropertiesSection;

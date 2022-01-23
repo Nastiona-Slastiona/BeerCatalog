@@ -6,11 +6,9 @@ import AddToFavoriteButton from 'features/common/components/AddToFavoriteButton/
 import BeerItemImage from 'features/common/components/BeerItemImage/beerItemImage';
 import BeerPageHeader from 'features/singleBeer/components/BeerPageHeader/beerPageHeader';
 import BrewingSection from 'features/singleBeer/components/BrewingSection/brewingSection';
-import FoodPairingSection from 'features/singleBeer/components/FoodPairingSection/foodPairingSection';
-import IngredientsSection from 'features/singleBeer/components/IngredientsSection/ingredientsSection';
 import LoadingIndicator from 'components/base/LoadingIndicator/loadingIndicator';
-import MethodSection from 'features/singleBeer/components/MethodSection/methodSection';
 import PropertiesSection from 'features/singleBeer/components/PropertiesSection/propertiesSection';
+import Table from 'src/components/base/Table/table';
 import fetchOneBeer from 'features/common/store/beers/state/thunks/fetchBeerThunk';
 
 import './beerPage.scss';
@@ -18,7 +16,7 @@ import './beerPage.scss';
 
 export default function BeerPage() {
     const location = useLocation();
-    const beerId = +location.pathname.slice(10);
+    const beerId = +location.pathname.slice(7);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -49,12 +47,12 @@ export default function BeerPage() {
                 </article>
                 <article className="beer-page__characteristics">
                     <PropertiesSection beer={beer} />
-                    <FoodPairingSection foodPairing={beer.food_pairing} />
+                    <Table caption="Food pairing" values={beer.food_pairing} isBorder={true} />
                 </article>
                 <BrewingSection brewingDescription={beer.brewers_tips} />
                 <article className="beer-page__preparation-section">
-                    <IngredientsSection beer={beer.ingredients} />
-                    <MethodSection methods={beer.method} />
+                    <Table caption="Ingredients" values={beer.ingredients} isBorder={true} isSubRows={true} />
+                    <Table caption="Method" values={beer.method} isSubRows={true} />
                 </article>
             </div>
         </section>
