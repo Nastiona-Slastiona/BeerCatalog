@@ -21,7 +21,7 @@ function Menu({ isVisible, setIsVisible }) {
 }
 
 Menu.propTypes = {
-    isVisible: PropTypes.bool,
+    isVisible: PropTypes.bool.isRequired,
     setIsVisible: PropTypes.func
 };
 

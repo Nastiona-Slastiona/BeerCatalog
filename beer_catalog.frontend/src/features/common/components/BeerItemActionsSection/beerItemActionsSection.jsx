@@ -12,7 +12,7 @@ function BeerItemActionsSection({ beer, onFavoriteClick }) {
         <div className="beer-item-actions-section__container">
             <Link className="beer-item-actions-section" to={`/beers/${beer.id}`}>Open</Link>
             <AddToFavoriteButton
-                className="beer-item-actions-section"
+                buttonClassName="beer-item-actions-section"
                 beer={beer}
                 buttonLabel="Favorite"
                 onFavoriteClick={onFavoriteClick}
@@ -22,7 +22,8 @@ function BeerItemActionsSection({ beer, onFavoriteClick }) {
 }
 
 BeerItemActionsSection.propTypes = {
-    beer: PropTypes.object
+    beer: PropTypes.object,
+    onFavoriteClick: PropTypes.func
 };
 
 export default BeerItemActionsSection;

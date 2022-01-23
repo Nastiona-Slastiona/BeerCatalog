@@ -7,7 +7,7 @@ import setIsFavoriteBeer from 'features/common/store/beers/state/thunks/beerThun
 
 function AddToFavoriteButton({
     beer,
-    className,
+    buttonClassName,
     buttonLabel,
     onFavoriteClick = () => undefined
 }) {
@@ -20,7 +20,7 @@ function AddToFavoriteButton({
     }, [beer, dispatch, onFavoriteClick]);
 
     return (
-        <button className={className} onClick={handleFavoriteButton}>{favoriteButton}</button>
+        <button className={buttonClassName} onClick={handleFavoriteButton}>{favoriteButton}</button>
     );
 }
 
@@ -28,7 +28,7 @@ AddToFavoriteButton.propTypes = {
     beer: PropTypes.object,
     buttonLabel: PropTypes.string,
     onFavoriteClick: PropTypes.func,
-    className: PropTypes.string
+    buttonClassName: PropTypes.string
 };
 
 export default AddToFavoriteButton;

@@ -1,9 +1,10 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import './beerPageHeader.scss';
 
 
-export default function BeerPageHeader({ beer }) {
+function BeerPageHeader({ beer }) {
     return (
         <div className="beer-page__header">
             <span className="beer-page__header--title">{beer.name}</span>
@@ -11,3 +12,9 @@ export default function BeerPageHeader({ beer }) {
         </div>
     );
 }
+
+BeerPageHeader.propTypes = {
+    beer: PropTypes.object.isRequired
+};
+
+export default BeerPageHeader;

@@ -37,7 +37,7 @@ export default function BeerPage() {
                     <div className="beer-page__info">
                         <BeerPageHeader beer={beer} />
                         <AddToFavoriteButton
-                            className="beer-page__button"
+                            buttonClassName="beer-page__button"
                             beer={beer}
                             buttonLabel="Add to Favorite"
                         />

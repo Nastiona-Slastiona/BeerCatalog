@@ -1,9 +1,10 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import './brewingSection.scss';
 
 
-export default function BrewingSection({ brewingDescription }) {
+function BrewingSection({ brewingDescription }) {
     return (
         <section>
             <div>
@@ -15,3 +16,9 @@ export default function BrewingSection({ brewingDescription }) {
         </section>
     );
 }
+
+BrewingSection.propTypes = {
+    brewingDescription: PropTypes.string.isRequired
+};
+
+export default BrewingSection;
