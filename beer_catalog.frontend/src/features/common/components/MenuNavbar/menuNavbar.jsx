@@ -6,19 +6,25 @@ import './menuNavbar.scss';
 
 
 export default function MenuNavbar() {
+    const menuItems = [{
+        link: '/', iconClassName: 'icon-drawer2', name: 'Home'
+    }, {
+        link: '/favorites', iconClassName: 'icon-star-full', name: 'Favorites'
+    }];
+
     return (
         <nav className="menu-navbar">
             <li>
-                <MenuNavbarItem
-                    link="/"
-                    iconClassName="icon-drawer2"
-                    name="Home"
-                />
-                <MenuNavbarItem
-                    link="/favorites"
-                    iconClassName="icon-star-full"
-                    name="Favorites"
-                />
+                {
+                    menuItems.map((menuItem, index) => (
+                        <MenuNavbarItem
+                            key={index}
+                            link={menuItem.link}
+                            iconClassName={menuItem.iconClassName}
+                            name={menuItem.name}
+                        />
+                    ))
+                }
             </li>
         </nav>
     );
