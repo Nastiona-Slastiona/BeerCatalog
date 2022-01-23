@@ -27,11 +27,14 @@ export default function FavoritesPage() {
 
     const favoriteBeers = useSelector(state => state.beers.favoriteBeers);
 
-    const beersListLength = favoriteBeers.length;
+    let beersListLength = favoriteBeers.length;
     const [pageShown, setPageShown] = useState(0);
 
     const onRemoveFavoriteClick = useCallback(() => {
-        setPageShown(Math.ceil(((beersListLength) / ENTITIES_ON_PAGE)));
+        beersListLength--; // because length is old
+        const pageNumber = Math.floor(((beersListLength) / ENTITIES_ON_PAGE));
+        const page = beersListLength % ENTITIES_ON_PAGE === 0 ? pageNumber - 1 : pageNumber;
+        setPageShown(page);
     }, [beersListLength]);
 
     if (!beersListLength) {
