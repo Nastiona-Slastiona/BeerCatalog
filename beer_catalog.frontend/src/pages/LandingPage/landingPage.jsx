@@ -38,10 +38,10 @@ export default function LandingPage() {
             dispatch(fetchBeers(page));
             setFetching(false);
             setPage(page + 1);
-            setIsFilterVisible(false);
-            setIsLoadingVisible(status === ThunkStatus.Loading);
+            setIsFilterVisible(filter.searchQuery !== '');
         }
-    }, [fetching, dispatch, setFetching, page, status]);
+        setIsLoadingVisible(status === ThunkStatus.Loading);
+    }, [fetching, dispatch, setFetching, page, status, filter]);
 
     useEffect(() => {
         document.addEventListener('scroll', scrollHandler);
@@ -61,24 +61,6 @@ export default function LandingPage() {
             setFetching(true);
         }
     }, []);
-
-    const onInputChange = useCallback(e => {
-        setFilter({
-            ...filter,
-            searchQuery: e.target.value
-        });
-
-        setIsFilterVisible(true);
-        setIsLoadingVisible(false);
-
-        if (e.target.value === '') {
-            setIsFilterVisible(false);
-            setFilter({
-                ...filter,
-                searchQuery: ''
-            });
-        }
-    }, [filter]);
 
     const searchedBeers = useMemo(() => {
         return beers.filter(beer => beer
@@ -103,15 +85,27 @@ export default function LandingPage() {
             && beer.ebc >= filter.filters.ebc);
     }, [filter.filters, searchedBeers]);
 
-    if (!filtredBeers.length) {
-        return (
-            <div>
-                <SearchBox onInputChange={onInputChange} />
-                <Filter isVisible={isFilterVisible} onChange={onFilterChange} />
-                <h2>There is nothing to display</h2>
-            </div>
-        );
-    }
+    const onInputChange = useCallback(e => {
+        setFilter({
+            ...filter,
+            searchQuery: e.target.value
+        });
+
+        if (filtredBeers.length < 5) {
+            setFetching(true);
+        }
+
+        setIsLoadingVisible(false);
+
+        if (e.target.value === '') {
+            setFilter({
+                ...filter,
+                searchQuery: ''
+            });
+            setFetching(false);
+        }
+        setIsFilterVisible(e.target.value !== '');
+    }, [filter, filtredBeers.length]);
 
     const renderedBeers = filtredBeers.map(beer => <BeerItem key={beer.id} beer={beer} isSimpleBeerMode={true} />);
 
@@ -119,11 +113,16 @@ export default function LandingPage() {
         <section>
             <SearchBox onInputChange={onInputChange} />
             <Filter isVisible={isFilterVisible} onChange={onFilterChange} />
-            <article className="landing-page__container">
-                <div className="landing-page">
-                    {renderedBeers}
-                </div>
-            </article>
+            {
+                filtredBeers.length
+                    ? (
+                        <article className="landing-page__container">
+                            <div className="landing-page">
+                                {renderedBeers}
+                            </div>
+                        </article>
+                    ) : <h2>There is nothing to display</h2>
+            }
             <LoadingIndicator isVisible={isLoadingVisible} />
         </section>
     );
