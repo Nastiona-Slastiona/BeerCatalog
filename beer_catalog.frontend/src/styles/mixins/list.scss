@@ -1,4 +1,4 @@
-@mixin table-item {
+@mixin list-item {
     display: block;
 
     width: 100%;
@@ -8,16 +8,16 @@
     border-radius: 2px;
 }
 
-@mixin table {
+@mixin list {
     min-width: 300px;
     width: 400px;
     margin: 20px 0;
 }
 
-@mixin table-container {
+@mixin list-container {
     margin: 0 80px;
 }
 
-@mixin table-header {
+@mixin list-header {
     @include typography-1;
 }

@@ -6,9 +6,8 @@ import AddToFavoriteButton from 'features/common/components/AddToFavoriteButton/
 import BeerItemImage from 'features/common/components/BeerItemImage/beerItemImage';
 import BeerPageHeader from 'features/singleBeer/components/BeerPageHeader/beerPageHeader';
 import BrewingSection from 'features/singleBeer/components/BrewingSection/brewingSection';
+import List from 'src/components/base/List/list';
 import LoadingIndicator from 'components/base/LoadingIndicator/loadingIndicator';
-import PropertiesSection from 'features/singleBeer/components/PropertiesSection/propertiesSection';
-import Table from 'src/components/base/Table/table';
 import fetchOneBeer from 'features/common/store/beers/state/thunks/fetchBeerThunk';
 
 import './beerPage.scss';
@@ -46,8 +45,15 @@ export default function BeerPage() {
                     <BeerItemImage imageUrl={beer.image_url} />
                 </article>
                 <article className="beer-page__characteristics">
-                    <PropertiesSection beer={beer} />
-                    <Table
+                    <List
+                        caption="Properties"
+                        values={beer.properties}
+                        hasBorder={true}
+                        hasSubrows={true}
+                        icon="icon-info"
+                        specifiedStyles={true}
+                    />
+                    <List
                         caption="Food pairing"
                         values={beer.food_pairing}
                         hasBorder={true}
@@ -55,13 +61,13 @@ export default function BeerPage() {
                 </article>
                 <BrewingSection brewingDescription={beer.brewers_tips} />
                 <article className="beer-page__preparation-section">
-                    <Table
+                    <List
                         caption="Ingredients"
                         values={beer.ingredients}
                         hasBorder={true}
                         hasSubrows={true}
                     />
-                    <Table
+                    <List
                         caption="Method"
                         values={beer.method}
                         hasSubrows={true}

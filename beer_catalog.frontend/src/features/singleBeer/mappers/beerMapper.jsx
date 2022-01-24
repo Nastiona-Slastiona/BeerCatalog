@@ -28,5 +28,14 @@ export default function beerMapper(beer) {
         }
     }
 
+    const properties = [[
+        'ABV', [beer.abv], 'Alcohol by volume'
+    ], [
+        'IBU', [beer.ibu], 'International Bitterness Units'
+    ], [
+        'EBC', [beer.ebc], 'Color by EBC'
+    ]];
+    beer.properties = properties;
+
     return beer;
 }
