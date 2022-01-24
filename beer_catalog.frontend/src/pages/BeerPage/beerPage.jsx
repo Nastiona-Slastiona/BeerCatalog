@@ -50,7 +50,7 @@ export default function BeerPage() {
                     <Table
                         caption="Food pairing"
                         values={beer.food_pairing}
-                        isBorder={true}
+                        hasBorder={true}
                     />
                 </article>
                 <BrewingSection brewingDescription={beer.brewers_tips} />
@@ -58,13 +58,13 @@ export default function BeerPage() {
                     <Table
                         caption="Ingredients"
                         values={beer.ingredients}
-                        isBorder={true}
-                        isSubRows={true}
+                        hasBorder={true}
+                        hasSubrows={true}
                     />
                     <Table
                         caption="Method"
                         values={beer.method}
-                        isSubRows={true}
+                        hasSubrows={true}
                     />
                 </article>
             </div>

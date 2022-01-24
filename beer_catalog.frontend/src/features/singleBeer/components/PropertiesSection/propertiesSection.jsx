@@ -29,7 +29,9 @@ function PropertiesSection({ beer }) {
                             <td className="properties__item-name">
                                 {property.name} <span title={property.title} className="icon-info" />
                             </td>
-                            <td className="properties__item-value">{property.value}</td>
+                            <td className="properties__item-value">
+                                {property.value}
+                            </td>
                         </tr>
                     ))
                 }

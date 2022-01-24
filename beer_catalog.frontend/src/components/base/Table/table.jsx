@@ -7,10 +7,10 @@ import './table.scss';
 function Table({
     caption,
     values,
-    isBorder = false,
-    isSubRows = false
+    hasBorder = false,
+    hasSubrows = false
 }) {
-    const itemClassName = isBorder ? 'table__item--borders' : 'table__item';
+    const itemClassName = hasBorder ? 'table__item--borders' : 'table__item';
 
     return (
         <table className="table__container">
@@ -23,7 +23,7 @@ function Table({
             </thead>
             <tbody className="table__body">
                 {
-                    isSubRows
+                    hasSubrows
                         ? values.map((value, index) => (
                             <tr key={index} className={itemClassName}>
                                 <td className="table__item-header">
@@ -54,8 +54,8 @@ function Table({
 Table.propTypes = {
     caption: PropTypes.string.isRequired,
     values: PropTypes.array.isRequired,
-    isBorder: PropTypes.bool,
-    isSubRows: PropTypes.bool
+    hasBorder: PropTypes.bool,
+    hasSubrows: PropTypes.bool
 };
 
 export default Table;

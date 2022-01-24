@@ -8,7 +8,11 @@ function BeerItemImage({ imageUrl }) {
     return (
         <div className="beer-item-image__container">
             <div className="beer-item-image__background">
-                <img className="beer-item-image" alt="PUNK IPA" src={imageUrl} />
+                <img
+                    className="beer-item-image"
+                    alt="PUNK IPA"
+                    src={imageUrl}
+                />
             </div>
         </div>
     );

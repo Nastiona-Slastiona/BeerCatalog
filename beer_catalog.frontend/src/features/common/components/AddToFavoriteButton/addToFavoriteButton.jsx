@@ -18,7 +18,9 @@ function AddToFavoriteButton({
     }, [beer, dispatch]);
 
     return (
-        <button className={buttonClassName} onClick={handleFavoriteButton}>{favoriteButton}</button>
+        <button className={buttonClassName} onClick={handleFavoriteButton}>
+            {favoriteButton}
+        </button>
     );
 }
 
