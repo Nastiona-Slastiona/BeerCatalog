@@ -1,0 +1,62 @@
+@import 'src/styles/colors';
+@import 'src/styles/mixins/typography';
+
+
+.beer-page {
+    @include typography-3;
+
+    display: block;
+
+    text-align: left;
+}
+
+.beer-page__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 10%;
+    padding: 30px 0;
+}
+
+.beer-page__main {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+}
+
+.beer-page__info {
+    font-family: $font-family;
+
+    display: block;
+
+    width: 100%;
+}
+
+.beer-page__button {
+    display: inherit;
+
+    width: fit-content;
+    margin: 20px 0;
+    padding: 10px 20px;
+
+    color: $secondary-color;
+    border: none;
+    background-color: $primary-color;
+}
+
+.beer-page__characteristics {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+    margin: 30px 0;
+}
+
+.beer-page__preparation-section {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+}

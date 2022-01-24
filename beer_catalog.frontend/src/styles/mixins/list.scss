@@ -1,0 +1,23 @@
+@mixin list-item {
+    display: block;
+
+    width: 100%;
+    padding: 20px;
+
+    border: 1px solid #dcdcdc;
+    border-radius: 2px;
+}
+
+@mixin list {
+    min-width: 300px;
+    width: 400px;
+    margin: 20px 0;
+}
+
+@mixin list-container {
+    margin: 0 80px;
+}
+
+@mixin list-header {
+    @include typography-1;
+}

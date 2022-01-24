@@ -37,9 +37,9 @@ const generateStyleLoader = loaderName => {
 
 module.exports = {
     mode: 'development',
-    entry: ['babel-polyfill', './src/index.js'],
+    entry: ['babel-polyfill', './src/index.jsx'],
     output: {
-        path: path.resolve(__dirname, 'static'),
+        path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
     devServer: {
@@ -81,11 +81,12 @@ module.exports = {
     resolve: {
         alias: {
             components: path.resolve(__dirname, 'src/components'),
-            models: path.resolve(__dirname, 'src/models'),
             store: path.resolve(__dirname, 'src/store'),
-            src: path.resolve(__dirname, 'src')
+            src: path.resolve(__dirname, 'src'),
+            pages: path.resolve(__dirname, 'src/pages'),
+            features: path.resolve(__dirname, 'src/features')
         },
         enforceExtension: false,
-        extensions: ['.jsx', '.js', '.css', '.wasm', '.ico', '...']
+        extensions: ['.jsx', '.js', '.css', '.wasm', '.ico', '.gif', '...']
     }
 };

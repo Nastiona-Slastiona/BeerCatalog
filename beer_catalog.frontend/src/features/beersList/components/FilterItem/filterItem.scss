@@ -1,0 +1,18 @@
+.filter-item {
+    display: flex;
+    justify-content: space-between;
+
+    width: 550px;
+    padding-top: 20px;
+}
+
+.filter-item__slider {
+    display: inline-flex;
+
+    width: 200px;
+    height: 1px;
+}
+
+.filter-item__label {
+    margin-right: 5px;
+}

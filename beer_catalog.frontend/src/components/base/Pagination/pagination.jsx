@@ -1,70 +1,84 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-import React from 'react';
-import classNames from 'classnames';
+import React, { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
-import './pagination.css';
+import './pagination.scss';
 
 
-function Pagination({ beers, setPage, pageShown }) {
-    const amountOfFavoriteBeers = beers.length;
-    const isVisible = amountOfFavoriteBeers > 5;
+const ENTITIES_ON_PAGE = 5;
 
+function Pagination({
+    list
+}) {
+    const listLength = list.length;
+    const isVisible = listLength > ENTITIES_ON_PAGE;
+    const [pageShown, setPage] = useState(0);
+    const length = Math.ceil(listLength / ENTITIES_ON_PAGE);
+    const pages = Array(length);
     const className = classNames(
         'pagination',
         { 'pagination--active': isVisible }
     );
-    const pages = [];
 
-    for (let i = 0; i < (beers.length / 5); i++) {
-        pages[i] = i + 1;
+    for (let i = 1; i <= length; i++) {
+        pages.push(i);
     }
+    // In cases where delete the last entity on the page, we should be directed on previous one
+    useEffect(() => {
+        if (listLength % ENTITIES_ON_PAGE === 0 && pageShown !== 0) {
+            setPage(prevValue => prevValue - ENTITIES_ON_PAGE);
+        }
+    }, [listLength, pageShown]);
 
-    const onPaginationClick = event => {
-        const paginationValue = event.target.className.split(' ');
-        if (paginationValue[0] !== 'pagination__button') {
-            const direction = paginationValue[paginationValue.length - 1].split('-');
-
-            if (direction.includes('right') && pageShown < pages.length - 1) {
-                setPage(prevPage => prevPage + 1);
-            } else if (direction.includes('left') && pageShown > 0) {
-                setPage(prevPage => prevPage - 1);
+    const onPaginationClick = useCallback(event => {
+        if (event.target.textContent === '>') {
+            if (pageShown < length - 1) {
+                setPage(prevPage => prevPage + ENTITIES_ON_PAGE);
+            }
+        } else if (event.target.textContent === '<') {
+            if (pageShown > 0) {
+                setPage(prevPage => prevPage - ENTITIES_ON_PAGE);
             }
         } else {
-            setPage(event.target.innerHTML - 1);
+            setPage((+event.target.innerHTML - 1) * ENTITIES_ON_PAGE);
         }
-    };
+    }, [length, pageShown, setPage]);
 
     return (
-        <div className={className}>
-            <span
-                className="pagination__change-page icon-arrow-left"
-                onClick={onPaginationClick}
-            />
-            {
-                pages.map((page, index) => (
+        <div>
+            {list.slice(pageShown, pageShown + ENTITIES_ON_PAGE)}
+            <div className="pagination__container">
+                <div className={className}>
                     <span
-                        key={index}
                         className="pagination__button"
                         onClick={onPaginationClick}
-                    >{page}
+                    >
+                        {'<'}
                     </span>
-                ))
-            }
-            <span
-                className="pagination__change-page icon-arrow-right"
-                onClick={onPaginationClick}
-            />
+                    {
+                        pages.map((page, index) => (
+                            <span
+                                key={index}
+                                className="pagination__button"
+                                onClick={onPaginationClick}
+                            >{page}
+                            </span>
+                        ))
+                    }
+                    <span
+                        className="pagination__button"
+                        onClick={onPaginationClick}
+                    >
+                        {'>'}
+                    </span>
+                </div>
+            </div>
         </div>
     );
 }
 
 Pagination.propTypes = {
-    // // beers: PropType.,
-    setPage: PropTypes.func,
-    pageShown: PropTypes.number
+    list: PropTypes.array.isRequired
 };
 
 export default Pagination;

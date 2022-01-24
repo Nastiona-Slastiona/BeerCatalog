@@ -1,0 +1,34 @@
+@import 'src/styles/colors';
+@import 'src/styles/mixins/typography';
+
+.beer-item-actions-section__container {
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: 25px;
+}
+
+.beer-item-actions-section {
+    @include typography-3; 
+    
+    display: flex;
+    align-items: center;
+
+    width: fit-content;
+    padding: 0 20px;
+
+    color: inherit;
+    border: none;
+    background: none;
+
+    text: {
+        transform: uppercase;
+
+        align: left;
+        decoration: none;
+    }
+
+    &:hover {
+        background: #494949;
+    }
+}

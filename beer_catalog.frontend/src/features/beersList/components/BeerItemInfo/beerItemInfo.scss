@@ -1,0 +1,31 @@
+@import 'src/styles/colors';
+@import 'src/styles/mixins/typography';
+
+.beer-item-info {
+    @include typography-0;
+    
+    display: grid;
+
+    width: 380px;
+    height: 200px;
+    padding: 20px;
+
+    text-align: left;
+
+    color: #fff;
+    background: #808080;
+
+}
+
+.beer-item-info__text--title {
+    @include typography-1;
+    
+    display: block;
+
+    padding-bottom: 10px;
+
+}
+
+.beer-item-info__text--tagline {
+    display: block;
+}

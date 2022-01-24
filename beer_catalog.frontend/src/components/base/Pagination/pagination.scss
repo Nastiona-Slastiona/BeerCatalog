@@ -1,44 +1,54 @@
-$primary-color: rgb(182, 216, 255);
-$secondary-color: rgb(92, 133, 180);
-$border-color: rgb(23, 57, 95);
+$pagination-color: #b6d8ff;
+$pagination-color--hover: #5c85b4;
+$pagination-border-color: #17395f;
 
 .pagination {
-  display: none;
-  justify-content: left;
+    font-size: 25px;
 
-  width: 100%;
-  font-size: 25px;
-  margin: 10px;
-  padding: 10px;
-  &--active {
+    display: none;
+    justify-content: center;
+
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+}
+
+.pagination--active {
     display: flex;
-  }
+}
 
-  &__button {
+.pagination__container {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+}
+
+.pagination__button {
     display: inherit;
 
     margin: 5px 2px;
     padding: 10px 15px;
 
-    border: 1px solid $border-color;
-    background-color: $primary-color;
+    border: 1px solid $pagination-border-color;
     border-radius: 40%;
+    background-color: $pagination-color;
 
     &:hover {
-      background-color: $secondary-color;
+        background-color: $pagination-color--hover;
     }
-  }
+}
 
-  &__change-page {
-    display: inherit;
+.pagination__change-page {
     font-size: 35px;
+
+    display: inherit;
 
     margin: 5px;
 
-    color: $primary-color;
+    color: $pagination-color;
 
     &:hover {
-      color: $secondary-color;
+        color: $pagination-color--hover;
     }
-  }
 }

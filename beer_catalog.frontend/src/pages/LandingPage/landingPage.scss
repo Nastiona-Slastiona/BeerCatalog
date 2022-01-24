@@ -1,0 +1,22 @@
+.landing-page {
+    display: grid;
+
+    width: fit-content;
+    margin: 60px;
+
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.landing-page__container {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+}
+
+.landing-page__beer-item {
+    display: block;
+
+    margin-top: 20px;
+}

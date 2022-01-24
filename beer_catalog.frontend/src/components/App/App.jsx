@@ -1,24 +1,24 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable import/no-unresolved */
-import 'src/styles/fonts/icomoon/style';
-
-import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import FavoritesPage from 'components/FavoritesPage/favoritesPage';
-import LandingPage from 'components/LandingPage/landingPage';
-import PageHeader from 'components/PageHeader/pageHeader';
+import React from 'react';
 
-import './app.css';
+import BeerPage from 'pages/BeerPage/beerPage';
+import FavoritesPage from 'pages/FavoritesPage/favoritesPage';
+import LandingPage from 'pages/LandingPage/landingPage';
+import PageHeader from 'features/common/components/PageHeader/pageHeader';
+
+import 'src/styles/fonts/icomoon/style';
+import './app.scss';
 
 
 export default function App() {
     return (
-        <div className="App">
+        <div className="app">
             <BrowserRouter>
                 <PageHeader />
                 <Routes>
                     <Route path="/" element={<LandingPage />} exact />
                     <Route path="/favorites" element={<FavoritesPage />} />
+                    <Route path="/beers/:id" element={<BeerPage />} exact />
                 </Routes>
             </BrowserRouter>
         </div>

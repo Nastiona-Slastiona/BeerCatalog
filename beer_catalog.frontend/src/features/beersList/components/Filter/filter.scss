@@ -1,0 +1,19 @@
+.filter__header {
+    font-size: 25px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.filter__container {
+    font-size: 20px;
+
+    display: none;
+    justify-content: center;
+
+    margin: 20px;
+}
+
+.filter__container--active {
+    display: flex;
+}

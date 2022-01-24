@@ -1,8 +1,7 @@
-/* eslint-disable import/no-extraneous-dependencies */
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
-import './searchBox.css';
+import './searchBox.scss';
 
 
 function SearchBox({ onInputChange }) {

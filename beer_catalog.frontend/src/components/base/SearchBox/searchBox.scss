@@ -1,27 +1,24 @@
-@mixin search-box__components {
-  display: inline;
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  color: rgb(148, 144, 144);
-  border: none;
+    color: #6c6c74;
 }
 
-.search-box {
-  &__input {
+.search-box__input {
     font-size: 18px;
 
     width: 370px;
     margin-right: 5px;
 
-    @include search-box__components;
+    border: inherit;
+    border-bottom: 2px solid #c7c3c3;
+}
 
-    border-bottom: 2px solid rgb(199, 195, 195);
-  }
-
-  &__button {
+.search-box__button {
     font-size: 40px;
 
+    border: inherit;
     background: none;
-
-    @include search-box__components;
-  }
 }
