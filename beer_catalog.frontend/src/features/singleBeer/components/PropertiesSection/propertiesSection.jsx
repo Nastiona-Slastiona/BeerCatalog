@@ -16,8 +16,8 @@ function PropertiesSection({ beer }) {
     return (
         <table className="properties">
             <thead>
-                <tr>
-                    <td className="properties__header">
+                <tr className="properties__header">
+                    <td>
                         Properties
                     </td>
                 </tr>

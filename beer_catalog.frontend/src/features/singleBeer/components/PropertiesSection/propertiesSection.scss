@@ -9,6 +9,7 @@ $bg-color: #9596a0;
 
 .properties__table {
     @include table;
+    display: block;
 }
 
 .properties__item {
@@ -37,5 +38,5 @@ $bg-color: #9596a0;
     display: flex;
     justify-content: space-between;
 
-    width: 70px;
+    width: 100px;
 }
