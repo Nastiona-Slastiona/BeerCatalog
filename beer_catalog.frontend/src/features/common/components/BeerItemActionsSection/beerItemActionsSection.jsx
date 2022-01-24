@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import './beerItemActionsSection.scss';
 
 
-function BeerItemActionsSection({ beer, onFavoriteClick }) {
+function BeerItemActionsSection({ beer }) {
     return (
         <div className="beer-item-actions-section__container">
             <Link className="beer-item-actions-section" to={`/beers/${beer.id}`}>Open</Link>
@@ -15,15 +15,13 @@ function BeerItemActionsSection({ beer, onFavoriteClick }) {
                 buttonClassName="beer-item-actions-section"
                 beer={beer}
                 buttonLabel="Favorite"
-                onFavoriteClick={onFavoriteClick}
             />
         </div>
     );
 }
 
 BeerItemActionsSection.propTypes = {
-    beer: PropTypes.object,
-    onFavoriteClick: PropTypes.func
+    beer: PropTypes.object
 };
 
 export default BeerItemActionsSection;

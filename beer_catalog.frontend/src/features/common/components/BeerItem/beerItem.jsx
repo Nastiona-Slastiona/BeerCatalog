@@ -9,14 +9,13 @@ import FavoriteBeerItemInfo from 'features/favoritesBeers/components/FavoriteBee
 function BeerItem({
     beer,
     isSimpleBeerMode,
-    itemClassName,
-    onRemoveFavoriteClick = () => undefined
+    itemClassName
 }) {
     return (
         <div className={itemClassName}>
             {
                 !isSimpleBeerMode &&
-                <FavoriteBeerItemInfo favoriteBeer={beer} onRemoveFavoriteClick={onRemoveFavoriteClick} />
+                <FavoriteBeerItemInfo favoriteBeer={beer} />
             }
             <BeerItemImage imageUrl={beer.image_url} />
             {
@@ -29,7 +28,6 @@ function BeerItem({
 
 BeerItem.propTypes = {
     beer: PropTypes.object.isRequired,
-    onRemoveFavoriteClick: PropTypes.func,
     itemClassName: PropTypes.string,
     isSimpleBeerMode: PropTypes.bool
 };
