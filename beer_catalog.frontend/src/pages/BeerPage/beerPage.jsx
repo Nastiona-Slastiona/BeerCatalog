@@ -47,12 +47,25 @@ export default function BeerPage() {
                 </article>
                 <article className="beer-page__characteristics">
                     <PropertiesSection beer={beer} />
-                    <Table caption="Food pairing" values={beer.food_pairing} isBorder={true} />
+                    <Table
+                        caption="Food pairing"
+                        values={beer.food_pairing}
+                        isBorder={true}
+                    />
                 </article>
                 <BrewingSection brewingDescription={beer.brewers_tips} />
                 <article className="beer-page__preparation-section">
-                    <Table caption="Ingredients" values={beer.ingredients} isBorder={true} isSubRows={true} />
-                    <Table caption="Method" values={beer.method} isSubRows={true} />
+                    <Table
+                        caption="Ingredients"
+                        values={beer.ingredients}
+                        isBorder={true}
+                        isSubRows={true}
+                    />
+                    <Table
+                        caption="Method"
+                        values={beer.method}
+                        isSubRows={true}
+                    />
                 </article>
             </div>
         </section>

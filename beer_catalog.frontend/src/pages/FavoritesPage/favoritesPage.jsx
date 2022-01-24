@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import BeerItem from 'features/common/components/BeerItem/beerItem';
@@ -7,8 +7,6 @@ import fetchOneBeer from 'features/common/store/beers/state/thunks/fetchBeerThun
 
 import './favoritesPage.scss';
 
-
-const ENTITIES_ON_PAGE = 5;
 
 export default function FavoritesPage() {
     const favoriteBeersIds = useSelector(state => state.beers.favoritesBeersIds);
@@ -27,15 +25,7 @@ export default function FavoritesPage() {
 
     const favoriteBeers = useSelector(state => state.beers.favoriteBeers);
 
-    let beersListLength = favoriteBeers.length;
-    const [pageShown, setPageShown] = useState(0);
-
-    const onRemoveFavoriteClick = useCallback(() => {
-        beersListLength--; // because length is old
-        const pageNumber = Math.floor(((beersListLength) / ENTITIES_ON_PAGE));
-        const page = beersListLength % ENTITIES_ON_PAGE === 0 ? pageNumber - 1 : pageNumber;
-        setPageShown(page);
-    }, [beersListLength]);
+    const beersListLength = favoriteBeers.length;
 
     if (!beersListLength) {
         return (
@@ -43,35 +33,25 @@ export default function FavoritesPage() {
         );
     }
 
-    const renderedBeers = [];
-
-    for (let i = 0; i < beersListLength; i += ENTITIES_ON_PAGE) {
-        renderedBeers.push(Array.from(favoriteBeers.slice(i, i + ENTITIES_ON_PAGE).map(favoriteBeer => {
-            return (
-                <BeerItem
-                    key={favoriteBeer.id}
-                    beer={favoriteBeer}
-                    itemClassName="favorite-page__beer-item"
-                    isSimpleBeerMode={false}
-                    onRemoveFavoriteClick={onRemoveFavoriteClick}
-                />
-            );
-        })));
-    }
+    const renderedBeers = favoriteBeers.map(favoriteBeer => {
+        return (
+            <BeerItem
+                key={favoriteBeer.id}
+                beer={favoriteBeer}
+                itemClassName="favorite-page__beer-item"
+                isSimpleBeerMode={false}
+            />
+        );
+    });
 
     return (
         <section>
             <h2 className="favorites-page__header">Your Favorite beers</h2>
             <article className="favorites-page__container">
                 <div className="favorites-page">
-                    {renderedBeers[pageShown]}
+                    <Pagination list={renderedBeers} />
                 </div>
             </article>
-            <Pagination
-                list={favoriteBeers}
-                setPage={setPageShown}
-                pageShown={pageShown}
-            />
         </section>
     );
 }
