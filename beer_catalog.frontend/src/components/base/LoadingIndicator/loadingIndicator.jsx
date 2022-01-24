@@ -13,7 +13,7 @@ function LoadingIndicator({ isVisible }) {
 }
 
 LoadingIndicator.propTypes = {
-    isVisible: PropTypes.bool
+    isVisible: PropTypes.bool.isRequired
 };
 
 export default LoadingIndicator;

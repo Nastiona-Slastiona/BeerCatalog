@@ -62,12 +62,11 @@ const beersSlice = createSlice({
 
                         return beer;
                     });
-                    state.selectedBeer = state.favoriteBeers.filter(beer => beer.id === action.payload.id)[0];
                 } else {
                     action.payload.isFavorite = false;
-                    state.selectedBeer = action.payload;
                 }
             }
+            state.selectedBeer = action.payload;
             state.status = ThunkStatus.Resolved;
         },
         [fetchOneBeer.rejected]: setError,

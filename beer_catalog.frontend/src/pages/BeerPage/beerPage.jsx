@@ -18,15 +18,15 @@ export default function BeerPage() {
     const location = useLocation();
     const beerId = +location.pathname.slice(7);
     const dispatch = useDispatch();
-
     useEffect(() => {
         dispatch(fetchOneBeer(beerId));
     }, [beerId, dispatch]);
 
     const beer = useSelector(state => state.beers.selectedBeer);
+
     if (beer.id !== beerId) {
         return (
-            <LoadingIndicator />
+            <LoadingIndicator isVisible={true} />
         );
     }
 
