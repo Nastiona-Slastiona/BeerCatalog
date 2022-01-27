@@ -9,11 +9,11 @@ export default function SignIn() {
             <form className="auth">
                 <div className="auth__item">
                     <p>Email</p>
-                    <input type="text" className="auth__input" placeholder="EMAIL" />
+                    <input type="text" className="auth__input" placeholder="Email" />
                 </div>
                 <div className="auth__item">
                     <p>Имя</p>
-                    <input type="text" className="auth__input" placeholder="Enter your name" />
+                    <input type="text" className="auth__input" placeholder="Password" />
                 </div>
                 <hr />
                 <button type="submit" className="auth__button">Sign in</button>

@@ -1,3 +1,4 @@
+using beer_catalog.backend.Helpers;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,14 +6,18 @@ var builder = WebApplication.CreateBuilder(args);
 string connection = builder.Configuration.GetConnectionString("DefaultConnection");
 
 // Add services to the container.
-builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connection));
+builder.Services.AddCors();
+
+builder.Services.AddDbContext<UserContext>(options => options.UseSqlServer(connection));
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<JwtService>();
 
 var app = builder.Build();
 
-app.MapGet("/api/users", async (ApplicationContext db) => await db.Users.ToListAsync());
+app.MapGet("/api/users", async (UserContext db) => await db.Users.ToListAsync());
 
-app.MapGet("/api/users/{id:int}", async (int id, ApplicationContext db) =>
+app.MapGet("/api/users/{id:int}", async (int id, UserContext db) =>
 {
     User? user = await db.Users.FirstOrDefaultAsync(u => u.Id == id);
     if (user == null) return Results.NotFound(new { message = "User is not found" });
@@ -20,7 +25,7 @@ app.MapGet("/api/users/{id:int}", async (int id, ApplicationContext db) =>
     return Results.Json(user);
 });
 
-app.MapDelete("/api/users/{id:int}", async (int id, ApplicationContext db) =>
+app.MapDelete("/api/users/{id:int}", async (int id, UserContext db) =>
 {
     User? user = await db.Users.FirstOrDefaultAsync(u => u.Id == id);
     if (user == null) return Results.NotFound(new { message = "User is not found" });
@@ -31,7 +36,7 @@ app.MapDelete("/api/users/{id:int}", async (int id, ApplicationContext db) =>
     return Results.Json(user);
 });
 
-app.MapPost("/api/users", async (User user, ApplicationContext db) =>
+app.MapPost("/api/users", async (User user, UserContext db) =>
 {
     await db.Users.AddAsync(user);
     await db.SaveChangesAsync();
@@ -39,7 +44,7 @@ app.MapPost("/api/users", async (User user, ApplicationContext db) =>
     return user;
 });
 
-app.MapPut("api/users", async (User userData, ApplicationContext db) =>
+app.MapPut("api/users", async (User userData, UserContext db) =>
 {
     User? user = await db.Users.FirstOrDefaultAsync(u => u.Id == userData.Id);
     if (user == null) return Results.NotFound(new { message = "User is not found" });
@@ -66,6 +71,13 @@ app.UseDefaultFiles();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseCors(options => options
+    .WithOrigins(new[] { "http://localhost:3000", "http://localhost:7192" })
+    .AllowAnyHeader()
+    .AllowAnyMethod()
+    .AllowCredentials()
+);
 
 app.UseAuthorization();
 
