@@ -1,0 +1,6 @@
+/bin
+/wwwroot
+/obj
+/Migrations
+
+*.csproj

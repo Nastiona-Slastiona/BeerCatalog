@@ -19,11 +19,23 @@
 
 }
 
-.page-header__settings {
-    margin-right: 10px;
+.page-header__authentification {
+    margin: 80px;
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.page-header__authentification-item {
+    @include typography-3;
+    margin: 5px;
+    text-decoration: none;
+    color: $secondary-color;
 
     &:hover {
         color: #ffffff;
+        text-decoration: underline;
+        
     }
 }
 
