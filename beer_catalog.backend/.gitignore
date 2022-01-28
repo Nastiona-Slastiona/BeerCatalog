@@ -2,5 +2,3 @@
 /wwwroot
 /obj
 /Migrations
-
-*.csproj
