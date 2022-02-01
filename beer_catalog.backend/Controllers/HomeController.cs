@@ -26,10 +26,10 @@ public class HomeController : Controller
         return View();
     }
 
-    [HttpPost("signIn")]
-    public IActionResult SignIn([FromBody] User userData)
+    [HttpPost("signin")]
+    public IActionResult Signin([FromBody] User userData)
     {
-        var user = _repository.GetByEmail(userData);
+        var user = _repository.GetByEmail(userData.Email);
         if (user != null)
         {
             if (BCrypt.Net.BCrypt.Verify(userData.Password, user.Password))
@@ -66,6 +66,37 @@ public class HomeController : Controller
         };
 
         return Created("success", _repository.Create(user));
+    }
+    [HttpGet("user")]
+    public IActionResult User()
+    {
+        try
+        {
+            var jwt = Request.Cookies["jwt"];
+
+            var token = _jwtService.Verify(jwt);
+
+            int userId = int.Parse(token.Issuer);
+
+            var user = _repository.GetById(userId);
+
+            return Ok(user);
+        }
+        catch (Exception e)
+        {
+            return Unauthorized();
+        }
+
+    }
+    [HttpPost("signout")]
+    public IActionResult Signout()
+    {
+        Response.Cookies.Delete("jwt");
+
+        return Ok(new
+        {
+            message = "success"
+        });
     }
 
     public IActionResult Privacy()

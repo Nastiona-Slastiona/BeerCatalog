@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import BeerPage from 'pages/BeerPage/beerPage';
 import FavoritesPage from 'pages/FavoritesPage/favoritesPage';
@@ -13,17 +13,35 @@ import './app.scss';
 
 
 export default function App() {
+    const [authorized, setAuthorized] = useState(false);
+    const [name, setName] = useState('');
+    useEffect(() => {
+        (
+            async () => {
+                const response = await fetch('http://localhost:7192/user', {
+                    headers: { 'Content-Type': 'application/json' },
+                    credentials: 'include'
+                });
+
+                if (response.ok) {
+                    const user = await response.json();
+                    setAuthorized(true);
+                    setName(user.Name);
+                }
+            }
+        )();
+    });
+
     return (
         <div className="app">
             <BrowserRouter>
-                <PageHeader />
+                <PageHeader name={name} />
                 <Routes>
                     <Route path="/" element={<LandingPage />} exact />
                     <Route path="/favorites" element={<FavoritesPage />} />
                     <Route path="/beers/:id" element={<BeerPage />} exact />
-                    <Route path="/login" element={<SignIn />} />
+                    <Route path="/signin" element={<SignIn />} />
                     <Route path="/register" element={<Register />} />
-
                 </Routes>
             </BrowserRouter>
         </div>

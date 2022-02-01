@@ -6,15 +6,22 @@ import Menu from 'features/common/components/Menu/menu';
 import './pageHeader.scss';
 
 
-export default function PageHeader() {
+export default function PageHeader({ name }) {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
-
     const hideMenu = useCallback(() => {
         setIsMenuVisible(false);
     }, []);
 
     const showMenu = useCallback(() => {
         setIsMenuVisible(true);
+    }, []);
+
+    const onSignOutClick = useCallback(async () => {
+        await fetch('https://localhost:7192/signout', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include'
+        });
     }, []);
 
     return (
@@ -34,14 +41,28 @@ export default function PageHeader() {
                         setIsVisible={hideMenu}
                     />
                 </div>
-                <ul className="page-header__authentification">
-                    <li>
-                        <Link className="page-header__authentification-item" to="/login">Login</Link>
-                    </li>
-                    <li>
-                        <Link className="page-header__authentification-item" to="/register">Register</Link>
-                    </li>
-                </ul>
+                {
+                    name
+                        ? (
+                            <ul className="page-header__authentification">
+                                <p>Hello {name}</p>
+                                <li>
+                                    <Link className="page-header__authentification-item" to="/signin" onClick={onSignOutClick}>Sign Out</Link>
+                                </li>
+                            </ul>
+                        )
+                        : (
+                            <ul className="page-header__authentification">
+                                <li>
+                                    <Link className="page-header__authentification-item" to="/signin">Sign In</Link>
+                                </li>
+                                <li>
+                                    <Link className="page-header__authentification-item" to="/register">Register</Link>
+                                </li>
+                            </ul>
+                        )
+
+                }
             </div>
 
         </div>

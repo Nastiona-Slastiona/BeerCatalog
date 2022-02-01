@@ -1,19 +1,64 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
+import { Navigate } from 'react-router-dom';
 
 import './auth.scss';
 
 
 export default function SignIn() {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [authorized, setAuthorized] = useState(false);
+
+    const onEmailChange = useCallback(e => {
+        setEmail(e.target.value);
+    }, []);
+
+    const onPasswordChange = useCallback(e => {
+        setPassword(e.target.value);
+    }, []);
+
+    const onFormSubmit = async e => {
+        e.preventDefault();
+
+        const response = await fetch('http://localhost:7192/signin', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include',
+            body: JSON.stringify({
+                password,
+                email
+            })
+        });
+
+        if (response.ok) {
+            setAuthorized(true);
+        }
+    };
+
+    if (authorized) {
+        return <Navigate to="/" />;
+    }
+
     return (
-        <div className="auth__container">
+        <div className="auth__container" onSubmit={onFormSubmit}>
             <form className="auth">
                 <div className="auth__item">
                     <p>Email</p>
-                    <input type="text" className="auth__input" placeholder="Email" />
+                    <input
+                        className="auth__input"
+                        placeholder="Email"
+                        onChange={onEmailChange}
+                    />
                 </div>
                 <div className="auth__item">
-                    <p>Имя</p>
-                    <input type="text" className="auth__input" placeholder="Password" />
+                    <p>Password</p>
+                    <input
+                        className="auth__input"
+                        placeholder="Password"
+                        onChange={onPasswordChange}
+                    />
                 </div>
                 <hr />
                 <button type="submit" className="auth__button">Sign in</button>
