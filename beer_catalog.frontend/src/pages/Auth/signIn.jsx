@@ -18,7 +18,7 @@ export default function SignIn({ setName }) {
         setPassword(e.target.value);
     }, []);
 
-    const onFormSubmit = useCallbck(async e => {
+    const onFormSubmit = useCallback(async e => {
         e.preventDefault();
 
         const response = await signIn(password, email);
@@ -27,7 +27,7 @@ export default function SignIn({ setName }) {
             setName(response.name);
             setAuthorized(true);
         }
-    }, []);
+    }, [email, password, setName]);
 
     if (authorized) {
         return <Navigate to="/" />;
@@ -37,7 +37,7 @@ export default function SignIn({ setName }) {
         <div className="auth__container" onSubmit={onFormSubmit}>
             <form className="auth">
                 <div className="auth__item">
-                    <p>Email</p>
+                    <p className="auth__fieldname">Email</p>
                     <input
                         className="auth__input"
                         placeholder="Email"
@@ -45,7 +45,7 @@ export default function SignIn({ setName }) {
                     />
                 </div>
                 <div className="auth__item">
-                    <p>Password</p>
+                    <p className="auth__fieldname">Password</p>
                     <input
                         className="auth__input"
                         placeholder="Password"

@@ -22,7 +22,7 @@ export default function Register() {
     }, []);
 
     const onImageChange = useCallback(e => {
-        setImage(e.target.value);
+        setImage(e.target.files);
     }, []);
 
     const onDateChange = useCallback(e => {
@@ -57,7 +57,7 @@ export default function Register() {
         <div className="auth__container">
             <form className="auth" onSubmit={onFormSubmit}>
                 <div className="auth__item">
-                    <p>Email</p>
+                    <p className="auth__fieldname">Email</p>
                     <input
                         className="auth__input"
                         placeholder="Enter your email"
@@ -66,7 +66,7 @@ export default function Register() {
                     />
                 </div>
                 <div className="auth__item">
-                    <p>Name</p>
+                    <p className="auth__fieldname">Name</p>
                     <input
                         className="auth__input"
                         placeholder="Enter your name"
@@ -76,7 +76,7 @@ export default function Register() {
                 </div>
                 <hr />
                 <div className="auth__item">
-                    <p>Image</p>
+                    <p className="auth__fieldname">Image</p>
                     <input
                         type="file"
                         className="auth__input"
@@ -84,7 +84,7 @@ export default function Register() {
                     />
                 </div>
                 <div className="auth__item">
-                    <p>Birth Date</p>
+                    <p className="auth__fieldname">Birth Date</p>
                     <input
                         type="date"
                         className="auth__input"
@@ -94,7 +94,7 @@ export default function Register() {
                 </div>
                 <hr />
                 <div className="auth__item">
-                    <p>Password</p>
+                    <p className="auth__fieldname">Password</p>
                     <input
                         className="auth__input"
                         placeholder="Enter your password"

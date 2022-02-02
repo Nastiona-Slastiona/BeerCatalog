@@ -45,7 +45,7 @@ export default function PageHeader({ name, setName }) {
                     name !== ''
                         ? (
                             <ul className="page-header__authentification">
-                                <p>Hello, {name}</p>
+                                <p>Hello, {name}!</p>
                                 <li>
                                     <Link
                                         className="page-header__authentification-item"
