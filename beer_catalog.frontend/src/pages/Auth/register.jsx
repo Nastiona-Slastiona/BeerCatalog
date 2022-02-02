@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { Navigate } from 'react-router-dom';
+import { registrate } from 'authentication/helpers/serverConnectionHelper';
 
 import './auth.scss';
 
@@ -32,25 +33,21 @@ export default function Register() {
         setPassword(e.target.value);
     }, []);
 
-    const onFormSubmit = async e => {
+    const onFormSubmit = useCallback(async e => {
         e.preventDefault();
 
-        const response = await fetch('http://localhost:7192/register', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                name,
-                password,
-                email,
-                image,
-                birthDate
-            })
+        const response = await registrate({
+            name,
+            password,
+            email,
+            image,
+            birthDate
         });
 
-        if (response.ok) {
+        if (response) {
             setRegister(true);
         }
-    };
+    }, [birthDate, email, image, name, password]);
 
     if (register) {
         return <Navigate to="/signin" />;

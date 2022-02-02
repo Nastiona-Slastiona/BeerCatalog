@@ -7,6 +7,7 @@ import LandingPage from 'pages/LandingPage/landingPage';
 import PageHeader from 'features/common/components/PageHeader/pageHeader';
 import Register from 'pages/Auth/register';
 import SignIn from 'pages/Auth/signIn';
+import { getUser } from 'authentication/helpers/serverConnectionHelper';
 
 import 'src/styles/fonts/icomoon/style';
 import './app.scss';
@@ -19,16 +20,10 @@ export default function App() {
         if (!authorized) {
             (
                 async () => {
-                    const response = await fetch('http://localhost:7192/user', {
-                        headers: { 'Content-Type': 'application/json' },
-                        credentials: 'include'
-                    });
+                    const user = await getUser();
 
-                    if (response.ok) {
-                        const user = await response.json();
+                    if (user) {
                         setName(user.name);
-                    }
-                    if (name) {
                         setAuthorized(true);
                     }
                 }

@@ -84,7 +84,8 @@ module.exports = {
             store: path.resolve(__dirname, 'src/store'),
             src: path.resolve(__dirname, 'src'),
             pages: path.resolve(__dirname, 'src/pages'),
-            features: path.resolve(__dirname, 'src/features')
+            features: path.resolve(__dirname, 'src/features'),
+            authentication: path.resolve(__dirname, 'src/features/authentication')
         },
         enforceExtension: false,
         extensions: ['.jsx', '.js', '.css', '.wasm', '.ico', '.gif', '...']

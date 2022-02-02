@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { Navigate } from 'react-router-dom';
+import { signIn } from '../../features/authentication/helpers/serverConnectionHelper';
 
 import './auth.scss';
 
@@ -17,27 +18,16 @@ export default function SignIn({ setName }) {
         setPassword(e.target.value);
     }, []);
 
-    const onFormSubmit = async e => {
+    const onFormSubmit = useCallbck(async e => {
         e.preventDefault();
 
-        const response = await fetch('http://localhost:7192/signin', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            credentials: 'include',
-            body: JSON.stringify({
-                password,
-                email
-            })
-        });
+        const response = await signIn(password, email);
 
-        if (response.ok) {
-            const content = await response.json();
-            setName(content.name);
+        if (response) {
+            setName(response.name);
             setAuthorized(true);
         }
-    };
+    }, []);
 
     if (authorized) {
         return <Navigate to="/" />;

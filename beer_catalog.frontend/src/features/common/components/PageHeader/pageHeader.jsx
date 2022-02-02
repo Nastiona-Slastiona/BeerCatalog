@@ -2,6 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import Menu from 'features/common/components/Menu/menu';
+import { signOut } from 'authentication/helpers/serverConnectionHelper';
 
 import './pageHeader.scss';
 
@@ -17,12 +18,8 @@ export default function PageHeader({ name, setName }) {
         setIsMenuVisible(true);
     }, []);
 
-    const onSignOutClick = useCallback(async () => {
-        await fetch('http://localhost:7192/signout', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            credentials: 'include'
-        });
+    const onSignOutClick = useCallback(() => {
+        signOut();
 
         setName('');
     }, [setName]);
