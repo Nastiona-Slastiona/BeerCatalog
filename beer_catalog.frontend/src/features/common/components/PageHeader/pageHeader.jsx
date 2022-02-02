@@ -6,8 +6,9 @@ import Menu from 'features/common/components/Menu/menu';
 import './pageHeader.scss';
 
 
-export default function PageHeader({ name }) {
+export default function PageHeader({ name, setName }) {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
+
     const hideMenu = useCallback(() => {
         setIsMenuVisible(false);
     }, []);
@@ -17,12 +18,14 @@ export default function PageHeader({ name }) {
     }, []);
 
     const onSignOutClick = useCallback(async () => {
-        await fetch('https://localhost:7192/signout', {
+        await fetch('http://localhost:7192/signout', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             credentials: 'include'
         });
-    }, []);
+
+        setName('');
+    }, [setName]);
 
     return (
         <div>
@@ -42,12 +45,18 @@ export default function PageHeader({ name }) {
                     />
                 </div>
                 {
-                    name
+                    name !== ''
                         ? (
                             <ul className="page-header__authentification">
-                                <p>Hello {name}</p>
+                                <p>Hello, {name}</p>
                                 <li>
-                                    <Link className="page-header__authentification-item" to="/signin" onClick={onSignOutClick}>Sign Out</Link>
+                                    <Link
+                                        className="page-header__authentification-item"
+                                        to="/signin"
+                                        onClick={onSignOutClick}
+                                    >
+                                        Sign Out
+                                    </Link>
                                 </li>
                             </ul>
                         )
@@ -64,7 +73,6 @@ export default function PageHeader({ name }) {
 
                 }
             </div>
-
         </div>
     );
 }

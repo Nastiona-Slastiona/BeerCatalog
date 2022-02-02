@@ -16,31 +16,35 @@ export default function App() {
     const [authorized, setAuthorized] = useState(false);
     const [name, setName] = useState('');
     useEffect(() => {
-        (
-            async () => {
-                const response = await fetch('http://localhost:7192/user', {
-                    headers: { 'Content-Type': 'application/json' },
-                    credentials: 'include'
-                });
+        if (!authorized) {
+            (
+                async () => {
+                    const response = await fetch('http://localhost:7192/user', {
+                        headers: { 'Content-Type': 'application/json' },
+                        credentials: 'include'
+                    });
 
-                if (response.ok) {
-                    const user = await response.json();
-                    setAuthorized(true);
-                    setName(user.Name);
+                    if (response.ok) {
+                        const user = await response.json();
+                        setName(user.name);
+                    }
+                    if (name) {
+                        setAuthorized(true);
+                    }
                 }
-            }
-        )();
+            )();
+        }
     });
 
     return (
         <div className="app">
             <BrowserRouter>
-                <PageHeader name={name} />
+                <PageHeader name={name} setName={setName} />
                 <Routes>
                     <Route path="/" element={<LandingPage />} exact />
                     <Route path="/favorites" element={<FavoritesPage />} />
                     <Route path="/beers/:id" element={<BeerPage />} exact />
-                    <Route path="/signin" element={<SignIn />} />
+                    <Route path="/signin" element={<SignIn setName={setName} />} />
                     <Route path="/register" element={<Register />} />
                 </Routes>
             </BrowserRouter>

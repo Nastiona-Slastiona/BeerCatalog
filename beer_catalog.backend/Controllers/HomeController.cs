@@ -41,14 +41,9 @@ public class HomeController : Controller
                     HttpOnly = true
                 });
 
-                return Ok(new
-                {
-                    message = "success"
-                });
+                return Ok(user);
             }
-
         }
-
 
         return BadRequest(new { message = "Invalid credentials" });
     }
@@ -67,6 +62,7 @@ public class HomeController : Controller
 
         return Created("success", _repository.Create(user));
     }
+
     [HttpGet("user")]
     public IActionResult User()
     {
@@ -88,6 +84,7 @@ public class HomeController : Controller
         }
 
     }
+
     [HttpPost("signout")]
     public IActionResult Signout()
     {

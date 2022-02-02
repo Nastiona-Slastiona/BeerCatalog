@@ -4,7 +4,7 @@ import { Navigate } from 'react-router-dom';
 import './auth.scss';
 
 
-export default function SignIn() {
+export default function SignIn({ setName }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [authorized, setAuthorized] = useState(false);
@@ -33,6 +33,8 @@ export default function SignIn() {
         });
 
         if (response.ok) {
+            const content = await response.json();
+            setName(content.name);
             setAuthorized(true);
         }
     };

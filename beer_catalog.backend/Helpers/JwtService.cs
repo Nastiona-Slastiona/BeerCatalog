@@ -27,7 +27,9 @@ public class JwtService
         tokenHandler.ValidateToken(jwt, new TokenValidationParameters
         {
             IssuerSigningKey = new SymmetricSecurityKey(key),
-            ValidateIssuerSigningKey = true
+            ValidateIssuerSigningKey = true,
+            ValidateIssuer = false,
+            ValidateAudience = false
 
         }, out SecurityToken validatedToken);
 

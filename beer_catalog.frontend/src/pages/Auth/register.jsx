@@ -48,9 +48,7 @@ export default function Register() {
         });
 
         if (response.ok) {
-            const content = await response.json();
             setRegister(true);
-            console.log(content);
         }
     };
 
