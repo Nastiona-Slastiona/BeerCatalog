@@ -1,8 +1,8 @@
 const serviceUrls = {
-    registration: 'http://localhost:7192/register',
-    signIn: 'http://localhost:7192/signin',
-    getUser: 'http://localhost:7192/user',
-    signOut: 'http://localhost:7192/signout'
+    registration: 'http://localhost:7192/api/register',
+    signIn: 'http://localhost:7192/api/signin',
+    getUser: 'http://localhost:7192/api/user',
+    signOut: 'http://localhost:7192/api/signout'
 };
 
 export default serviceUrls;

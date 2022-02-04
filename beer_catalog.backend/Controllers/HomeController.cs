@@ -5,6 +5,8 @@ using beer_catalog.backend.Helpers;
 
 namespace beer_catalog.backend.Controllers;
 
+
+[Route("api")]
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
@@ -49,18 +51,39 @@ public class HomeController : Controller
     }
 
     [HttpPost("register")]
-    public IActionResult Register([FromBody] User userData)
+    public IActionResult Register([FromForm] UserDTO userData)
     {
-        var user = new User
+        try
         {
-            Password = BCrypt.Net.BCrypt.HashPassword(userData.Password),
-            Name = userData.Name,
-            BirthDate = userData.BirthDate,
-            Email = userData.Email,
-            Image = userData.Image
-        };
+            var user = new User
+            {
+                Password = BCrypt.Net.BCrypt.HashPassword(userData.Password),
+                Name = userData.Name,
+                BirthDate = userData.BirthDate,
+                Email = userData.Email
+            };
 
-        return Created("success", _repository.Create(user));
+            if (userData.Image != null)
+            {
+                byte[]? imageData = null;
+
+                using (var binaryReader = new BinaryReader(userData.Image.OpenReadStream()))
+                {
+                    imageData = binaryReader.ReadBytes((int)userData.Image.Length);
+                }
+
+                user.Image = imageData;
+            }
+
+            return Created("success", _repository.Create(user));
+        }
+        catch (Exception e)
+        {
+            return BadRequest(new
+            {
+                message = e.Message
+            });
+        }
     }
 
     [HttpGet("user")]

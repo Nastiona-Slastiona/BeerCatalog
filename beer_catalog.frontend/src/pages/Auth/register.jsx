@@ -22,7 +22,7 @@ export default function Register() {
     }, []);
 
     const onImageChange = useCallback(e => {
-        setImage(e.target.files);
+        setImage(e.target.files[0]);
     }, []);
 
     const onDateChange = useCallback(e => {
@@ -55,7 +55,7 @@ export default function Register() {
 
     return (
         <div className="auth__container">
-            <form className="auth" onSubmit={onFormSubmit}>
+            <form className="auth" encType="multipart/form-data" onSubmit={onFormSubmit}>
                 <div className="auth__item">
                     <p className="auth__fieldname">Email</p>
                     <input
