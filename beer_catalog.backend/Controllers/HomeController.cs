@@ -51,7 +51,7 @@ public class HomeController : Controller
     }
 
     [HttpPost("register")]
-    public IActionResult Register([FromForm] UserDTO userData)
+    public IActionResult Register([FromBody] UserDTO userData)
     {
         try
         {

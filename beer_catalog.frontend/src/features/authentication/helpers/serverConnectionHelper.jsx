@@ -52,8 +52,8 @@ async function registrate(user) {
 
     const response = await fetch(serviceUrls.registration, {
         method: 'POST',
-        headers: { 'Content-Type': 'multipart/form-data' },
-        body: formData
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(user)
     });
 
     if (response.ok) {
