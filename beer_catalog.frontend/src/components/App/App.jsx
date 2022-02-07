@@ -14,17 +14,20 @@ import './app.scss';
 
 
 export default function App() {
-    const [authorized, setAuthorized] = useState(false);
+    const [fetchUser, setFetchUser] = useState(false);
     const [name, setName] = useState('');
+    const [image, setImage] = useState('');
+
     useEffect(() => {
-        if (!authorized) {
+        if (fetchUser) {
             (
                 async () => {
                     const user = await getUser();
 
                     if (user) {
                         setName(user.name);
-                        setAuthorized(true);
+                        setImage(user.image);
+                        setFetchUser(true);
                     }
                 }
             )();
@@ -34,12 +37,23 @@ export default function App() {
     return (
         <div className="app">
             <BrowserRouter>
-                <PageHeader name={name} setName={setName} />
+                <PageHeader image={image} name={name} setName={setName} />
                 <Routes>
                     <Route path="/" element={<LandingPage />} exact />
                     <Route path="/favorites" element={<FavoritesPage />} />
                     <Route path="/beers/:id" element={<BeerPage />} exact />
-                    <Route path="/signin" element={<SignIn setName={setName} />} />
+                    <Route
+                        path="/signin"
+                        element={
+                            (
+                                <SignIn
+                                    setName={setName}
+                                    setImage={setImage}
+                                    setFetchUser={setFetchUser}
+                                />
+                            )
+                        }
+                    />
                     <Route path="/register" element={<Register />} />
                 </Routes>
             </BrowserRouter>

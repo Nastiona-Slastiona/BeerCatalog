@@ -88,6 +88,6 @@ module.exports = {
             authentication: path.resolve(__dirname, 'src/features/authentication')
         },
         enforceExtension: false,
-        extensions: ['.jsx', '.js', '.css', '.wasm', '.ico', '.gif', '...']
+        extensions: ['.jsx', '.js', '.css', '.wasm', '.ico', '.gif', '.png', '...']
     }
 };

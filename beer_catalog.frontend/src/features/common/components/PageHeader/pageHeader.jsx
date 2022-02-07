@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 
 import Menu from 'features/common/components/Menu/menu';
 import { signOut } from 'authentication/helpers/serverConnectionHelper';
+import user from 'src/static/user';
 
 import './pageHeader.scss';
 
 
-export default function PageHeader({ name, setName }) {
+export default function PageHeader({ image, name, setName }) {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
 
     const hideMenu = useCallback(() => {
@@ -23,6 +24,7 @@ export default function PageHeader({ name, setName }) {
 
         setName('');
     }, [setName]);
+    const newImg = image ? `data:image/png;base64, ${image}` : false;
 
     return (
         <div>
@@ -46,6 +48,7 @@ export default function PageHeader({ name, setName }) {
                         ? (
                             <ul className="page-header__authentification">
                                 <p>Hello, {name}!</p>
+                                <img alt="avatar" className="page-header__avatar" src={newImg || user} />
                                 <li>
                                     <Link
                                         className="page-header__authentification-item"
@@ -67,7 +70,6 @@ export default function PageHeader({ name, setName }) {
                                 </li>
                             </ul>
                         )
-
                 }
             </div>
         </div>

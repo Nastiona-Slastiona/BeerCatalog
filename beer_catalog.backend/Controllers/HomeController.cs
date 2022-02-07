@@ -42,7 +42,7 @@ public class HomeController : Controller
                 {
                     HttpOnly = true
                 });
-
+                
                 return Ok(user);
             }
         }
@@ -51,10 +51,10 @@ public class HomeController : Controller
     }
 
     [HttpPost("register")]
-    public IActionResult Register([FromBody] UserDTO userData)
+    public IActionResult Register([FromForm]UserDTO userData)
     {
-        try
-        {
+        try                                     
+        {         
             var user = new User
             {
                 Password = BCrypt.Net.BCrypt.HashPassword(userData.Password),
@@ -75,6 +75,7 @@ public class HomeController : Controller
                 user.Image = imageData;
             }
 
+       
             return Created("success", _repository.Create(user));
         }
         catch (Exception e)

@@ -10,7 +10,7 @@ public class User
     [JsonProperty("BirthDate")]
     public DateTime BirthDate { get; set; }
     [JsonProperty("Image")]
-    public byte[] Image { get; set; }
+    public byte[]? Image { get; set; }
     [JsonProperty("Password")]
     public string Password { get; set; } = null!;
 }

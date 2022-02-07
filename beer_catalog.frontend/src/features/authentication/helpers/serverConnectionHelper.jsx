@@ -38,13 +38,12 @@ async function getUser() {
     if (response.ok) {
         return response.json();
     }
-
-    return null;
 }
 
 async function registrate(user) {
     const formData = new FormData();
-    formData.append('Image', user.image);
+    const imageFile = user.image;
+    formData.append('Image', imageFile);
     formData.append('Name', user.name);
     formData.append('Email', user.email);
     formData.append('Password', user.password);
@@ -52,13 +51,10 @@ async function registrate(user) {
 
     const response = await fetch(serviceUrls.registration, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(user)
+        body: formData
     });
 
     if (response.ok) {
-        console.log(response.name);
-
         return response;
     }
 
