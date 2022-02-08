@@ -5,10 +5,11 @@ import { signIn } from '../../features/authentication/helpers/serverConnectionHe
 import './auth.scss';
 
 
-export default function SignIn({ setName, setImage, setFetchUser }) {
+export default function SignIn({ setName, setImage }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [authorized, setAuthorized] = useState(false);
+
     const onEmailChange = useCallback(e => {
         setEmail(e.target.value);
     }, []);
@@ -19,7 +20,7 @@ export default function SignIn({ setName, setImage, setFetchUser }) {
 
     const onFormSubmit = useCallback(async e => {
         e.preventDefault();
-        setFetchUser(true);
+
         const response = await signIn(password, email);
 
         if (response) {
@@ -27,7 +28,7 @@ export default function SignIn({ setName, setImage, setFetchUser }) {
             setImage(response.image);
             setAuthorized(true);
         }
-    }, [setFetchUser, password, email, setName, setImage]);
+    }, [password, email, setName, setImage]);
 
     if (authorized) {
         return <Navigate to="/" />;

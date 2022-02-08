@@ -35,9 +35,9 @@ export default function PageHeader({ image, name, setName }) {
                         label=" "
                         onClick={showMenu}
                     />
-                    <span>
+                    <Link className="page-header__logo" to="/">
                         Beer catalog
-                    </span>
+                    </Link>
                     <Menu
                         isVisible={isMenuVisible}
                         setIsVisible={hideMenu}

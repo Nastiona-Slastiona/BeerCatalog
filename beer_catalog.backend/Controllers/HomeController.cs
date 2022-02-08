@@ -9,16 +9,13 @@ namespace beer_catalog.backend.Controllers;
 [Route("api")]
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
     private readonly IUserRepository _repository;
     private readonly JwtService _jwtService;
 
     public HomeController(
-        ILogger<HomeController> logger,
         IUserRepository repository,
         JwtService jwtService)
     {
-        _logger = logger;
         _repository = repository;
         _jwtService = jwtService;
     }
@@ -42,7 +39,7 @@ public class HomeController : Controller
                 {
                     HttpOnly = true
                 });
-                
+
                 return Ok(user);
             }
         }
@@ -51,10 +48,10 @@ public class HomeController : Controller
     }
 
     [HttpPost("register")]
-    public IActionResult Register([FromForm]UserDTO userData)
+    public IActionResult Register([FromForm] UserDTO userData)
     {
-        try                                     
-        {         
+        try
+        {
             var user = new User
             {
                 Password = BCrypt.Net.BCrypt.HashPassword(userData.Password),
@@ -75,7 +72,7 @@ public class HomeController : Controller
                 user.Image = imageData;
             }
 
-       
+
             return Created("success", _repository.Create(user));
         }
         catch (Exception e)
@@ -102,7 +99,7 @@ public class HomeController : Controller
 
             return Ok(user);
         }
-        catch (Exception e)
+        catch
         {
             return Unauthorized();
         }

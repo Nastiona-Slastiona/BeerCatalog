@@ -19,6 +19,11 @@
 
 }
 
+.page-header__logo {
+    text-decoration: none;
+    color: $secondary-color;
+}
+
 .page-header__authentification {
     @include typography-0;
     margin: 10px;
@@ -32,7 +37,7 @@
     margin: 0 10px;
     height: 40px;
     width: 40px;
-    border: 2px solid $primary-color-dark;
+    border: 3px solid $primary-color-dark;
     border-radius: 50%;
 }
 

@@ -40,18 +40,21 @@ async function getUser() {
     }
 }
 
-async function registrate(user) {
+function getFormData(user) {
     const formData = new FormData();
-    const imageFile = user.image;
-    formData.append('Image', imageFile);
+    formData.append('Image', user.image);
     formData.append('Name', user.name);
     formData.append('Email', user.email);
     formData.append('Password', user.password);
     formData.append('BirthDate', user.birthDate);
 
+    return formData;
+}
+
+async function registrate(user) {
     const response = await fetch(serviceUrls.registration, {
         method: 'POST',
-        body: formData
+        body: getFormData(user)
     });
 
     if (response.ok) {
