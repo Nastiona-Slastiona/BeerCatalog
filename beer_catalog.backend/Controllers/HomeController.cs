@@ -117,6 +117,22 @@ public class HomeController : Controller
         });
     }
 
+    [HttpPost("setFavoriteBeers")]
+    public IActionResult SetFavoriteBeer([FromBody] FavoriteBeersDTO favoriteBeers)
+    {
+        try
+        {
+            _repository.ChangeFavoriteBeers(favoriteBeers);
+
+            return Ok();
+        }
+        catch
+        {
+            return BadRequest();
+        }
+
+    }
+
     public IActionResult Privacy()
     {
         return View();

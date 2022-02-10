@@ -1,6 +1,3 @@
-using Newtonsoft.Json;
-
-
 public class UserDTO
 {
 
@@ -13,4 +10,6 @@ public class UserDTO
     public IFormFile Image { get; set; }
 
     public string Password { get; set; } = null!;
+
+    public string FavoriteBeers { get; set; } = "";
 }

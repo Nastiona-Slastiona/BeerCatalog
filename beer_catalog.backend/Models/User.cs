@@ -13,4 +13,6 @@ public class User
     public byte[]? Image { get; set; }
     [JsonProperty("Password")]
     public string Password { get; set; } = null!;
+
+    public string FavoriteBeers { get; set; } = "";
 }

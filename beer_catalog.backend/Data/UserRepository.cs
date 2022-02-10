@@ -18,4 +18,16 @@ public class UserRepository : IUserRepository
     public User GetByEmail(string email) => _context.Users.FirstOrDefault(user => user.Email == email);
 
     public User GetById(int id) => _context.Users.FirstOrDefault(u => u.Id == id);
+
+    public void ChangeFavoriteBeers(FavoriteBeersDTO favoriteBeers)
+    {
+        User user = this.GetByEmail(favoriteBeers.Email);
+
+        if (user != null)
+        {
+            user.FavoriteBeers = favoriteBeers.FavoriteBeers;
+        }
+
+        _context.SaveChanges();
+    }
 }
