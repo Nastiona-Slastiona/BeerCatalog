@@ -11,11 +11,13 @@ import { getUser } from 'authentication/helpers/serverConnectionHelper';
 
 import 'src/styles/fonts/icomoon/style';
 import './app.scss';
+import { useDispatch } from 'react-redux';
 
 
 export default function App() {
     const [name, setName] = useState('');
     const [image, setImage] = useState('');
+    const dispatch = useDispatch();
 
     useEffect(() => {
         (
@@ -23,8 +25,21 @@ export default function App() {
                 const user = await getUser();
 
                 if (user) {
+                    const favoriteBeers = user.favoriteBeers.split(' ');
+                    for (let index = 0; index < favoriteBeers.length; index++) {
+                        favoriteBeers[index] = +favoriteBeers[index];
+                    }
+
                     setName(user.name);
                     setImage(user.image);
+                    dispatch({
+                        type: 'users/setUserData',
+                        payload: {
+                            authorized: true,
+                            email: user.email,
+                            favoriteBeers
+                        }
+                    });
                 }
             }
         )();
