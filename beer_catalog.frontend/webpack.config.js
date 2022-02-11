@@ -35,6 +35,14 @@ const generateStyleLoader = loaderName => {
     ];
 };
 
+const generateUrlLoader = (mimeType, limit = 10000) => [{
+    loader: 'url-loader',
+    options: {
+        limit,
+        mimetype: mimeType
+    }
+}];
+
 module.exports = {
     mode: 'development',
     entry: ['babel-polyfill', './src/index.jsx'],
@@ -46,6 +54,7 @@ module.exports = {
         port: 3000,
         hot: true
     },
+    devtool: 'source-map',
     plugins: [
         new HTMLWebpackPlugin({ template: './index.html' }),
         new CleanWebpackPlugin(),
@@ -69,12 +78,7 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|gif)$/i,
-                use: [{
-                    loader: 'url-loader',
-                    options: {
-                        limit: 8192
-                    }
-                }]
+                use: generateUrlLoader('image/png')
             }
         ]
     },

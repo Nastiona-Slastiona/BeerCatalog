@@ -14,24 +14,20 @@ import './app.scss';
 
 
 export default function App() {
-    const [fetchUser, setFetchUser] = useState(false);
     const [name, setName] = useState('');
     const [image, setImage] = useState('');
 
     useEffect(() => {
-        if (fetchUser) {
-            (
-                async () => {
-                    const user = await getUser();
+        (
+            async () => {
+                const user = await getUser();
 
-                    if (user) {
-                        setName(user.name);
-                        setImage(user.image);
-                        setFetchUser(true);
-                    }
+                if (user) {
+                    setName(user.name);
+                    setImage(user.image);
                 }
-            )();
-        }
+            }
+        )();
     });
 
     return (
@@ -42,18 +38,7 @@ export default function App() {
                     <Route path="/" element={<LandingPage />} exact />
                     <Route path="/favorites" element={<FavoritesPage />} />
                     <Route path="/beers/:id" element={<BeerPage />} exact />
-                    <Route
-                        path="/signin"
-                        element={
-                            (
-                                <SignIn
-                                    setName={setName}
-                                    setImage={setImage}
-                                    setFetchUser={setFetchUser}
-                                />
-                            )
-                        }
-                    />
+                    <Route path="/signin" element={<SignIn setName={setName} setImage={setImage} />} />
                     <Route path="/register" element={<Register />} />
                 </Routes>
             </BrowserRouter>
