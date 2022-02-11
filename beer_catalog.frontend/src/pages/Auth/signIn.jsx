@@ -41,6 +41,7 @@ export default function SignIn({ setName, setImage, setFetchUser }) {
                     <input
                         className="auth__input"
                         placeholder="Email"
+                        required
                         onChange={onEmailChange}
                     />
                 </div>
@@ -49,6 +50,8 @@ export default function SignIn({ setName, setImage, setFetchUser }) {
                     <input
                         className="auth__input"
                         placeholder="Password"
+                        type="password"
+                        required
                         onChange={onPasswordChange}
                     />
                 </div>

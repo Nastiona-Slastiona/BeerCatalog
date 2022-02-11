@@ -10,6 +10,9 @@ export default function Register() {
     const [image, setImage] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [warning, setWarning] = useState('');
+    const [formWarning, setFormWarning] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
     const [birthDate, setBirthDate] = useState('');
     const [register, setRegister] = useState(false);
 
@@ -33,21 +36,34 @@ export default function Register() {
         setPassword(e.target.value);
     }, []);
 
+    const onConfirmPasswordChange = useCallback(e => {
+        setConfirmPassword(e.target.value);
+        if (e.target.value !== password) {
+            setWarning('This password differs from the previous one');
+        } else {
+            setWarning('');
+        }
+    }, [password]);
+
     const onFormSubmit = useCallback(async e => {
         e.preventDefault();
+        if (confirmPassword === password) {
+            setFormWarning('');
+            const response = await registrate({
+                name,
+                password,
+                email,
+                image,
+                birthDate
+            });
 
-        const response = await registrate({
-            name,
-            password,
-            email,
-            image,
-            birthDate
-        });
-
-        if (response) {
-            setRegister(true);
+            if (response) {
+                setRegister(true);
+            }
+        } else {
+            setFormWarning('Passwords differ one from another');
         }
-    }, [birthDate, email, image, name, password]);
+    }, [birthDate, confirmPassword, email, image, name, password]);
 
     if (register) {
         return <Navigate to="/signin" />;
@@ -56,6 +72,7 @@ export default function Register() {
     return (
         <div className="auth__container">
             <form className="auth" encType="multipart/form-data" onSubmit={onFormSubmit}>
+                <p className="auth__warning">{formWarning}</p>
                 <div className="auth__item">
                     <p className="auth__fieldname">Email</p>
                     <input
@@ -98,8 +115,20 @@ export default function Register() {
                     <input
                         className="auth__input"
                         placeholder="Enter your password"
+                        type="password"
                         required
                         onChange={onPasswordChange}
+                    />
+                </div>
+                <p>{warning}</p>
+                <div className="auth__item">
+                    <p className="auth__fieldname">Password</p>
+                    <input
+                        className="auth__input"
+                        placeholder="Confirm your password"
+                        type="password"
+                        required
+                        onChange={onConfirmPasswordChange}
                     />
                 </div>
                 <button type="submit" className="auth__button">Submit</button>

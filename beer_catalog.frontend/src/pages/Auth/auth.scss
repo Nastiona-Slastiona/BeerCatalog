@@ -11,7 +11,12 @@
 
 .auth__container {
     display: flex;
-    justify-content: center;;
+    justify-content: center;
+}
+
+.auth__warning {
+    @include typography-2;
+    color: #ff4e4e;
 }
 
 .auth__input {
