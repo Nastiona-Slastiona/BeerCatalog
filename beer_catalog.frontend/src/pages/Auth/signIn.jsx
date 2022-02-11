@@ -1,6 +1,9 @@
 import React, { useCallback, useState } from 'react';
 import { Navigate } from 'react-router-dom';
-import { signIn } from '../../features/authentication/helpers/serverConnectionHelper';
+import { useDispatch } from 'react-redux';
+
+import getUserHelper from 'authentication/helpers/getUserHelper';
+import { signIn } from 'authentication/helpers/serverConnectionHelper';
 
 import './auth.scss';
 
@@ -9,6 +12,8 @@ export default function SignIn({ setName, setImage }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [authorized, setAuthorized] = useState(false);
+    const dispatch = useDispatch();
+
 
     const onEmailChange = useCallback(e => {
         setEmail(e.target.value);
@@ -24,11 +29,21 @@ export default function SignIn({ setName, setImage }) {
         const response = await signIn(password, email);
 
         if (response) {
+            const favoriteBeers = getUserHelper(response);
+
+            dispatch({ type: 'beers/favoriteBeersSet', payload: favoriteBeers });
             setName(response.name);
             setImage(response.image);
+            dispatch({
+                type: 'users/setUserData',
+                payload: {
+                    isAuthorized: true,
+                    email: response.email
+                }
+            });
             setAuthorized(true);
         }
-    }, [password, email, setName, setImage]);
+    }, [password, email, setName, setImage, dispatch]);
 
     if (authorized) {
         return <Navigate to="/" />;

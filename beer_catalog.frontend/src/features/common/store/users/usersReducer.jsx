@@ -22,7 +22,7 @@ const usersSlice = createSlice({
         setUserData(state, action) {
             return {
                 ...state,
-                isAuthorized: action.payload.authorized,
+                isAuthorized: action.payload.isAuthorized,
                 email: action.payload.email
             };
         }

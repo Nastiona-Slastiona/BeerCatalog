@@ -8,6 +8,7 @@ import PageHeader from 'features/common/components/PageHeader/pageHeader';
 import Register from 'pages/Auth/register';
 import SignIn from 'pages/Auth/signIn';
 import { getUser } from 'authentication/helpers/serverConnectionHelper';
+import getUserHelper from 'authentication/helpers/getUserHelper';
 
 import 'src/styles/fonts/icomoon/style';
 import './app.scss';
@@ -17,18 +18,15 @@ import { useDispatch } from 'react-redux';
 export default function App() {
     const [name, setName] = useState('');
     const [image, setImage] = useState('');
+    const [fetchingUser, setFetchingUser] = useState(true);
     const dispatch = useDispatch();
 
     useEffect(() => {
         (
             async () => {
                 const user = await getUser();
-
-                if (user) {
-                    const favoriteBeers = user.favoriteBeers.split(' ');
-                    for (let index = 0; index < favoriteBeers.length; index++) {
-                        favoriteBeers[index] = +favoriteBeers[index];
-                    }
+                if (user && fetchingUser) {
+                    const favoriteBeers = getUserHelper(user);
 
                     dispatch({ type: 'beers/favoriteBeersSet', payload: favoriteBeers });
                     setName(user.name);
@@ -36,10 +34,11 @@ export default function App() {
                     dispatch({
                         type: 'users/setUserData',
                         payload: {
-                            authorized: true,
+                            isAuthorized: true,
                             email: user.email
                         }
                     });
+                    setFetchingUser(false);
                 }
             }
         )();

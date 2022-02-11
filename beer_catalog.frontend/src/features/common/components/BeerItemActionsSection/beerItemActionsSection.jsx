@@ -9,13 +9,13 @@ import { useSelector } from 'react-redux';
 
 
 function BeerItemActionsSection({ beer }) {
-    const authorized = useSelector(state => state.users.isAuthorized);
+    const isAuthorized = useSelector(state => state.users.isAuthorized);
 
     return (
         <div className="beer-item-actions-section__container">
             <Link className="beer-item-actions-section" to={`/beers/${beer.id}`}>Open</Link>
             {
-                authorized && (
+                isAuthorized && (
                     <AddToFavoriteButton
                         buttonClassName="beer-item-actions-section"
                         beer={beer}

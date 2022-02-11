@@ -17,7 +17,7 @@ export default function LandingPage() {
     const beers = useSelector(state => state.beers.beersList);
     const status = useSelector(state => state.beers.status);
     const email = useSelector(state => state.users.email);
-    const authorized = useSelector(state => state.users.isAuthorized);
+    const isAuthorized = useSelector(state => state.users.isAuthorized);
     const favoriteBeers = useSelector(state => state.beers.favoritesBeersIds);
     const currentPage = useSelector(state => state.beers.currentPage);
     const [page, setPage] = useState(currentPage + 1);
@@ -35,7 +35,7 @@ export default function LandingPage() {
     });
 
     useEffect(() => {
-        if (authorized) {
+        if (isAuthorized) {
             dispatch(setUserFavoriteBeers({ email, favoriteBeers }));
         }
     });
@@ -110,7 +110,13 @@ export default function LandingPage() {
         setIsFilterVisible(e.target.value !== '');
     }, [filter, filtredBeers.length]);
 
-    const renderedBeers = filtredBeers.map(beer => <BeerItem key={beer.id} beer={beer} isSimpleBeerMode={true} />);
+    const renderedBeers = filtredBeers.map(beer => (
+        <BeerItem
+            key={beer.id}
+            beer={beer}
+            isSimpleBeerMode={true}
+        />
+    ));
 
     return (
         <section>

@@ -103,7 +103,6 @@ public class HomeController : Controller
         {
             return Unauthorized();
         }
-
     }
 
     [HttpPost("signout")]

@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 
 import Menu from 'features/common/components/Menu/menu';
 import { signOut } from 'authentication/helpers/serverConnectionHelper';
@@ -12,6 +12,7 @@ import './pageHeader.scss';
 export default function PageHeader({ image, name, setName }) {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
     const dispatch = useDispatch();
+    const isAuthorized = useSelector(state => state.users.isAuthorized);
 
     const hideMenu = useCallback(() => {
         setIsMenuVisible(false);
@@ -25,7 +26,13 @@ export default function PageHeader({ image, name, setName }) {
         signOut();
 
         setName('');
-        dispatch({ type: 'users/setUserData', payload: { isAuthorized: false, email: '' } });
+        dispatch({
+            type: 'users/setUserData',
+            payload: {
+                isAuthorized: false,
+                email: ''
+            }
+        });
         dispatch({ type: 'beers/initialStateSet' });
     }, [dispatch, setName]);
     const newImg = image ? `data:image/png;base64, ${image}` : false;
@@ -48,7 +55,7 @@ export default function PageHeader({ image, name, setName }) {
                     />
                 </div>
                 {
-                    name !== ''
+                    isAuthorized
                         ? (
                             <ul className="page-header__authentification">
                                 <p>Hello, {name}!</p>
