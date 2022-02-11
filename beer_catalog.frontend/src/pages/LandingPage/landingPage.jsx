@@ -7,8 +7,7 @@ import LoadingIndicator from 'components/base/LoadingIndicator/loadingIndicator'
 import SearchBox from 'components/base/SearchBox/searchBox';
 import ThunkStatus from 'features/common/models/thunkStatus';
 import fetchBeers from 'features/beersList/store/beersThunk';
-import storageHelper from 'src/helpers/storageHelper';
-
+import setUserFavoriteBeers from 'features/common/store/users/state/thunks/usersThunk';
 
 import './landingPage.scss';
 
@@ -17,9 +16,11 @@ export default function LandingPage() {
     const dispatch = useDispatch();
     const beers = useSelector(state => state.beers.beersList);
     const status = useSelector(state => state.beers.status);
+    const email = useSelector(state => state.users.email);
+    const authorized = useSelector(state => state.users.isAuthorized);
+    const favoriteBeers = useSelector(state => state.beers.favoritesBeersIds);
     const currentPage = useSelector(state => state.beers.currentPage);
     const [page, setPage] = useState(currentPage + 1);
-    const favoritesBeersIds = useSelector(state => state.beers.favoritesBeersIds);
 
     const [isFilterVisible, setIsFilterVisible] = useState(false);
     const [isLoadingVisible, setIsLoadingVisible] = useState(status === ThunkStatus.Loading);
@@ -30,6 +31,12 @@ export default function LandingPage() {
             abv: '0',
             ibu: '0',
             ebc: '0'
+        }
+    });
+
+    useEffect(() => {
+        if (authorized) {
+            dispatch(setUserFavoriteBeers({ email, favoriteBeers }));
         }
     });
 
@@ -50,10 +57,6 @@ export default function LandingPage() {
             document.removeEventListener('scroll', scrollHandler);
         };
     });
-
-    useEffect(() => {
-        storageHelper.setItem('favoriteBeersIds', favoritesBeersIds);
-    }, [favoritesBeersIds]);
 
     const scrollHandler = useCallback(e => {
         const targetWindowState = e.target.documentElement;

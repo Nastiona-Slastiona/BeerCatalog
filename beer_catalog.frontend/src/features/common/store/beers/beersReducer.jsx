@@ -1,16 +1,15 @@
 import ThunkStatus from 'src/features/common/models/thunkStatus';
 import { createSlice } from '@reduxjs/toolkit';
 import favoriteBeerSet from 'features/common/store/reducers/beers/favoriteBeerSet';
+import favoriteBeersSet from 'features/common/store/reducers/beers/favoriteBeersSet';
 import fetchBeers from 'features/beersList/store/beersThunk';
 import fetchOneBeer from 'features/common/store/beers/state/thunks/fetchBeerThunk';
-import serviceKeys from 'src/constants/serviceKeys';
 import setIsFavoriteBeer from 'features/common/store/beers/state/thunks/beerThunk';
-import storageHelper from 'src/helpers/storageHelper';
 
 
 const initialState = {
     beersList: [],
-    favoritesBeersIds: storageHelper.getItem(serviceKeys.favoriteBeersIds),
+    favoritesBeersIds: [],
     favoriteBeers: [],
     selectedBeer: {},
     status: '',
@@ -27,7 +26,13 @@ const beersSlice = createSlice({
     name: 'beers',
     initialState,
     reducers: {
-        favoriteBeerSet
+        favoriteBeerSet,
+        favoriteBeersSet,
+        initialStateSet() {
+            return {
+                ...initialState
+            };
+        }
     },
     extraReducers: {
         [fetchBeers.pending]: state => {
@@ -37,10 +42,10 @@ const beersSlice = createSlice({
             const beers = [...action.payload[0]];
 
             beers.forEach(beer => {
-                if (!state.favoritesBeersIds.includes(beer.id)) {
-                    beer.isFavorite = false;
-                } else {
+                if (state.favoritesBeersIds.includes(beer.id)) {
                     beer.isFavorite = true;
+                } else {
+                    beer.isFavorite = false;
                 }
             });
 

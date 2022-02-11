@@ -5,8 +5,8 @@ import setUserFavoriteBeers from './state/thunks/usersThunk';
 
 const initialState = {
     isAuthorized: false,
-    favoriteBeers: [],
-    email: ''
+    email: '',
+    status: ''
 };
 
 const setError = (state, action) => {
@@ -22,15 +22,8 @@ const usersSlice = createSlice({
         setUserData(state, action) {
             return {
                 ...state,
-                authorized: action.payload.authorized,
-                email: action.payload.email,
-                favoriteBeers: action.payload.favoriteBeers
-            };
-        },
-        setUserFavoriteBeer(state, action) {
-            return {
-                ...state,
-                favoriteBeers: action.payload
+                isAuthorized: action.payload.authorized,
+                email: action.payload.email
             };
         }
     },
@@ -38,8 +31,8 @@ const usersSlice = createSlice({
         [setUserFavoriteBeers.pending]: state => {
             state.status = ThunkStatus.Loading;
         },
-        [setUserFavoriteBeers.fulfilled]: (state, action) => {
-            state.favoriteBeers = action.payload.favoriteBeers;
+        [setUserFavoriteBeers.fulfilled]: state => {
+            state.status = ThunkStatus.Resolved;
         },
         [setUserFavoriteBeers.rejected]: setError
     }

@@ -30,14 +30,14 @@ export default function App() {
                         favoriteBeers[index] = +favoriteBeers[index];
                     }
 
+                    dispatch({ type: 'beers/favoriteBeersSet', payload: favoriteBeers });
                     setName(user.name);
                     setImage(user.image);
                     dispatch({
                         type: 'users/setUserData',
                         payload: {
                             authorized: true,
-                            email: user.email,
-                            favoriteBeers
+                            email: user.email
                         }
                     });
                 }

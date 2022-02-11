@@ -118,7 +118,7 @@ public class HomeController : Controller
     }
 
     [HttpPost("setFavoriteBeers")]
-    public IActionResult SetFavoriteBeer([FromBody] FavoriteBeersDTO favoriteBeers)
+    public IActionResult SetFavoriteBeer([FromBody] FavoriteBeerDTO favoriteBeers)
     {
         try
         {

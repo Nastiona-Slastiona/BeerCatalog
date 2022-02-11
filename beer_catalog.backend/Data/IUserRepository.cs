@@ -5,6 +5,6 @@ public interface IUserRepository
 
     User GetById(int id);
 
-    void ChangeFavoriteBeers(FavoriteBeersDTO favoriteBeers);
+    void ChangeFavoriteBeers(FavoriteBeerDTO favoriteBeers);
 
 }
