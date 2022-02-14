@@ -1,8 +1,8 @@
 const serviceUrls = {
-    registration: 'http://localhost:8080/api/register',
-    signIn: 'http://localhost:8080/api/signin',
-    getUser: 'http://localhost:8080/api/user',
-    signOut: 'http://localhost:8080/api/signout'
+    registration: 'https://beer-catalog-server.azurewebsites.net/api/register',
+    signIn: 'https://beer-catalog-server.azurewebsites.net/api/signin',
+    getUser: 'https://beer-catalog-server.azurewebsites.net/api/user',
+    signOut: 'https://beer-catalog-server.azurewebsites.net/api/signout'
 };
 
 export default serviceUrls;
