@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'beer-catalog-frontend'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_73B8FBA194A8471C95747FDD6BF39A4A }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_48DC333DFB72434D94BC78243A464B07 }}
           package: .
