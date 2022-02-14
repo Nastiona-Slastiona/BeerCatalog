@@ -51,7 +51,6 @@ module.exports = {
         filename: 'bundle.js'
     },
     devServer: {
-        port: 3000,
         hot: true
     },
     devtool: 'source-map',
