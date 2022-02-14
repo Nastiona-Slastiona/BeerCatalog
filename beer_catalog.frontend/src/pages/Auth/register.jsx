@@ -78,6 +78,7 @@ export default function Register() {
                     <input
                         className="auth__input"
                         placeholder="Enter your email"
+                        type="email"
                         required
                         onChange={onEmailChange}
                     />
