@@ -37,7 +37,7 @@ public class HomeController : Controller
 
                 Response.Cookies.Append("jwt", jwt, new CookieOptions
                 {
-                    HttpOnly = true
+                    MaxAge = TimeSpan.FromDays(1)
                 });
 
                 return Ok(user);
@@ -132,12 +132,15 @@ public class HomeController : Controller
 
     }
 
+    [Route("/privacy")]
     public IActionResult Privacy()
     {
         return View();
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+
+    [Route("/error")]
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
