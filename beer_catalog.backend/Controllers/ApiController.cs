@@ -7,22 +7,17 @@ namespace beer_catalog.backend.Controllers;
 
 
 [Route("api")]
-public class HomeController : Controller
+public class ApiController : ControllerBase
 {
     private readonly IUserRepository _repository;
     private readonly JwtService _jwtService;
 
-    public HomeController(
+    public ApiController(
         IUserRepository repository,
         JwtService jwtService)
     {
         _repository = repository;
         _jwtService = jwtService;
-    }
-
-    public IActionResult Index()
-    {
-        return View();
     }
 
     [HttpPost("signin")]
@@ -117,14 +112,9 @@ public class HomeController : Controller
         });
     }
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
-
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        return BadRequest(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }
