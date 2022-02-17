@@ -42,6 +42,7 @@ export default function SignIn({ setName, setImage }) {
                     <input
                         className="auth__input"
                         placeholder="Email"
+                        type="email"
                         required
                         onChange={onEmailChange}
                     />
