@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-import getUserHelper from 'authentication/helpers/getUserHelper';
+import getUserFavoriteBeersHelper from 'authentication/helpers/getUserFavoriteBeersHelper';
 import { signIn } from 'authentication/helpers/serverConnectionHelper';
 
 import './auth.scss';
@@ -29,7 +29,7 @@ export default function SignIn({ setName, setImage }) {
         const response = await signIn(password, email);
 
         if (response) {
-            const favoriteBeers = getUserHelper(response);
+            const favoriteBeers = getUserFavoriteBeersHelper(response);
 
             dispatch({ type: 'beers/favoriteBeersSet', payload: favoriteBeers });
             setName(response.name);

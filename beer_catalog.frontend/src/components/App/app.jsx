@@ -8,7 +8,7 @@ import PageHeader from 'features/common/components/PageHeader/pageHeader';
 import Register from 'pages/Auth/register';
 import SignIn from 'pages/Auth/signIn';
 import { getUser } from 'authentication/helpers/serverConnectionHelper';
-import getUserHelper from 'authentication/helpers/getUserHelper';
+import getUserFavoriteBeersHelper from 'authentication/helpers/getUserFavoriteBeersHelper';
 
 import 'src/styles/fonts/icomoon/style';
 import './app.scss';
@@ -26,7 +26,7 @@ export default function App() {
             async () => {
                 const user = await getUser();
                 if (user && fetchingUser) {
-                    const favoriteBeers = getUserHelper(user);
+                    const favoriteBeers = getUserFavoriteBeersHelper(user);
 
                     dispatch({ type: 'beers/favoriteBeersSet', payload: favoriteBeers });
                     setName(user.name);
