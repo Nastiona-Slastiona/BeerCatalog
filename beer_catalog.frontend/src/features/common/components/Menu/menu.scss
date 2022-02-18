@@ -29,7 +29,7 @@
 }
 
 .menu__header {
-    @include typography-4;
+    @include typography-4-small;
     
     display: flex;
 
@@ -38,4 +38,10 @@
 
     color: $secondary-color;
     background-color: $primary-color;
+}
+
+@media (min-width: 500px) {
+    .menu__header {
+        @include typography-4;
+    }
 }

@@ -2,7 +2,7 @@
 @import 'src/styles/mixins/typography';
 
 .beer-item-info {
-    @include typography-0;
+    @include typography-0-small;
     
     display: grid;
 
@@ -17,13 +17,26 @@
 
 }
 
+@media (min-width: 500px) {
+    .beer-item-info {
+        @include typography-0;
+    }
+}
+
 .beer-item-info__text--title {
-    @include typography-1;
+    @include typography-1-small;
     
     display: block;
 
     padding-bottom: 10px;
 
+}
+
+@media (min-width: 500px) {
+    .beer-item-info__text--title {
+        @include typography-1;
+    
+    }
 }
 
 .beer-item-info__text--tagline {

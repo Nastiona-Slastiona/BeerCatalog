@@ -3,6 +3,8 @@ $font-family-styled: Georgia, 'Times New Roman', Times, serif;
 $font-family-Lucinda: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
   'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
+$font-main-size: 18pt;  
+
 @mixin typography-0 {
     font: {
         family: $font-family;
@@ -10,10 +12,25 @@ $font-family-Lucinda: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     };
 }
 
+@mixin typography-0-small {
+    font: {
+        family: $font-family;
+        size: 14pt;
+    };
+}
+
 @mixin typography-1 {
     font: {
         family: $font-family;
         size: 25pt;
+        weight: 600;
+    };
+}
+
+@mixin typography-1-small {
+    font: {
+        family: $font-family;
+        size: 20pt;
         weight: 600;
     };
 }
@@ -32,9 +49,23 @@ $font-family-Lucinda: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     };
 }
 
+@mixin typography-3-small {
+    font: {
+        size: 15pt;
+        family: $font-family;
+    };
+}
+
 @mixin typography-4 {
     font: {
         size: 25pt;
+        family: $font-family-styled;
+    };
+}
+
+@mixin typography-4-small {
+    font: {
+        size: 18pt;
         family: $font-family-styled;
     };
 }
@@ -54,10 +85,26 @@ $font-family-Lucinda: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     };
 }
 
+@mixin typography-6-small {
+    font: {
+        family: $font-family;
+        size: 20pt;
+        weight: 700; 
+    };
+}
+
 @mixin typography-7 {
     font: {
         family: $font-family;
         size: 20pt;
+        style: italic;
+    };
+}
+
+@mixin typography-7-small {
+    font: {
+        family: $font-family;
+        size: 15pt;
         style: italic;
     };
 }

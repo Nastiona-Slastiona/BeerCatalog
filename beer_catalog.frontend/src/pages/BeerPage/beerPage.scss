@@ -3,11 +3,17 @@
 
 
 .beer-page {
-    @include typography-3;
+    @include typography-0-small;
 
     display: block;
 
     text-align: left;
+}
+
+@media (min-width: 500px) {
+    .beer-page {
+        @include typography-3;
+    }
 }
 
 .beer-page__container {

@@ -8,7 +8,13 @@
 }
 
 .list__header {
-    @include typography-6;
+    @include typography-6-small;
+}
+
+@media (min-width: 500px) {
+    .list__header {
+        @include typography-6;
+    }
 }
 
 .list__body {
