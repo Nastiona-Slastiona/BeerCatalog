@@ -1,11 +1,12 @@
 using beer_catalog.backend.Helpers;
+using beer_catalog.backend.Constants;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
-string connection = builder.Configuration.GetConnectionString("DefaultConnection");
+string connection = builder.Configuration.GetConnectionString("DefaultConnection").Replace("{your_password}", ServiceConnection.ConnectionStringPassword);
 
 builder.Services.AddCors(options =>
 {
