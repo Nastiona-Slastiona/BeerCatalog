@@ -6,6 +6,12 @@
     width: 50%;
 }
 
+@media (min-width: 1100px) {
+    .favorites-page {
+        width: 90%;
+    }
+}
+
 
 .favorites-page__header {
     @include typography-5;
@@ -37,4 +43,10 @@
     padding: 30px;
 
     box-shadow: 0 4px 3px 2px #98999b80;
+}
+
+@media (min-width: 1000px) {
+    .favorites-page__beer-item {
+        width: auto;
+    }
 }
