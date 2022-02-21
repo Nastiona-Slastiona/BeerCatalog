@@ -8,7 +8,7 @@ string connection = builder.Configuration.GetConnectionString("DefaultConnection
 builder.Services.AddCors();
 
 builder.Services.AddDbContext<UserContext>(options => options.UseSqlServer(connection));
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllers();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<JwtService>();
 
@@ -36,8 +36,9 @@ app.UseCors(options => options
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
 
 app.Run();
