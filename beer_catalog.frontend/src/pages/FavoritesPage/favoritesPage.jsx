@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import BeerItem from 'features/common/components/BeerItem/beerItem';
@@ -11,17 +11,17 @@ import './favoritesPage.scss';
 export default function FavoritesPage() {
     const favoriteBeersIds = useSelector(state => state.beers.favoritesBeersIds);
     const dispatch = useDispatch();
-    const favorites = useSelector(state => state.beers.favoriteBeers);
-    const [fetching, setFetching] = useState(favorites.length < favoriteBeersIds.length);
+    // const favorites = useSelector(state => state.beers.favoriteBeers);
+    // const [fetching, setFetching] = useState(favorites.length < favoriteBeersIds.length);
     useEffect(() => {
         favoriteBeersIds.forEach(beerId => {
-            if (fetching) {
-                dispatch(fetchOneBeer(beerId));
-            }
+            // if (fetching) {
+            dispatch(fetchOneBeer(beerId));
+            // }
 
-            setFetching(false);
+            // setFetching(false);
         });
-    }, [favoriteBeersIds, dispatch, fetching]);
+    }, [favoriteBeersIds, dispatch]);
 
     const favoriteBeers = useSelector(state => state.beers.favoriteBeers);
 
