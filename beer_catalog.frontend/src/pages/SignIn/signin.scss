@@ -1,7 +1,7 @@
 @import 'src/styles/colors';
 @import 'src/styles/mixins/typography';
 
-.register {
+.signin {
     min-width: 400px;
     width: 50%;
     max-width: 600px;
@@ -13,18 +13,18 @@
     background-color: $primary-color-lighter;
 }
 
-.register__container {
+.signin__container {
     display: flex;
     justify-content: center;
 }
 
-.register__warning {
+.signin__warning {
     color: #ff4e4e;
 
     @include typography-2;
 }
 
-.register__input {
+.signin__input {
     font-size: inherit;
     font-family: inherit;
 
@@ -39,11 +39,11 @@
     }
 }
 
-.register__fieldname {
+.signin__fieldname {
     margin: 0 5px 0 0;
 }
 
-.register__item {
+.signin__item {
     @include typography-3;
     display: flex;
     align-items: center;
@@ -60,7 +60,7 @@
     background-color: #ffffff;
 }
 
-.register__button {
+.signin__button {
     padding: 10px;
 
     color: $secondary-color;

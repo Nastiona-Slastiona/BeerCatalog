@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { signIn } from '../../features/authentication/helpers/serverConnectionHelper';
 
-import './auth.scss';
+import './signin.scss';
 
 
 export default function SignIn({ setName, setImage }) {
@@ -35,22 +35,22 @@ export default function SignIn({ setName, setImage }) {
     }
 
     return (
-        <div className="auth__container" onSubmit={onFormSubmit}>
-            <form className="auth">
-                <div className="auth__item">
-                    <p className="auth__fieldname">Email</p>
+        <div className="signin__container" onSubmit={onFormSubmit}>
+            <form className="signin">
+                <div className="signin__item">
+                    <p className="signin__fieldname">Email</p>
                     <input
-                        className="auth__input"
+                        className="signin__input"
                         placeholder="Email"
                         type="email"
                         required
                         onChange={onEmailChange}
                     />
                 </div>
-                <div className="auth__item">
-                    <p className="auth__fieldname">Password</p>
+                <div className="signin__item">
+                    <p className="signin__fieldname">Password</p>
                     <input
-                        className="auth__input"
+                        className="signin__input"
                         placeholder="Password"
                         type="password"
                         required
@@ -58,7 +58,7 @@ export default function SignIn({ setName, setImage }) {
                     />
                 </div>
                 <hr />
-                <button type="submit" className="auth__button">Sign in</button>
+                <button type="submit" className="signin__button">Sign in</button>
             </form>
         </div>
     );

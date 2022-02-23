@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { registrate } from 'authentication/helpers/serverConnectionHelper';
 
-import './auth.scss';
+import './register.scss';
 
 
 export default function Register() {
@@ -70,51 +70,51 @@ export default function Register() {
     }
 
     return (
-        <div className="auth__container">
-            <form className="auth" encType="multipart/form-data" onSubmit={onFormSubmit}>
-                <p className="auth__warning">{formWarning}</p>
-                <div className="auth__item">
-                    <p className="auth__fieldname">Email</p>
+        <div className="register__container">
+            <form className="register" encType="multipart/form-data" onSubmit={onFormSubmit}>
+                <p className="register__warning">{formWarning}</p>
+                <div className="register__item">
+                    <p className="register__fieldname">Email</p>
                     <input
-                        className="auth__input"
+                        className="register__input"
                         placeholder="Enter your email"
                         type="email"
                         required
                         onChange={onEmailChange}
                     />
                 </div>
-                <div className="auth__item">
-                    <p className="auth__fieldname">Name</p>
+                <div className="register__item">
+                    <p className="register__fieldname">Name</p>
                     <input
-                        className="auth__input"
+                        className="register__input"
                         placeholder="Enter your name"
                         required
                         onChange={onNameChange}
                     />
                 </div>
                 <hr />
-                <div className="auth__item">
-                    <p className="auth__fieldname">Image</p>
+                <div className="register__item">
+                    <p className="register__fieldname">Image</p>
                     <input
                         type="file"
-                        className="auth__input"
+                        className="register__input"
                         onChange={onImageChange}
                     />
                 </div>
-                <div className="auth__item">
-                    <p className="auth__fieldname">Birth Date</p>
+                <div className="register__item">
+                    <p className="register__fieldname">Birth Date</p>
                     <input
                         type="date"
-                        className="auth__input"
+                        className="register__input"
                         required
                         onChange={onDateChange}
                     />
                 </div>
                 <hr />
-                <div className="auth__item">
-                    <p className="auth__fieldname">Password</p>
+                <div className="register__item">
+                    <p className="register__fieldname">Password</p>
                     <input
-                        className="auth__input"
+                        className="register__input"
                         placeholder="Enter your password"
                         type="password"
                         required
@@ -122,17 +122,17 @@ export default function Register() {
                     />
                 </div>
                 <p>{warning}</p>
-                <div className="auth__item">
-                    <p className="auth__fieldname">Password</p>
+                <div className="register__item">
+                    <p className="register__fieldname">Password</p>
                     <input
-                        className="auth__input"
+                        className="register__input"
                         placeholder="Confirm your password"
                         type="password"
                         required
                         onChange={onConfirmPasswordChange}
                     />
                 </div>
-                <button type="submit" className="auth__button">Submit</button>
+                <button type="submit" className="register__button">Submit</button>
             </form>
         </div>
     );
