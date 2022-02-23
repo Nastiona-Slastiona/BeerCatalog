@@ -2,17 +2,18 @@
 using Microsoft.AspNetCore.Mvc;
 using beer_catalog.backend.Models;
 using beer_catalog.backend.Helpers;
+using beer_catalog.backend.DTOs;
 
 namespace beer_catalog.backend.Controllers;
 
 
-[Route("api")]
-public class ApiController : ControllerBase
+[Route("api/login")]
+public class LoginController : ControllerBase
 {
     private readonly IUserRepository _repository;
     private readonly JwtService _jwtService;
 
-    public ApiController(
+    public LoginController(
         IUserRepository repository,
         JwtService jwtService)
     {

@@ -1,5 +1,5 @@
+using beer_catalog.backend.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Text;
 
 public class UserContext : DbContext
 {

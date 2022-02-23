@@ -1,3 +1,5 @@
+namespace beer_catalog.backend.Data;
+
 public class UserRepository : IUserRepository
 {
     private readonly UserContext _context;

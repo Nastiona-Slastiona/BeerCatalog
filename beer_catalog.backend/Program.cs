@@ -1,3 +1,4 @@
+using beer_catalog.backend.Data;
 using beer_catalog.backend.Helpers;
 using Microsoft.EntityFrameworkCore;
 
