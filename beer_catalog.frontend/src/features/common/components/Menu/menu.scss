@@ -5,11 +5,17 @@
 .menu {
     display: block;
 
-    width: 350px;
+    width: fit-content;
     height: 100%;
 
     border-right: 1px solid $secondary-color;
     background-color: #ffffff;
+}
+
+@media (min-width: 600px) {
+    .menu {
+        width: 350px;
+    }
 }
 
 .menu__container {
@@ -33,15 +39,17 @@
     
     display: flex;
 
-    height: 120px;
     padding: 30px;
-
+    height: 100px;
+    
     color: $secondary-color;
     background-color: $primary-color;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 600px) {
     .menu__header {
         @include typography-4;
+        
+        height: 120px;
     }
 }

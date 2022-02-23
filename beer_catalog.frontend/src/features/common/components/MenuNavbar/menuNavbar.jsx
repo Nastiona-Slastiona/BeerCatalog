@@ -13,19 +13,18 @@ export default function MenuNavbar() {
     }];
 
     return (
-        <nav className="menu-navbar">
-            <li>
-                {
-                    menuItems.map((menuItem, index) => (
+        <ul className="menu-navbar">
+            {
+                menuItems.map((menuItem, index) => (
+                    <li key={index} className="menu-navbar__item">
                         <MenuNavbarItem
-                            key={index}
                             link={menuItem.link}
                             iconClassName={menuItem.iconClassName}
                             name={menuItem.name}
                         />
-                    ))
-                }
-            </li>
-        </nav>
+                    </li>
+                ))
+            }
+        </ul>
     );
 }
