@@ -77,6 +77,11 @@
             return new byte[0];
         }
 
+        public void SetFavoriteBeers(FavoriteBeerDTO favoriteBeers)
+        {
+            userRepository.ChangeFavoriteBeers(favoriteBeers);
+        }
+
         public UserDto GetUserById(int id) => this.CreateUserDtoFromUser(userRepository.GetById(id));
     }
 }

@@ -7,6 +7,7 @@ import LandingPage from 'pages/LandingPage/landingPage';
 import PageHeader from 'features/common/components/PageHeader/pageHeader';
 import Register from 'pages/Register/register';
 import SignIn from 'pages/SignIn/signIn';
+import getUserFavoriteBeersHelper from 'authentication/helpers/getUserFavoriteBeersHelper';
 import requestHelper from 'src/helpers/requestHelper';
 import serviceUrls from 'src/constants/serviceUrls';
 
@@ -20,6 +21,7 @@ export default function App() {
     const [image, setImage] = useState('');
     const dispatch = useDispatch();
 
+
     useEffect(() => {
         (
             async () => {
@@ -31,7 +33,7 @@ export default function App() {
                     headers: { 'Content-Type': 'application/json' },
                     credentials: 'include'
                 });
-
+                const favoriteBeers = getUserFavoriteBeersHelper(user);
                 dispatch({ type: 'beers/favoriteBeersSet', payload: favoriteBeers });
                 setName(user.name);
                 dispatch({
@@ -41,7 +43,6 @@ export default function App() {
                         email: user.email
                     }
                 });
-                setFetchingUser(false);
                 user.image = userImage;
                 setImage(userImage);
             }
