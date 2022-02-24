@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using beer_catalog.backend.Models;
 using beer_catalog.backend.Helpers;
 using beer_catalog.backend.DTOs;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace beer_catalog.backend;
 
@@ -80,18 +81,18 @@ public class LoginController : ControllerBase
         }
     }
 
-    [HttpGet("user")]
-    public IActionResult User()
+    [HttpGet("getUser")]
+    public IActionResult GetUser()
     {
         try
         {
-            var jwt = Request.Cookies["jwt"];
+            string? jwt = Request.Cookies["jwt"];
 
-            var token = _jwtService.Verify(jwt);
+            JwtSecurityToken token = _jwtService.Verify(jwt);
 
             int userId = int.Parse(token.Issuer);
 
-            var user = _repository.GetById(userId);
+            User user = _repository.GetById(userId);
 
             return Ok(user);
         }

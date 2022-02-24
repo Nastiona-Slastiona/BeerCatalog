@@ -1,0 +1,22 @@
+@import 'src/styles/colors';
+@import 'src/styles/mixins/typography';
+
+.authentification {
+    @include typography-0;
+    display: flex;
+    align-items: center;
+}
+
+.authentification__item {
+    margin: 10px;
+    
+    text-decoration: none;
+
+    color: $secondary-color;
+
+    &:hover {
+        text-decoration: underline;
+
+        color: #fff;
+    }
+}

@@ -1,14 +1,16 @@
 import React, { useCallback, useState } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
+import Authentication from 'features/common/components/Authentication/authentication';
 import Menu from 'features/common/components/Menu/menu';
+import UserInfo from 'features/common/components/UserInfo/userInfo';
 import { signOut } from 'authentication/helpers/serverConnectionHelper';
-import user from 'src/static/user_svg';
 
 import './pageHeader.scss';
 
 
-export default function PageHeader({ image, name, setName }) {
+function PageHeader({ image, name, setName }) {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
 
     const hideMenu = useCallback(() => {
@@ -24,7 +26,6 @@ export default function PageHeader({ image, name, setName }) {
 
         setName('');
     }, [setName]);
-    const newImg = image ? `data:image/png;base64, ${image}` : false;
 
     return (
         <div>
@@ -35,43 +36,27 @@ export default function PageHeader({ image, name, setName }) {
                         label=" "
                         onClick={showMenu}
                     />
-                    <Link className="page-header__logo" to="/">
-                        Beer catalog
-                    </Link>
-                    <Menu
-                        isVisible={isMenuVisible}
-                        setIsVisible={hideMenu}
-                    />
+                    <Link className="page-header__logo" to="/">Beer catalog</Link>
+                    <Menu isVisible={isMenuVisible} setIsVisible={hideMenu} />
                 </div>
                 {
                     name !== ''
                         ? (
-                            <ul className="page-header__authentification">
-                                <p>Hello, {name}!</p>
-                                <img alt="avatar" className="page-header__avatar" src={newImg || user} />
-                                <li>
-                                    <Link
-                                        className="page-header__authentification-item"
-                                        to="/signin"
-                                        onClick={onSignOutClick}
-                                    >
-                                        Sign Out
-                                    </Link>
-                                </li>
-                            </ul>
+                            <UserInfo name={name} image={image} onClick={onSignOutClick} />
                         )
                         : (
-                            <ul className="page-header__authentification">
-                                <li>
-                                    <Link className="page-header__authentification-item" to="/signin">Sign In</Link>
-                                </li>
-                                <li>
-                                    <Link className="page-header__authentification-item" to="/register">Register</Link>
-                                </li>
-                            </ul>
+                            <Authentication />
                         )
                 }
             </div>
         </div>
     );
 }
+
+PageHeader.propTypes = {
+    image: PropTypes.string,
+    name: PropTypes.string,
+    setName: PropTypes.func
+};
+
+export default PageHeader;
