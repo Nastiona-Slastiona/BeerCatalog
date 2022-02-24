@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import user from 'src/static/user';
-
 import './userInfo.scss';
 
 
@@ -13,7 +11,11 @@ function UserInfo({ name, image, onClick }) {
     return (
         <div className="userInfo__authentification">
             <p>Hello, {name}!</p>
-            <img alt="avatar" className="userInfo__avatar" src={newImg || user} />
+            {
+                newImg
+                    ? <img alt="avatar" className="userInfo__avatar" src={newImg} />
+                    : <span className="icon-user_svg1 userInfo__avatar--default" />
+            }
             <Link
                 className="userInfo__authentification-item"
                 to="/signin"

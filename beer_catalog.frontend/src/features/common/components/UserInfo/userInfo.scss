@@ -10,6 +10,10 @@
     border-radius: 50%;
 }
 
+.userInfo__avatar--default {
+    font-size: 46pt;
+}
+
 .userInfo__authentification {
     @include typography-0;
 
