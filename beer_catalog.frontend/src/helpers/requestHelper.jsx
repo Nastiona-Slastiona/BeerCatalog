@@ -1,9 +1,7 @@
 const requestHelper = {
-    get: async url => {
-        const options = {
-            method: 'GET'
-        };
-
+    get: async (url, options = {
+        method: 'GET'
+    }) => {
         const data = await getRequest(
             url,
             options

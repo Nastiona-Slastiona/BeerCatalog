@@ -35,6 +35,14 @@ const generateStyleLoader = loaderName => {
     ];
 };
 
+const generateUrlLoader = (mimeType, limit = 10000) => [{
+    loader: 'url-loader',
+    options: {
+        limit,
+        mimetype: mimeType
+    }
+}];
+
 module.exports = {
     mode: 'development',
     entry: ['babel-polyfill', './src/index.jsx'],
@@ -46,6 +54,7 @@ module.exports = {
         port: 3000,
         hot: true
     },
+    devtool: 'source-map',
     plugins: [
         new HTMLWebpackPlugin({ template: './index.html' }),
         new CleanWebpackPlugin(),
@@ -69,12 +78,25 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|gif)$/i,
-                use: [{
-                    loader: 'url-loader',
-                    options: {
-                        limit: 8192
+                use: generateUrlLoader('image/png')
+            },
+            {
+                test: /\.svg$/,
+                loader: '@svgr/webpack',
+                options: {
+                    ref: true,
+                    svgoConfig: {
+                        plugins: [
+                            {
+                                removeViewBox: false,
+                                removeDimensions: true,
+                                inlineStyles: {
+                                    onlyMatchedOnce: false
+                                }
+                            }
+                        ]
                     }
-                }]
+                }
             }
         ]
     },
@@ -84,9 +106,10 @@ module.exports = {
             store: path.resolve(__dirname, 'src/store'),
             src: path.resolve(__dirname, 'src'),
             pages: path.resolve(__dirname, 'src/pages'),
-            features: path.resolve(__dirname, 'src/features')
+            features: path.resolve(__dirname, 'src/features'),
+            authentication: path.resolve(__dirname, 'src/features/authentication')
         },
         enforceExtension: false,
-        extensions: ['.jsx', '.js', '.css', '.wasm', '.ico', '.gif', '...']
+        extensions: ['.jsx', '.js', '.css', '.wasm', '.ico', '.gif', '.png', '.svg', '...']
     }
 };
