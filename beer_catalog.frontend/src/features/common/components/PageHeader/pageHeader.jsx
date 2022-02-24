@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Menu from 'features/common/components/Menu/menu';
 import { signOut } from 'authentication/helpers/serverConnectionHelper';
-import user from 'src/static/user';
+import user from 'src/static/user_svg';
 
 import './pageHeader.scss';
 
