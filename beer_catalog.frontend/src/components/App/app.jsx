@@ -30,7 +30,7 @@ export default function App() {
                     credentials: 'include'
                 });
 
-                if (user && userImage) {
+                if (user) {
                     setName(user.name);
                     user.image = userImage;
                     setImage(userImage);
@@ -47,7 +47,7 @@ export default function App() {
                     <Route path="/" element={<LandingPage />} exact />
                     <Route path="/favorites" element={<FavoritesPage />} />
                     <Route path="/beers/:id" element={<BeerPage />} exact />
-                    <Route path="/signin" element={<SignIn setName={setName} setImage={setImage} />} />
+                    <Route path="/signin" element={<SignIn setName={setName} />} />
                     <Route path="/register" element={<Register />} />
                 </Routes>
             </BrowserRouter>

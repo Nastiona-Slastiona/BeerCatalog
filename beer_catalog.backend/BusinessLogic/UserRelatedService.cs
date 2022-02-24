@@ -71,11 +71,10 @@
 
             if (user.Image != null)
             {
-                
                 return user.Image;
             }
 
-            return null;
+            return new byte[0];
         }
 
         public UserDto GetUserById(int id) => this.CreateUserDtoFromUser(userRepository.GetById(id));
