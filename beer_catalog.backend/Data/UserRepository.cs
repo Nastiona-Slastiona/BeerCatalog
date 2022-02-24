@@ -30,7 +30,7 @@ public class UserRepository
             user.FavoriteBeers = favoriteBeers.FavoriteBeers;
         }
 
-        _context.SaveChanges();
+        userContext.SaveChanges();
     }
     public User GetById(int id) => userContext.Users.FirstOrDefault(u => u.Id == id);
 }
