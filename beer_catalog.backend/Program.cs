@@ -1,3 +1,5 @@
+using beer_catalog.backend;
+using beer_catalog.backend.BusinessLogic;
 using beer_catalog.backend.Helpers;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,14 +11,16 @@ builder.Services.AddCors();
 
 builder.Services.AddDbContext<UserContext>(options => options.UseSqlServer(connection));
 builder.Services.AddControllers();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<JwtService>();
+builder.Services.AddScoped<UserRelatedService>();
+builder.Services.AddScoped<AuthRelatedService>();
 
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
+    app.UseExceptionHandler("/Login/Error");
 
     app.UseHsts();
 }

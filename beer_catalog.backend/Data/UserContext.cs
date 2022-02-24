@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using System.Text;
+
+namespace beer_catalog.backend;
 
 public class UserContext : DbContext
 {

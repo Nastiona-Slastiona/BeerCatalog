@@ -5,10 +5,10 @@ import BeerPage from 'pages/BeerPage/beerPage';
 import FavoritesPage from 'pages/FavoritesPage/favoritesPage';
 import LandingPage from 'pages/LandingPage/landingPage';
 import PageHeader from 'features/common/components/PageHeader/pageHeader';
-import Register from 'pages/Auth/register';
-import SignIn from 'pages/Auth/signIn';
-import { getUser } from 'authentication/helpers/serverConnectionHelper';
-import getUserFavoriteBeersHelper from 'authentication/helpers/getUserFavoriteBeersHelper';
+import Register from 'pages/Register/register';
+import SignIn from 'pages/SignIn/signIn';
+import requestHelper from 'src/helpers/requestHelper';
+import serviceUrls from 'src/constants/serviceUrls';
 
 import 'src/styles/fonts/icomoon/style';
 import './app.scss';
@@ -18,28 +18,32 @@ import { useDispatch } from 'react-redux';
 export default function App() {
     const [name, setName] = useState('');
     const [image, setImage] = useState('');
-    const [fetchingUser, setFetchingUser] = useState(true);
     const dispatch = useDispatch();
 
     useEffect(() => {
         (
             async () => {
-                const user = await getUser();
-                if (user && fetchingUser) {
-                    const favoriteBeers = getUserFavoriteBeersHelper(user);
+                const user = await requestHelper.get(serviceUrls.getUser, {
+                    headers: { 'Content-Type': 'application/json' },
+                    credentials: 'include'
+                });
+                const userImage = await requestHelper.get(serviceUrls.getUserImage, {
+                    headers: { 'Content-Type': 'application/json' },
+                    credentials: 'include'
+                });
 
-                    dispatch({ type: 'beers/favoriteBeersSet', payload: favoriteBeers });
-                    setName(user.name);
-                    setImage(user.image);
-                    dispatch({
-                        type: 'users/setUserData',
-                        payload: {
-                            isAuthorized: true,
-                            email: user.email
-                        }
-                    });
-                    setFetchingUser(false);
-                }
+                dispatch({ type: 'beers/favoriteBeersSet', payload: favoriteBeers });
+                setName(user.name);
+                dispatch({
+                    type: 'users/setUserData',
+                    payload: {
+                        isAuthorized: true,
+                        email: user.email
+                    }
+                });
+                setFetchingUser(false);
+                user.image = userImage;
+                setImage(userImage);
             }
         )();
     });
@@ -52,7 +56,7 @@ export default function App() {
                     <Route path="/" element={<LandingPage />} exact />
                     <Route path="/favorites" element={<FavoritesPage />} />
                     <Route path="/beers/:id" element={<BeerPage />} exact />
-                    <Route path="/signin" element={<SignIn setName={setName} setImage={setImage} />} />
+                    <Route path="/signin" element={<SignIn setName={setName} />} />
                     <Route path="/register" element={<Register />} />
                 </Routes>
             </BrowserRouter>

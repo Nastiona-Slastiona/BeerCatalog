@@ -79,6 +79,24 @@ module.exports = {
             {
                 test: /\.(png|jpg|gif)$/i,
                 use: generateUrlLoader('image/png')
+            },
+            {
+                test: /\.svg$/,
+                loader: '@svgr/webpack',
+                options: {
+                    ref: true,
+                    svgoConfig: {
+                        plugins: [
+                            {
+                                removeViewBox: false,
+                                removeDimensions: true,
+                                inlineStyles: {
+                                    onlyMatchedOnce: false
+                                }
+                            }
+                        ]
+                    }
+                }
             }
         ]
     },
@@ -92,6 +110,6 @@ module.exports = {
             authentication: path.resolve(__dirname, 'src/features/authentication')
         },
         enforceExtension: false,
-        extensions: ['.jsx', '.js', '.css', '.wasm', '.ico', '.gif', '.png', '...']
+        extensions: ['.jsx', '.js', '.css', '.wasm', '.ico', '.gif', '.png', '.svg', '...']
     }
 };

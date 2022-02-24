@@ -6,7 +6,7 @@ namespace beer_catalog.backend.Helpers;
 
 public class JwtService
 {
-    private string secureKey = "this is very secure key";
+    private readonly string secureKey = "this is very secure key";
 
     public string Generate(int id)
     {
@@ -23,7 +23,7 @@ public class JwtService
     public JwtSecurityToken Verify(string jwt)
     {
         var tokenHandler = new JwtSecurityTokenHandler();
-        var key = Encoding.ASCII.GetBytes(secureKey);
+        byte[] key = Encoding.ASCII.GetBytes(secureKey);
         tokenHandler.ValidateToken(jwt, new TokenValidationParameters
         {
             IssuerSigningKey = new SymmetricSecurityKey(key),
