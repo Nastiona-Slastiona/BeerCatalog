@@ -1,43 +1,40 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using beer_catalog.backend.Models;
-using beer_catalog.backend.Helpers;
-using beer_catalog.backend.DTOs;
-using System.IdentityModel.Tokens.Jwt;
+using beer_catalog.backend.BusinessLogic;
 
 namespace beer_catalog.backend;
-
 
 [Route("api/login")]
 public class LoginController : ControllerBase
 {
-    private readonly IUserRepository _repository;
-    private readonly JwtService _jwtService;
+    private readonly UserRelatedService userRelatedService;
+    private readonly AuthRelatedService authRelatedService;
 
     public LoginController(
-        IUserRepository repository,
-        JwtService jwtService)
+        UserRelatedService userService,
+        AuthRelatedService authService)
     {
-        _repository = repository;
-        _jwtService = jwtService;
+        userRelatedService = userService;
+        authRelatedService = authService;
     }
 
     [HttpPost("signin")]
     public IActionResult Signin([FromBody] User userData)
     {
-        var user = _repository.GetByEmail(userData.Email);
+        User user = userRelatedService.GettingUser(userData.Email);
         if (user != null)
         {
-            if (BCrypt.Net.BCrypt.Verify(userData.Password, user.Password))
-            {
-                var jwt = _jwtService.Generate(user.Id);
+            string jwt = authRelatedService.SetJwt(user, userData);
 
+            if (jwt != "")
+            {
                 Response.Cookies.Append("jwt", jwt, new CookieOptions
                 {
                     HttpOnly = true
                 });
 
-                return Ok(user);
+                return Ok(userRelatedService.CreateUserDtoFromUser(user));
             }
         }
 
@@ -45,32 +42,13 @@ public class LoginController : ControllerBase
     }
 
     [HttpPost("register")]
-    public IActionResult Register([FromForm] UserDTO userData)
+    public IActionResult Register([FromForm] UserDto userData)
     {
         try
         {
-            var user = new User
-            {
-                Password = BCrypt.Net.BCrypt.HashPassword(userData.Password),
-                Name = userData.Name,
-                BirthDate = userData.BirthDate,
-                Email = userData.Email
-            };
+            User user = userRelatedService.CreateUserFromDto(userData);
 
-            if (userData.Image != null)
-            {
-                byte[]? imageData = null;
-
-                using (var binaryReader = new BinaryReader(userData.Image.OpenReadStream()))
-                {
-                    imageData = binaryReader.ReadBytes((int)userData.Image.Length);
-                }
-
-                user.Image = imageData;
-            }
-
-
-            return Created("success", _repository.Create(user));
+            return Created("success", userRelatedService.Create(user));
         }
         catch (Exception e)
         {
@@ -86,15 +64,25 @@ public class LoginController : ControllerBase
     {
         try
         {
-            string? jwt = Request.Cookies["jwt"];
+            int userId = authRelatedService.GetUserId(Request.Cookies["jwt"]);
 
-            JwtSecurityToken token = _jwtService.Verify(jwt);
+            return Ok(userRelatedService.GetUserById(userId));
+        }
+        catch
+        {
+            return Unauthorized();
+        }
 
-            int userId = int.Parse(token.Issuer);
+    }
 
-            User user = _repository.GetById(userId);
+    [HttpGet("getUserImage")]
+    public IActionResult GetUserImage()
+    {
+        try
+        {
+            int userId = authRelatedService.GetUserId(Request.Cookies["jwt"]);
 
-            return Ok(user);
+            return Ok(userRelatedService.GetImage(userId));
         }
         catch
         {
