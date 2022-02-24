@@ -1,8 +1,9 @@
 import React, { useCallback, useState } from 'react';
 import { Navigate } from 'react-router-dom';
-import { signIn } from 'features/authentication/helpers/serverConnectionHelper';
 
 import Input from 'components/base/Input/input';
+import requestHelper from 'src/helpers/requestHelper';
+import serviceUrls from 'src/constants/serviceUrls';
 
 import './signin.scss';
 
@@ -27,7 +28,17 @@ export default function SignIn({ setName, setImage }) {
     const onFormSubmit = useCallback(async e => {
         e.preventDefault();
 
-        const response = await signIn(password, email);
+        const response = await requestHelper.get(serviceUrls.signIn, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include',
+            body: JSON.stringify({
+                password,
+                email
+            })
+        });
 
         if (response) {
             setName(response.name);

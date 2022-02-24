@@ -1,8 +1,9 @@
 import React, { useCallback, useState } from 'react';
 import { Navigate } from 'react-router-dom';
-import { registrate } from 'authentication/helpers/serverConnectionHelper';
 
 import Input from 'components/base/Input/input';
+import requestHelper from 'src/helpers/requestHelper';
+import serviceUrls from 'src/constants/serviceUrls';
 
 import './register.scss';
 
@@ -64,12 +65,22 @@ export default function Register() {
         e.preventDefault();
         if (confirmPassword === password) {
             setWarning('');
-            const response = await registrate({
+            const user = {
                 name,
                 password,
                 email,
                 image,
                 birthDate
+            };
+
+            const formData = new FormData();
+            for (const key in user) {
+                formData.append(key, user[key]);
+            }
+
+            const response = await requestHelper.get(serviceUrls.registration, {
+                method: 'POST',
+                body: formData
             });
 
             if (response) {

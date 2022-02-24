@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 import Authentication from 'features/common/components/Authentication/authentication';
 import Menu from 'features/common/components/Menu/menu';
 import UserInfo from 'features/common/components/UserInfo/userInfo';
-import { signOut } from 'authentication/helpers/serverConnectionHelper';
+import requestHelper from 'src/helpers/requestHelper';
+import serviceUrls from 'src/constants/serviceUrls';
 
 import './pageHeader.scss';
 
@@ -21,8 +22,12 @@ function PageHeader({ image, name, setName }) {
         setIsMenuVisible(true);
     }, []);
 
-    const onSignOutClick = useCallback(() => {
-        signOut();
+    const onSignOutClick = useCallback(async () => {
+        await requestHelper.get(serviceUrls.signOut, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include'
+        });
 
         setName('');
     }, [setName]);

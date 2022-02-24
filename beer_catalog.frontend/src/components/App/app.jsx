@@ -7,7 +7,8 @@ import LandingPage from 'pages/LandingPage/landingPage';
 import PageHeader from 'features/common/components/PageHeader/pageHeader';
 import Register from 'pages/Register/register';
 import SignIn from 'pages/SignIn/signIn';
-import { getUser } from 'authentication/helpers/serverConnectionHelper';
+import requestHelper from 'src/helpers/requestHelper';
+import serviceUrls from 'src/constants/serviceUrls';
 
 import 'src/styles/fonts/icomoon/style';
 import './app.scss';
@@ -20,7 +21,10 @@ export default function App() {
     useEffect(() => {
         (
             async () => {
-                const user = await getUser();
+                const user = await requestHelper.get(serviceUrls.getUser, {
+                    headers: { 'Content-Type': 'application/json' },
+                    credentials: 'include'
+                });
 
                 if (user) {
                     setName(user.name);
