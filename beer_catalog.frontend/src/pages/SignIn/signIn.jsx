@@ -1,6 +1,8 @@
 import React, { useCallback, useState } from 'react';
 import { Navigate } from 'react-router-dom';
-import { signIn } from '../../features/authentication/helpers/serverConnectionHelper';
+import { signIn } from 'features/authentication/helpers/serverConnectionHelper';
+
+import Input from 'components/base/Input/input';
 
 import './signin.scss';
 
@@ -17,6 +19,10 @@ export default function SignIn({ setName, setImage }) {
     const onPasswordChange = useCallback(e => {
         setPassword(e.target.value);
     }, []);
+
+    const fields = [{
+        type: 'email', name: 'Email', onChange: onEmailChange
+    }, { type: 'password', name: 'Password', onChange: onPasswordChange }];
 
     const onFormSubmit = useCallback(async e => {
         e.preventDefault();
@@ -37,26 +43,19 @@ export default function SignIn({ setName, setImage }) {
     return (
         <div className="signin__container" onSubmit={onFormSubmit}>
             <form className="signin">
-                <div className="signin__item">
-                    <p className="signin__fieldname">Email</p>
-                    <input
-                        className="signin__input"
-                        placeholder="Email"
-                        type="email"
-                        required
-                        onChange={onEmailChange}
-                    />
-                </div>
-                <div className="signin__item">
-                    <p className="signin__fieldname">Password</p>
-                    <input
-                        className="signin__input"
-                        placeholder="Password"
-                        type="password"
-                        required
-                        onChange={onPasswordChange}
-                    />
-                </div>
+                {
+                    fields.map((field, index) => {
+                        return (
+                            <Input
+                                key={index}
+                                name={field.name}
+                                type={field.type}
+                                placeholder={field.name}
+                                onChange={field.onChange}
+                            />
+                        );
+                    })
+                }
                 <hr />
                 <button type="submit" className="signin__button">Sign in</button>
             </form>

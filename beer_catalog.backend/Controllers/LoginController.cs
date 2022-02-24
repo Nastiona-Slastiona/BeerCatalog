@@ -4,7 +4,7 @@ using beer_catalog.backend.Models;
 using beer_catalog.backend.Helpers;
 using beer_catalog.backend.DTOs;
 
-namespace beer_catalog.backend.Controllers;
+namespace beer_catalog.backend;
 
 
 [Route("api/login")]

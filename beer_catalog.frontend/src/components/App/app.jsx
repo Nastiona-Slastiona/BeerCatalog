@@ -5,8 +5,8 @@ import BeerPage from 'pages/BeerPage/beerPage';
 import FavoritesPage from 'pages/FavoritesPage/favoritesPage';
 import LandingPage from 'pages/LandingPage/landingPage';
 import PageHeader from 'features/common/components/PageHeader/pageHeader';
-import Register from 'pages/Auth/register';
-import SignIn from 'pages/Auth/signIn';
+import Register from 'pages/Register/register';
+import SignIn from 'pages/SignIn/signIn';
 import { getUser } from 'authentication/helpers/serverConnectionHelper';
 
 import 'src/styles/fonts/icomoon/style';

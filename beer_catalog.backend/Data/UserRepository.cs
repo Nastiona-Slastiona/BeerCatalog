@@ -1,4 +1,7 @@
-namespace beer_catalog.backend.Data;
+using beer_catalog.backend.Models;
+
+namespace beer_catalog.backend;
+
 
 public class UserRepository : IUserRepository
 {

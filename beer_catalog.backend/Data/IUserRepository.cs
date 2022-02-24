@@ -1,6 +1,6 @@
 using beer_catalog.backend.Models;
 
-namespace beer_catalog.backend.Data;
+namespace beer_catalog.backend;
 
 public interface IUserRepository
 {

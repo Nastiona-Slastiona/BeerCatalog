@@ -1,71 +1,29 @@
 @import 'src/styles/colors';
 @import 'src/styles/mixins/typography';
+@import 'src/styles/mixins/form';
 
 .register {
-    min-width: 400px;
-    width: 50%;
-    max-width: 600px;
-    padding: 10px 0;
+    @include form;
 
     border: 1px solid $primary-color;
-    border-radius: 20px;
     box-shadow: 2px 2px 5px 2px #46749b67;
     background-color: $primary-color-lighter;
 }
 
 .register__container {
-    display: flex;
-    justify-content: center;
+    @include form__container;
 }
 
 .register__warning {
     color: #ff4e4e;
 
-    @include typography-2;
-}
-
-.register__input {
-    font-size: inherit;
-    font-family: inherit;
-
-    width: 75%;
-    padding-left: 5px;
-
-    border: none;
-    border-left: solid 1px #000;
-    border-radius: 0 5px 5px 0;
-    &:focus {
-        outline: none;
-    }
-}
-
-.register__fieldname {
-    margin: 0 5px 0 0;
-}
-
-.register__item {
-    @include typography-3;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    margin: 20px;
-    padding: 10px;
-
-    text-align: left;
-
-    border: solid 1px #000000;
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px 2px #46749b67;
-    background-color: #ffffff;
+    @include typography-0;
 }
 
 .register__button {
-    padding: 10px;
+    @include form__button;
 
     color: $secondary-color;
-    border: none;
-    border-radius: 10px;
     box-shadow: 2px 2px 5px 2px #46749b67;
     background-color: $primary-color;
 

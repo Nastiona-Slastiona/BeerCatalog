@@ -1,4 +1,4 @@
-using beer_catalog.backend.Data;
+using beer_catalog.backend;
 using beer_catalog.backend.Helpers;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,7 +17,7 @@ var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
+    app.UseExceptionHandler("/Login/Error");
 
     app.UseHsts();
 }

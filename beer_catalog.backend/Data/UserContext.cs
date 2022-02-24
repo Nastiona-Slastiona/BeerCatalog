@@ -1,5 +1,6 @@
-using beer_catalog.backend.Models;
 using Microsoft.EntityFrameworkCore;
+
+namespace beer_catalog.backend;
 
 public class UserContext : DbContext
 {

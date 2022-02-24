@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace beer_catalog.backend.Models;
+namespace beer_catalog.backend;
 
 public class User
 {
