@@ -1,8 +1,6 @@
-using Newtonsoft.Json;
+namespace beer_catalog.backend;
 
-namespace beer_catalog.backend.DTOs;
-
-public class UserDTO
+public class UserDto
 {
     public string Name { get; set; }
     public string Email { get; set; } = null!;

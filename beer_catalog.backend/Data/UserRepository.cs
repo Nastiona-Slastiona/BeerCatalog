@@ -2,25 +2,24 @@ using beer_catalog.backend.Models;
 
 namespace beer_catalog.backend;
 
-
-public class UserRepository : IUserRepository
+public class UserRepository
 {
-    private readonly UserContext _context;
+    private readonly UserContext userContext;
 
     public UserRepository(UserContext context)
     {
-        _context = context;
+        userContext = context;
     }
 
     public User Create(User user)
     {
-        _context.Users.Add(user);
-        user.Id = _context.SaveChanges();
+        userContext.Users.Add(user);
+        user.Id = userContext.SaveChanges();
 
         return user;
     }
 
-    public User GetByEmail(string email) => _context.Users.FirstOrDefault(user => user.Email == email);
+    public User GetByEmail(string email) => userContext.Users.FirstOrDefault(user => user.Email == email);
 
-    public User GetById(int id) => _context.Users.FirstOrDefault(u => u.Id == id);
+    public User GetById(int id) => userContext.Users.FirstOrDefault(u => u.Id == id);
 }
