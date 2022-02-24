@@ -25,10 +25,15 @@ export default function App() {
                     headers: { 'Content-Type': 'application/json' },
                     credentials: 'include'
                 });
+                const userImage = await requestHelper.get(serviceUrls.getUserImage, {
+                    headers: { 'Content-Type': 'application/json' },
+                    credentials: 'include'
+                });
 
-                if (user) {
+                if (user && userImage) {
                     setName(user.name);
-                    setImage(user.image);
+                    user.image = userImage;
+                    setImage(userImage);
                 }
             }
         )();
