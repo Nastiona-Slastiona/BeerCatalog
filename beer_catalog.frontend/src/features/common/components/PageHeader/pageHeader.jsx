@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -13,6 +14,8 @@ import './pageHeader.scss';
 
 function PageHeader({ image, name, setName }) {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
+    const dispatch = useDispatch();
+    const isAuthorized = useSelector(state => state.users.isAuthorized);
 
     const hideMenu = useCallback(() => {
         setIsMenuVisible(false);
@@ -30,7 +33,15 @@ function PageHeader({ image, name, setName }) {
         });
 
         setName('');
-    }, [setName]);
+        dispatch({
+            type: 'users/setUserData',
+            payload: {
+                isAuthorized: false,
+                email: ''
+            }
+        });
+        dispatch({ type: 'beers/initialStateSet' });
+    }, [dispatch, setName]);
 
     return (
         <div>
@@ -45,7 +56,7 @@ function PageHeader({ image, name, setName }) {
                     <Menu isVisible={isMenuVisible} setIsVisible={hideMenu} />
                 </div>
                 {
-                    name !== ''
+                    isAuthorized
                         ? (
                             <UserInfo name={name} image={image} onClick={onSignOutClick} />
                         )

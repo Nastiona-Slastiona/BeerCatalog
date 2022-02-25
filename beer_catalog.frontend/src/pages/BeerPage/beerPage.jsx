@@ -22,6 +22,7 @@ export default function BeerPage() {
     }, [beerId, dispatch]);
 
     const beer = useSelector(state => state.beers.selectedBeer);
+    const isAuthorized = useSelector(state => state.users.isAuthorized);
 
     if (beer.id !== beerId) {
         return (
@@ -35,11 +36,15 @@ export default function BeerPage() {
                 <article className="beer-page__main">
                     <div className="beer-page__info">
                         <BeerPageHeader beer={beer} />
-                        <AddToFavoriteButton
-                            buttonClassName="beer-page__button"
-                            beer={beer}
-                            buttonLabel="Add to Favorite"
-                        />
+                        {
+                            isAuthorized && (
+                                <AddToFavoriteButton
+                                    buttonClassName="beer-page__button"
+                                    beer={beer}
+                                    buttonLabel="Add to Favorite"
+                                />
+                            )
+                        }
                         <div>{beer.description}</div>
                     </div>
                     <BeerItemImage imageUrl={beer.image_url} />

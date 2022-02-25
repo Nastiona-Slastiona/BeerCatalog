@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
 
 import setIsFavoriteBeer from 'features/common/store/beers/state/thunks/beerThunk';
 
@@ -11,11 +11,18 @@ function AddToFavoriteButton({
     buttonLabel
 }) {
     const dispatch = useDispatch();
-    const favoriteButton = beer.isFavorite ? 'Remove Favorite' : buttonLabel;
+    const isAuthorized = useSelector(state => state.users.isAuthorized);
+    const favoriteBeers = useSelector(state => state.beers.favoritesBeersIds);
+    const favoriteButton = favoriteBeers.includes(beer.id) ? 'Remove Favorite' : buttonLabel;
 
     const handleFavoriteButton = useCallback(() => {
-        dispatch(setIsFavoriteBeer(beer));
-    }, [beer, dispatch]);
+        if (isAuthorized) {
+            dispatch(setIsFavoriteBeer(beer));
+        } else {
+            console.log('Unauthorized user');
+        }
+    }, [isAuthorized, beer, dispatch]);
+
 
     return (
         <button className={buttonClassName} onClick={handleFavoriteButton}>

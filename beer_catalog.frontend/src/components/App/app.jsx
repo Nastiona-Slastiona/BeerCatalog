@@ -7,16 +7,20 @@ import LandingPage from 'pages/LandingPage/landingPage';
 import PageHeader from 'features/common/components/PageHeader/pageHeader';
 import Register from 'pages/Register/register';
 import SignIn from 'pages/SignIn/signIn';
+import getUserFavoriteBeersHelper from 'authentication/helpers/getUserFavoriteBeersHelper';
 import requestHelper from 'src/helpers/requestHelper';
 import serviceUrls from 'src/constants/serviceUrls';
 
 import 'src/styles/fonts/icomoon/style';
 import './app.scss';
+import { useDispatch } from 'react-redux';
 
 
 export default function App() {
     const [name, setName] = useState('');
     const [image, setImage] = useState('');
+    const dispatch = useDispatch();
+
 
     useEffect(() => {
         (
@@ -25,16 +29,25 @@ export default function App() {
                     headers: { 'Content-Type': 'application/json' },
                     credentials: 'include'
                 });
+
                 const userImage = await requestHelper.get(serviceUrls.getUserImage, {
                     headers: { 'Content-Type': 'application/json' },
                     credentials: 'include'
                 });
 
-                if (user) {
-                    setName(user.name);
-                    user.image = userImage;
-                    setImage(userImage);
-                }
+                const favoriteBeers = getUserFavoriteBeersHelper(user);
+                dispatch({ type: 'beers/favoriteBeersSet', payload: favoriteBeers });
+
+                setName(user.name);
+                dispatch({
+                    type: 'users/setUserData',
+                    payload: {
+                        isAuthorized: true,
+                        email: user.email
+                    }
+                });
+                user.image = userImage;
+                setImage(userImage);
             }
         )();
     });

@@ -21,5 +21,16 @@ public class UserRepository
 
     public User GetByEmail(string email) => userContext.Users.FirstOrDefault(user => user.Email == email);
 
+    public void ChangeFavoriteBeers(FavoriteBeerDTO favoriteBeers)
+    {
+        User user = this.GetByEmail(favoriteBeers.Email);
+
+        if (user != null)
+        {
+            user.FavoriteBeers = favoriteBeers.FavoriteBeers;
+        }
+
+        userContext.SaveChanges();
+    }
     public User GetById(int id) => userContext.Users.FirstOrDefault(u => u.Id == id);
 }

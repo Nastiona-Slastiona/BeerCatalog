@@ -59,7 +59,8 @@
                 Password = user.Password,
                 BirthDate = user.BirthDate,
                 Email = user.Email,
-                Image = null
+                Image = null,
+                FavoriteBeers = user.FavoriteBeers,
             };
 
             return userDto;
@@ -75,6 +76,11 @@
             }
 
             return new byte[0];
+        }
+
+        public void SetFavoriteBeers(FavoriteBeerDTO favoriteBeers)
+        {
+            userRepository.ChangeFavoriteBeers(favoriteBeers);
         }
 
         public UserDto GetUserById(int id) => this.CreateUserDtoFromUser(userRepository.GetById(id));
