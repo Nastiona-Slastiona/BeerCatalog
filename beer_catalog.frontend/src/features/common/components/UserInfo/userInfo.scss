@@ -1,0 +1,44 @@
+@import 'src/styles/colors';
+@import 'src/styles/mixins/typography';
+
+.userInfo__avatar {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+
+    border: 3px solid $primary-color-dark;
+    border-radius: 50%;
+}
+
+.userInfo__avatar--default {
+    font-size: 46pt;
+}
+
+.userInfo__authentification {
+    @include typography-0-small;
+
+    display: flex;
+    align-items: center;
+
+    margin: 10px;
+}
+
+@media (min-width: 500px) {
+    .userInfo__authentification {
+        @include typography-0;
+    }
+}
+
+.userInfo__authentification-item {
+    margin: 5px;
+
+    text-decoration: none;
+
+    color: $secondary-color;
+
+    &:hover {
+        text-decoration: underline;
+
+        color: #fff;
+    }
+}

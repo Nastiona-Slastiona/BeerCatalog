@@ -1,15 +1,18 @@
 import React, { useCallback, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
+import Authentication from 'features/common/components/Authentication/authentication';
 import Menu from 'features/common/components/Menu/menu';
-import { signOut } from 'authentication/helpers/serverConnectionHelper';
-import user from 'src/static/user';
+import UserInfo from 'features/common/components/UserInfo/userInfo';
+import requestHelper from 'src/helpers/requestHelper';
+import serviceUrls from 'src/constants/serviceUrls';
 
 import './pageHeader.scss';
 
 
-export default function PageHeader({ image, name, setName }) {
+function PageHeader({ image, name, setName }) {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
     const dispatch = useDispatch();
     const isAuthorized = useSelector(state => state.users.isAuthorized);
@@ -22,8 +25,12 @@ export default function PageHeader({ image, name, setName }) {
         setIsMenuVisible(true);
     }, []);
 
-    const onSignOutClick = useCallback(() => {
-        signOut();
+    const onSignOutClick = useCallback(async () => {
+        await requestHelper.get(serviceUrls.signOut, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include'
+        });
 
         setName('');
         dispatch({
@@ -35,7 +42,6 @@ export default function PageHeader({ image, name, setName }) {
         });
         dispatch({ type: 'beers/initialStateSet' });
     }, [dispatch, setName]);
-    const newImg = image ? `data:image/png;base64, ${image}` : false;
 
     return (
         <div>
@@ -46,43 +52,27 @@ export default function PageHeader({ image, name, setName }) {
                         label=" "
                         onClick={showMenu}
                     />
-                    <Link className="page-header__logo" to="/">
-                        Beer catalog
-                    </Link>
-                    <Menu
-                        isVisible={isMenuVisible}
-                        setIsVisible={hideMenu}
-                    />
+                    <Link className="page-header__logo" to="/">Beer catalog</Link>
+                    <Menu isVisible={isMenuVisible} setIsVisible={hideMenu} />
                 </div>
                 {
                     isAuthorized
                         ? (
-                            <ul className="page-header__authentification">
-                                <p>Hello, {name}!</p>
-                                <img alt="avatar" className="page-header__avatar" src={newImg || user} />
-                                <li>
-                                    <Link
-                                        className="page-header__authentification-item"
-                                        to="/signin"
-                                        onClick={onSignOutClick}
-                                    >
-                                        Sign Out
-                                    </Link>
-                                </li>
-                            </ul>
+                            <UserInfo name={name} image={image} onClick={onSignOutClick} />
                         )
                         : (
-                            <ul className="page-header__authentification">
-                                <li>
-                                    <Link className="page-header__authentification-item" to="/signin">Sign In</Link>
-                                </li>
-                                <li>
-                                    <Link className="page-header__authentification-item" to="/register">Register</Link>
-                                </li>
-                            </ul>
+                            <Authentication />
                         )
                 }
             </div>
         </div>
     );
 }
+
+PageHeader.propTypes = {
+    image: PropTypes.string,
+    name: PropTypes.string,
+    setName: PropTypes.func
+};
+
+export default PageHeader;

@@ -1,7 +1,7 @@
 function favoriteBeersSet(state, action) {
     return {
         ...state,
-        favoritesBeersIds: action.payload
+        favoritesBeersIds: action.payload === '' ? [] : action.payload
     };
 }
 
