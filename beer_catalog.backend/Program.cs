@@ -1,3 +1,5 @@
+using beer_catalog.backend;
+using beer_catalog.backend.BusinessLogic;
 using beer_catalog.backend.Helpers;
 using beer_catalog.backend.Constants;
 using Microsoft.EntityFrameworkCore;
@@ -35,8 +37,10 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddDbContext<UserContext>(options => options.UseSqlServer(connection));
 builder.Services.AddControllers();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<JwtService>();
+builder.Services.AddScoped<UserRelatedService>();
+builder.Services.AddScoped<AuthRelatedService>();
 
 var app = builder.Build();
 

@@ -1,0 +1,39 @@
+@import 'src/styles/colors';
+@import 'src/styles/mixins/typography';
+@import 'src/styles/mixins/form';
+
+.register {
+    @include form;
+
+    border: 1px solid $primary-color;
+    box-shadow: 2px 2px 5px 2px #46749b67;
+    background-color: $primary-color-lighter;
+}
+
+.register__container {
+    @include form__container;
+}
+
+.register__warning {
+    color: #ff4e4e;
+
+    @include typography-0;
+}
+
+.register__button {
+    @include form__button;
+
+    color: $secondary-color;
+    box-shadow: 2px 2px 5px 2px #46749b67;
+    background-color: $primary-color;
+
+    @include typography-1;
+
+    &:hover {
+        background-color: $primary-color-intensive;
+    }
+
+    &:focus {
+        background-color: $primary-color-dark;
+    }
+}

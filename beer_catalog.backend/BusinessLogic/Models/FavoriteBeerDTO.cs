@@ -1,6 +1,5 @@
 using Newtonsoft.Json;
 
-
 public class FavoriteBeerDTO
 {
     [JsonProperty("email")]
