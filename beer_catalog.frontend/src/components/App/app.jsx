@@ -29,12 +29,15 @@ export default function App() {
                     headers: { 'Content-Type': 'application/json' },
                     credentials: 'include'
                 });
+
                 const userImage = await requestHelper.get(serviceUrls.getUserImage, {
                     headers: { 'Content-Type': 'application/json' },
                     credentials: 'include'
                 });
+
                 const favoriteBeers = getUserFavoriteBeersHelper(user);
                 dispatch({ type: 'beers/favoriteBeersSet', payload: favoriteBeers });
+
                 setName(user.name);
                 dispatch({
                     type: 'users/setUserData',

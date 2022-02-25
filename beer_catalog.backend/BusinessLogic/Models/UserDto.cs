@@ -7,6 +7,5 @@ public class UserDto
     public DateTime BirthDate { get; set; }
     public IFormFile Image { get; set; }
     public string Password { get; set; } = null!;
-
     public string FavoriteBeers { get; set; } = "";
 }

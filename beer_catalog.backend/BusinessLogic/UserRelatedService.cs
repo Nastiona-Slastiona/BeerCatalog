@@ -59,7 +59,8 @@
                 Password = user.Password,
                 BirthDate = user.BirthDate,
                 Email = user.Email,
-                Image = null
+                Image = null,
+                FavoriteBeers = user.FavoriteBeers,
             };
 
             return userDto;
