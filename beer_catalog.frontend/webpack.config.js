@@ -47,11 +47,10 @@ module.exports = {
     mode: 'development',
     entry: ['babel-polyfill', './src/index.jsx'],
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'build'),
         filename: 'bundle.js'
     },
     devServer: {
-        port: 3000,
         hot: true
     },
     devtool: 'source-map',

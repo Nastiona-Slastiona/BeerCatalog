@@ -31,7 +31,7 @@ public class LoginController : ControllerBase
             {
                 Response.Cookies.Append("jwt", jwt, new CookieOptions
                 {
-                    HttpOnly = true
+                    MaxAge = TimeSpan.FromDays(1)
                 });
 
                 return Ok(userRelatedService.CreateUserDtoFromUser(user));
@@ -102,6 +102,7 @@ public class LoginController : ControllerBase
         });
     }
 
+    [Route("/error")]
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
