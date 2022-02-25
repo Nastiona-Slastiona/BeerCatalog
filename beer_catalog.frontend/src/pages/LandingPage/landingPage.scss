@@ -1,12 +1,21 @@
 .landing-page {
-    display: grid;
+    display: block;
 
     min-width: 300px;
     width: fit-content;
     margin: 60px;
+}
 
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+@media (min-width: 1100px) {
+    .landing-page {
+        display: grid;
+    
+        width: fit-content;
+        margin: 60px;
+    
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
 }
 
 .landing-page__container {

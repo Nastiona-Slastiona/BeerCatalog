@@ -1,16 +1,35 @@
 .filter-item {
-    display: flex;
+    display: block;
     justify-content: space-between;
 
-    width: 550px;
+    width: 450px;
     padding-top: 20px;
+}
+
+@media (min-width: 1400px) {
+    .filter-item {
+        display: flex;
+        justify-content: space-between;
+    
+        width: 550px;
+        padding-top: 20px;
+    }
 }
 
 .filter-item__slider {
     display: inline-flex;
 
-    width: 200px;
+    width: 60%;
     height: 1px;
+}
+
+@media (min-width: 1400px) {
+    .filter-item__slider {
+        display: inline-flex;
+    
+        width: 200px;
+        height: 1px;
+    }
 }
 
 .filter-item__label {

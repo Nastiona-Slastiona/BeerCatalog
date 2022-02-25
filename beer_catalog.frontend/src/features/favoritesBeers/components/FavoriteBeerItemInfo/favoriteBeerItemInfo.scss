@@ -20,10 +20,14 @@
 }
 
 .favorite-beer-item-info__title {
-    @include typography-1;
-    
-    font-size: 45px;
+    @include typography-1-small;
     padding-bottom: 10px;
+}
+
+@media (min-width: 500px) {
+    .favorite-beer-item-info__title {
+        @include typography-1;
+    }
 }
 
 .favorite-beer-item-info__tagline {

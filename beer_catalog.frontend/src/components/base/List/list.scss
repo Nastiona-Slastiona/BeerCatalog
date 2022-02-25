@@ -7,13 +7,29 @@
     margin: 0 80px 0 0;
 }
 
+
+
 .list__header {
-    @include typography-6;
+    @include typography-6-small;
 }
+
+@media (min-width: 500px) {
+    .list__header {
+        @include typography-6;
+    }
+}
+
 
 .list__body {
     @include list;
     display: block;
+}
+
+@media (min-width: 800px) {
+    .list__body {
+        @include list;
+        display: block;
+    }
 }
 
 .list__item--borders {
@@ -45,7 +61,14 @@
 }
 
 .list__item-header {
-    @include list-header;
+    font-size: 15pt;
+    font-weight: 600;
+}
+
+@media (min-width: 500px) {
+    .list__item-header {
+        @include list-header;
+    }
 }
 
 .list__item-body {

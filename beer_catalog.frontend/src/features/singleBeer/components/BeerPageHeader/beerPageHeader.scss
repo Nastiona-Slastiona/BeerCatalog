@@ -2,7 +2,7 @@
 @import 'src/styles/colors';
 
 .beer-page__header--tagline {
-    @include typography-7;
+    @include typography-7-small;
 
     display: block;
 
@@ -10,9 +10,21 @@
     color: #808080;
 }
 
+@media (min-width: 500px) {
+    .beer-page__header--tagline {
+        @include typography-7;
+    }
+}
+
 .beer-page__header--title {
-    @include typography-1;
+    @include typography-1-small;
     padding-bottom: 10px;
     
     font-size: 30pt;
+}
+
+@media (min-width: 500px) {
+    .beer-page__header--title {
+        @include typography-1;
+    }
 }

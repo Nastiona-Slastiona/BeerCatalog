@@ -15,12 +15,18 @@
 }
 
 .userInfo__authentification {
-    @include typography-0;
+    @include typography-0-small;
 
     display: flex;
     align-items: center;
 
     margin: 10px;
+}
+
+@media (min-width: 500px) {
+    .userInfo__authentification {
+        @include typography-0;
+    }
 }
 
 .userInfo__authentification-item {

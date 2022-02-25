@@ -36,7 +36,7 @@ builder.Services.AddAuthentication(options =>
 });
 
 builder.Services.AddDbContext<UserContext>(options => options.UseSqlServer(connection));
-builder.Services.AddControllers();
+builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddScoped<UserRelatedService>();
