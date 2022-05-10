@@ -1,0 +1,54 @@
+$pagination-color: #b6d8ff;
+$pagination-color--hover: #5c85b4;
+$pagination-border-color: #17395f;
+
+.pagination {
+    font-size: 25px;
+
+    display: none;
+    justify-content: center;
+
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+}
+
+.pagination--active {
+    display: flex;
+}
+
+.pagination__container {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+}
+
+.pagination__button {
+    display: inherit;
+
+    margin: 5px 2px;
+    padding: 10px 15px;
+
+    border: 1px solid $pagination-border-color;
+    border-radius: 40%;
+    background-color: $pagination-color;
+
+    &:hover {
+        background-color: $pagination-color--hover;
+    }
+}
+
+.pagination__change-page {
+    font-size: 35px;
+
+    display: inherit;
+
+    margin: 5px;
+
+    color: $pagination-color;
+
+    &:hover {
+        color: $pagination-color--hover;
+    }
+}

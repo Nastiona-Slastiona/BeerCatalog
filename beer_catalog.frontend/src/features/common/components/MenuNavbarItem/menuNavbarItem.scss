@@ -1,0 +1,35 @@
+@import 'src/styles/colors';
+@import 'src/styles/mixins/typography';
+
+$hover-color: #696a6e;
+
+.menu-navbar-item {
+    @include typography-3;
+    
+    display: flex;
+
+    width: 150px;
+
+    text-decoration: none;
+
+    color: #87888f;
+    &:hover {
+        border-bottom: 1px solid $hover-color;
+    }
+}
+
+.menu-navbar-item__container {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+    margin-top: 30px;
+}
+
+.menu-navbar-item__icon {
+    display: flex;
+
+    margin-right: 40px;
+
+    color: $hover-color;
+}

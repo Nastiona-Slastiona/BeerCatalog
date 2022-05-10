@@ -1,0 +1,18 @@
+@import 'src/styles/mixins/typography';
+@import 'src/styles/colors';
+
+.beer-page__header--tagline {
+    @include typography-7;
+
+    display: block;
+
+    margin: 10px 0;
+    color: #808080;
+}
+
+.beer-page__header--title {
+    @include typography-1;
+    padding-bottom: 10px;
+    
+    font-size: 30pt;
+}
